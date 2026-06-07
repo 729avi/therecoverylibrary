@@ -6,243 +6,32 @@
 <title>The RDB Act, 1993 — A Practitioner's Treatise</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#f5efe3;
-  --paper-2:#efe7d6;
-  --paper-deep:#e9dfca;
-  --ink:#221d17;
-  --ink-soft:#4a4135;
-  --ink-faint:#7c715f;
-  --forest:#1f3d3a;       /* primary, deep forest */
-  --forest-deep:#13302d;
-  --forest-bright:#2f5a55;
-  --ox:#6e2530;           /* secondary, used for SARFAESI cross-refs */
-  --ox-bright:#8a2f3a;
-  --indigo:#1f3a55;       /* tertiary, used for IBC cross-refs */
-  --indigo-bright:#2c548a;
-  --brass:#a87d34;
-  --brass-light:#c69a4a;
-  --line:#d6c9ad;
-  --line-soft:#e2d7bf;
-  --shadow:rgba(46,33,20,.16);
-  --max:1180px;
-}
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;scroll-padding-top:80px;}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:"Spectral",Georgia,serif;
-  font-size:18px;
-  line-height:1.72;
-  -webkit-font-smoothing:antialiased;
-  background-image:
-    radial-gradient(circle at 12% 8%, rgba(168,125,52,.05), transparent 40%),
-    radial-gradient(circle at 88% 30%, rgba(31,61,58,.06), transparent 42%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-}
-
-#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;
-  background:linear-gradient(90deg,var(--forest),var(--brass));transition:width .12s ease-out;}
-
-.shell{max-width:var(--max);margin:0 auto;padding:0 28px;}
-.with-aside{display:grid;grid-template-columns:248px 1fr;gap:54px;align-items:start;}
-@media(max-width:980px){.with-aside{grid-template-columns:1fr;}}
-
-aside.toc{position:sticky;top:24px;align-self:start;font-family:"Spectral",serif;
-  border-right:1px solid var(--line);padding-right:18px;max-height:calc(100vh - 48px);overflow:auto;}
-@media(max-width:980px){aside.toc{display:none;}}
-.toc h4{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--brass);margin:0 0 14px;font-weight:600;}
-.toc a{display:block;color:var(--ink-soft);text-decoration:none;font-size:14px;
-  padding:5px 10px;margin:1px 0;border-radius:5px;line-height:1.35;transition:all .18s;
-  border-left:2px solid transparent;}
-.toc a:hover{color:var(--forest);background:var(--paper-2);}
-.toc a.active{color:var(--forest);background:var(--paper-deep);border-left-color:var(--forest);font-weight:600;}
-.toc a .num{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--brass);margin-right:7px;}
-
-.hero{position:relative;overflow:hidden;background:
-   linear-gradient(160deg,var(--forest-deep) 0%, var(--forest) 48%, #0e2422 100%);
-  color:var(--paper);padding:96px 0 76px;border-bottom:6px solid var(--brass);}
-.hero::before{content:"";position:absolute;inset:0;opacity:.5;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 0v60M0 30h60' stroke='%23ffffff' stroke-opacity='0.04'/%3E%3C/svg%3E");}
-.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;
-  background:radial-gradient(circle,rgba(198,154,74,.22),transparent 65%);}
-.hero .shell{position:relative;z-index:2;}
-.hero .kicker{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.34em;
-  text-transform:uppercase;color:var(--brass-light);margin-bottom:22px;}
-.hero h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(40px,7vw,80px);
-  line-height:1.02;letter-spacing:-.015em;margin:0 0 8px;text-wrap:balance;}
-.hero h1 em{font-style:italic;color:var(--brass-light);}
-.hero .sub{font-family:"Newsreader",serif;font-style:italic;font-size:clamp(19px,2.4vw,26px);
-  color:rgba(245,239,227,.85);max-width:680px;margin:18px 0 0;font-weight:400;line-height:1.4;}
-.hero .meta-strip{display:flex;flex-wrap:wrap;gap:0;margin-top:46px;
-  border:1px solid rgba(198,154,74,.4);border-radius:8px;overflow:hidden;max-width:860px;
-  background:rgba(0,0,0,.12);}
-.hero .meta-strip div{flex:1 1 160px;padding:16px 20px;border-right:1px solid rgba(198,154,74,.22);}
-.hero .meta-strip div:last-child{border-right:none;}
-.hero .meta-strip .lab{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--brass-light);display:block;margin-bottom:5px;}
-.hero .meta-strip .val{font-family:"Fraunces",serif;font-size:18px;font-weight:500;color:var(--paper);}
-
-main{padding:64px 0 40px;}
-section.part{margin:0 0 78px;scroll-margin-top:30px;}
-.part-head{margin-bottom:30px;position:relative;}
-.part-head .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.26em;
-  text-transform:uppercase;color:var(--brass);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:14px;}
-.part-head .eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);}
-.part-head h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,44px);
-  line-height:1.06;letter-spacing:-.01em;margin:0;color:var(--ink);text-wrap:balance;}
-.part-head h2 .pin{color:var(--forest);}
-.lead{font-family:"Newsreader",serif;font-size:21px;line-height:1.55;color:var(--ink-soft);
-  max-width:760px;margin:18px 0 8px;}
-
-h3{font-family:"Fraunces",serif;font-weight:600;font-size:25px;letter-spacing:-.005em;
-  color:var(--forest);margin:42px 0 4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
-h3 .s{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--brass);font-weight:600;
-  background:var(--paper-deep);padding:3px 9px;border-radius:5px;border:1px solid var(--line);white-space:nowrap;}
-h4{font-family:"Fraunces",serif;font-weight:600;font-size:19px;color:var(--ox);margin:28px 0 2px;}
-p{margin:14px 0;max-width:74ch;}
-.body-block{max-width:74ch;}
-strong{font-weight:600;color:var(--ink);}
-em{color:var(--ink-soft);}
-a.ref{color:var(--forest);text-decoration:none;border-bottom:1px dotted var(--forest-bright);}
-a.ref:hover{background:var(--paper-deep);}
-
-ul.clean,ol.clean{max-width:74ch;padding-left:0;list-style:none;margin:16px 0;}
-ul.clean li,ol.clean li{position:relative;padding:6px 0 6px 30px;line-height:1.62;border-bottom:1px dashed var(--line-soft);}
-ul.clean li:last-child,ol.clean li:last-child{border-bottom:none;}
-ul.clean li::before{content:"§";position:absolute;left:2px;top:6px;color:var(--brass);font-family:"Fraunces",serif;font-weight:600;}
-ol.clean{counter-reset:c;}
-ol.clean li::before{counter-increment:c;content:counter(c);position:absolute;left:0;top:8px;
-  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--paper);background:var(--forest);
-  width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-weight:600;}
-ol.clean li{padding-left:34px;}
-
-.callout{border-radius:10px;padding:20px 22px 20px 24px;margin:24px 0;position:relative;
-  border:1px solid var(--line);background:var(--paper-2);max-width:78ch;box-shadow:0 1px 0 rgba(255,255,255,.5) inset;}
-.callout .tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;
-  text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:7px;margin-bottom:8px;}
-.callout p{margin:6px 0;font-size:16.5px;}
-.callout.prac{background:#eef0e9;border-left:4px solid var(--forest);}
-.callout.prac .tag{color:var(--forest);}
-.callout.amend{background:#f3ece0;border-left:4px solid var(--brass);}
-.callout.amend .tag{color:#8a6526;}
-.callout.case{background:#f1e8e7;border-left:4px solid var(--ox);}
-.callout.case .tag{color:var(--ox);}
-.callout.pitfall{background:#f4e9df;border-left:4px solid #b8541f;}
-.callout.pitfall .tag{color:#a1481a;}
-.callout.cross{background:#eaeef2;border-left:4px solid var(--indigo);}
-.callout.cross .tag{color:var(--indigo);}
-.callout .cite{font-family:"Newsreader",serif;font-style:italic;color:var(--ink-faint);font-size:14.5px;}
-
-.defgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin:24px 0;}
-.defcard{background:var(--paper-2);border:1px solid var(--line);border-radius:9px;padding:17px 18px;
-  transition:transform .18s,box-shadow .18s,border-color .18s;}
-.defcard:hover{transform:translateY(-3px);box-shadow:0 10px 26px var(--shadow);border-color:var(--brass);}
-.defcard .term{font-family:"Fraunces",serif;font-weight:600;font-size:18px;color:var(--forest);margin:0 0 4px;}
-.defcard .sec{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--brass);letter-spacing:.08em;}
-.defcard p{font-size:15px;line-height:1.55;margin:8px 0 0;color:var(--ink-soft);max-width:none;}
-
-.tablewrap{overflow-x:auto;margin:24px 0;border:1px solid var(--line);border-radius:9px;}
-table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--paper-2);}
-th{background:var(--forest);color:var(--paper);font-family:"Fraunces",serif;font-weight:500;
-  text-align:left;padding:12px 16px;font-size:14px;letter-spacing:.01em;}
-td{padding:12px 16px;border-top:1px solid var(--line);vertical-align:top;line-height:1.5;}
-tr:nth-child(even) td{background:var(--paper);}
-td strong{color:var(--forest);}
-.tablewrap.ox th{background:var(--ox);}
-.tablewrap.indigo th{background:var(--indigo);}
-
-/* The big three-way comparison table */
-.threecol{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0;}
-@media(max-width:880px){.threecol{grid-template-columns:1fr;}}
-.regime{border:1px solid var(--line);border-radius:11px;padding:0;background:var(--paper-2);overflow:hidden;display:flex;flex-direction:column;}
-.regime .head{padding:22px 22px 18px;color:var(--paper);}
-.regime.sarfaesi .head{background:linear-gradient(160deg,var(--ox-bright),var(--ox));}
-.regime.rdb .head{background:linear-gradient(160deg,var(--forest-bright),var(--forest));}
-.regime.ibc .head{background:linear-gradient(160deg,var(--indigo-bright),var(--indigo));}
-.regime .head h4{margin:0;color:var(--paper);font-size:20px;font-family:"Fraunces",serif;font-weight:600;}
-.regime .head .tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);}
-.regime .head p{margin:8px 0 0;color:rgba(245,239,227,.92);font-size:14.5px;line-height:1.5;font-style:italic;font-family:"Newsreader",serif;max-width:none;}
-.regime .body{padding:18px 22px 22px;font-size:14.5px;flex:1;}
-.regime .body dt{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-top:12px;}
-.regime .body dt:first-child{margin-top:0;}
-.regime .body dd{margin:3px 0 8px;font-size:14.5px;line-height:1.5;color:var(--ink-soft);}
-.regime .body dd strong{color:var(--ink);}
-
-.timeline{position:relative;margin:34px 0 10px;padding-left:8px;}
-.timeline::before{content:"";position:absolute;left:14px;top:8px;bottom:8px;width:2px;
-  background:linear-gradient(180deg,var(--brass),var(--forest),var(--indigo));}
-.tl-item{position:relative;padding:0 0 30px 50px;}
-.tl-item::before{content:"";position:absolute;left:7px;top:6px;width:16px;height:16px;border-radius:50%;
-  background:var(--paper);border:3px solid var(--forest);box-shadow:0 0 0 4px var(--paper);}
-.tl-item .yr{font-family:"JetBrains Mono",monospace;font-weight:600;color:var(--brass);font-size:13px;letter-spacing:.05em;}
-.tl-item .tl-t{font-family:"Fraunces",serif;font-weight:600;font-size:18px;color:var(--ink);margin:2px 0 4px;}
-.tl-item p{font-size:16px;margin:4px 0;color:var(--ink-soft);}
-
-.flow{margin:30px 0;display:flex;flex-direction:column;gap:0;}
-.flow-step{display:grid;grid-template-columns:64px 1fr;gap:18px;position:relative;padding-bottom:8px;}
-.flow-node{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:13px;color:var(--paper);
-  background:var(--forest);width:64px;height:64px;border-radius:12px;display:grid;place-items:center;text-align:center;
-  line-height:1.1;flex-shrink:0;box-shadow:0 6px 16px rgba(31,61,58,.28);}
-.flow-node.alt{background:var(--brass);box-shadow:0 6px 16px rgba(168,125,52,.28);color:var(--ink);}
-.flow-node.warn{background:#b8541f;box-shadow:0 6px 16px rgba(184,84,31,.28);}
-.flow-body{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:14px;}
-.flow-body h5{font-family:"Fraunces",serif;font-size:17px;font-weight:600;margin:0 0 4px;color:var(--ink);}
-.flow-body h5 span{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--brass);margin-left:8px;}
-.flow-body p{margin:4px 0 0;font-size:15px;color:var(--ink-soft);max-width:none;}
-.flow-step:not(:last-child)::after{content:"▼";position:absolute;left:26px;bottom:-4px;color:var(--brass);font-size:12px;}
-
-.pull{font-family:"Newsreader",serif;font-style:italic;font-size:23px;line-height:1.45;
-  color:var(--forest);border-top:2px solid var(--brass);border-bottom:2px solid var(--brass);
-  padding:24px 0;margin:34px 0;max-width:none;text-align:center;}
-.pull span{display:block;font-family:"JetBrains Mono",monospace;font-style:normal;font-size:11px;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-top:14px;}
-
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0;}
-.chip{font-family:"JetBrains Mono",monospace;font-size:12px;background:var(--paper-deep);
-  border:1px solid var(--line);border-radius:30px;padding:7px 15px;color:var(--ink-soft);}
-.chip b{color:var(--forest);}
-
-.orn{display:flex;align-items:center;justify-content:center;gap:14px;margin:30px 0;color:var(--brass);}
-.orn::before,.orn::after{content:"";height:1px;width:80px;background:var(--line);}
-.orn span{font-size:14px;}
-
-/* Decision tree (when to invoke what) */
-.dtree{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:24px;margin:30px 0;}
-.dtree h5{font-family:"Fraunces",serif;font-size:19px;color:var(--forest);margin:0 0 14px;}
-.dq{padding:10px 14px;border-left:3px solid var(--brass);background:var(--paper);margin:10px 0;border-radius:0 6px 6px 0;}
-.dq .q{font-family:"Fraunces",serif;font-size:16px;color:var(--ink);font-weight:600;margin:0 0 5px;}
-.dq .a{font-size:14.5px;color:var(--ink-soft);margin:0;}
-.dq .a strong{color:var(--forest);}
-
-footer{background:var(--ink);color:var(--paper);padding:50px 0 40px;margin-top:40px;border-top:6px solid var(--forest);}
-footer .shell{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start;}
-footer h5{font-family:"Fraunces",serif;font-size:22px;margin:0 0 6px;color:var(--paper);font-weight:600;}
-footer p{color:rgba(245,239,227,.6);font-size:14px;max-width:46ch;}
-footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.04em;
-  color:rgba(198,154,74,.7);border:1px solid rgba(198,154,74,.25);border-radius:8px;padding:14px 18px;max-width:360px;line-height:1.6;}
-
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
-.reveal.in{opacity:1;transform:none;}
-::selection{background:var(--forest);color:var(--paper);}
-::-webkit-scrollbar{width:11px;height:11px;}
-::-webkit-scrollbar-track{background:var(--paper-deep);}
-::-webkit-scrollbar-thumb{background:var(--forest);border-radius:6px;border:2px solid var(--paper-deep);}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
 </head>
-<body>
+<body data-vol="rdb">
 <div id="progress"></div>
+
+<header class="masthead" id="masthead">
+  <div class="shell">
+    <a class="brand" href="index.html">
+      <span class="seal">R</span>
+      <span class="wm"><b>The Recovery Library</b><span>Debt Enforcement · India</span></span>
+    </a>
+    <nav class="mnav">
+      <a class="home-link" href="index.html">Home</a>
+      <a href="rbi-prudential-framework.html">RBI Framework</a>
+      <a href="sarfaesi-act.html">SARFAESI</a>
+      <a class="current" href="rdb-act.html">RDB Act</a>
+    </nav>
+  </div>
+</header>
 
 <header class="hero">
   <div class="shell">
     <div class="kicker">Act No. 51 of 1993 · The Republic of India</div>
     <h1>The <em>RDB</em> Act</h1>
-    <h1 style="font-size:clamp(22px,3.4vw,38px);font-weight:400;color:rgba(245,239,227,.92);margin-top:2px;">Recovery of Debts and Bankruptcy Act, 1993<br>(formerly the Recovery of Debts Due to Banks and Financial Institutions Act, 1993)</h1>
+    <p class="full">Recovery of Debts and Bankruptcy Act, 1993<br>(formerly the Recovery of Debts Due to Banks and Financial Institutions Act, 1993)</p>
     <p class="sub">The specialised adjudication regime for bank recovery. The forum that supplied the DRT, that now houses individual insolvency, and that completes the trio with SARFAESI and the IBC.</p>
     <div class="meta-strip">
       <div><span class="lab">Assent</span><span class="val">27 Aug 1993</span></div>
@@ -342,7 +131,7 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
     </div>
 
     <div class="callout amend">
-      <span class="tag">◈ Note on nomenclature</span>
+      <span class="tag">Note on nomenclature</span>
       <p>Practitioners and older case law still use "RDDBFI Act" or "DRT Act." After 1 December 2019 the correct statutory style is "Recovery of Debts and Bankruptcy Act, 1993," abbreviated "RDB Act." The Act bears two faces today, an adjudicatory recovery code for banks and financial institutions, and an adjudicating-authority charter for individual insolvency under the IBC.</p>
     </div>
   </section>
@@ -399,7 +188,7 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
     <p>The Act applies where the amount of debt due to a bank, financial institution, or consortium is <strong>not less than ten lakh rupees, or such other amount, being not less than one lakh rupees, as the Central Government may, by notification, specify</strong>. By notification dated 6 September 2018, the Central Government raised the threshold to <strong>twenty lakh rupees</strong>. Below that figure, the DRT route is unavailable and the bank must proceed by an ordinary civil suit.</p>
 
     <div class="callout pitfall">
-      <span class="tag">⚠ Pitfall — the threshold is jurisdictional</span>
+      <span class="tag">Pitfall — the threshold is jurisdictional</span>
       <p>A claim below ₹20 lakh is not within the DRT's jurisdiction at all. The Tribunal cannot enlarge its jurisdiction by consent. A bank that mistakenly files below the threshold will see the application returned for presentation to the proper civil court, with limitation continuing to run in the meantime. Always pleaded the principal figure carefully, exclusive of penal interest, since the threshold is on "debt" as defined.</p>
     </div>
   </section>
@@ -433,7 +222,7 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
     </div>
 
     <div class="callout prac">
-      <span class="tag">▣ Practitioner's note — the breadth of "debt"</span>
+      <span class="tag">Practitioner's note — the breadth of "debt"</span>
       <p>The definition of debt in section 2(g) is one of the widest in Indian commercial law. It is not limited to a contractual loan. It captures liability under a guarantee, an arbitral award, a decree of any civil court, and an unpaid mortgage. The Supreme Court has read this definition expansively to bring within the DRT's jurisdiction even claims arising from foreign-exchange transactions, indemnity claims, and bill-discounting disputes. The first question in any RDB Act analysis is not whether there is a contract, but whether the claim sounds in debt as so defined.</p>
     </div>
   </section>
@@ -474,7 +263,7 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
     <p>Salaries and allowances are prescribed by rules and may not be varied to the incumbent's disadvantage. Removal is only by order of the Central Government on the ground of proved misbehaviour or incapacity, after inquiry by a sitting Judge (of the High Court for a Presiding Officer; of the Supreme Court for a Chairperson), with a reasonable opportunity of being heard. Section 16 protects acts and proceedings from being called into question merely on grounds of defect in constitution.</p>
 
     <div class="callout amend">
-      <span class="tag">◈ Amendment watch — the Tribunal Reforms Act 2021</span>
+      <span class="tag">Amendment watch — the Tribunal Reforms Act 2021</span>
       <p>Since 4 April 2021, all appointments to the DRT and DRAT, including qualifications, term, salaries, allowances, resignation and removal, are governed by Chapter II of the Tribunal Reforms Act 2021, not by sections 6 and 11 of the RDB Act, by reason of sections 6A and 15A. Officers appointed before the commencement of Part XIV of Chapter VI of the Finance Act 2017 continue under the older regime.</p>
     </div>
   </section>
@@ -493,7 +282,7 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
     <p>Inserted by Act 1 of 2000 and reinforced by Act 44 of 2016. The Chairperson exercises general superintendence and control over DRTs within his jurisdiction. He may direct DRTs to furnish information on pendency under both the RDB Act and SARFAESI, convene meetings of Presiding Officers to review performance, and recommend inquiry against a Presiding Officer for misbehaviour or incapacity. Importantly, sub-section (2) confers on the Chairperson the power to <strong>transfer cases from one DRT to another</strong> within his jurisdiction, on application or suo motu.</p>
 
     <div class="callout case">
-      <span class="tag">⚖ Case law — only the Chairperson can transfer</span>
+      <span class="tag">Case law — only the Chairperson can transfer</span>
       <p>In <em>Eskays Construction Pvt. Ltd. v. Soma Papers and Industries Ltd.</em> (2016) and the line of authority following it, the High Courts have held that they cannot transfer a case from one DRT to another. Section 17A vests that power exclusively in the DRAT Chairperson. A writ petition seeking transfer is liable to be dismissed on the alternate-remedy ground.</p>
     </div>
 
@@ -501,7 +290,7 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
     <p>From the appointed day, no court or other authority has jurisdiction over the matters specified in section 17, <strong>except the Supreme Court and a High Court exercising jurisdiction under Articles 226 and 227</strong>. The bar is comprehensive, even excluding civil courts that may have entertained a matter before establishment of the DRT (subject to the savings in section 31). The proviso preserves, on a transitional basis, certain proceedings of multi-state cooperative banks pending before the 2013 amendment.</p>
 
     <div class="callout case">
-      <span class="tag">⚖ Case law — Allahabad Bank v. Canara Bank</span>
+      <span class="tag">Case law — Allahabad Bank v. Canara Bank</span>
       <p>In <em>Allahabad Bank v. Canara Bank</em> (2000) 4 SCC 406, the Supreme Court held that, in matters of priorities between banks over the same secured assets, the DRT has exclusive jurisdiction. The civil court is excluded even where the question is one of competing claims rather than recovery from the borrower. The decision confirms the wide sweep of section 18.</p>
     </div>
   </section>
@@ -542,7 +331,7 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
     <p>The defendant may plead set-off of any ascertained sum legally recoverable by him from the applicant. He may also set up a counter-claim in respect of any cause of action accruing before he has delivered his defence, including a claim for damages. A counter-claim has the effect of a cross-suit. Where the applicant contends that the counter-claim ought not to be disposed of as a counter-claim but in an independent action, the DRT decides the issue alongside the recovery application (sub-section 11, substituted 2016).</p>
 
     <div class="callout case">
-      <span class="tag">⚖ Case law — counter-claim before the DRT</span>
+      <span class="tag">Case law — counter-claim before the DRT</span>
       <p>In <em>Indian Bank v. ABS Marine Products (P) Ltd.</em> (2006) 5 SCC 72, the Supreme Court held that a defendant in a DRT proceeding cannot transfer his counter-claim to the civil court; the DRT is the only forum that can adjudicate the counter-claim along with the bank's recovery application. The decision protects the integrity of the DRT's exclusive jurisdiction even where the counter-claim is large.</p>
     </div>
 
@@ -562,7 +351,7 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
     <p>The Presiding Officer issues a recovery certificate, signed by him, to the Recovery Officer, specifying the amount of debt for recovery. Sub-section (22A), inserted in 2016, gives the certificate a <strong>deemed-decree</strong> status for the purposes of (i) initiating winding-up under the Companies Act 2013, (ii) proceeding against an LLP under the LLP Act 2008, and (iii) initiating insolvency proceedings against any individual or partnership firm under any law in force.</p>
 
     <div class="callout case">
-      <span class="tag">⚖ Case law — recovery certificate as a fresh cause of action for CIRP</span>
+      <span class="tag">Case law — recovery certificate as a fresh cause of action for CIRP</span>
       <p>In <em>Kotak Mahindra Bank Ltd. v. A. Balakrishnan</em> (2022) 9 SCC 186, the Supreme Court held that a recovery certificate issued by the DRT under section 19(22) gives rise to a <strong>fresh cause of action</strong>, with its own limitation, for initiating CIRP under section 7 of the IBC. Earlier in <em>Dena Bank v. C. Shivakumar Reddy</em> (2021) 10 SCC 330, the Court had similarly held that a recovery certificate is a "financial debt" and the holder a "financial creditor" for IBC purposes. The two decisions converted the recovery certificate from a domestic execution document into a bridge to the insolvency regime.</p>
     </div>
 
@@ -621,7 +410,7 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
     <p>Where the appeal under section 30 is preferred by the person from whom debt is due, the DRT shall not entertain the appeal unless the appellant has deposited <strong>50% of the debt</strong> as determined by the DRT. There is no power to reduce. This is a second pre-deposit, stricter than section 21.</p>
 
     <div class="callout pitfall">
-      <span class="tag">⚠ Pitfall — double pre-deposit risk</span>
+      <span class="tag">Pitfall — double pre-deposit risk</span>
       <p>A borrower who loses at the Recovery Officer's stage faces two distinct deposit gates. First, an appeal against the substantive DRT order to the DRAT requires 50% under section 21 (reducible to 25%). Then, any appeal against the Recovery Officer's execution order to the DRT requires another 50% under section 30A, not reducible. Counsel for borrowers should factor both gates into the litigation strategy from the outset.</p>
     </div>
   </section>
@@ -674,7 +463,7 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
     </div>
 
     <div class="callout amend">
-      <span class="tag">◈ Amendment watch — phased commencement</span>
+      <span class="tag">Amendment watch — phased commencement</span>
       <p>The Part III IBC jurisdiction has been notified in tranches. Personal guarantors to corporate debtors were notified with effect from 1 December 2019. Other individuals and partnership firms remain subject to a separate notification. Until the relevant tranche is notified, the older Presidency-Towns Insolvency Act 1909 and the Provincial Insolvency Act 1920 continue to apply. Check the latest notification before filing.</p>
     </div>
   </section>
@@ -985,16 +774,22 @@ footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacin
   </main>
 </div>
 
-<footer>
+<footer class="site">
   <div class="shell">
-    <div>
-      <h5>The RDB Act, 1993</h5>
-      <p>A practitioner's treatise on Act 51 of 1993 as amended through Act 44 of 2016 and the IBC 2016, with the leading jurisprudence and a complete decision framework on SARFAESI, RDB and IBC.</p>
+    <div class="ftop">
+      <div>
+        <h5>The <em>Recovery</em> Library</h5>
+        <p>A practitioner's reference set on financial restructuring and debt recovery in India — the RBI Prudential Framework, the SARFAESI Act, and the Recovery of Debts and Bankruptcy Act, read together with their leading jurisprudence and IBC interface.</p>
+      </div>
+      <div class="fnav">
+        <span class="fl">The Volumes</span>
+        <a href="index.html">Home</a>
+        <a href="rbi-prudential-framework.html">I · RBI Prudential Framework</a>
+        <a href="sarfaesi-act.html">II · SARFAESI Act</a>
+        <a href="rdb-act.html">III · RDB Act</a>
+      </div>
     </div>
-    <div class="disc">
-      <strong style="color:var(--brass-light);">A note on use.</strong><br>
-      This explainer is a study and reference aid synthesised from the bare Act, principal amendments and settled case law. Statutory positions, threshold figures and citations should be verified against the current bare Act and the latest notifications before professional reliance. It is not legal advice.
-    </div>
+    <p class="disc"><strong>A note on use.</strong> These explainers are study and reference aids synthesised from the bare statutes, RBI directions and settled case law. Statutory positions and citations should be verified against the current text before professional reliance. They are not legal advice.</p>
   </div>
 </footer>
 
@@ -1010,6 +805,13 @@ const links=[...document.querySelectorAll('#toc a')];
 const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
 const spy=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const id='#'+e.target.id;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));}});},{rootMargin:'-20% 0px -70% 0px'});
 secs.forEach(s=>s&&spy.observe(s));
+</script>
+<script>
+(function(){
+  var mh=document.getElementById('masthead');
+  function onScrollMh(){ if(mh) mh.classList.toggle('scrolled', window.scrollY>10); }
+  document.addEventListener('scroll',onScrollMh,{passive:true}); onScrollMh();
+})();
 </script>
 </body>
 </html>
