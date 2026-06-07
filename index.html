@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Recovery Library · Debt Recovery and Restructuring in India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5efe3;
+  --paper-2:#efe7d6;
+  --paper-deep:#e9dfca;
+  --ink:#221d17;
+  --ink-soft:#4a4135;
+  --ink-faint:#7c715f;
+  --ox:#6e2530;
+  --ox-deep:#511821;
+  --ox-bright:#8a2f3a;
+  --brass:#a87d34;
+  --brass-light:#c69a4a;
+  --teal:#1f3d3a;
+  --teal-bright:#2f5a55;
+  --line:#d6c9ad;
+  --line-soft:#e2d7bf;
+  --shadow:rgba(46,33,20,.16);
+  --max:1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:84px;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Spectral",Georgia,serif;
+  font-size:18px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(168,125,52,.06), transparent 40%),
+    radial-gradient(circle at 88% 24%, rgba(110,37,48,.05), transparent 42%),
+    radial-gradient(circle at 50% 120%, rgba(31,61,58,.05), transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
+.shell{max-width:var(--max);margin:0 auto;padding:0 28px;}
+
+/* ---------- reading / scroll progress ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:300;
+  background:linear-gradient(90deg,var(--ox),var(--brass));transition:width .12s ease-out;}
+
+/* ---------- top bar ---------- */
+header.bar{position:fixed;top:0;left:0;right:0;z-index:250;
+  background:rgba(245,239,227,.82);backdrop-filter:blur(10px) saturate(1.2);
+  border-bottom:1px solid var(--line-soft);transition:box-shadow .25s,background .25s;}
+header.bar.scrolled{box-shadow:0 10px 30px -18px var(--shadow);background:rgba(245,239,227,.94);}
+.bar .shell{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);}
+.brand .seal{width:30px;height:30px;border-radius:7px;flex-shrink:0;
+  background:linear-gradient(150deg,var(--ox),var(--ox-deep));display:grid;place-items:center;
+  color:var(--brass-light);font-family:"Fraunces",serif;font-weight:600;font-size:16px;
+  box-shadow:0 4px 12px -3px rgba(110,37,48,.5),inset 0 1px 0 rgba(255,255,255,.12);}
+.brand .bt{font-family:"Fraunces",serif;font-weight:600;font-size:16px;letter-spacing:-.01em;line-height:1;}
+.brand .bs{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--brass);display:block;margin-top:3px;}
+.bar nav{display:flex;gap:4px;}
+.bar nav a{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:8px 13px;border-radius:6px;
+  transition:all .18s;border:1px solid transparent;}
+.bar nav a:hover{color:var(--ox);background:var(--paper-2);border-color:var(--line);}
+@media(max-width:720px){.bar nav{display:none;}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;min-height:96vh;display:flex;align-items:center;
+  background:linear-gradient(158deg,var(--ox-deep) 0%,var(--ox) 46%,#3c1019 100%);
+  color:var(--paper);border-bottom:6px solid var(--brass);padding:120px 0 70px;}
+.hero::before{content:"";position:absolute;inset:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 0v60M0 30h60' stroke='%23ffffff' stroke-opacity='0.045'/%3E%3C/svg%3E");}
+.hero .glow{position:absolute;border-radius:50%;pointer-events:none;will-change:transform;}
+.hero .g1{right:-160px;top:-130px;width:540px;height:540px;
+  background:radial-gradient(circle,rgba(198,154,74,.26),transparent 64%);}
+.hero .g2{left:-140px;bottom:-180px;width:480px;height:480px;
+  background:radial-gradient(circle,rgba(47,90,85,.30),transparent 66%);}
+.hero .shell{position:relative;z-index:3;display:grid;grid-template-columns:1.08fr .92fr;
+  gap:56px;align-items:center;width:100%;}
+@media(max-width:900px){.hero .shell{grid-template-columns:1fr;gap:48px;}}
+
+.hero .kicker{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--brass-light);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+.hero .kicker::before{content:"";width:34px;height:1px;background:var(--brass-light);opacity:.7;}
+.hero h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(42px,6.6vw,82px);
+  line-height:1.0;letter-spacing:-.018em;margin:0;text-wrap:balance;}
+.hero h1 em{font-style:italic;color:var(--brass-light);}
+.hero .sub{font-family:"Newsreader",serif;font-style:italic;font-size:clamp(18px,2.2vw,24px);
+  color:rgba(245,239,227,.86);max-width:560px;margin:24px 0 0;font-weight:400;line-height:1.45;}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px;}
+.btn{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;padding:14px 22px;border-radius:8px;transition:all .2s;font-weight:600;
+  display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:1px solid transparent;}
+.btn.solid{background:var(--brass);color:var(--ox-deep);box-shadow:0 10px 24px -10px rgba(198,154,74,.6);}
+.btn.solid:hover{background:var(--brass-light);transform:translateY(-2px);}
+.btn.ghost{border-color:rgba(198,154,74,.45);color:var(--brass-light);}
+.btn.ghost:hover{background:rgba(198,154,74,.12);border-color:var(--brass-light);}
+.btn .ar{transition:transform .2s;}
+.btn:hover .ar{transform:translateX(4px);}
+
+/* hero meta strip */
+.hero .meta-strip{display:flex;flex-wrap:wrap;gap:0;margin-top:46px;
+  border:1px solid rgba(198,154,74,.4);border-radius:8px;overflow:hidden;max-width:560px;
+  background:rgba(0,0,0,.14);}
+.hero .meta-strip div{flex:1 1 120px;padding:14px 18px;border-right:1px solid rgba(198,154,74,.2);}
+.hero .meta-strip div:last-child{border-right:none;}
+.hero .meta-strip .lab{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brass-light);display:block;margin-bottom:5px;}
+.hero .meta-strip .val{font-family:"Fraunces",serif;font-size:21px;font-weight:600;color:var(--paper);}
+
+/* ---------- hero 3D book stack ---------- */
+.stage{perspective:1400px;position:relative;height:430px;display:grid;place-items:center;}
+@media(max-width:900px){.stage{height:360px;}}
+.deck3d{position:relative;width:260px;height:340px;transform-style:preserve-3d;
+  transform:rotateX(8deg) rotateY(-22deg);transition:transform .25s ease-out;will-change:transform;}
+.spine{position:absolute;inset:0;border-radius:6px 12px 12px 6px;transform-style:preserve-3d;
+  box-shadow:0 30px 60px -22px rgba(0,0,0,.6);border:1px solid rgba(0,0,0,.25);
+  padding:26px 24px;display:flex;flex-direction:column;justify-content:space-between;
+  transition:transform .55s cubic-bezier(.2,.7,.2,1);}
+.spine::after{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;border-radius:6px 0 0 6px;
+  background:linear-gradient(90deg,rgba(0,0,0,.28),transparent);transform:translateZ(1px);}
+.spine .vnum{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;opacity:.8;}
+.spine .vname{font-family:"Fraunces",serif;font-weight:600;font-size:27px;line-height:1.05;letter-spacing:-.01em;}
+.spine .vyear{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;opacity:.7;}
+.spine .vrule{height:2px;width:42px;background:currentColor;opacity:.55;margin:10px 0;}
+.s-rbi{background:linear-gradient(155deg,#b8893c,#7c5a1f);color:#fbf3df;transform:translateZ(-72px) translateX(-30px) rotateY(3deg);}
+.s-sar{background:linear-gradient(155deg,var(--ox),var(--ox-deep));color:#f6e7e3;transform:translateZ(0) translateX(0);}
+.s-rdb{background:linear-gradient(155deg,var(--teal-bright),var(--teal));color:#e6efea;transform:translateZ(-72px) translateX(30px) rotateY(-3deg);}
+.deck-hint{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--brass-light);opacity:.7;white-space:nowrap;}
+
+/* ---------- sections ---------- */
+main{position:relative;z-index:2;}
+section{padding:88px 0;}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--brass);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);}
+.sec-h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,46px);
+  line-height:1.05;letter-spacing:-.012em;margin:0;color:var(--ink);text-wrap:balance;max-width:18ch;}
+.sec-h2 em{font-style:italic;color:var(--ox);}
+.lead{font-family:"Newsreader",serif;font-size:21px;line-height:1.55;color:var(--ink-soft);
+  max-width:680px;margin:22px 0 0;}
+
+/* ---------- intro architecture ---------- */
+.arch{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px;}
+@media(max-width:820px){.arch{grid-template-columns:1fr;}}
+.layer{background:var(--paper-2);border:1px solid var(--line);border-radius:11px;padding:24px 22px;
+  position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.layer:hover{transform:translateY(-4px);box-shadow:0 16px 34px -20px var(--shadow);border-color:var(--brass);}
+.layer .lnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--brass);letter-spacing:.16em;}
+.layer h3{font-family:"Fraunces",serif;font-weight:600;font-size:21px;margin:8px 0 6px;color:var(--ink);}
+.layer p{font-size:15.5px;line-height:1.55;color:var(--ink-soft);margin:0;max-width:none;}
+.layer .edge{position:absolute;left:0;top:0;bottom:0;width:4px;}
+.layer.rbi .edge{background:var(--brass);} .layer.rbi .lnum,.layer.rbi h3{color:#8a6526;}
+.layer.sar .edge{background:var(--ox);} .layer.sar h3{color:var(--ox);}
+.layer.rdb .edge{background:var(--teal);} .layer.rdb h3{color:var(--teal);}
+
+/* ---------- the deck / tabs ---------- */
+.deck-sec{background:
+   radial-gradient(circle at 50% 0%,rgba(110,37,48,.05),transparent 55%),var(--paper-deep);
+   border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:40px auto 8px;
+  background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:6px;max-width:max-content;
+  box-shadow:0 8px 22px -16px var(--shadow);}
+.tab{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:600;color:var(--ink-soft);background:transparent;border:none;cursor:pointer;
+  padding:11px 18px;border-radius:8px;transition:all .22s;display:flex;align-items:center;gap:8px;}
+.tab .dot{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.5;transition:opacity .2s;}
+.tab:hover{color:var(--ink);}
+.tab.active{color:var(--paper);}
+.tab.active .dot{opacity:1;background:var(--brass-light);}
+.tab[data-k="rbi"].active{background:linear-gradient(150deg,#a8772f,#7c5a1f);}
+.tab[data-k="sar"].active{background:linear-gradient(150deg,var(--ox),var(--ox-deep));}
+.tab[data-k="rdb"].active{background:linear-gradient(150deg,var(--teal-bright),var(--teal));}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+@media(max-width:920px){.grid3{grid-template-columns:1fr;max-width:440px;margin-inline:auto;}}
+
+.vol{perspective:1100px;cursor:pointer;outline:none;}
+.vol-inner{position:relative;border-radius:15px;overflow:hidden;transform-style:preserve-3d;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,opacity .35s;
+  background:var(--paper);border:1px solid var(--line);min-height:430px;display:flex;flex-direction:column;
+  box-shadow:0 14px 34px -22px var(--shadow);will-change:transform;}
+.vol:hover .vol-inner{box-shadow:0 40px 70px -34px var(--shadow);border-color:var(--brass);}
+.vol.dim .vol-inner{opacity:.62;}
+.vol.spotlight .vol-inner{transform:translateY(-10px) scale(1.015);
+  box-shadow:0 48px 80px -36px var(--shadow);border-color:var(--brass);}
+
+.vol .cap{position:relative;padding:30px 28px 26px;color:#f6ecdf;overflow:hidden;
+  transform:translateZ(40px);transform-style:preserve-3d;}
+.vol[data-k="rbi"] .cap{background:linear-gradient(150deg,#b8893c 0%,#7c5a1f 100%);}
+.vol[data-k="sar"] .cap{background:linear-gradient(150deg,var(--ox) 0%,var(--ox-deep) 100%);}
+.vol[data-k="rdb"] .cap{background:linear-gradient(150deg,var(--teal-bright) 0%,var(--teal) 100%);}
+.vol .cap::before{content:"";position:absolute;inset:0;opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 0v40M0 20h40' stroke='%23ffffff' stroke-opacity='0.05'/%3E%3C/svg%3E");}
+.vol .vtop{display:flex;justify-content:space-between;align-items:baseline;position:relative;z-index:2;}
+.vol .vroman{font-family:"Fraunces",serif;font-weight:600;font-size:44px;line-height:1;opacity:.9;
+  text-shadow:0 2px 10px rgba(0,0,0,.3);transform:translateZ(30px);}
+.vol .vtag{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.35);border-radius:30px;padding:5px 11px;opacity:.92;}
+.vol .vtitle{font-family:"Fraunces",serif;font-weight:600;font-size:28px;line-height:1.05;letter-spacing:-.01em;
+  margin:22px 0 4px;position:relative;z-index:2;transform:translateZ(24px);text-shadow:0 2px 12px rgba(0,0,0,.25);}
+.vol .vtitle em{font-style:italic;color:rgba(255,255,255,.92);}
+.vol .vyr{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;opacity:.78;position:relative;z-index:2;}
+.vol .glare{position:absolute;inset:0;pointer-events:none;z-index:3;opacity:0;transition:opacity .25s;
+  background:radial-gradient(420px circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.35),transparent 45%);}
+.vol:hover .glare{opacity:1;}
+
+.vol .body{padding:24px 28px 26px;display:flex;flex-direction:column;flex:1;
+  transform:translateZ(18px);transform-style:preserve-3d;}
+.vol .desc{font-family:"Newsreader",serif;font-size:16.5px;line-height:1.5;color:var(--ink-soft);margin:0 0 18px;}
+.vol .facets{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:auto;}
+.vol .facet{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.04em;
+  background:var(--paper-deep);border:1px solid var(--line);border-radius:30px;padding:5px 11px;color:var(--ink-soft);}
+.vol .open{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:600;display:inline-flex;align-items:center;gap:9px;margin-top:22px;
+  padding-top:18px;border-top:1px solid var(--line-soft);}
+.vol[data-k="rbi"] .open{color:#8a6526;}
+.vol[data-k="sar"] .open{color:var(--ox);}
+.vol[data-k="rdb"] .open{color:var(--teal);}
+.vol .open .ar{transition:transform .2s;}
+.vol:hover .open .ar{transform:translateX(5px);}
+
+/* ---------- interlock band ---------- */
+.interlock{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;}
+@media(max-width:860px){.interlock{grid-template-columns:1fr;gap:36px;}}
+.flowmap{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:34px 30px;
+  box-shadow:0 14px 34px -24px var(--shadow);}
+.fm-row{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line-soft);}
+.fm-row:last-child{border-bottom:none;}
+.fm-ic{width:46px;height:46px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;
+  font-family:"Fraunces",serif;font-weight:600;font-size:18px;color:#fff;box-shadow:0 8px 18px -8px var(--shadow);}
+.fm-ic.rbi{background:linear-gradient(150deg,#b8893c,#7c5a1f);}
+.fm-ic.sar{background:linear-gradient(150deg,var(--ox),var(--ox-deep));}
+.fm-ic.rdb{background:linear-gradient(150deg,var(--teal-bright),var(--teal));}
+.fm-row .t{font-family:"Fraunces",serif;font-weight:600;font-size:17px;color:var(--ink);}
+.fm-row .d{font-size:14px;color:var(--ink-faint);line-height:1.45;}
+.pull{font-family:"Newsreader",serif;font-style:italic;font-size:23px;line-height:1.45;
+  color:var(--ox);border-left:3px solid var(--brass);padding:6px 0 6px 24px;margin:24px 0 0;}
+
+/* ---------- author colophon ---------- */
+.colophon{background:linear-gradient(160deg,var(--teal) 0%,#16302d 100%);color:var(--paper);
+  border-top:6px solid var(--brass);position:relative;overflow:hidden;}
+.colophon::after{content:"";position:absolute;left:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(198,154,74,.18),transparent 65%);}
+.colcard{display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;position:relative;z-index:2;}
+@media(max-width:740px){.colcard{grid-template-columns:1fr;text-align:center;gap:20px;}}
+.avatar{width:92px;height:92px;border-radius:18px;background:linear-gradient(150deg,var(--brass),#7c5a1f);
+  display:grid;place-items:center;font-family:"Fraunces",serif;font-weight:600;font-size:38px;color:#fbf3df;
+  box-shadow:0 16px 36px -14px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.18);justify-self:center;}
+.colophon .clab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--brass-light);margin-bottom:8px;}
+.colophon .cname{font-family:"Fraunces",serif;font-weight:600;font-size:34px;line-height:1.05;margin:0;letter-spacing:-.01em;}
+.colophon .crole{font-family:"Newsreader",serif;font-style:italic;font-size:17px;color:rgba(245,239,227,.82);margin:8px 0 0;}
+.li-btn{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:600;text-decoration:none;color:var(--teal);background:var(--brass-light);
+  padding:14px 22px;border-radius:9px;display:inline-flex;align-items:center;gap:10px;justify-self:center;
+  transition:transform .2s,background .2s;box-shadow:0 12px 26px -12px rgba(0,0,0,.5);white-space:nowrap;}
+.li-btn:hover{transform:translateY(-2px);background:#d9b466;}
+.li-btn svg{width:16px;height:16px;}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:var(--paper);padding:46px 0 40px;border-top:6px solid var(--ox);}
+footer .shell{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start;}
+footer h5{font-family:"Fraunces",serif;font-size:21px;margin:0 0 6px;color:var(--paper);font-weight:600;}
+footer h5 em{font-style:italic;color:var(--brass-light);}
+footer p{color:rgba(245,239,227,.6);font-size:14px;max-width:48ch;margin:6px 0 0;}
+footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.04em;
+  color:rgba(245,239,227,.5);max-width:42ch;line-height:1.7;}
+footer .disc strong{color:var(--brass-light);font-weight:600;}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+.d1{transition-delay:.08s;} .d2{transition-delay:.16s;} .d3{transition-delay:.24s;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}
+  .deck3d,.spine,.vol-inner{transition:none;}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="bar" id="bar">
+  <div class="shell">
+    <a class="brand" href="#top">
+      <span class="seal">R</span>
+      <span><span class="bt">The Recovery Library</span><span class="bs">Debt Enforcement · India</span></span>
+    </a>
+    <nav>
+      <a href="rbi-prudential-framework.html">RBI Framework</a>
+      <a href="sarfaesi-act.html">SARFAESI</a>
+      <a href="rdb-act.html">RDB Act</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="glow g1" data-depth="0.5"></div>
+  <div class="glow g2" data-depth="0.3"></div>
+  <div class="shell">
+    <div>
+      <div class="kicker reveal">A Practitioner's Reference Library</div>
+      <h1 class="reveal d1">The Architecture of <em>Debt Recovery</em> &amp; Restructuring in India</h1>
+      <p class="sub reveal d2">Three statutory instruments, read as one enforcement system. How stressed debt is recognised, how secured collateral is realised, and where the disputes are decided. Written for the desk, not the bookshelf.</p>
+      <div class="cta reveal d3">
+        <a class="btn solid" href="#library">Enter the library <span class="ar">&rarr;</span></a>
+        <a class="btn ghost" href="#fit">How they interlock</a>
+      </div>
+      <div class="meta-strip reveal d3">
+        <div><span class="lab">Treatises</span><span class="val">Three</span></div>
+        <div><span class="lab">Span</span><span class="val">1993 &ndash; 2025</span></div>
+        <div><span class="lab">Format</span><span class="val">Annotated</span></div>
+      </div>
+    </div>
+    <div class="stage reveal d2">
+      <div class="deck3d" id="deck3d">
+        <a class="spine s-rbi" href="rbi-prudential-framework.html">
+          <span class="vnum">Vol. I</span>
+          <div><div class="vrule"></div><span class="vname">Prudential Framework</span></div>
+          <span class="vyear">RBI · 2019</span>
+        </a>
+        <a class="spine s-rdb" href="rdb-act.html">
+          <span class="vnum">Vol. III</span>
+          <div><div class="vrule"></div><span class="vname">The RDB Act</span></div>
+          <span class="vyear">Act 51 of 1993</span>
+        </a>
+        <a class="spine s-sar" href="sarfaesi-act.html">
+          <span class="vnum">Vol. II</span>
+          <div><div class="vrule"></div><span class="vname">The SARFAESI Act</span></div>
+          <span class="vyear">Act 54 of 2002</span>
+        </a>
+      </div>
+      <div class="deck-hint">Move your cursor &middot; the volumes respond</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<!-- ===================== INTRO / ARCHITECTURE ===================== -->
+<section class="shell" id="about">
+  <div class="eyebrow reveal">What this is</div>
+  <h2 class="sec-h2 reveal d1">One system, read in <em>three movements</em>.</h2>
+  <p class="lead reveal d2">Bank and lender recovery in India is not governed by a single code. It is the interaction of three instruments that recognise, realise and resolve stressed debt. Read in isolation, each is a fragment. Read together, they describe how a defaulted rupee travels from a lender's books to a court's order. These guides treat them as that single working machinery.</p>
+  <div class="arch">
+    <div class="layer rbi reveal d1"><span class="edge"></span>
+      <span class="lnum">Layer 01 · Recognition</span>
+      <h3>The operating system</h3>
+      <p>The RBI Prudential Framework sits above the recovery statutes. It dictates when stress must be acknowledged, how a resolution plan must be attempted, and what provisioning bites when lenders delay.</p>
+    </div>
+    <div class="layer sar reveal d2"><span class="edge"></span>
+      <span class="lnum">Layer 02 · Realisation</span>
+      <h3>The self-help remedy</h3>
+      <p>SARFAESI lets a secured creditor seize and sell collateral on its own authority, without first knocking on the door of a court. Speed bought at the price of careful procedure.</p>
+    </div>
+    <div class="layer rdb reveal d3"><span class="edge"></span>
+      <span class="lnum">Layer 03 · Adjudication</span>
+      <h3>The specialised forum</h3>
+      <p>The RDB Act built the Debts Recovery Tribunal, the dedicated forum for bank recovery that now also houses individual insolvency and hears appeals from SARFAESI action.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE LIBRARY / DECK ===================== -->
+<section class="deck-sec" id="library">
+  <div class="shell">
+    <div class="eyebrow reveal" style="justify-content:center;text-align:center;">The Volumes</div>
+    <h2 class="sec-h2 reveal d1" style="text-align:center;margin-inline:auto;max-width:22ch;">Open a <em>treatise</em>.</h2>
+    <p class="lead reveal d2" style="text-align:center;margin-inline:auto;">Select an instrument to bring it forward, then open the full annotated walkthrough. Each card tilts to your cursor.</p>
+
+    <div class="tabs reveal d2" id="tabs" role="tablist">
+      <button class="tab active" data-k="rbi"><span class="dot"></span>RBI Framework</button>
+      <button class="tab" data-k="sar"><span class="dot"></span>SARFAESI</button>
+      <button class="tab" data-k="rdb"><span class="dot"></span>RDB Act</button>
+    </div>
+
+    <div class="grid3" id="grid">
+      <!-- RBI -->
+      <a class="vol reveal d1" data-k="rbi" href="rbi-prudential-framework.html" aria-label="Open the RBI Prudential Framework treatise">
+        <div class="vol-inner">
+          <div class="cap">
+            <div class="glare"></div>
+            <div class="vtop"><span class="vroman">I</span><span class="vtag">Recognition</span></div>
+            <h3 class="vtitle">The <em>Prudential</em> Framework</h3>
+            <span class="vyr">RBI · 7 June 2019 · cons. 2025</span>
+          </div>
+          <div class="body">
+            <p class="desc">Not a recovery statute but the operating system above them all. It tells lenders when stress must be recognised, how it must be resolved, and what provisioning bites if they delay.</p>
+            <div class="facets"><span class="facet">Stress recognition</span><span class="facet">Resolution plans</span><span class="facet">Provisioning</span><span class="facet">IBC interface</span></div>
+            <span class="open">Open the treatise <span class="ar">&rarr;</span></span>
+          </div>
+        </div>
+      </a>
+      <!-- SARFAESI -->
+      <a class="vol reveal d2" data-k="sar" href="sarfaesi-act.html" aria-label="Open the SARFAESI Act treatise">
+        <div class="vol-inner">
+          <div class="cap">
+            <div class="glare"></div>
+            <div class="vtop"><span class="vroman">II</span><span class="vtag">Realisation</span></div>
+            <h3 class="vtitle">The <em>SARFAESI</em> Act</h3>
+            <span class="vyr">Act 54 of 2002</span>
+          </div>
+          <div class="body">
+            <p class="desc">A self-help recovery code that lets a secured creditor seize and sell collateral without first knocking on the door of a court. A complete walkthrough, from genesis to the IBC interface.</p>
+            <div class="facets"><span class="facet">Section 13 enforcement</span><span class="facet">Security interest</span><span class="facet">DRT appeals</span><span class="facet">Case law</span></div>
+            <span class="open">Open the treatise <span class="ar">&rarr;</span></span>
+          </div>
+        </div>
+      </a>
+      <!-- RDB -->
+      <a class="vol reveal d3" data-k="rdb" href="rdb-act.html" aria-label="Open the RDB Act treatise">
+        <div class="vol-inner">
+          <div class="cap">
+            <div class="glare"></div>
+            <div class="vtop"><span class="vroman">III</span><span class="vtag">Adjudication</span></div>
+            <h3 class="vtitle">The <em>RDB</em> Act</h3>
+            <span class="vyr">Act 51 of 1993</span>
+          </div>
+          <div class="body">
+            <p class="desc">The specialised adjudication regime for bank recovery. The forum that supplied the DRT, that now houses individual insolvency, and that completes the trio with SARFAESI and the IBC.</p>
+            <div class="facets"><span class="facet">Debts Recovery Tribunal</span><span class="facet">Recovery certificates</span><span class="facet">Individual insolvency</span><span class="facet">Appellate route</span></div>
+            <span class="open">Open the treatise <span class="ar">&rarr;</span></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW THEY INTERLOCK ===================== -->
+<section class="shell" id="fit">
+  <div class="interlock">
+    <div class="reveal">
+      <div class="eyebrow">The Interface</div>
+      <h2 class="sec-h2">How the three <em>interlock</em>.</h2>
+      <p class="lead">A single default rarely lives inside one statute. The Prudential Framework forces the lender to act, SARFAESI lets it realise the security on its own steam, and the RDB Act provides the tribunal where the borrower can be heard and the balance recovered. The IBC then waits at the boundary of each.</p>
+      <p class="pull">Recognise, then realise, then adjudicate. The same debt, three points of leverage.</p>
+    </div>
+    <div class="flowmap reveal d2">
+      <div class="fm-row">
+        <span class="fm-ic rbi">I</span>
+        <span><span class="t">Recognition triggers the clock</span><span class="d">A missed payment crosses an RBI threshold; the lender must classify the stress and frame a resolution plan or face provisioning.</span></span>
+      </div>
+      <div class="fm-row">
+        <span class="fm-ic sar">II</span>
+        <span><span class="t">Realisation without a court</span><span class="d">If security exists, SARFAESI lets the creditor issue notice, take possession and sell, subject to the borrower's statutory safeguards.</span></span>
+      </div>
+      <div class="fm-row">
+        <span class="fm-ic rdb">III</span>
+        <span><span class="t">Adjudication and the shortfall</span><span class="d">The RDB Act's tribunal hears challenges to SARFAESI action and issues recovery certificates for any balance that remains.</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AUTHOR ===================== -->
+<section class="colophon">
+  <div class="shell" style="padding-top:64px;padding-bottom:64px;">
+    <div class="colcard reveal">
+      <div class="avatar">AK</div>
+      <div>
+        <div class="clab">Compiled &amp; written by</div>
+        <p class="cname">Avichal Kumar</p>
+        <p class="crole">Advocate, Bar Council of Delhi &middot; Post Graduate Insolvency Programme, National Law University Delhi. Research in corporate governance, secured creditor rights and insolvency.</p>
+      </div>
+      <a class="li-btn" href="https://www.linkedin.com/in/avichalkumar29/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        Connect on LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="shell">
+    <div>
+      <h5>The <em>Recovery</em> Library</h5>
+      <p>A practitioner's reference set on financial restructuring and debt recovery in India: the RBI Prudential Framework, the SARFAESI Act, and the Recovery of Debts and Bankruptcy Act, with their leading jurisprudence and IBC interface.</p>
+    </div>
+    <div class="disc">
+      <strong>A note on use.</strong><br>
+      These explainers are study and reference aids synthesised from the bare statutes, RBI directions and settled case law. Statutory positions and citations should be verified against the current text before professional reliance. They are not legal advice.
+    </div>
+  </div>
+</footer>
+
+<script>
+// scroll progress
+const bar=document.getElementById('progress');
+const topbar=document.getElementById('bar');
+function onScroll(){
+  const h=document.documentElement;const sc=h.scrollTop;const max=h.scrollHeight-h.clientHeight;
+  bar.style.width=(max>0?(sc/max*100):0)+'%';
+  topbar.classList.toggle('scrolled',sc>40);
+}
+document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+// reveal on scroll
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// hero parallax glows + 3D deck tilt
+const heroSec=document.querySelector('.hero');
+const deck=document.getElementById('deck3d');
+const glows=[...document.querySelectorAll('.hero .glow')];
+heroSec.addEventListener('pointermove',e=>{
+  const r=heroSec.getBoundingClientRect();
+  const px=(e.clientX-r.left)/r.width-0.5;
+  const py=(e.clientY-r.top)/r.height-0.5;
+  if(deck) deck.style.transform=`rotateX(${8 - py*10}deg) rotateY(${-22 + px*20}deg)`;
+  glows.forEach(g=>{const d=parseFloat(g.dataset.depth||.3);
+    g.style.transform=`translate(${px*60*d}px,${py*60*d}px)`;});
+});
+heroSec.addEventListener('pointerleave',()=>{
+  if(deck) deck.style.transform='rotateX(8deg) rotateY(-22deg)';
+  glows.forEach(g=>g.style.transform='');
+});
+
+// per-card 3D tilt + glare
+document.querySelectorAll('.vol').forEach(card=>{
+  const inner=card.querySelector('.vol-inner');
+  const glare=card.querySelector('.glare');
+  card.addEventListener('pointermove',e=>{
+    const r=card.getBoundingClientRect();
+    const px=(e.clientX-r.left)/r.width-0.5;
+    const py=(e.clientY-r.top)/r.height-0.5;
+    inner.style.transform=`rotateY(${px*12}deg) rotateX(${-py*12}deg)`;
+    if(glare){glare.style.setProperty('--gx',(px*100+50)+'%');glare.style.setProperty('--gy',(py*100+50)+'%');}
+  });
+  card.addEventListener('pointerleave',()=>{inner.style.transform='';});
+});
+
+// tabs spotlight the matching volume
+const tabs=[...document.querySelectorAll('.tab')];
+const vols=[...document.querySelectorAll('.vol')];
+function spotlight(k){
+  tabs.forEach(t=>t.classList.toggle('active',t.dataset.k===k));
+  vols.forEach(v=>{
+    const match=v.dataset.k===k;
+    v.classList.toggle('spotlight',match);
+    v.classList.toggle('dim',!match);
+  });
+}
+tabs.forEach(t=>{
+  t.addEventListener('click',()=>spotlight(t.dataset.k));
+  t.addEventListener('mouseenter',()=>spotlight(t.dataset.k));
+});
+// clearing spotlight when leaving the grid area returns to neutral
+const grid=document.getElementById('grid');
+grid.addEventListener('mouseleave',()=>{
+  vols.forEach(v=>{v.classList.remove('dim');});
+});
+grid.addEventListener('mouseenter',()=>{
+  const active=document.querySelector('.tab.active');
+  if(active) spotlight(active.dataset.k);
+});
+spotlight('rbi');
+</script>
+</body>
+</html>

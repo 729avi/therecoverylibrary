@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The RDB Act, 1993 — A Practitioner's Treatise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5efe3;
+  --paper-2:#efe7d6;
+  --paper-deep:#e9dfca;
+  --ink:#221d17;
+  --ink-soft:#4a4135;
+  --ink-faint:#7c715f;
+  --forest:#1f3d3a;       /* primary, deep forest */
+  --forest-deep:#13302d;
+  --forest-bright:#2f5a55;
+  --ox:#6e2530;           /* secondary, used for SARFAESI cross-refs */
+  --ox-bright:#8a2f3a;
+  --indigo:#1f3a55;       /* tertiary, used for IBC cross-refs */
+  --indigo-bright:#2c548a;
+  --brass:#a87d34;
+  --brass-light:#c69a4a;
+  --line:#d6c9ad;
+  --line-soft:#e2d7bf;
+  --shadow:rgba(46,33,20,.16);
+  --max:1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:80px;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Spectral",Georgia,serif;
+  font-size:18px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(168,125,52,.05), transparent 40%),
+    radial-gradient(circle at 88% 30%, rgba(31,61,58,.06), transparent 42%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
+
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;
+  background:linear-gradient(90deg,var(--forest),var(--brass));transition:width .12s ease-out;}
+
+.shell{max-width:var(--max);margin:0 auto;padding:0 28px;}
+.with-aside{display:grid;grid-template-columns:248px 1fr;gap:54px;align-items:start;}
+@media(max-width:980px){.with-aside{grid-template-columns:1fr;}}
+
+aside.toc{position:sticky;top:24px;align-self:start;font-family:"Spectral",serif;
+  border-right:1px solid var(--line);padding-right:18px;max-height:calc(100vh - 48px);overflow:auto;}
+@media(max-width:980px){aside.toc{display:none;}}
+.toc h4{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--brass);margin:0 0 14px;font-weight:600;}
+.toc a{display:block;color:var(--ink-soft);text-decoration:none;font-size:14px;
+  padding:5px 10px;margin:1px 0;border-radius:5px;line-height:1.35;transition:all .18s;
+  border-left:2px solid transparent;}
+.toc a:hover{color:var(--forest);background:var(--paper-2);}
+.toc a.active{color:var(--forest);background:var(--paper-deep);border-left-color:var(--forest);font-weight:600;}
+.toc a .num{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--brass);margin-right:7px;}
+
+.hero{position:relative;overflow:hidden;background:
+   linear-gradient(160deg,var(--forest-deep) 0%, var(--forest) 48%, #0e2422 100%);
+  color:var(--paper);padding:96px 0 76px;border-bottom:6px solid var(--brass);}
+.hero::before{content:"";position:absolute;inset:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 0v60M0 30h60' stroke='%23ffffff' stroke-opacity='0.04'/%3E%3C/svg%3E");}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,rgba(198,154,74,.22),transparent 65%);}
+.hero .shell{position:relative;z-index:2;}
+.hero .kicker{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--brass-light);margin-bottom:22px;}
+.hero h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(40px,7vw,80px);
+  line-height:1.02;letter-spacing:-.015em;margin:0 0 8px;text-wrap:balance;}
+.hero h1 em{font-style:italic;color:var(--brass-light);}
+.hero .sub{font-family:"Newsreader",serif;font-style:italic;font-size:clamp(19px,2.4vw,26px);
+  color:rgba(245,239,227,.85);max-width:680px;margin:18px 0 0;font-weight:400;line-height:1.4;}
+.hero .meta-strip{display:flex;flex-wrap:wrap;gap:0;margin-top:46px;
+  border:1px solid rgba(198,154,74,.4);border-radius:8px;overflow:hidden;max-width:860px;
+  background:rgba(0,0,0,.12);}
+.hero .meta-strip div{flex:1 1 160px;padding:16px 20px;border-right:1px solid rgba(198,154,74,.22);}
+.hero .meta-strip div:last-child{border-right:none;}
+.hero .meta-strip .lab{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brass-light);display:block;margin-bottom:5px;}
+.hero .meta-strip .val{font-family:"Fraunces",serif;font-size:18px;font-weight:500;color:var(--paper);}
+
+main{padding:64px 0 40px;}
+section.part{margin:0 0 78px;scroll-margin-top:30px;}
+.part-head{margin-bottom:30px;position:relative;}
+.part-head .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--brass);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.part-head .eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);}
+.part-head h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,44px);
+  line-height:1.06;letter-spacing:-.01em;margin:0;color:var(--ink);text-wrap:balance;}
+.part-head h2 .pin{color:var(--forest);}
+.lead{font-family:"Newsreader",serif;font-size:21px;line-height:1.55;color:var(--ink-soft);
+  max-width:760px;margin:18px 0 8px;}
+
+h3{font-family:"Fraunces",serif;font-weight:600;font-size:25px;letter-spacing:-.005em;
+  color:var(--forest);margin:42px 0 4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+h3 .s{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--brass);font-weight:600;
+  background:var(--paper-deep);padding:3px 9px;border-radius:5px;border:1px solid var(--line);white-space:nowrap;}
+h4{font-family:"Fraunces",serif;font-weight:600;font-size:19px;color:var(--ox);margin:28px 0 2px;}
+p{margin:14px 0;max-width:74ch;}
+.body-block{max-width:74ch;}
+strong{font-weight:600;color:var(--ink);}
+em{color:var(--ink-soft);}
+a.ref{color:var(--forest);text-decoration:none;border-bottom:1px dotted var(--forest-bright);}
+a.ref:hover{background:var(--paper-deep);}
+
+ul.clean,ol.clean{max-width:74ch;padding-left:0;list-style:none;margin:16px 0;}
+ul.clean li,ol.clean li{position:relative;padding:6px 0 6px 30px;line-height:1.62;border-bottom:1px dashed var(--line-soft);}
+ul.clean li:last-child,ol.clean li:last-child{border-bottom:none;}
+ul.clean li::before{content:"§";position:absolute;left:2px;top:6px;color:var(--brass);font-family:"Fraunces",serif;font-weight:600;}
+ol.clean{counter-reset:c;}
+ol.clean li::before{counter-increment:c;content:counter(c);position:absolute;left:0;top:8px;
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--paper);background:var(--forest);
+  width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-weight:600;}
+ol.clean li{padding-left:34px;}
+
+.callout{border-radius:10px;padding:20px 22px 20px 24px;margin:24px 0;position:relative;
+  border:1px solid var(--line);background:var(--paper-2);max-width:78ch;box-shadow:0 1px 0 rgba(255,255,255,.5) inset;}
+.callout .tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:7px;margin-bottom:8px;}
+.callout p{margin:6px 0;font-size:16.5px;}
+.callout.prac{background:#eef0e9;border-left:4px solid var(--forest);}
+.callout.prac .tag{color:var(--forest);}
+.callout.amend{background:#f3ece0;border-left:4px solid var(--brass);}
+.callout.amend .tag{color:#8a6526;}
+.callout.case{background:#f1e8e7;border-left:4px solid var(--ox);}
+.callout.case .tag{color:var(--ox);}
+.callout.pitfall{background:#f4e9df;border-left:4px solid #b8541f;}
+.callout.pitfall .tag{color:#a1481a;}
+.callout.cross{background:#eaeef2;border-left:4px solid var(--indigo);}
+.callout.cross .tag{color:var(--indigo);}
+.callout .cite{font-family:"Newsreader",serif;font-style:italic;color:var(--ink-faint);font-size:14.5px;}
+
+.defgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin:24px 0;}
+.defcard{background:var(--paper-2);border:1px solid var(--line);border-radius:9px;padding:17px 18px;
+  transition:transform .18s,box-shadow .18s,border-color .18s;}
+.defcard:hover{transform:translateY(-3px);box-shadow:0 10px 26px var(--shadow);border-color:var(--brass);}
+.defcard .term{font-family:"Fraunces",serif;font-weight:600;font-size:18px;color:var(--forest);margin:0 0 4px;}
+.defcard .sec{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--brass);letter-spacing:.08em;}
+.defcard p{font-size:15px;line-height:1.55;margin:8px 0 0;color:var(--ink-soft);max-width:none;}
+
+.tablewrap{overflow-x:auto;margin:24px 0;border:1px solid var(--line);border-radius:9px;}
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--paper-2);}
+th{background:var(--forest);color:var(--paper);font-family:"Fraunces",serif;font-weight:500;
+  text-align:left;padding:12px 16px;font-size:14px;letter-spacing:.01em;}
+td{padding:12px 16px;border-top:1px solid var(--line);vertical-align:top;line-height:1.5;}
+tr:nth-child(even) td{background:var(--paper);}
+td strong{color:var(--forest);}
+.tablewrap.ox th{background:var(--ox);}
+.tablewrap.indigo th{background:var(--indigo);}
+
+/* The big three-way comparison table */
+.threecol{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0;}
+@media(max-width:880px){.threecol{grid-template-columns:1fr;}}
+.regime{border:1px solid var(--line);border-radius:11px;padding:0;background:var(--paper-2);overflow:hidden;display:flex;flex-direction:column;}
+.regime .head{padding:22px 22px 18px;color:var(--paper);}
+.regime.sarfaesi .head{background:linear-gradient(160deg,var(--ox-bright),var(--ox));}
+.regime.rdb .head{background:linear-gradient(160deg,var(--forest-bright),var(--forest));}
+.regime.ibc .head{background:linear-gradient(160deg,var(--indigo-bright),var(--indigo));}
+.regime .head h4{margin:0;color:var(--paper);font-size:20px;font-family:"Fraunces",serif;font-weight:600;}
+.regime .head .tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);}
+.regime .head p{margin:8px 0 0;color:rgba(245,239,227,.92);font-size:14.5px;line-height:1.5;font-style:italic;font-family:"Newsreader",serif;max-width:none;}
+.regime .body{padding:18px 22px 22px;font-size:14.5px;flex:1;}
+.regime .body dt{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-top:12px;}
+.regime .body dt:first-child{margin-top:0;}
+.regime .body dd{margin:3px 0 8px;font-size:14.5px;line-height:1.5;color:var(--ink-soft);}
+.regime .body dd strong{color:var(--ink);}
+
+.timeline{position:relative;margin:34px 0 10px;padding-left:8px;}
+.timeline::before{content:"";position:absolute;left:14px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(180deg,var(--brass),var(--forest),var(--indigo));}
+.tl-item{position:relative;padding:0 0 30px 50px;}
+.tl-item::before{content:"";position:absolute;left:7px;top:6px;width:16px;height:16px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--forest);box-shadow:0 0 0 4px var(--paper);}
+.tl-item .yr{font-family:"JetBrains Mono",monospace;font-weight:600;color:var(--brass);font-size:13px;letter-spacing:.05em;}
+.tl-item .tl-t{font-family:"Fraunces",serif;font-weight:600;font-size:18px;color:var(--ink);margin:2px 0 4px;}
+.tl-item p{font-size:16px;margin:4px 0;color:var(--ink-soft);}
+
+.flow{margin:30px 0;display:flex;flex-direction:column;gap:0;}
+.flow-step{display:grid;grid-template-columns:64px 1fr;gap:18px;position:relative;padding-bottom:8px;}
+.flow-node{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:13px;color:var(--paper);
+  background:var(--forest);width:64px;height:64px;border-radius:12px;display:grid;place-items:center;text-align:center;
+  line-height:1.1;flex-shrink:0;box-shadow:0 6px 16px rgba(31,61,58,.28);}
+.flow-node.alt{background:var(--brass);box-shadow:0 6px 16px rgba(168,125,52,.28);color:var(--ink);}
+.flow-node.warn{background:#b8541f;box-shadow:0 6px 16px rgba(184,84,31,.28);}
+.flow-body{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:14px;}
+.flow-body h5{font-family:"Fraunces",serif;font-size:17px;font-weight:600;margin:0 0 4px;color:var(--ink);}
+.flow-body h5 span{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--brass);margin-left:8px;}
+.flow-body p{margin:4px 0 0;font-size:15px;color:var(--ink-soft);max-width:none;}
+.flow-step:not(:last-child)::after{content:"▼";position:absolute;left:26px;bottom:-4px;color:var(--brass);font-size:12px;}
+
+.pull{font-family:"Newsreader",serif;font-style:italic;font-size:23px;line-height:1.45;
+  color:var(--forest);border-top:2px solid var(--brass);border-bottom:2px solid var(--brass);
+  padding:24px 0;margin:34px 0;max-width:none;text-align:center;}
+.pull span{display:block;font-family:"JetBrains Mono",monospace;font-style:normal;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-top:14px;}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0;}
+.chip{font-family:"JetBrains Mono",monospace;font-size:12px;background:var(--paper-deep);
+  border:1px solid var(--line);border-radius:30px;padding:7px 15px;color:var(--ink-soft);}
+.chip b{color:var(--forest);}
+
+.orn{display:flex;align-items:center;justify-content:center;gap:14px;margin:30px 0;color:var(--brass);}
+.orn::before,.orn::after{content:"";height:1px;width:80px;background:var(--line);}
+.orn span{font-size:14px;}
+
+/* Decision tree (when to invoke what) */
+.dtree{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:24px;margin:30px 0;}
+.dtree h5{font-family:"Fraunces",serif;font-size:19px;color:var(--forest);margin:0 0 14px;}
+.dq{padding:10px 14px;border-left:3px solid var(--brass);background:var(--paper);margin:10px 0;border-radius:0 6px 6px 0;}
+.dq .q{font-family:"Fraunces",serif;font-size:16px;color:var(--ink);font-weight:600;margin:0 0 5px;}
+.dq .a{font-size:14.5px;color:var(--ink-soft);margin:0;}
+.dq .a strong{color:var(--forest);}
+
+footer{background:var(--ink);color:var(--paper);padding:50px 0 40px;margin-top:40px;border-top:6px solid var(--forest);}
+footer .shell{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start;}
+footer h5{font-family:"Fraunces",serif;font-size:22px;margin:0 0 6px;color:var(--paper);font-weight:600;}
+footer p{color:rgba(245,239,227,.6);font-size:14px;max-width:46ch;}
+footer .disc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.04em;
+  color:rgba(198,154,74,.7);border:1px solid rgba(198,154,74,.25);border-radius:8px;padding:14px 18px;max-width:360px;line-height:1.6;}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+::selection{background:var(--forest);color:var(--paper);}
+::-webkit-scrollbar{width:11px;height:11px;}
+::-webkit-scrollbar-track{background:var(--paper-deep);}
+::-webkit-scrollbar-thumb{background:var(--forest);border-radius:6px;border:2px solid var(--paper-deep);}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="hero">
+  <div class="shell">
+    <div class="kicker">Act No. 51 of 1993 · The Republic of India</div>
+    <h1>The <em>RDB</em> Act</h1>
+    <h1 style="font-size:clamp(22px,3.4vw,38px);font-weight:400;color:rgba(245,239,227,.92);margin-top:2px;">Recovery of Debts and Bankruptcy Act, 1993<br>(formerly the Recovery of Debts Due to Banks and Financial Institutions Act, 1993)</h1>
+    <p class="sub">The specialised adjudication regime for bank recovery. The forum that supplied the DRT, that now houses individual insolvency, and that completes the trio with SARFAESI and the IBC.</p>
+    <div class="meta-strip">
+      <div><span class="lab">Assent</span><span class="val">27 Aug 1993</span></div>
+      <div><span class="lab">In force</span><span class="val">24 Jun 1993</span></div>
+      <div><span class="lab">Renamed</span><span class="val">1 Dec 2019</span></div>
+      <div><span class="lab">Threshold</span><span class="val">₹20 lakh</span></div>
+      <div><span class="lab">Disposal target</span><span class="val">180 days</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="shell with-aside" style="margin-top:0;">
+  <aside class="toc" id="toc">
+    <h4>Contents</h4>
+    <a href="#genesis"><span class="num">I</span>Genesis &amp; History</a>
+    <a href="#scheme"><span class="num">II</span>Object &amp; Architecture</a>
+    <a href="#applicability"><span class="num">III</span>Applicability &amp; Threshold</a>
+    <a href="#definitions"><span class="num">IV</span>The Defined Terms</a>
+    <a href="#tribunals"><span class="num">V</span>The Tribunals (Ch. II)</a>
+    <a href="#jurisdiction"><span class="num">VI</span>Jurisdiction (Ch. III)</a>
+    <a href="#procedure"><span class="num">VII</span>Procedure: s. 19 (Ch. IV)</a>
+    <a href="#recovery"><span class="num">VIII</span>Recovery (Ch. V)</a>
+    <a href="#misc"><span class="num">IX</span>Miscellaneous (Ch. VI)</a>
+    <a href="#avatar"><span class="num">X</span>The Adjudicating Authority Avatar</a>
+    <a href="#amendments"><span class="num">XI</span>The 2016 Procedural Overhaul</a>
+    <a href="#cases"><span class="num">XII</span>Landmark Jurisprudence</a>
+    <a href="#decision"><span class="num">XIII</span>SARFAESI vs RDB vs IBC</a>
+    <a href="#workflow"><span class="num">XIV</span>The Tactical Playbook</a>
+    <a href="#glossary"><span class="num">XV</span>Glossary</a>
+  </aside>
+
+  <main>
+
+  <!-- ================ PART I ================ -->
+  <section class="part reveal" id="genesis">
+    <div class="part-head">
+      <div class="eyebrow">Part I</div>
+      <h2>Genesis: <span class="pin">the first wave of recovery reform</span></h2>
+    </div>
+    <p class="lead">If SARFAESI was Parliament's response to a banking system drowning in NPAs that it could not enforce against, the RDB Act came a decade earlier in response to a different illness, namely the inability of ordinary civil courts to dispose of bank suits within a banker's lifetime. It is the foundational layer of the modern recovery architecture.</p>
+
+    <div class="body-block">
+      <p>By the late 1980s the volume of pending bank-recovery suits had become unmanageable. Civil courts treated bank claims like any other commercial dispute, with no priority on the docket and no specialised expertise. The Tiwari Committee in 1981 had already recommended the establishment of special tribunals; the Narasimham Committee on the Financial System in 1991 reaffirmed the recommendation in stronger terms. The legislative response was the RDB Act 1993, which created a two-tier specialised forum, the Debts Recovery Tribunal (DRT) and the Debts Recovery Appellate Tribunal (DRAT), exclusively to adjudicate bank claims at speed.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="yr">1981</div>
+        <div class="tl-t">Tiwari Committee</div>
+        <p>The first formal recommendation that Government should establish specialised tribunals for adjudication of debts due to banks and financial institutions. The recommendation lay unimplemented for a decade.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">1991</div>
+        <div class="tl-t">Narasimham Committee on the Financial System</div>
+        <p>Repeated the call. Identified the burden of bad loans on the banking system and the impossibility of recovery through ordinary civil litigation as a structural drag on the economy.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">1993</div>
+        <div class="tl-t">The Ordinance, then the Act</div>
+        <p>The Recovery of Debts Due to Banks and Financial Institutions Ordinance was promulgated on 24 June 1993 and was replaced by Act 51 of 1993, which received assent on 27 August 1993 and is deemed to have come into force on 24 June 1993 by virtue of section 1(3).</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">1995</div>
+        <div class="tl-t">The Delhi High Court strike-down</div>
+        <p>In Delhi Bar Association v. Union of India, the Delhi High Court struck down certain provisions of the Act as unconstitutional, holding that the exclusion of civil court jurisdiction in matters involving counter-claims and complex issues offended Article 14. The decision was carried in appeal to the Supreme Court.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2000</div>
+        <div class="tl-t">The first major amendment</div>
+        <p>Act 1 of 2000 substantially redrafted section 19, conferring on the DRT broad procedural powers (including those previously held to be deficient by the Delhi High Court) and introducing the Recovery Officer's machinery in greater detail. This amendment was upheld and largely settled the constitutional position.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2002</div>
+        <div class="tl-t">Union of India v. Delhi High Court Bar Association</div>
+        <p>The Supreme Court upheld the constitutional validity of the Act as amended in 2000, confirming that Parliament was competent to create a specialised tribunal with exclusive jurisdiction over bank-recovery matters.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2002</div>
+        <div class="tl-t">SARFAESI joins the system</div>
+        <p>The Securitisation Act layered self-help enforcement on top of the existing DRT machinery, with SARFAESI applications also coming to the DRT under section 17 SARFAESI. The DRT thus acquired a dual jurisdiction: as the original forum for bank claims under the RDB Act, and as the appellate forum for SARFAESI grievances.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2013</div>
+        <div class="tl-t">Multi-state cooperative banks</div>
+        <p>Act 1 of 2013 brought multi-state cooperative banks within the definition of "bank" under section 2(d)(vi), enabling them to use the DRT route.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2016</div>
+        <div class="tl-t">The structural overhaul (Act 44 of 2016)</div>
+        <p>The same omnibus statute that reshaped SARFAESI also rewrote large parts of the RDB Act. It recast section 19 with new procedural rigour, introduced a 30-day written-statement clock with a 15-day extension, halved the pre-deposit for DRAT appeals from 75% to 50%, prescribed a sale-proceeds waterfall for secured assets, made the recovery certificate a deemed decree for winding-up purposes, introduced electronic filing under section 19A, and crowned the system with section 31B, granting registered secured creditors statutory priority over Government dues.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2019</div>
+        <div class="tl-t">The bankruptcy avatar</div>
+        <p>With effect from 1 December 2019, by reason of section 249 read with the Fifth Schedule to the IBC, the Act was renamed the <strong>Recovery of Debts and Bankruptcy Act, 1993</strong>. The DRT was simultaneously empowered as the Adjudicating Authority for individual and partnership insolvency under Part III of the IBC, beginning with personal guarantors to corporate debtors. The DRAT became the appellate forum for these orders. The RDB Act thereby outgrew its original mandate.</p>
+      </div>
+    </div>
+
+    <div class="callout amend">
+      <span class="tag">◈ Note on nomenclature</span>
+      <p>Practitioners and older case law still use "RDDBFI Act" or "DRT Act." After 1 December 2019 the correct statutory style is "Recovery of Debts and Bankruptcy Act, 1993," abbreviated "RDB Act." The Act bears two faces today, an adjudicatory recovery code for banks and financial institutions, and an adjudicating-authority charter for individual insolvency under the IBC.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART II ================ -->
+  <section class="part reveal" id="scheme">
+    <div class="part-head">
+      <div class="eyebrow">Part II</div>
+      <h2>Object &amp; architecture: <span class="pin">a specialised forum, a streamlined procedure</span></h2>
+    </div>
+    <p class="lead">Three ideas hold the Act together. Specialised adjudication, by tribunals staffed with persons of judicial rank. Streamlined procedure, free of the encumbrances of the Code of Civil Procedure but disciplined by natural justice. Exclusive jurisdiction, with the civil court barred from entertaining matters falling within the DRT's authority.</p>
+
+    <h3><span class="s">Pillar 1</span> Specialised adjudication</h3>
+    <p>The Presiding Officer of a DRT is a person who is, has been, or is qualified to be a District Judge (section 5). The Chairperson of a DRAT is a person who is, has been, or is qualified to be a Judge of a High Court, or a senior member of the Indian Legal Service, or a former DRT Presiding Officer of at least three years' standing (section 10). The forum is therefore not a creature of executive convenience; it is a judicial body staffed by persons of judicial rank.</p>
+
+    <h3><span class="s">Pillar 2</span> Streamlined procedure</h3>
+    <p>Section 22 expressly frees the DRT and DRAT from the procedural shackles of the Code of Civil Procedure, while binding them to the principles of natural justice. The Tribunals retain the substantive powers of a civil court for the limited purposes of summoning witnesses, requiring discovery, receiving affidavit evidence, issuing commissions, reviewing decisions, and dismissing or restoring applications. The result is a forum that can move at the pace of commercial dispute resolution rather than civil litigation.</p>
+
+    <h3><span class="s">Pillar 3</span> Exclusive jurisdiction</h3>
+    <p>Section 18 bars all courts and authorities, except the Supreme Court and a High Court under Articles 226 and 227, from exercising jurisdiction in relation to matters specified in section 17. Section 34 reinforces this by giving the Act overriding effect over inconsistent laws. Together they channel every bank-recovery dispute into the DRT.</p>
+
+    <div class="pull">
+      "It shall not be open to the defendant to dispute before the Recovery Officer the correctness of the amount specified in the certificate."
+      <span>Section 26(1), the closing of the post-decree door</span>
+    </div>
+
+    <h4>The actors, at a glance</h4>
+    <div class="chips">
+      <span class="chip"><b>Applicant</b> · bank or FI</span>
+      <span class="chip"><b>Defendant</b> · the borrower</span>
+      <span class="chip"><b>Presiding Officer</b> · the DRT judge</span>
+      <span class="chip"><b>Chairperson</b> · the DRAT head</span>
+      <span class="chip"><b>Recovery Officer</b> · the executor</span>
+      <span class="chip"><b>Tribunal Reforms Act 2021</b> · governs current service conditions</span>
+      <span class="chip"><b>Multi-state coop banks</b> · within definition since 2013</span>
+    </div>
+  </section>
+
+  <!-- ================ PART III ================ -->
+  <section class="part reveal" id="applicability">
+    <div class="part-head">
+      <div class="eyebrow">Part III</div>
+      <h2>Applicability, extent <span class="pin">&amp; the pecuniary threshold</span></h2>
+    </div>
+    <p class="lead">The Act is national in extent and threshold-bound in jurisdiction. Section 1(4) is the gate, and the figure it speaks of has been raised by notification more than once.</p>
+
+    <h3><span class="s">s. 1(2)</span> Extent</h3>
+    <p>The Act extends to the whole of India. The original exclusion of the State of Jammu and Kashmir was removed by the Jammu and Kashmir Reorganisation (Adaptation of Central Laws) notifications dated 30 October 2019, so the Act now applies to the Union territories of Jammu and Kashmir and Ladakh as well.</p>
+
+    <h3><span class="s">s. 1(3)</span> Commencement</h3>
+    <p>Deemed to have come into force on 24 June 1993, the date the original Ordinance was promulgated.</p>
+
+    <h3><span class="s">s. 1(4)</span> The pecuniary threshold</h3>
+    <p>The Act applies where the amount of debt due to a bank, financial institution, or consortium is <strong>not less than ten lakh rupees, or such other amount, being not less than one lakh rupees, as the Central Government may, by notification, specify</strong>. By notification dated 6 September 2018, the Central Government raised the threshold to <strong>twenty lakh rupees</strong>. Below that figure, the DRT route is unavailable and the bank must proceed by an ordinary civil suit.</p>
+
+    <div class="callout pitfall">
+      <span class="tag">⚠ Pitfall — the threshold is jurisdictional</span>
+      <p>A claim below ₹20 lakh is not within the DRT's jurisdiction at all. The Tribunal cannot enlarge its jurisdiction by consent. A bank that mistakenly files below the threshold will see the application returned for presentation to the proper civil court, with limitation continuing to run in the meantime. Always pleaded the principal figure carefully, exclusive of penal interest, since the threshold is on "debt" as defined.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART IV ================ -->
+  <section class="part reveal" id="definitions">
+    <div class="part-head">
+      <div class="eyebrow">Part IV · Section 2</div>
+      <h2>The defined terms: <span class="pin">the doors of jurisdiction</span></h2>
+    </div>
+    <p class="lead">Two definitions do most of the work in RDB Act practice. The breadth of "debt" decides what the DRT can entertain, and the meaning of "bank" decides who can file. Everything else is procedural detail.</p>
+
+    <div class="defgrid">
+      <div class="defcard"><div class="term">Bank</div><div class="sec">s.2(d)</div><p>A banking company, a corresponding new bank, the State Bank of India, a subsidiary bank, a Regional Rural Bank, or a multi-state cooperative bank. The last category was added by Act 1 of 2013; their inclusion is now constitutionally settled by <em>Pandurang Ganpati Chaugule</em> (2020).</p></div>
+
+      <div class="defcard"><div class="term">Debt</div><div class="sec">s.2(g)</div><p>Any liability inclusive of interest claimed as due from any person by a bank, FI or consortium during the course of business, whether secured or unsecured, assigned, payable under decree or arbitral award, or under a mortgage, and subsisting on and legally recoverable on the date of application. Post-2016 it extends to unpaid debt securities after a 90-day notice by the debenture trustee.</p></div>
+
+      <div class="defcard"><div class="term">Financial institution</div><div class="sec">s.2(h)</div><p>A public financial institution under section 4A of the Companies Act 1956; an ARC registered under section 3 SARFAESI (post-2004); a Board-registered debenture trustee for secured debt securities (post-2016); or such other institution as the Central Government may specify.</p></div>
+
+      <div class="defcard"><div class="term">Property</div><div class="sec">s.2(jb)</div><p>Inserted in 2016. Immovable property, movable property, any debt or right to receive payment of money (secured or unsecured), receivables (existing or future), and intangible assets (know-how, patent, copyright, trade mark, licence, franchise) of similar commercial nature.</p></div>
+
+      <div class="defcard"><div class="term">Secured creditor &amp; security interest</div><div class="sec">s.2(la), 2(lb)</div><p>Both inserted in 2016. Borrowed wholesale from section 2(zd) and section 2(zf) of SARFAESI, harmonising the two statutes on what counts as a security interest and who counts as a secured creditor.</p></div>
+
+      <div class="defcard"><div class="term">Recovery Officer</div><div class="sec">s.2(k)</div><p>An officer appointed by the Central Government for each Tribunal under section 7(1). Distinct from the Presiding Officer. The Presiding Officer adjudicates; the Recovery Officer executes.</p></div>
+
+      <div class="defcard"><div class="term">Presiding Officer</div><div class="sec">s.2(ja)</div><p>The single judicial member who constitutes a DRT under section 4(1). Must be qualified to be a District Judge.</p></div>
+
+      <div class="defcard"><div class="term">Chairperson</div><div class="sec">s.2(ea)</div><p>The single judicial member who constitutes a DRAT under section 9. Must be qualified to be a Judge of a High Court, or otherwise eligible under section 10.</p></div>
+
+      <div class="defcard"><div class="term">Tribunal &amp; Appellate Tribunal</div><div class="sec">s.2(o), 2(a)</div><p>The DRT established under section 3 and the DRAT established under section 8 respectively.</p></div>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">▣ Practitioner's note — the breadth of "debt"</span>
+      <p>The definition of debt in section 2(g) is one of the widest in Indian commercial law. It is not limited to a contractual loan. It captures liability under a guarantee, an arbitral award, a decree of any civil court, and an unpaid mortgage. The Supreme Court has read this definition expansively to bring within the DRT's jurisdiction even claims arising from foreign-exchange transactions, indemnity claims, and bill-discounting disputes. The first question in any RDB Act analysis is not whether there is a contract, but whether the claim sounds in debt as so defined.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART V ================ -->
+  <section class="part reveal" id="tribunals">
+    <div class="part-head">
+      <div class="eyebrow">Part V · Chapter II (ss. 3–16)</div>
+      <h2>The Tribunals: <span class="pin">DRT and DRAT, end to end</span></h2>
+    </div>
+    <p class="lead">Chapter II establishes the forum and staffs it. It is the constitutional plumbing of the Act. The substantive movement comes later in Chapter IV.</p>
+
+    <h3><span class="s">s. 3</span> Establishment of the Tribunal</h3>
+    <p>The Central Government, by notification, establishes one or more DRTs and specifies the territorial jurisdiction of each. Post-2019, sub-section (1A) clarifies that DRTs also exercise the jurisdiction of the Adjudicating Authority under Part III IBC.</p>
+
+    <h3><span class="s">s. 4</span> Composition</h3>
+    <p>A DRT consists of <strong>one person only, the Presiding Officer</strong>, appointed by notification. Sub-section (2), substituted in 2016, allows the Central Government to authorise a Presiding Officer (or a judicial member) of another Tribunal to discharge DRT functions concurrently, addressing the chronic problem of vacancies.</p>
+
+    <h3><span class="s">s. 5</span> Qualifications for Presiding Officer</h3>
+    <p>A person is qualified if he is, has been, or is qualified to be, a <strong>District Judge</strong>.</p>
+
+    <h3><span class="s">s. 6 / 6A</span> Term of office</h3>
+    <p>Post-2016, the term of office is <strong>five years</strong> from the date of entry, with eligibility for reappointment, subject to a retirement age of <strong>65 years</strong> (substituted by Act 44 of 2016). Section 6A, inserted by the Finance Act 2017 and subsequently substituted by the Tribunal Reforms Act 2021, now governs the qualifications, appointment, salaries, allowances, resignation and removal of all Presiding Officers appointed after the commencement of that Act, by reference to Chapter II of the Tribunal Reforms Act 2021.</p>
+
+    <h3><span class="s">s. 7</span> Staff and the Recovery Officer</h3>
+    <p>Each DRT is provided with one or more Recovery Officers and such other staff as the Central Government thinks fit, all under the general superintendence of the Presiding Officer. The Recovery Officer is the key executive arm.</p>
+
+    <h3><span class="s">s. 8</span> Establishment of the Appellate Tribunal</h3>
+    <p>The Central Government establishes one or more DRATs. Since 2016, the Chairperson of one Appellate Tribunal can be authorised to discharge the functions of another (sub-section 3), again to manage vacancies. Sub-section (1A), inserted by the IBC, enables the DRAT to entertain appeals against the Adjudicating Authority's orders under Part III IBC.</p>
+
+    <h3><span class="s">s. 9 / 10</span> Composition and qualifications of the DRAT Chairperson</h3>
+    <p>A DRAT consists of <strong>one person only, the Chairperson</strong>. He must be, have been, or be qualified to be, a <strong>Judge of a High Court</strong>, or a member of the Indian Legal Service who has held a Grade I post for at least three years, or a Presiding Officer of a DRT for at least three years.</p>
+
+    <h3><span class="s">s. 11 / 15A</span> Term of office</h3>
+    <p>Post-2016, the term is <strong>five years</strong>, with eligibility for reappointment, subject to a retirement age of <strong>70 years</strong>. Section 15A mirrors section 6A for the Chairperson and now refers to the Tribunal Reforms Act 2021.</p>
+
+    <h3><span class="s">ss. 13–16</span> Service conditions, vacancies, resignation, removal</h3>
+    <p>Salaries and allowances are prescribed by rules and may not be varied to the incumbent's disadvantage. Removal is only by order of the Central Government on the ground of proved misbehaviour or incapacity, after inquiry by a sitting Judge (of the High Court for a Presiding Officer; of the Supreme Court for a Chairperson), with a reasonable opportunity of being heard. Section 16 protects acts and proceedings from being called into question merely on grounds of defect in constitution.</p>
+
+    <div class="callout amend">
+      <span class="tag">◈ Amendment watch — the Tribunal Reforms Act 2021</span>
+      <p>Since 4 April 2021, all appointments to the DRT and DRAT, including qualifications, term, salaries, allowances, resignation and removal, are governed by Chapter II of the Tribunal Reforms Act 2021, not by sections 6 and 11 of the RDB Act, by reason of sections 6A and 15A. Officers appointed before the commencement of Part XIV of Chapter VI of the Finance Act 2017 continue under the older regime.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART VI ================ -->
+  <section class="part reveal" id="jurisdiction">
+    <div class="part-head">
+      <div class="eyebrow">Part VI · Chapter III (ss. 17–18)</div>
+      <h2>Jurisdiction, powers and authority: <span class="pin">what the DRT decides and who else cannot</span></h2>
+    </div>
+
+    <h3><span class="s">s. 17</span> The DRT's jurisdiction</h3>
+    <p>Sub-section (1) gives the DRT, from the appointed day, the jurisdiction, powers and authority to <strong>entertain and decide applications from banks and financial institutions for recovery of debts</strong> due to them. Sub-section (1A), inserted in 2019, extends the DRT's jurisdiction to applications under Part III of the IBC, and authorises circuit sittings at district headquarters. Sub-section (2) confers appellate jurisdiction on the DRAT against DRT orders, and sub-section (2A) similarly extends appellate jurisdiction over Part III IBC orders.</p>
+
+    <h3><span class="s">s. 17A</span> Power of the DRAT Chairperson</h3>
+    <p>Inserted by Act 1 of 2000 and reinforced by Act 44 of 2016. The Chairperson exercises general superintendence and control over DRTs within his jurisdiction. He may direct DRTs to furnish information on pendency under both the RDB Act and SARFAESI, convene meetings of Presiding Officers to review performance, and recommend inquiry against a Presiding Officer for misbehaviour or incapacity. Importantly, sub-section (2) confers on the Chairperson the power to <strong>transfer cases from one DRT to another</strong> within his jurisdiction, on application or suo motu.</p>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — only the Chairperson can transfer</span>
+      <p>In <em>Eskays Construction Pvt. Ltd. v. Soma Papers and Industries Ltd.</em> (2016) and the line of authority following it, the High Courts have held that they cannot transfer a case from one DRT to another. Section 17A vests that power exclusively in the DRAT Chairperson. A writ petition seeking transfer is liable to be dismissed on the alternate-remedy ground.</p>
+    </div>
+
+    <h3><span class="s">s. 18</span> Bar of jurisdiction</h3>
+    <p>From the appointed day, no court or other authority has jurisdiction over the matters specified in section 17, <strong>except the Supreme Court and a High Court exercising jurisdiction under Articles 226 and 227</strong>. The bar is comprehensive, even excluding civil courts that may have entertained a matter before establishment of the DRT (subject to the savings in section 31). The proviso preserves, on a transitional basis, certain proceedings of multi-state cooperative banks pending before the 2013 amendment.</p>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — Allahabad Bank v. Canara Bank</span>
+      <p>In <em>Allahabad Bank v. Canara Bank</em> (2000) 4 SCC 406, the Supreme Court held that, in matters of priorities between banks over the same secured assets, the DRT has exclusive jurisdiction. The civil court is excluded even where the question is one of competing claims rather than recovery from the borrower. The decision confirms the wide sweep of section 18.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART VII ================ -->
+  <section class="part reveal" id="procedure">
+    <div class="part-head">
+      <div class="eyebrow">Part VII · Chapter IV (ss. 19–24)</div>
+      <h2>Procedure: <span class="pin">the section 19 machine</span></h2>
+    </div>
+    <p class="lead">Section 19 is the operative heart of the Act. Substantially rewritten in 2016, it now reads like a complete civil-procedure code in miniature, covering jurisdiction, summons, written statement, set-off, counter-claim, attachment before judgment, the receiver, the final order, the waterfall, and the recovery certificate.</p>
+
+    <h3><span class="s">s. 19(1)</span> Where to file</h3>
+    <p>An application may be filed before the DRT within whose local limits <strong>any one of the following</strong> is situated: (a) the branch or any other office of the bank or FI maintaining the account in which the debt claimed is outstanding (added in 2016, this is now usually the most convenient ground); (aa) the place where the defendant actually and voluntarily resides, carries on business, or personally works for gain; (b) similarly, the place of any one of multiple defendants; or (c) the place where the cause of action arises wholly or in part. The provisos permit withdrawal with DRT permission to invoke SARFAESI instead, to be disposed of within 30 days.</p>
+
+    <h3><span class="s">s. 19(1A) and (1B)</span> The multi-state cooperative bank option</h3>
+    <p>A multi-state cooperative bank may opt to recover under the Multi-State Co-operative Societies Act 2002 instead of approaching the DRT. If it has already filed before the DRT, it may withdraw with permission to switch to that route. The election is the bank's, not the borrower's.</p>
+
+    <h3><span class="s">s. 19(2)</span> Joinder</h3>
+    <p>Where one bank has filed against a defendant and another bank or FI has a claim against the same defendant, the second bank may join the first at any stage before final order. The DRT becomes a forum for consolidated recovery.</p>
+
+    <h3><span class="s">s. 19(3)</span> Form, fee, and document discipline</h3>
+    <p>Every application must be in the prescribed form, accompanied by true copies of all documents relied on, and the prescribed fee. The Explanation, inserted in 2016, clarifies that "documents" includes statements of account or any entry in banker's books duly certified under the <strong>Bankers' Books Evidence Act, 1891</strong>. This codifies the practice of relying on certified bank statements as primary evidence.</p>
+
+    <h3><span class="s">s. 19(3A)</span> Disclosure of the security pool (inserted 2016)</h3>
+    <p>The applicant must state the particulars of debt secured by security interest, the estimated value of those securities, and where insufficient, the particulars of other properties owned by the defendants. If even those are insufficient, the applicant may seek an order directing the defendant to disclose particulars of other assets. This is the discovery engine of the modern RDB Act.</p>
+
+    <h3><span class="s">s. 19(4) and (4A)</span> Summons and the asset freeze</h3>
+    <p>On receipt of the application, the DRT issues summons directing the defendant: (i) to show cause within 30 days why the relief should not be granted, (ii) to disclose particulars of properties other than those identified by the applicant, and (iii) to restrain him from dealing with or disposing of disclosed assets pending hearing. Sub-section (4A), inserted in 2016, overrides section 65A of the Transfer of Property Act and forbids the defendant from transferring secured or disclosed assets by sale, lease or otherwise (except in the ordinary course of business) without prior DRT approval.</p>
+
+    <h3><span class="s">s. 19(5)</span> Written statement and the 30+15 day clock</h3>
+    <p>The defendant must file his written statement within <strong>30 days</strong> of service, including any claim of set-off or counter-claim, accompanied by original or true-copy documents relied on. In exceptional and special circumstances recorded in writing, the Presiding Officer may extend the period by a further <strong>15 days</strong>, but no more. Non-disclosure under an order entitles the DRT to detain the defaulting officer in civil prison for up to three months, subject to a hearing.</p>
+
+    <h3><span class="s">s. 19(5A) and (5B)</span> Admission and partial decree (inserted 2016)</h3>
+    <p>On filing of the written statement, or expiry of the period, the DRT fixes a date for admission or denial of documents and for continuation or vacation of the interim order. Where the defendant admits the debt in full or in part, the DRT orders payment of the admitted amount within 30 days; failure to comply entitles the DRT to issue a recovery certificate to the extent of the admission. This is the DRT's analogue of a judgment-on-admission.</p>
+
+    <h3><span class="s">s. 19(6)–(11)</span> Set-off and counter-claim</h3>
+    <p>The defendant may plead set-off of any ascertained sum legally recoverable by him from the applicant. He may also set up a counter-claim in respect of any cause of action accruing before he has delivered his defence, including a claim for damages. A counter-claim has the effect of a cross-suit. Where the applicant contends that the counter-claim ought not to be disposed of as a counter-claim but in an independent action, the DRT decides the issue alongside the recovery application (sub-section 11, substituted 2016).</p>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — counter-claim before the DRT</span>
+      <p>In <em>Indian Bank v. ABS Marine Products (P) Ltd.</em> (2006) 5 SCC 72, the Supreme Court held that a defendant in a DRT proceeding cannot transfer his counter-claim to the civil court; the DRT is the only forum that can adjudicate the counter-claim along with the bank's recovery application. The decision protects the integrity of the DRT's exclusive jurisdiction even where the counter-claim is large.</p>
+    </div>
+
+    <h3><span class="s">s. 19(10A) and (10B)</span> Affidavit verification (inserted 2016)</h3>
+    <p>Every application, written statement, set-off, counter-claim, reply or pleading must be supported by an affidavit verifying all facts and pleadings. Witness affidavits must be filed simultaneously. Non-compliant facts cannot be relied on as evidence. This is the procedural innovation that aligns RDB practice with the affidavit-driven model of commercial arbitration.</p>
+
+    <h3><span class="s">s. 19(13)–(18)</span> Attachment before judgment and the receiver</h3>
+    <p>At any stage, on the applicant's application disclosing particulars and estimated value of the property to be attached, or otherwise being satisfied, the DRT may direct the defendant to furnish security where he is about to dispose of property, remove it from jurisdiction, or cause damage to it (sub-section 13). Where the defendant fails to show cause or furnish security, the DRT may attach the whole or sufficient part of the property. Sub-section (15) permits conditional attachment, sub-section (16) voids any attachment made without compliance with sub-section (13), and sub-section (17) permits civil-prison detention for up to three months for disobedience. Sub-section (18) empowers the DRT to appoint a <strong>receiver</strong>, with the full range of powers to bring and defend suits, collect rents and profits, and execute documents.</p>
+
+    <h3><span class="s">s. 19(19) and (20AB)</span> The waterfall in winding-up and otherwise</h3>
+    <p>Where a recovery certificate is issued against a company in liquidation, the DRT directs distribution in the manner provided in <strong>section 326 of the Companies Act, 2013</strong> (formerly section 529A of the 1956 Act), preserving the workmen's-dues priority. Sub-section (20AB), inserted in 2016, prescribes a waterfall for sale of secured assets in all other cases: (i) preservation, valuation, public-notice, auction and other sale-related costs paid in full, and (ii) the bank's debts. The Explanation makes the waterfall <strong>subject to the IBC</strong> where insolvency proceedings are pending.</p>
+
+    <h3><span class="s">s. 19(20)</span> The final order</h3>
+    <p>The DRT, after giving both sides an opportunity of being heard on the claim, set-off, counter-claim and interest, must pass an interim or final order within <strong>30 days from the conclusion of hearings</strong>. The order may include payment of interest from the due date until realisation or actual payment.</p>
+
+    <h3><span class="s">s. 19(22) and (22A)</span> The recovery certificate and the bridge to insolvency</h3>
+    <p>The Presiding Officer issues a recovery certificate, signed by him, to the Recovery Officer, specifying the amount of debt for recovery. Sub-section (22A), inserted in 2016, gives the certificate a <strong>deemed-decree</strong> status for the purposes of (i) initiating winding-up under the Companies Act 2013, (ii) proceeding against an LLP under the LLP Act 2008, and (iii) initiating insolvency proceedings against any individual or partnership firm under any law in force.</p>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — recovery certificate as a fresh cause of action for CIRP</span>
+      <p>In <em>Kotak Mahindra Bank Ltd. v. A. Balakrishnan</em> (2022) 9 SCC 186, the Supreme Court held that a recovery certificate issued by the DRT under section 19(22) gives rise to a <strong>fresh cause of action</strong>, with its own limitation, for initiating CIRP under section 7 of the IBC. Earlier in <em>Dena Bank v. C. Shivakumar Reddy</em> (2021) 10 SCC 330, the Court had similarly held that a recovery certificate is a "financial debt" and the holder a "financial creditor" for IBC purposes. The two decisions converted the recovery certificate from a domestic execution document into a bridge to the insolvency regime.</p>
+    </div>
+
+    <h3><span class="s">s. 19(24)</span> The 180-day target</h3>
+    <p>The application must be dealt with as expeditiously as possible. Post-2016, "every effort shall be made to complete the proceedings in <strong>two hearings</strong>" and to dispose of the application finally within <strong>180 days</strong> from the date of receipt. The targets are directory rather than mandatory in practice, but they discipline the conduct of the proceedings.</p>
+
+    <h3><span class="s">s. 19A</span> Electronic filing</h3>
+    <p>Inserted by Act 44 of 2016. The Central Government may by rules notify Tribunals before which applications, written statements and documents must be filed in electronic form, authenticated by digital signature. Orders displayed on the Tribunal's website are deemed public notice, and electronic transmission of orders is deemed service. The e-DRT framework has been rolled out progressively since 2017.</p>
+
+    <h3><span class="s">s. 20</span> Appeal to the DRAT</h3>
+    <p>Any person aggrieved by a DRT order may appeal to the DRAT within <strong>30 days</strong> (reduced from 45 by Act 44 of 2016). No appeal lies from a consent order. The DRAT may, on sufficient cause, condone delay. The appeal must be disposed of, as far as possible, within six months.</p>
+
+    <h3><span class="s">s. 21</span> The 50% pre-deposit</h3>
+    <p>Where the appeal is preferred by the borrower, it shall not be entertained unless he deposits with the DRAT <strong>50% of the amount of debt</strong> determined by the DRT under section 19 (reduced from 75% by Act 44 of 2016). The DRAT may, for recorded reasons, reduce the deposit, but <strong>not below 25%</strong>. The pre-deposit cannot be entirely waived. This deposit is the borrower's gateway to appellate review.</p>
+
+    <h3><span class="s">s. 22</span> Procedure and powers</h3>
+    <p>The Tribunals are not bound by the CPC but are guided by natural justice. They have civil-court powers in respect of summoning, discovery, affidavits, commissions, review, dismissal for default, and restoration. Proceedings are deemed judicial proceedings under the IPC, and the Tribunals are deemed civil courts for the limited purposes of section 195 CrPC and Chapter XXVI of the CrPC. Sub-section (4), inserted in 2016, makes the Bankers' Books Evidence Act, 1891 applicable to all proceedings.</p>
+
+    <h3><span class="s">s. 22A</span> Uniform procedure</h3>
+    <p>Inserted in 2016. The Central Government may prescribe a uniform procedure for proceedings before all DRTs and DRATs, an attempt to address the inconsistency in practice across tribunals.</p>
+
+    <h3><span class="s">s. 23</span> Right of representation</h3>
+    <p>A bank may authorise one or more legal practitioners or officers to act as Presenting Officers. The defendant may appear in person or through similar authorisation. The Act recognises a non-advocate Presenting Officer model, distinguishing it from ordinary civil litigation.</p>
+
+    <h3><span class="s">s. 24</span> Limitation</h3>
+    <p>The provisions of the <strong>Limitation Act, 1963</strong> apply, as far as may be, to an application made to the DRT. The applicable article is Article 137 (three years, "any other application"). Acknowledgements under sections 18 and 19 of the Limitation Act extend the period.</p>
+  </section>
+
+  <!-- ================ PART VIII ================ -->
+  <section class="part reveal" id="recovery">
+    <div class="part-head">
+      <div class="eyebrow">Part VIII · Chapter V (ss. 25–30A)</div>
+      <h2>Recovery: <span class="pin">the Recovery Officer's arsenal</span></h2>
+    </div>
+    <p class="lead">A judgment without execution is paper. Chapter V puts execution in the hands of the Recovery Officer, with powers borrowed wholesale from the Income Tax Act's recovery code. The Recovery Officer is the practical recovery engine.</p>
+
+    <h3><span class="s">s. 25</span> Modes of recovery</h3>
+    <p>On receipt of the certificate, the Recovery Officer may proceed by one or more of: (a) attachment and sale of the defendant's movable or immovable property; (aa) <strong>taking possession of property over which security interest is created and appointing a receiver to sell</strong> (added in 2016, an internalised SARFAESI-style power); (b) arrest and detention of the defendant in civil prison; (c) appointing a receiver for management of the defendant's properties; and (d) any other mode prescribed by the Central Government.</p>
+
+    <h3><span class="s">s. 26</span> Validity of the certificate</h3>
+    <p>The defendant cannot dispute before the Recovery Officer the correctness of the amount in the certificate, and no objection on any other ground is entertained. The Presiding Officer alone can withdraw the certificate or correct clerical or arithmetical mistakes, with intimation to the Recovery Officer.</p>
+
+    <h3><span class="s">s. 27</span> Stay, instalment, and forfeiture of appeal right</h3>
+    <p>Post-2016 substitution. The Presiding Officer may grant time to pay only if the defendant makes a <strong>down payment of not less than 25%</strong> of the amount specified in the recovery certificate and gives an unconditional undertaking to pay the balance in a reasonable time acceptable to the bank. Once the Recovery Officer stays proceedings on such order, the defendant <strong>forfeits his right to appeal</strong> against the DRT order (sub-section 1B). Default in instalment payments lifts the stay automatically and the Recovery Officer resumes recovery (sub-section 1C). This is a strong inducement for honest defendants and a sharp penalty for tactical ones.</p>
+
+    <h3><span class="s">s. 28</span> Other modes including garnishee</h3>
+    <p>The Recovery Officer may issue garnishee notices to any person from whom money is due, or may become due, to the defendant. The Officer may attach amounts in joint accounts (presuming equal shares), apply to any court holding the defendant's money for payment over, and resort to <strong>distraint and sale of movable property in the manner of the Third Schedule to the Income Tax Act, 1961</strong>. A garnishee who fails to comply becomes himself a defendant in default for the amount notified.</p>
+
+    <h3><span class="s">s. 29</span> Income Tax Act application</h3>
+    <p>The <strong>Second and Third Schedules to the Income Tax Act, 1961</strong> and the Income Tax (Certificate Proceedings) Rules, 1962 apply, as far as possible, to recovery under the Act, with necessary modifications and with the defendant treated as the assessee. This imports the full machinery of attachment, proclamation, sale, and rateable distribution.</p>
+
+    <h3><span class="s">s. 30</span> Appeal against the Recovery Officer's order</h3>
+    <p>Any person aggrieved by an order of the Recovery Officer may, within 30 days, appeal to the DRT. The DRT may confirm, modify or set aside.</p>
+
+    <h3><span class="s">s. 30A</span> The 50% deposit for Recovery Officer appeals (inserted 2016)</h3>
+    <p>Where the appeal under section 30 is preferred by the person from whom debt is due, the DRT shall not entertain the appeal unless the appellant has deposited <strong>50% of the debt</strong> as determined by the DRT. There is no power to reduce. This is a second pre-deposit, stricter than section 21.</p>
+
+    <div class="callout pitfall">
+      <span class="tag">⚠ Pitfall — double pre-deposit risk</span>
+      <p>A borrower who loses at the Recovery Officer's stage faces two distinct deposit gates. First, an appeal against the substantive DRT order to the DRAT requires 50% under section 21 (reducible to 25%). Then, any appeal against the Recovery Officer's execution order to the DRT requires another 50% under section 30A, not reducible. Counsel for borrowers should factor both gates into the litigation strategy from the outset.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART IX ================ -->
+  <section class="part reveal" id="misc">
+    <div class="part-head">
+      <div class="eyebrow">Part IX · Chapter VI (ss. 31–37)</div>
+      <h2>Miscellaneous: <span class="pin">priority, override, and transition</span></h2>
+    </div>
+
+    <h3><span class="s">s. 31</span> Transfer of pending cases</h3>
+    <p>Every suit or proceeding pending before any court before establishment of a DRT, if the cause of action would have fallen within the DRT's jurisdiction, stands transferred to the DRT. Appeals are excluded. The provisos preserve, transitionally, certain multi-state cooperative bank proceedings under the 2002 Act.</p>
+
+    <h3><span class="s">s. 31A</span> Recovery certificate in case of decree (inserted 2000)</h3>
+    <p>Where a decree was passed before the commencement of the 2000 Amendment Act and has not been executed, the decree-holder may apply to the DRT for an order of recovery. The DRT issues a certificate to the Recovery Officer, who proceeds as if it were a domestic certificate.</p>
+
+    <h3><span class="s">s. 31B</span> Priority to secured creditors (inserted 2016)</h3>
+    <p>The mirror of section 26E SARFAESI. <strong>Notwithstanding anything contained in any other law for the time being in force</strong>, the rights of secured creditors to realise secured debts by sale of assets over which security interest is created shall have <strong>priority</strong> and shall be paid in priority over all other debts and Government dues, including revenues, taxes, cesses and rates payable to the Central Government, State Government or local authority. The Explanation expressly subordinates the priority to the IBC where insolvency proceedings are pending.</p>
+
+    <div class="callout cross">
+      <span class="tag">⇄ Cross-reference — s.31B RDB vs s.26E SARFAESI</span>
+      <p>Section 31B RDB and section 26E SARFAESI together reverse the older common-law primacy of State and Crown dues. The two provisions operate together. Section 26E applies to enforcement by secured creditors under SARFAESI; section 31B applies to recovery through the DRT. The trigger for section 26E is registration of the security interest with CERSAI; section 31B has no such precondition but its priority is again subject to the IBC waterfall in section 53 where insolvency proceedings are pending.</p>
+    </div>
+
+    <h3><span class="s">s. 32</span> Public servants</h3>
+    <p>The Chairperson, Presiding Officer, Recovery Officer and other officers and employees of the Tribunals are deemed public servants under section 21 of the Indian Penal Code.</p>
+
+    <h3><span class="s">s. 33</span> Protection of good-faith action</h3>
+    <p>No suit, prosecution or other legal proceeding lies against the Central Government, the Presiding Officer, the Chairperson, or the Recovery Officer for anything done or intended to be done in good faith under the Act.</p>
+
+    <h3><span class="s">s. 34</span> Overriding effect</h3>
+    <p>The provisions of the Act have effect <strong>notwithstanding anything inconsistent</strong> in any other law for the time being in force. Sub-section (2) makes the Act <em>in addition to and not in derogation of</em> the IFCI Act 1948, the SFC Act 1951, the UTI Act 1963, the IRBI Act 1984, the Sick Industrial Companies (Special Provisions) Act 1985 and the SIDBI Act 1989.</p>
+
+    <h3><span class="s">ss. 35–37</span> Removal of difficulties, rule-making, repeal</h3>
+    <p>Section 35 empowers the Central Government to remove difficulties within three years of commencement. Section 36 confers rule-making power, including post-2016 powers on uniform procedure (clause da), modes of recovery (clause db) and e-filing (clauses ccc and ccd). Section 37 repealed the 1993 Ordinance and saved everything done under it.</p>
+  </section>
+
+  <!-- ================ PART X ================ -->
+  <section class="part reveal" id="avatar">
+    <div class="part-head">
+      <div class="eyebrow">Part X</div>
+      <h2>The Adjudicating Authority avatar: <span class="pin">the DRT under Part III of the IBC</span></h2>
+    </div>
+    <p class="lead">Since 1 December 2019, the DRT wears a second hat. By virtue of section 179 of the IBC, the DRT is the Adjudicating Authority for insolvency resolution of individuals and partnership firms under Part III. The DRAT is the appellate forum. The rollout has been staggered, beginning with personal guarantors to corporate debtors.</p>
+
+    <div class="body-block">
+      <p>The IBC's Fifth Schedule simultaneously did three things to the RDB Act. It renamed the Act to its present style. It inserted sub-sections (1A) and (1B) in section 8 and sub-sections (1A) and (2A) in section 17, conferring the new jurisdiction. And it added a stub section 19A specific to Part III IBC, providing that the application made to the DRT under the IBC is to be dealt with in the manner provided under that Code, not the procedure in section 19 of the RDB Act.</p>
+      <p>For practitioners, the practical effect is that the DRT now decides three categories of matter: (i) recovery applications by banks and FIs under section 19 RDB Act; (ii) SARFAESI grievances under section 17 SARFAESI; and (iii) insolvency applications under Part III IBC. Each category follows its own procedural code. A single Presiding Officer juggles three statutes.</p>
+    </div>
+
+    <div class="callout amend">
+      <span class="tag">◈ Amendment watch — phased commencement</span>
+      <p>The Part III IBC jurisdiction has been notified in tranches. Personal guarantors to corporate debtors were notified with effect from 1 December 2019. Other individuals and partnership firms remain subject to a separate notification. Until the relevant tranche is notified, the older Presidency-Towns Insolvency Act 1909 and the Provincial Insolvency Act 1920 continue to apply. Check the latest notification before filing.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART XI ================ -->
+  <section class="part reveal" id="amendments">
+    <div class="part-head">
+      <div class="eyebrow">Part XI · Act 44 of 2016</div>
+      <h2>The 2016 procedural overhaul, <span class="pin">consolidated</span></h2>
+    </div>
+    <p class="lead">The same omnibus statute that reshaped SARFAESI also rewrote the RDB Act. The table below sets out every consequential change to the RDB Act, so the picture is in one place.</p>
+
+    <div class="tablewrap">
+      <table>
+        <tr><th>Theme</th><th>Before 2016</th><th>After Act 44 of 2016</th></tr>
+        <tr><td><strong>Definitions</strong></td><td>No "secured creditor", "security interest" or "property" defined</td><td>All three defined by reference to SARFAESI, plus "financial lease" and "debt securities" inserted.</td></tr>
+        <tr><td><strong>Tenure</strong></td><td>Variable tenure, age 62 for PO and 65 for Chairperson</td><td>Fixed five-year term, retirement at 65 (PO) and 70 (Chairperson). Subsumed under Tribunal Reforms Act 2021 since 2021.</td></tr>
+        <tr><td><strong>s. 17A</strong></td><td>Limited superintendence</td><td>Wide powers: information from DRTs, periodic review meetings, recommend inquiry against Presiding Officers.</td></tr>
+        <tr><td><strong>s. 19(1)(a)</strong></td><td>Jurisdiction only by defendant's residence/business or cause of action</td><td>New jurisdictional limb: the branch maintaining the account in which debt claimed is outstanding. Now the most convenient ground.</td></tr>
+        <tr><td><strong>s. 19(3A)</strong></td><td>No prescribed disclosure</td><td>Mandatory disclosure of secured-property pool and other assets, with power to direct further disclosure.</td></tr>
+        <tr><td><strong>s. 19(4)–(5)</strong></td><td>Loose summons and written-statement timeline</td><td>Show-cause in 30 days, asset disclosure, restraint order; written statement in 30 days, extendable to 45 only in exceptional circumstances.</td></tr>
+        <tr><td><strong>s. 19(4A)</strong></td><td>No express asset freeze</td><td>Overriding s.65A TPA: no transfer of secured/disclosed assets without DRT approval. Sale-proceeds accountability mandated.</td></tr>
+        <tr><td><strong>s. 19(5B)</strong></td><td>No judgment-on-admission mechanism</td><td>Admission-based recovery certificate to the extent of admitted debt within 30 days.</td></tr>
+        <tr><td><strong>s. 19(10A)–(10B)</strong></td><td>Pleadings could be unverified</td><td>Mandatory affidavit verification; unverified facts inadmissible.</td></tr>
+        <tr><td><strong>s. 19(20AB)</strong></td><td>No statutory waterfall</td><td>Sale-proceeds waterfall: (i) preservation and sale-related costs, (ii) bank's debts. Subject to IBC priority where CIRP pending.</td></tr>
+        <tr><td><strong>s. 19(22A)</strong></td><td>Recovery certificate had no winding-up effect</td><td><strong>Deemed decree</strong> for winding-up, LLP insolvency, and individual/partnership insolvency. The bridge to Kotak v. Balakrishnan.</td></tr>
+        <tr><td><strong>s. 19(24)</strong></td><td>"Endeavour" to dispose of within 180 days</td><td>"Every effort" to complete in two hearings and dispose of within 180 days.</td></tr>
+        <tr><td><strong>s. 19A</strong></td><td>No e-filing provision</td><td>E-filing of applications, summons, orders; deemed service by transmission and deemed public notice through website.</td></tr>
+        <tr><td><strong>s. 20(3)</strong></td><td>Appeal in 45 days</td><td>Appeal in <strong>30 days</strong>.</td></tr>
+        <tr><td><strong>s. 21</strong></td><td>75% deposit, reducible at DRAT discretion</td><td><strong>50% deposit, reducible to not less than 25%</strong>. Cannot be waived.</td></tr>
+        <tr><td><strong>s. 25(aa)</strong></td><td>No express possession power</td><td>Recovery Officer may take possession of secured property and appoint a receiver to sell.</td></tr>
+        <tr><td><strong>s. 27</strong></td><td>Stay possible without conditions</td><td>Stay only on <strong>25% down payment</strong> and unconditional undertaking; defendant forfeits appeal right.</td></tr>
+        <tr><td><strong>s. 30A</strong></td><td>No deposit for Recovery Officer appeal</td><td><strong>50% deposit</strong>, not reducible.</td></tr>
+        <tr><td><strong>s. 31B</strong></td><td>State dues prevailed by common law and statutory first charges</td><td><strong>Secured creditors' priority</strong> over all Government dues, taxes, cesses and rates, subject to IBC.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================ PART XII ================ -->
+  <section class="part reveal" id="cases">
+    <div class="part-head">
+      <div class="eyebrow">Part XII</div>
+      <h2>Landmark jurisprudence <span class="pin">the cases that decide DRT practice</span></h2>
+    </div>
+
+    <div class="defgrid">
+      <div class="defcard"><div class="term">Union of India v. Delhi High Court Bar Association</div><div class="sec">(2002) 4 SCC 275</div><p>The cornerstone constitutional decision. The Supreme Court upheld the validity of the RDB Act as amended in 2000, holding that Parliament could lawfully create a specialised tribunal with exclusive jurisdiction over bank-recovery matters. It set aside the earlier Delhi High Court ruling that had struck down provisions of the un-amended Act.</p></div>
+
+      <div class="defcard"><div class="term">Allahabad Bank v. Canara Bank</div><div class="sec">(2000) 4 SCC 406</div><p>Established the wide sweep of section 18. The DRT has exclusive jurisdiction even in inter-bank priority disputes over secured assets, to the exclusion of the civil court.</p></div>
+
+      <div class="defcard"><div class="term">Indian Bank v. ABS Marine Products</div><div class="sec">(2006) 5 SCC 72</div><p>A counter-claim by a defendant before the DRT cannot be transferred out to the civil court. The DRT alone can adjudicate the counter-claim alongside the bank's recovery application.</p></div>
+
+      <div class="defcard"><div class="term">Industrial Investment Bank of India v. Marshal's Power and Telecom</div><div class="sec">(2007) 1 SCC 106</div><p>Read section 19(8) liberally on the scope of permissible counter-claims; a counter-claim can be set up against any of the defendant's rights as against the applicant bank.</p></div>
+
+      <div class="defcard"><div class="term">Standard Chartered Bank v. Dharminder Bhohi</div><div class="sec">(2013) 15 SCC 341</div><p>Clarified the relative powers of the Presiding Officer and the Recovery Officer. The Recovery Officer cannot reopen the merits of the certificate; his jurisdiction is execution alone, and section 26 bars merit-stage objections at his level.</p></div>
+
+      <div class="defcard"><div class="term">Eskays Construction v. Soma Papers</div><div class="sec">(2016) 11 SCC 357</div><p>Only the Chairperson of the DRAT can transfer a case from one DRT to another under section 17A(2). The High Court has no such transfer power.</p></div>
+
+      <div class="defcard"><div class="term">Transcore v. Union of India</div><div class="sec">(2008) 1 SCC 125</div><p>The pivotal cross-statute decision. A pending OA before the DRT is no bar to invoking SARFAESI; the two remedies are complementary, not alternative. Section 37 SARFAESI is the textual anchor.</p></div>
+
+      <div class="defcard"><div class="term">Dena Bank v. C. Shivakumar Reddy</div><div class="sec">(2021) 10 SCC 330</div><p>A recovery certificate is a "financial debt" and its holder a "financial creditor" under the IBC. The decision is the first step in the recovery-certificate-to-CIRP bridge.</p></div>
+
+      <div class="defcard"><div class="term">Kotak Mahindra Bank v. A. Balakrishnan</div><div class="sec">(2022) 9 SCC 186</div><p>A recovery certificate gives rise to a <strong>fresh cause of action</strong> with its own limitation, sufficient to found a CIRP application under section 7 IBC. This is the most important recent decision linking the RDB Act to the IBC.</p></div>
+
+      <div class="defcard"><div class="term">Bank of Rajasthan v. VCK Shares</div><div class="sec">(2022) SCC OnLine SC 1340</div><p>Reaffirmed that the DRT's jurisdiction under section 19 extends to any claim sounding in debt within the wide section 2(g) definition, including claims relating to securities transactions financed by the bank.</p></div>
+
+      <div class="defcard"><div class="term">United Bank of India v. Satyawati Tondon</div><div class="sec">(2010) 8 SCC 110</div><p>Though primarily a SARFAESI decision, this case applies equally to the RDB Act. High Courts should be reluctant to entertain writ petitions against DRT orders where the statutory appellate remedy under section 20 is available.</p></div>
+
+      <div class="defcard"><div class="term">Pandurang Ganpati Chaugule v. Vishwasrao Patil Murgud Sah. Bank</div><div class="sec">(2020) 9 SCC 215</div><p>Constitution Bench. Multi-state cooperative banks are "banks" for both the RDB Act and SARFAESI. Settles a long jurisdictional debate at the intersection of cooperative and banking law.</p></div>
+    </div>
+  </section>
+
+  <!-- ================ PART XIII — THE BIG ONE ================ -->
+  <section class="part reveal" id="decision">
+    <div class="part-head">
+      <div class="eyebrow">Part XIII · The decision framework</div>
+      <h2>SARFAESI vs RDB vs IBC: <span class="pin">when to invoke which remedy</span></h2>
+    </div>
+    <p class="lead">This is the question that every counsel acting for a stressed lender must answer at the outset, and the answer determines the entire litigation strategy. The three statutes are not interchangeable. Each has a specific shape, a specific threshold, a specific forum, and a specific kind of outcome.</p>
+
+    <div class="threecol">
+      <div class="regime sarfaesi">
+        <div class="head">
+          <div class="tag">Regime 1</div>
+          <h4>SARFAESI</h4>
+          <p>Self-help enforcement of a security interest, without court intervention to start.</p>
+        </div>
+        <div class="body">
+          <dl>
+            <dt>Nature</dt>
+            <dd>Enforcement of <strong>a specific security</strong> by the creditor itself</dd>
+            <dt>Who may use it</dt>
+            <dd><strong>Secured creditors only</strong>: banks, FIs, ARCs, qualifying debenture trustees</dd>
+            <dt>Threshold</dt>
+            <dd>Secured debt over ₹1 lakh; dues over 20% of principal plus interest</dd>
+            <dt>Trigger</dt>
+            <dd>NPA classification plus a Section 13(2) notice</dd>
+            <dt>Forum</dt>
+            <dd>The creditor itself, with CMM or DM assistance under Section 14. Borrower's recourse is to the DRT under Section 17, with appeal to the DRAT</dd>
+            <dt>What you get</dt>
+            <dd>Possession and sale of the specific collateral. <strong>Not a personal money decree</strong></dd>
+            <dt>Speed</dt>
+            <dd>Fastest. No court involvement to commence. Possession often within 60 to 120 days of notice if uncontested</dd>
+            <dt>Limits</dt>
+            <dd>Cannot reach unsecured assets. Excluded from agricultural land, pledges, aircraft, vessels. CERSAI registration required to enforce</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="regime rdb">
+        <div class="head">
+          <div class="tag">Regime 2</div>
+          <h4>RDB Act</h4>
+          <p>Adjudicatory recovery of debt by tribunal, with a money decree and execution machinery.</p>
+        </div>
+        <div class="body">
+          <dl>
+            <dt>Nature</dt>
+            <dd>Specialised <strong>adjudication</strong>, money decree, and execution against any property of the debtor</dd>
+            <dt>Who may use it</dt>
+            <dd><strong>Banks and financial institutions</strong> (including ARCs, debenture trustees). Other creditors cannot file</dd>
+            <dt>Threshold</dt>
+            <dd>Debt of <strong>₹20 lakh or more</strong> (current notification under section 1(4))</dd>
+            <dt>Trigger</dt>
+            <dd>Liability sounding in "debt" under section 2(g). Wide definition, includes secured, unsecured, decretal, guarantee-based</dd>
+            <dt>Forum</dt>
+            <dd>DRT having jurisdiction (branch maintaining account, defendant's residence/business, or cause of action). Appeal to DRAT with 50% pre-deposit, reducible to 25%</dd>
+            <dt>What you get</dt>
+            <dd><strong>A recovery certificate</strong>, which is a deemed decree for winding-up, LLP and individual insolvency purposes. Executable against all the debtor's property</dd>
+            <dt>Speed</dt>
+            <dd>Target 180 days from receipt of application. In practice, slower, but faster than civil suit</dd>
+            <dt>Limits</dt>
+            <dd>Below ₹20 lakh, the DRT is closed. Above, the DRT is the only forum</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="regime ibc">
+        <div class="head">
+          <div class="tag">Regime 3</div>
+          <h4>IBC</h4>
+          <p>Collective insolvency resolution or liquidation of the entire entity, with a moratorium.</p>
+        </div>
+        <div class="body">
+          <dl>
+            <dt>Nature</dt>
+            <dd><strong>Collective</strong> insolvency resolution or liquidation of the whole entity, not individual creditor enforcement</dd>
+            <dt>Who may use it</dt>
+            <dd>Financial creditor, operational creditor, or the corporate debtor itself (for CIRP). Creditors and debtors for personal insolvency</dd>
+            <dt>Threshold</dt>
+            <dd>For CIRP: default of <strong>₹1 crore</strong> (raised from ₹1 lakh in March 2020). Lower thresholds for personal insolvency</dd>
+            <dt>Trigger</dt>
+            <dd>A default on a financial or operational debt</dd>
+            <dt>Forum</dt>
+            <dd>NCLT for corporates, DRT for individuals and partnership firms (Part III). NCLAT and DRAT respectively on appeal</dd>
+            <dt>What you get</dt>
+            <dd>A <strong>resolution plan</strong> binding on all stakeholders (Section 31 IBC), or liquidation with distribution under the Section 53 waterfall</dd>
+            <dt>Speed</dt>
+            <dd>Strict: CIRP 180 days, extendable to 270, with an outer limit of 330 days</dd>
+            <dt>Limits</dt>
+            <dd>Cannot be used for individual creditor enforcement. Once admitted, moratorium under Section 14 freezes all SARFAESI and RDB action</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="dtree">
+      <h5>The practitioner's decision tree</h5>
+
+      <div class="dq">
+        <p class="q">Q1. Are you a secured creditor with a registered security interest in non-excluded collateral, and is the account NPA?</p>
+        <p class="a"><strong>Yes:</strong> SARFAESI is the fastest route. Invoke Section 13(2) immediately. The DRT is the borrower's forum, not yours. <strong>No:</strong> proceed to Q2.</p>
+      </div>
+
+      <div class="dq">
+        <p class="q">Q2. Are you a bank or financial institution with a claim sounding in debt of ₹20 lakh or more, and do you need an adjudicated money decree or to reach unsecured assets?</p>
+        <p class="a"><strong>Yes:</strong> file an Original Application under Section 19 RDB Act. The DRT is your forum, and you obtain a recovery certificate executable across the debtor's estate. <strong>No:</strong> proceed to Q3.</p>
+      </div>
+
+      <div class="dq">
+        <p class="q">Q3. Is the debtor a corporate, with a default of ₹1 crore or more, and is the business potentially viable (resolution preferable to liquidation), or do you wish to invoke a moratorium and a collective process?</p>
+        <p class="a"><strong>Yes:</strong> the IBC is your forum. File a Section 7 application before the NCLT (financial creditor) or Section 9 (operational creditor). Admission triggers the Section 14 moratorium and the collective process. <strong>No:</strong> if the debtor is an individual or partnership firm and the default is significant, Part III IBC may be available before the DRT.</p>
+      </div>
+
+      <div class="dq">
+        <p class="q">Q4. Are you below all of these thresholds, or is your claim outside "debt" under section 2(g)?</p>
+        <p class="a"><strong>Then:</strong> the ordinary civil suit, under the Code of Civil Procedure before the appropriate civil court, remains the only route.</p>
+      </div>
+    </div>
+
+    <h3><span class="s">Coordination</span> The three remedies in combination</h3>
+
+    <p>The three regimes are not mutually exclusive. In a typical large-exposure recovery scenario, all three operate, sequentially or in parallel. The practitioner's task is to coordinate them.</p>
+
+    <h4>SARFAESI plus RDB Act</h4>
+    <p>Per <em>Transcore v. Union of India</em> (2008), a bank may pursue both remedies simultaneously. Section 37 SARFAESI provides that the Act is in addition to and not in derogation of the RDB Act. The standard playbook is to invoke SARFAESI for speed against the specific collateral, while keeping the RDB Act application alive for the personal claim, guarantor liability, and any shortfall under section 13(10) SARFAESI. Recovery in one forum is adjusted against the other; double recovery is impermissible.</p>
+
+    <h4>RDB Act feeding into the IBC</h4>
+    <p>Per <em>Dena Bank v. C. Shivakumar Reddy</em> (2021) and <em>Kotak Mahindra Bank v. A. Balakrishnan</em> (2022), a recovery certificate is a financial debt and its holder a financial creditor. The certificate furnishes a fresh cause of action with its own limitation, sufficient to support a Section 7 IBC application. Counsel should think of the recovery certificate as a passport, not a terminus.</p>
+
+    <h4>The IBC's primacy on admission</h4>
+    <p>Once CIRP is admitted, Section 14 IBC freezes all SARFAESI and RDB enforcement. Section 238 IBC overrides Section 35 SARFAESI and Section 34 RDB. The priority under Section 26E SARFAESI and Section 31B RDB is itself made subject to the IBC waterfall in Section 53 where insolvency proceedings are pending. A creditor whose enforcement is in mid-flight must down tools, lodge its claim with the resolution professional, and participate in the collective process.</p>
+
+    <div class="callout cross">
+      <span class="tag">⇄ Cross-reference — the choice in seven words</span>
+      <p><strong>SARFAESI for the asset. RDB for the decree. IBC for the entity.</strong> SARFAESI realises specific collateral. The RDB Act establishes liability and produces a portable certificate. The IBC reorganises or liquidates the whole entity. Each is reaching for a different prize.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART XIV ================ -->
+  <section class="part reveal" id="workflow">
+    <div class="part-head">
+      <div class="eyebrow">Part XIV</div>
+      <h2>The tactical playbook: <span class="pin">a sequenced approach</span></h2>
+    </div>
+    <p class="lead">Doctrine becomes practice once you can see the sequence. Here is how a counsel for a secured lender typically sequences the three statutes from default to recovery.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-node">NPA</div>
+        <div class="flow-body">
+          <h5>Step 0 · Classification and CERSAI verification</h5>
+          <p>Confirm the NPA classification under RBI norms. Verify that the security interest is registered with CERSAI under Section 26B SARFAESI. Without registration, SARFAESI enforcement is barred.</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-node">13(2)</div>
+        <div class="flow-body">
+          <h5>Step 1 · Issue the SARFAESI demand notice <span>SARFAESI s.13(2)</span></h5>
+          <p>Start the SARFAESI clock. The 60-day period is the fastest path to possession of the specific collateral. Concurrently, prepare the RDB Act application.</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-node alt">OA</div>
+        <div class="flow-body">
+          <h5>Step 2 · File the Original Application under section 19 RDB Act</h5>
+          <p>Sue for the entire debt, exclusive of penal interest. Plead all security particulars under Section 19(3A) and seek attachment-before-judgment under Section 19(13). The RDB Act application protects the unsecured portion, the guarantor exposure, and the future shortfall.</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-node">14</div>
+        <div class="flow-body">
+          <h5>Step 3 · Take possession; if resisted, Section 14 SARFAESI to the CMM/DM</h5>
+          <p>The CMM or DM must order possession within 30 days, extendable to 60. This proceeds in parallel with the RDB Act adjudication.</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-node alt">SALE</div>
+        <div class="flow-body">
+          <h5>Step 4 · Sale of the secured asset; apply proceeds</h5>
+          <p>Conduct the sale under the Enforcement Rules. Apply proceeds to costs, then dues. Any shortfall feeds back into the RDB Act application under Section 13(10) SARFAESI.</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-node">RC</div>
+        <div class="flow-body">
+          <h5>Step 5 · Recovery Certificate from the DRT <span>RDB s.19(22)</span></h5>
+          <p>Obtain the recovery certificate from the Presiding Officer. The Recovery Officer proceeds with attachment, sale, garnishee, and Income Tax Act machinery against all the debtor's other property.</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-node warn">IBC</div>
+        <div class="flow-body">
+          <h5>Step 6 · Strategic IBC filing</h5>
+          <p>If the borrower is a corporate and the default exceeds ₹1 crore, a Section 7 IBC application before the NCLT is a powerful pressure lever. The recovery certificate itself is a sufficient basis for the application per <em>Kotak v. Balakrishnan</em>. Admission triggers the moratorium, freezing all enforcement and forcing collective resolution. Use this when piecemeal recovery has stalled, or when the entity is genuinely insolvent.</p>
+        </div>
+      </div>
+    </div>
+
+    <h4>Five questions before filing</h4>
+    <ol class="clean">
+      <li>Is the claim within "debt" under section 2(g)? Anything sounding in liability inclusive of interest from any business activity will qualify.</li>
+      <li>Is the principal claim at least ₹20 lakh? Below the threshold, the DRT is closed.</li>
+      <li>Have you computed limitation correctly? Apply Article 137 of the Limitation Act, and check for acknowledgements under sections 18 and 19.</li>
+      <li>Have you identified the correct DRT under Section 19(1)? The branch-account ground is usually the cleanest.</li>
+      <li>Are you exhausting SARFAESI first or in parallel? Do not abandon SARFAESI just because the DRT is faster; the collateral is your best asset.</li>
+    </ol>
+
+    <div class="orn"><span>✦ ✦ ✦</span></div>
+  </section>
+
+  <!-- ================ PART XV ================ -->
+  <section class="part reveal" id="glossary">
+    <div class="part-head">
+      <div class="eyebrow">Part XV</div>
+      <h2>Glossary <span class="pin">of working abbreviations</span></h2>
+    </div>
+    <div class="defgrid">
+      <div class="defcard"><div class="term">DRT</div><p>Debts Recovery Tribunal established under Section 3, with a single Presiding Officer of district-judge rank.</p></div>
+      <div class="defcard"><div class="term">DRAT</div><p>Debts Recovery Appellate Tribunal established under Section 8, with a single Chairperson of high-court-judge rank.</p></div>
+      <div class="defcard"><div class="term">OA</div><p>Original Application, the term of art for an application under Section 19(1) RDB Act.</p></div>
+      <div class="defcard"><div class="term">RC</div><p>Recovery Certificate issued under Section 19(22) by the Presiding Officer to the Recovery Officer. A deemed decree under Section 19(22A).</p></div>
+      <div class="defcard"><div class="term">RO</div><p>Recovery Officer appointed under Section 7(1) to execute the recovery certificate. Distinct from the Presiding Officer.</p></div>
+      <div class="defcard"><div class="term">PO</div><p>Presiding Officer of a DRT under Section 4(1).</p></div>
+      <div class="defcard"><div class="term">RDB Act</div><p>Recovery of Debts and Bankruptcy Act, 1993. Renamed from RDDBFI Act with effect from 1 December 2019.</p></div>
+      <div class="defcard"><div class="term">CIRP</div><p>Corporate Insolvency Resolution Process under the IBC.</p></div>
+      <div class="defcard"><div class="term">NCLT/NCLAT</div><p>National Company Law Tribunal and Appellate Tribunal, the IBC forum for corporate insolvency.</p></div>
+      <div class="defcard"><div class="term">Part III IBC</div><p>The IBC chapter dealing with insolvency resolution and bankruptcy for individuals and partnership firms, with the DRT as Adjudicating Authority.</p></div>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="shell">
+    <div>
+      <h5>The RDB Act, 1993</h5>
+      <p>A practitioner's treatise on Act 51 of 1993 as amended through Act 44 of 2016 and the IBC 2016, with the leading jurisprudence and a complete decision framework on SARFAESI, RDB and IBC.</p>
+    </div>
+    <div class="disc">
+      <strong style="color:var(--brass-light);">A note on use.</strong><br>
+      This explainer is a study and reference aid synthesised from the bare Act, principal amendments and settled case law. Statutory positions, threshold figures and citations should be verified against the current bare Act and the latest notifications before professional reliance. It is not legal advice.
+    </div>
+  </div>
+</footer>
+
+<script>
+const bar=document.getElementById('progress');
+function prog(){const h=document.documentElement;const sc=h.scrollTop;const max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?(sc/max*100):0)+'%';}
+document.addEventListener('scroll',prog,{passive:true});prog();
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const spy=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const id='#'+e.target.id;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));}});},{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>s&&spy.observe(s));
+</script>
+</body>
+</html>
