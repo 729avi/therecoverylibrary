@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Companies Act, 2013 — A Practitioner's Treatise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<style>
+/* ---------- page-specific components (Companies Act) ---------- */
+
+/* the working-scenario narrative */
+.scene{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;
+  padding:34px 38px;margin:34px 0;position:relative;overflow:hidden;max-width:none;}
+.scene::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);}
+.scene .epi{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px;}
+.scene > h3{margin-top:0;font-size:28px;color:var(--ink);}
+.scene > h3 .s{display:none;}
+.scene .chapter{margin-top:32px;padding-top:22px;border-top:1px solid var(--line);position:relative;}
+.scene .chapter:first-of-type{border-top:none;padding-top:0;margin-top:18px;}
+.scene .chapter .ch-num{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:#8a5a22;font-weight:600;}
+.scene .chapter h4{font-family:"Spectral",serif;font-size:22px;color:var(--ink);margin:4px 0 8px;
+  font-style:italic;font-weight:600;}
+.scene .chapter p{font-size:16.5px;line-height:1.7;color:var(--ink-soft);margin:8px 0;max-width:none;}
+.scene p.body-block{max-width:none;color:var(--ink-soft);}
+.prov{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);
+  background:var(--paper);padding:2px 7px;border-radius:3px;border:1px solid var(--line-soft);white-space:nowrap;}
+.scene .epilogue{margin-top:30px;padding:20px 24px;background:var(--paper-3);border-left:3px solid var(--accent);
+  border-radius:0 4px 4px 0;}
+.scene .epilogue p{font-family:"Spectral",serif;font-style:italic;font-size:17px;color:var(--ink-soft);
+  max-width:none;line-height:1.6;}
+.scene .epilogue strong{color:var(--ink);font-style:normal;}
+
+/* the interplay matrix */
+.matrix{display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:16px;margin:30px 0;}
+.mx{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:18px 20px;
+  transition:border-color .16s,transform .16s;}
+.mx:hover{border-color:var(--accent);transform:translateY(-2px);}
+.mx .lab{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:6px;}
+.mx h5{font-family:"Spectral",serif;font-size:18px;color:var(--ink);margin:0 0 8px;font-weight:600;line-height:1.2;}
+.mx p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:6px 0;max-width:none;}
+.mx .links{font-family:"IBM Plex Mono",monospace;font-size:11px;color:#8a5a22;margin-top:10px;padding-top:10px;
+  border-top:1px solid var(--line-soft);letter-spacing:.02em;line-height:1.5;}
+@media(max-width:640px){.scene{padding:26px 22px;}}
+</style>
+</head>
+<body data-vol="ca">
+<div id="progress"></div>
+
+<header class="masthead" id="masthead">
+  <div class="shell">
+    <a class="brand" href="index.html">
+      <span class="seal">R</span>
+      <span class="wm"><b>The Recovery Library</b><span>Debt Enforcement · India</span></span>
+    </a>
+    <nav class="mnav">
+      <a class="home-link" href="index.html">Home</a>
+      <a href="rbi-prudential-framework.html">RBI Framework</a>
+      <a href="sarfaesi-act.html">SARFAESI</a>
+      <a href="rdb-act.html">RDB Act</a>
+      <a class="current" href="companies-act.html">Companies Act</a>
+    </nav>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="shell">
+    <div class="kicker">Act No. 18 of 2013 · The Republic of India</div>
+    <h1>The <em>Companies</em> Act</h1>
+    <p class="full">Companies Act, 2013<br>read with the Insolvency and Bankruptcy Code, 2016</p>
+    <p class="sub">A targeted practitioner's reading of the Companies Act through the lens of insolvency practice. The provisions that decide identity, security, fraud, restructuring and resolution, and where each one meets the IBC.</p>
+    <div class="meta-strip">
+      <div><span class="lab">Assent</span><span class="val">29 Aug 2013</span></div>
+      <div><span class="lab">Rollout</span><span class="val">From 12 Sep 2013</span></div>
+      <div><span class="lab">Forum</span><span class="val">NCLT / NCLAT</span></div>
+      <div><span class="lab">Sections</span><span class="val">470 + 7 Schedules</span></div>
+      <div><span class="lab">Companion</span><span class="val">IBC 2016</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="shell with-aside" style="margin-top:0;">
+  <aside class="toc" id="toc">
+    <h4>Contents</h4>
+    <a href="#genesis"><span class="num">I</span>Genesis &amp; the IBC ecosystem</a>
+    <a href="#identity"><span class="num">II</span>Corporate identity &amp; directors</a>
+    <a href="#capital"><span class="num">III</span>Share capital &amp; debentures</a>
+    <a href="#charges"><span class="num">IV</span>Charges &amp; security interests</a>
+    <a href="#accounts"><span class="num">V</span>Accounts, audit &amp; financials</a>
+    <a href="#oppression"><span class="num">VI</span>Oppression &amp; mismanagement</a>
+    <a href="#schemes"><span class="num">VII</span>Compromises &amp; arrangements</a>
+    <a href="#investigation"><span class="num">VIII</span>Investigation &amp; SFIO</a>
+    <a href="#winding"><span class="num">IX</span>Winding up</a>
+    <a href="#valuers"><span class="num">X</span>Registered valuers</a>
+    <a href="#fraud"><span class="num">XI</span>Fraud &amp; personal liability</a>
+    <a href="#interplay"><span class="num">XII</span>The interplay with IBC</a>
+    <a href="#scenario"><span class="num">XIII</span>A working scenario</a>
+    <a href="#glossary"><span class="num">XIV</span>Glossary</a>
+  </aside>
+
+  <main>
+
+  <!-- ================ PART I ================ -->
+  <section class="part reveal" id="genesis">
+    <div class="part-head">
+      <div class="eyebrow">Part I</div>
+      <h2>Genesis: <span class="pin">the Companies Act inside the IBC ecosystem</span></h2>
+    </div>
+    <p class="lead">The Companies Act, 2013 was enacted to replace the Companies Act, 1956 with a modernised corporate code. Three years later, the Insolvency and Bankruptcy Code, 2016 arrived and removed the corporate distress jurisdiction from the Companies Act, redirecting it to a specialised insolvency regime. The two statutes were not designed as a pair, but they are now read as one in restructuring practice.</p>
+
+    <div class="body-block">
+      <p>The 2013 Act was the product of nearly a decade of deliberation. The J.J. Irani Committee submitted its report in 2005 with the central recommendation that corporate law be modernised, simplified and made principles-based. The Companies Bill 2011 and 2012 followed, and the Act was finally enacted on 29 August 2013. Different sections were notified in tranches between September 2013 and 2019. Today the Act sits as the foundational corporate statute in India, with 470 sections and 7 Schedules.</p>
+      <p>When the IBC entered into force in 2016, it did not repeal the Companies Act. It carved out a specialised insolvency layer, lifted "inability to pay debts" winding-up out of the Companies Act and placed it in the IBC, and made the National Company Law Tribunal the common forum for both statutes. Section 255 of the IBC, read with the Eleventh Schedule, effected the necessary amendments to the Companies Act. The result is a single Tribunal hearing both Companies Act matters (oppression, mergers, reduction of capital, schemes, voluntary winding up, investigations) and IBC matters (CIRP, liquidation), often involving the same corporate debtor.</p>
+    </div>
+
+    <div class="callout ibc">
+      <span class="tag">⤺ Why the Companies Act still matters in IBC practice</span>
+      <p>An insolvency professional does not work in a statutory vacuum. To verify secured creditor status, the IP looks to Chapter VI of the Companies Act on charges. To examine the conduct of directors before the petition was filed, the IP reads Section 166 on directors' duties. To trace diverted funds, the IP works with the financial statements maintained under Chapter IX and the SFIO investigation under Section 212. To restructure outside the IBC, or in liquidation, the IP relies on Sections 230 to 232. The Companies Act is the substantive law against which the IBC's procedural code is read.</p>
+    </div>
+
+    <h4>The seven concentration points</h4>
+    <p>For the insolvency practitioner, the Companies Act compresses to roughly seven concentration points: <strong>corporate identity</strong>; <strong>directors' duties</strong>; <strong>charges and securities</strong>; <strong>accounts and audit</strong>; <strong>oppression and mismanagement</strong>; <strong>schemes of compromise and arrangement</strong>; and the <strong>fraud and investigation</strong> regime. The remaining sections, on winding up, registered valuers and personal liability, fill the gaps. Everything else in the Act, however important to ordinary corporate practice, can be treated as background.</p>
+
+    <div class="chips">
+      <span class="chip"><b>NCLT</b> · adjudicator under both Acts</span>
+      <span class="chip"><b>NCLAT</b> · appellate forum</span>
+      <span class="chip"><b>MCA</b> · administrative oversight</span>
+      <span class="chip"><b>SFIO</b> · investigative arm</span>
+      <span class="chip"><b>IBBI</b> · IBC regulator, valuers</span>
+      <span class="chip"><b>NFRA</b> · audit oversight (s.132)</span>
+      <span class="chip"><b>ROC</b> · registration and filings</span>
+    </div>
+  </section>
+
+  <!-- ================ PART II ================ -->
+  <section class="part reveal" id="identity">
+    <div class="part-head">
+      <div class="eyebrow">Part II · ss. 2, 3, 4, 12 &amp; 149 to 172</div>
+      <h2>Corporate identity <span class="pin">and the directing mind</span></h2>
+    </div>
+    <p class="lead">Insolvency proceedings depend on identifying the legal person against whom they are brought, and the natural persons who controlled that person before default. The first set of provisions answers the identity question; the second answers the control question.</p>
+
+    <h3><span class="s">s. 2</span> Definitions</h3>
+    <p>Section 2 contains 95 defined terms. For insolvency work, the operative definitions are: "company" (Section 2(20)), "private company" (2(68)), "public company" (2(71)), "subsidiary" (2(87)) and "holding" (2(46)), "related party" (2(76)), "small company" (2(85)), "associate company" (2(6)), "financial statement" (2(40)), "financial year" (2(41)), and "officer in default" (2(60)). The IBC borrows several of these definitions wholesale, particularly "related party" (the IBC's own Section 5(24) extends it) and "officer in default" (which determines personal liability under Section 19 IBC and Section 70 IBC).</p>
+
+    <h3><span class="s">ss. 3, 4, 12</span> Incorporation and registered office</h3>
+    <p><strong>Section 3</strong> sets out who may form a company and the minimum-member thresholds. <strong>Section 4</strong> prescribes the contents of the memorandum of association, including the name, registered office, objects, liability of members and capital. <strong>Section 12</strong> mandates that every company shall have a registered office to which all communications and notices may be addressed, and prescribes the procedure for change of office.</p>
+    <p>These provisions matter to insolvency practice in three ways. First, jurisdiction under Section 60(1) IBC is anchored in the registered office; CIRP and liquidation are filed before the NCLT whose territorial jurisdiction covers it. Second, service of notices to the corporate debtor flows through the registered office. Third, in amalgamation and avoidance proceedings, the identity of holding, subsidiary and associate companies traced through Section 2 controls the scope of the resolution or recovery.</p>
+
+    <h3><span class="s">ss. 149 to 172</span> The Board of Directors</h3>
+    <p>Chapter XI runs from Section 149 to Section 172 and contains the entire law on directors. The provisions most relevant to insolvency practice are the following.</p>
+
+    <h4>Composition and independence (ss. 149 to 152)</h4>
+    <p><strong>Section 149</strong> requires a minimum of three directors in a public company and two in a private company, with a maximum of fifteen subject to special resolution. A listed public company and certain prescribed classes must have at least one-third independent directors. <strong>Section 149(6)</strong> defines an independent director and is the most heavily litigated provision in this chapter. <strong>Section 149(8)</strong> read with Schedule IV codifies the independent director's code of conduct.</p>
+
+    <h4>Section 166: the duties</h4>
+    <p>Section 166 codifies, for the first time in Indian law, the fiduciary duties of a director. It requires every director to: <strong>(a)</strong> act in accordance with the company's articles; <strong>(b)</strong> act in good faith to promote the company's objects, in the best interests of the company, its employees, the shareholders, the community and the environment; <strong>(c)</strong> exercise his duties with due and reasonable care, skill, diligence and independent judgment; <strong>(d)</strong> avoid situations where his direct or indirect interest conflicts, or possibly may conflict, with the interest of the company; <strong>(e)</strong> not achieve any undue gain or advantage; and <strong>(f)</strong> not assign his office. Contravention attracts a fine of one lakh to five lakh rupees.</p>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — Section 166 in the Tata Sons saga</span>
+      <p>In <em>Tata Consultancy Services Ltd. v. Cyrus Investments Pvt. Ltd.</em> (2021) 9 SCC 449, the Supreme Court considered the interaction between director duties and oppression. The Court held that the removal of a director and chairman, by procedures permitted under the articles and the Companies Act, did not amount to oppression. More importantly, the Court treated Section 166 as the substantive measure against which directorial conduct must be evaluated, including in oppression and mismanagement proceedings. The decision restored the centrality of the constitutional documents and the statutory duties code.</p>
+    </div>
+
+    <h4>Section 164: disqualifications</h4>
+    <p>A director of a company which has failed to file financial statements or annual returns for three consecutive years, or has failed to repay deposits or redeem debentures or pay declared dividend for one year or more, is disqualified for five years from appointment in any other company. The provision has been repeatedly invoked against directors of distressed and shell companies, with the Ministry of Corporate Affairs publishing lists of disqualified directors. In <em>Bhagavan Das Dhananjaya Das v. Union of India</em> (2018) and several High Court decisions, the courts have grappled with the procedural protections available to disqualified directors.</p>
+
+    <h4>Sections 168 to 169: resignation and removal</h4>
+    <p>A director may resign by written notice to the Board (Section 168), but the resignation does not relieve him of liability for acts done during his tenure. Removal of a director (other than independent directors not appointed by special resolution) is by ordinary resolution after special notice, with an opportunity to be heard.</p>
+
+    <div class="callout ibc">
+      <span class="tag">⤺ Intersection — directors during CIRP</span>
+      <p>On commencement of CIRP under Section 14 of the IBC, the powers of the board of directors stand <strong>suspended</strong> and vest in the interim resolution professional or resolution professional under Section 17 IBC. The directors continue to cooperate with the IRP or RP under Section 19 IBC and remain personally liable under Section 70 IBC for false or misleading information. Section 166 of the Companies Act continues to bind them with respect to acts done before commencement, and forms the substantive standard against which avoidance applications under Sections 43 to 51 IBC are evaluated.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART III ================ -->
+  <section class="part reveal" id="capital">
+    <div class="part-head">
+      <div class="eyebrow">Part III · ss. 43 to 72</div>
+      <h2>Share capital and securities: <span class="pin">the toolkit of restructuring</span></h2>
+    </div>
+    <p class="lead">Resolution plans under the IBC are, in substance, capital restructurings. They reduce equity, write off debt, convert debt into shares, issue fresh capital to incoming investors and, sometimes, squeeze out existing shareholders. Every step is built on the share-capital provisions in Chapter IV of the Companies Act.</p>
+
+    <h3><span class="s">ss. 43 to 47</span> Kinds of share capital</h3>
+    <p><strong>Section 43</strong> classifies share capital into equity and preference, with equity sub-divided into capital with voting rights and with differential rights. <strong>Section 44</strong> declares shares to be movable property, transferable in the manner provided in the articles. <strong>Section 47</strong> sets out the voting rights attached to each class.</p>
+
+    <h3><span class="s">ss. 53 to 55</span> Issue at discount, sweat equity, preference shares</h3>
+    <p><strong>Section 53</strong> prohibits the issue of shares at a discount, save the issue of sweat equity under Section 54. <strong>Section 55</strong> regulates the issue and redemption of preference shares. Preference shares with a redemption period exceeding 20 years are prohibited save for infrastructure projects. The provision is relevant to resolution plans that propose conversion of debt to preference shares or restructuring of existing preference capital.</p>
+
+    <h3><span class="s">s. 62</span> Further issue of share capital</h3>
+    <p>This is the workhorse provision for resolution plans and for routine capital raises. Section 62 prescribes three modes for the further issue of shares: <strong>(a)</strong> a rights issue to existing shareholders; <strong>(b)</strong> an issue to employees under an ESOP; and <strong>(c)</strong> a preferential allotment, including by way of conversion of debentures or loans into shares. Section 62(3) permits conversion of any loan or debenture into shares if the terms of the issue so provide, with prior shareholder approval.</p>
+
+    <div class="callout ibc">
+      <span class="tag">⤺ Intersection — Section 62 and the resolution plan</span>
+      <p>A resolution plan under Section 30 IBC almost invariably involves a Section 62 transaction: an incoming resolution applicant injects fresh equity, often combined with a conversion of existing financial debt into equity at a steep haircut. Section 31(1) IBC makes the approved plan binding on all stakeholders <em>including shareholders</em>, which displaces the ordinary shareholder approval requirement under Section 62. The plan, once approved, operates as a deemed resolution for the capital restructuring it embodies. The Supreme Court confirmed this approach in <em>Ghanashyam Mishra v. Edelweiss Asset Reconstruction Co.</em> (2021) 9 SCC 657, holding that all claims not part of the plan stand extinguished.</p>
+    </div>
+
+    <h3><span class="s">ss. 66 to 70</span> Reduction of capital, buy-back</h3>
+    <p><strong>Section 66</strong> allows reduction of share capital by special resolution and Tribunal sanction. Reductions are categorised into three types: (i) reduction of unpaid liability on shares; (ii) cancellation of paid-up capital lost or unrepresented by available assets; and (iii) payment off of paid-up capital in excess of the company's needs. In resolution plans, the cancellation route under sub-clause (ii) is routinely used to write off the existing equity of promoters before fresh equity is issued to the resolution applicant. <strong>Sections 67 to 70</strong> regulate buy-back of securities and impose limits and conditions.</p>
+
+    <h3><span class="s">s. 71</span> Debentures</h3>
+    <p>Section 71 regulates the issue of debentures. Sub-section (1) permits issue with an option to convert into shares. Sub-section (4) requires creation of a debenture redemption reserve out of profits, the rules of which have been progressively diluted by amendment. Sub-section (5) requires the appointment of a <strong>debenture trustee</strong> for any issue exceeding the prescribed amount, and sub-sections (6) and (7) prescribe the trustee's duties and the events on which the debenture-holders may approach the Tribunal for redress. The provision is relevant where the corporate debtor has raised funds through listed debt securities; the debenture trustee then acts as the secured creditor under the SARFAESI and RDB Act regimes, and as financial creditor for IBC purposes.</p>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — capital structuring under the IBC</span>
+      <p>In <em>Committee of Creditors of Essar Steel India Ltd. v. Satish Kumar Gupta</em> (2020) 8 SCC 531, the Supreme Court upheld the commercial wisdom of the committee of creditors as paramount in resolution plan approval. The plan approved in that case involved a Section 62 preferential allotment, write-off of existing equity through cancellation under Section 66, and fresh capital infusion. The decision is the leading authority on the binding effect of an approved plan on all stakeholders.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART IV ================ -->
+  <section class="part reveal" id="charges">
+    <div class="part-head">
+      <div class="eyebrow">Part IV · ss. 77 to 87</div>
+      <h2>Charges and security interests: <span class="pin">the door to secured creditor status</span></h2>
+    </div>
+    <p class="lead">Of all the Companies Act provisions, Chapter VI on charges is the one most directly determinative of IBC outcomes. A creditor's status as a secured creditor under the IBC, and accordingly its rank in the Section 53 waterfall, depends on the validity and registration of its charge under Sections 77 to 87 of the Companies Act.</p>
+
+    <h3><span class="s">s. 77</span> Duty to register charges</h3>
+    <p>Every company creating a charge, whether within or outside India, on its property or assets, must register the particulars of the charge with the Registrar of Companies <strong>within 30 days</strong> of creation. The Registrar may, on application and on payment of additional fees, allow registration <strong>within a further 60 days</strong>. For charges existing before the 2019 Amendment Act, an additional outer window was provided. The signature page and the instrument creating the charge must be filed in Form CHG-1 or CHG-9.</p>
+
+    <h3><span class="s">s. 77(3)</span> The consequence of non-registration</h3>
+    <p>This is the provision that controls insolvency outcomes. Section 77(3) reads: <strong>"no charge created by a company shall be taken into account by the liquidator appointed under this Act or the Insolvency and Bankruptcy Code, 2016, as the case may be, or any other creditor unless it is duly registered under sub-section (1) and a certificate of registration of such charge is given by the Registrar."</strong></p>
+    <p>The proviso adds that nothing in the section prejudices any contract or obligation between the charge-holder and the company. The result is precise. As between the parties, the charge remains valid and the debt remains a contractual debt. But against the liquidator and against other creditors, the unregistered charge is invisible. The "secured creditor" pleads in liquidation as an unsecured creditor.</p>
+
+    <div class="callout pitfall">
+      <span class="tag">⚠ Pitfall — the unregistered charge in CIRP</span>
+      <p>An unregistered or defectively registered charge converts a secured creditor into an unsecured one in the IBC waterfall. The financial creditor will still vote on the committee of creditors under Section 21 IBC, but in liquidation it will rank under Section 53(1)(d) (financial debts owed to unsecured creditors) rather than under Section 53(1)(b)(ii) (debts owed to a secured creditor). The economic difference is usually total. Before any IBC filing, due-diligence the entire charge register through the MCA portal and CERSAI.</p>
+    </div>
+
+    <h3><span class="s">ss. 78 to 80</span> Application by charge-holder, modification, intimation</h3>
+    <p><strong>Section 78</strong> permits the charge-holder to apply for registration if the company fails to do so. <strong>Section 79</strong> applies the registration regime to modifications of existing charges. <strong>Section 80</strong> deems registration to be notice of the charge from the date of registration to any person acquiring the property.</p>
+
+    <h3><span class="s">ss. 82 to 83</span> Satisfaction and the Registrar's powers</h3>
+    <p><strong>Section 82</strong> requires the company to intimate the Registrar of full satisfaction of any registered charge within 30 days. <strong>Section 83</strong> empowers the Registrar to make entries of satisfaction and release on the application of the company, after notice to the charge-holder. Importantly, the Registrar may also make entries of release where the property is acquired by the liquidator or transferred under a court or Tribunal order.</p>
+
+    <h3><span class="s">s. 86</span> Punishment</h3>
+    <p>Contravention of the Chapter attracts a fine on the company and a fine or imprisonment on every officer in default. Liability under Section 447 is also attracted if the failure is fraudulent.</p>
+
+    <h3><span class="s">s. 87</span> Central Government rectification</h3>
+    <p>Where a charge has been omitted, or where modification or satisfaction has not been filed within time, the Central Government (delegated to the Regional Director) may, on application, condone the delay and direct registration. The order may be made on such terms as the Government considers just, including for the protection of the parties' rights.</p>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — the unregistered charge and the IBC</span>
+      <p>In <em>Volkswagen Finance Private Limited v. Shree Balaji Printopack Pvt. Ltd.</em> and the line of NCLT decisions following it, the Tribunal has held that a charge unregistered under Section 77 cannot be taken into account by the liquidator or the resolution professional. The financial creditor's claim is admitted, but only as unsecured. The position is consistent with Section 77(3), and counsel for distressed-debt buyers must verify both the MCA charge register and the CERSAI register before placing a bid on a stressed asset.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART V ================ -->
+  <section class="part reveal" id="accounts">
+    <div class="part-head">
+      <div class="eyebrow">Part V · ss. 128 to 138</div>
+      <h2>Accounts, audit and financial statements: <span class="pin">the IP's evidence room</span></h2>
+    </div>
+    <p class="lead">An insolvency professional walks into the corporate debtor's office on the day of CIRP commencement with one mandate: take custody of the books, examine them, and use them to identify avoidance transactions. Chapter IX of the Companies Act controls what those books must contain, how long they must be kept, and what they must show.</p>
+
+    <h3><span class="s">s. 128</span> Books of account</h3>
+    <p>Every company must keep books of account at its registered office, on accrual basis, giving a true and fair view of the state of affairs. The books must be preserved for a period of <strong>not less than eight financial years</strong>. The proviso permits keeping books in electronic form at any place in India. For an IP, this is the statutory entitlement to demand and inspect.</p>
+
+    <h3><span class="s">s. 129</span> Financial statements</h3>
+    <p>The financial statements of a company must give a <strong>true and fair view</strong> of its state of affairs and comply with the accounting standards notified under Section 133. They must be in the form specified in Schedule III. Consolidated financial statements are required for companies with subsidiaries, associates and joint ventures. Departures from accounting standards must be disclosed in notes.</p>
+
+    <h3><span class="s">s. 130</span> Re-opening of accounts on Tribunal order</h3>
+    <p>The Tribunal may, on an application by the Central Government, SFIO, Income Tax authorities or any statutory regulator, direct re-opening of the books and recasting of the financial statements where it is satisfied that the earlier accounts were prepared in a fraudulent manner or that the affairs of the company were mismanaged. The recast accounts are deemed to be the company's financial statements. This is a powerful tool in fraud-led insolvencies.</p>
+
+    <h3><span class="s">s. 131</span> Voluntary revision</h3>
+    <p>A company may, with Tribunal approval, prepare revised financial statements or board's report where the earlier ones did not comply with Section 129 or Section 134. The Tribunal must give notice to the Central Government and the Income Tax authorities.</p>
+
+    <h3><span class="s">s. 132</span> National Financial Reporting Authority (NFRA)</h3>
+    <p>Notified in 2018 with retrospective effect from October 2018. NFRA monitors and enforces compliance with accounting standards and auditing standards in respect of prescribed classes of companies. It may investigate auditors and impose penalties up to ten times the audit fee or, for firms, up to ten lakh rupees with debarment up to ten years. NFRA action against the auditor of a corporate debtor often runs in parallel with insolvency proceedings.</p>
+
+    <h3><span class="s">s. 134</span> Board's report and directors' responsibility statement</h3>
+    <p>The Board's report must include the directors' responsibility statement under Section 134(5), which is the directors' affirmation that proper accounting policies were applied, prudent judgment was exercised, adequate internal financial controls were in place, and that the accounts were prepared on a going-concern basis. False statements in the Board's report attract Section 448 penalties and personal liability under Section 447 if fraudulent.</p>
+
+    <h3><span class="s">s. 138</span> Internal audit</h3>
+    <p>Prescribed classes of companies (large listed and unlisted public companies, and large private companies) must conduct an internal audit by a chartered accountant, cost accountant, or such other professional as the Board may decide. The internal audit report is a key piece of contemporaneous evidence for IPs investigating avoidance transactions.</p>
+
+    <div class="callout ibc">
+      <span class="tag">⤺ Intersection — the IP's investigation toolkit</span>
+      <p>The IRP or RP examines the books kept under Section 128, the financial statements under Section 129, the Board's report under Section 134, the auditor's report and the internal audit report under Section 138 to identify <strong>preferential transactions</strong> (Section 43 IBC), <strong>undervalued transactions</strong> (Section 45 IBC), <strong>extortionate credit transactions</strong> (Section 50 IBC) and <strong>transactions defrauding creditors</strong> (Section 49 IBC). The avoidance applications filed under Section 25(2)(j) IBC frequently quote chapter and verse from the Companies Act audit findings. Where the accounts themselves are tainted, Section 130 re-opening becomes the appropriate parallel remedy.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART VI ================ -->
+  <section class="part reveal" id="oppression">
+    <div class="part-head">
+      <div class="eyebrow">Part VI · ss. 241 to 246</div>
+      <h2>Oppression and mismanagement: <span class="pin">the dispute that precedes insolvency</span></h2>
+    </div>
+    <p class="lead">Distressed companies do not announce their distress. They first present as governance failures. A minority shareholder approaches the NCLT under Section 241 alleging oppression by the majority, or the Government invokes Section 241(2) alleging public-interest mismanagement. Within months, the same company is in CIRP. The two proceedings continue, often on overlapping facts.</p>
+
+    <h3><span class="s">s. 241</span> Application to the Tribunal</h3>
+    <p>Two classes of applicant: <strong>(1) members</strong> may apply alleging that the affairs of the company have been or are being conducted in a manner prejudicial to the public interest, prejudicial or oppressive to any member, or prejudicial to the interests of the company; or that a material change in the management has taken place which is likely to be prejudicial; and <strong>(2) the Central Government</strong> may apply directly where it forms an opinion that the affairs of the company are being conducted in a manner prejudicial to the public interest.</p>
+
+    <h3><span class="s">s. 242</span> Powers of the Tribunal</h3>
+    <p>The Tribunal has wide remedial powers including: regulating future conduct of the company; purchase of shares by other members or the company itself; reduction of the company's capital; restrictions on transfer; termination, setting aside or modification of any agreement; recovery of undue gains made by directors; appointment of directors; imposition of costs. The width of Section 242 is what makes the proceeding so attractive to minority litigants. The flip side is that the same width creates overlap with the IBC's resolution-plan jurisdiction.</p>
+
+    <h3><span class="s">s. 244</span> Right to apply</h3>
+    <p>To bring an oppression petition in a company having share capital, the applicant must hold not less than <strong>100 members or one-tenth of the total number of members, whichever is less</strong>, or members holding <strong>one-tenth of the issued share capital</strong> on which all calls have been paid. In a company without share capital, the threshold is one-fifth of the members. The Tribunal may, on application, <strong>waive</strong> these requirements where it is just and equitable.</p>
+
+    <h3><span class="s">s. 245</span> Class action</h3>
+    <p>A specified number of members or depositors may file a class action seeking restraint of unlawful acts, compensation against directors and auditors, and other reliefs. The provision was inserted in the 2013 Act in response to the Satyam scandal and has had limited use, but the architecture is now available.</p>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — the doctrinal test for oppression</span>
+      <p>The classical test was laid down in <em>Shanti Prasad Jain v. Kalinga Tubes Ltd.</em> (1965), where the Supreme Court held that "oppression" must be burdensome, harsh and wrongful, and a continuous course of oppressive conduct. The English line in <em>Needle Industries (India) Ltd. v. Needle Industries Newey (India) Holding Ltd.</em> (1981) 3 SCC 333 refined the test further. In <em>Tata Consultancy Services Ltd. v. Cyrus Investments Pvt. Ltd.</em> (2021) 9 SCC 449, the Supreme Court reiterated that lawful actions taken under articles, however unpalatable to a minority, do not constitute oppression. The judgment is the modern restatement of the law.</p>
+    </div>
+
+    <div class="callout ibc">
+      <span class="tag">⤺ Intersection — oppression petitions and CIRP</span>
+      <p>The standard sequence is: minority files oppression petition under Section 241 alleging siphoning of funds, related-party abuse and asset stripping; the majority defends; a financial creditor independently files Section 7 IBC; CIRP is admitted; the Section 14 IBC moratorium suspends the oppression proceedings. The Tribunal sits as both forum, but Section 238 IBC gives the Code primacy. The factual record built in the oppression petition often founds avoidance applications under Sections 43 to 51 IBC. Both proceedings may resume against the company's directors personally after resolution, since Section 32A IBC immunises only the corporate debtor and only post-approval.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART VII ================ -->
+  <section class="part reveal" id="schemes">
+    <div class="part-head">
+      <div class="eyebrow">Part VII · ss. 230 to 240</div>
+      <h2>Compromises, arrangements and amalgamations: <span class="pin">the most important chapter after the IBC</span></h2>
+    </div>
+    <p class="lead">If the IBC is the modern insolvency code, Chapter XV of the Companies Act is the older restructuring code. The two operate in parallel. Practitioners use Section 230 outside of CIRP for consensual restructurings; the Supreme Court has confirmed that Section 230 also operates inside liquidation; and the courts have held that Section 230 cannot be used to circumvent Section 29A of the IBC. Between them, the four provisions Sections 230, 232, 233 and 238 form the core of restructuring practice.</p>
+
+    <h3><span class="s">s. 230</span> Power to compromise or make arrangements</h3>
+    <p>Section 230 enables the Tribunal, on the application of the company, a creditor, a member or, in the case of a company being wound up, the liquidator, to <strong>order a meeting</strong> of the creditors or class of creditors, or members or class of members, with whom an arrangement is proposed. The Tribunal then directs the proposal to be put to vote.</p>
+    <p>If the arrangement is approved by a <strong>majority in number representing three-fourths in value</strong> of the creditors or members (or class) present and voting, in person or by proxy, the Tribunal may sanction it. The sanction binds the company, the creditors, the members and the liquidator (if any).</p>
+
+    <h4>Key sub-sections of Section 230</h4>
+    <ul class="clean">
+      <li><strong>(1) and (2)</strong>: trigger and disclosure requirements, including details of valuation, capital structure, latest auditor's report, pending proceedings and investigations.</li>
+      <li><strong>(3) to (5)</strong>: meeting notice to creditors and members, the Central Government, RBI, SEBI, ROC, Income Tax authorities, Stock Exchanges and other regulators, with 30-day notice to file objections.</li>
+      <li><strong>(6) and (7)</strong>: the order sanctioning the scheme. Sub-section (7) requires a statement on the effect of the compromise on key managerial personnel, promoters, non-promoter members, depositors, creditors, debenture-holders, employees and shareholders.</li>
+      <li><strong>(11) and (12)</strong>: the scheme may include a <strong>takeover offer</strong> by a person or group of persons; an aggrieved party may apply to the Tribunal.</li>
+    </ul>
+
+    <h3><span class="s">s. 231</span> Power of the Tribunal to enforce</h3>
+    <p>The Tribunal may supervise implementation of the scheme and, where the scheme cannot be implemented satisfactorily, may make an order for the winding up of the company. The provision converts a failed scheme into a winding-up trigger.</p>
+
+    <h3><span class="s">s. 232</span> Merger and amalgamation</h3>
+    <p>This is the merger code. Section 232 applies where a Section 230 compromise or arrangement is proposed for the purpose of a merger or amalgamation. It requires additional disclosures: a draft scheme adopted by the boards, a report of the experts on valuation, the share-exchange ratio and the report on the impact on stakeholders. The Tribunal may make orders for the transfer of property, liabilities, employees and pending proceedings. The merger order has the effect of a vesting order.</p>
+
+    <h3><span class="s">s. 233</span> Fast-track merger</h3>
+    <p>Section 233 permits a fast-track merger between two or more <strong>small companies</strong>, between a <strong>holding company and its wholly-owned subsidiary</strong>, or between such classes as may be prescribed (including, post-2021 rules, mergers between start-ups). The scheme is approved by the members holding not less than 90% of the share capital and by creditors holding 90% in value. No Tribunal sanction is required; the scheme is filed with the Regional Director, who registers it. The provision is used for intra-group simplifications and pre-IBC consolidations.</p>
+
+    <h3><span class="s">ss. 234 to 236</span> Cross-border, dissenting shareholders, squeeze-out</h3>
+    <p><strong>Section 234</strong> permits cross-border mergers with foreign companies in notified jurisdictions. <strong>Section 235</strong> empowers a transferee that has acquired 90% of the shares to acquire the dissenting 10%. <strong>Section 236</strong> contains a parallel squeeze-out where 90% of shareholders, by themselves or through associates, hold a controlling position.</p>
+
+    <h3><span class="s">s. 238</span> Preservation of books</h3>
+    <p>The books and papers of the amalgamated, transferor or dissolved company must not be disposed of without prior permission of the Central Government, which may itself examine them or refer them to investigation. The provision exists to preserve evidence for later proceedings, including IBC avoidance and SFIO investigation.</p>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — schemes inside liquidation: Y. Shivram Prasad</span>
+      <p>In <em>Y. Shivram Prasad v. S. Dhanapal</em>, the NCLAT held in 2019, and the Supreme Court declined to interfere, that during liquidation under the IBC the liquidator must explore a scheme of arrangement or compromise under Section 230 of the Companies Act before resorting to piecemeal sale. The decision read Section 230 into the IBC liquidation regime, on the footing that liquidation should be the last resort and value maximisation is the underlying object. Regulation 2B of the IBBI Liquidation Regulations now expressly contemplates such a scheme.</p>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — Arun Kumar Jagatramka and the bar on circumvention</span>
+      <p>In <em>Arun Kumar Jagatramka v. Jindal Steel and Power Ltd.</em> (2021) 7 SCC 474, the Supreme Court held that a promoter who is <strong>ineligible</strong> under Section 29A of the IBC to submit a resolution plan cannot use a Section 230 scheme of arrangement during liquidation to indirectly recover control of the corporate debtor. The Court read Section 29A into Section 230 by reference to Section 35(1)(f) IBC. The decision is the leading restraint on the use of the scheme route to bypass the IBC's eligibility filter.</p>
+    </div>
+
+    <div class="callout ibc">
+      <span class="tag">⤺ Intersection — three places where Section 230 meets the IBC</span>
+      <p>First, <em>before</em> CIRP, as a consensual restructuring with all classes of creditors. Second, <em>after</em> CIRP fails and the company is in liquidation, as a value-maximising alternative to piecemeal sale (per Y. Shivram Prasad). Third, as a <em>restraint</em>: an ineligible promoter cannot use Section 230 to recover the company they lost (per Arun Kumar Jagatramka). The four sections, 230, 232, 233 and 238, are the most-tested Companies Act provisions in insolvency examinations and the most-litigated in practice.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART VIII ================ -->
+  <section class="part reveal" id="investigation">
+    <div class="part-head">
+      <div class="eyebrow">Part VIII · ss. 206 to 229</div>
+      <h2>Investigation: <span class="pin">when CIRP uncovers a crime</span></h2>
+    </div>
+    <p class="lead">CIRP often becomes the trigger for a parallel investigation, because the books examined by the resolution professional reveal more than commercial distress. Chapter XIV equips the Central Government and the Serious Fraud Investigation Office with the powers to investigate, seize, attach and prosecute.</p>
+
+    <h3><span class="s">ss. 206, 207</span> Power to call for information and conduct inspection</h3>
+    <p>The Registrar of Companies, on a written communication or otherwise, may call for any information, explanation or document from the company under Section 206. He may direct an inspection of the company's books and papers. Where he is satisfied that the company's business is being carried on for a fraudulent or unlawful purpose, he reports to the Central Government for investigation.</p>
+
+    <h3><span class="s">s. 210</span> Investigation by the Central Government</h3>
+    <p>The Central Government may, of its own motion, on a Tribunal order, or on a special resolution of the company, order an investigation into the affairs of the company. The Government appoints inspectors with powers to require production of documents, to administer oaths and to examine on oath.</p>
+
+    <h3><span class="s">s. 212</span> Investigation by the SFIO</h3>
+    <p>The Central Government may, where it is of opinion that an investigation should be conducted by the <strong>Serious Fraud Investigation Office</strong>, assign the investigation to that body. The SFIO assumes exclusive jurisdiction once notified; no other investigating agency may proceed without permission. The SFIO Director may, with reasons to be recorded, <strong>arrest</strong> a person believed to be guilty of an offence punishable under Section 447. Bail provisions are stricter: for offences with terms above three years, the conditions in Section 212(6) apply.</p>
+
+    <h3><span class="s">s. 213</span> Investigation in other cases</h3>
+    <p>The Tribunal may, on the application of not less than 100 members or members holding not less than one-tenth of voting power, or on a creditor's application, direct an investigation if it is satisfied of circumstances suggesting fraud or misfeasance.</p>
+
+    <h3><span class="s">ss. 219, 220, 221</span> Related companies, seizure, freezing</h3>
+    <p><strong>Section 219</strong> extends the investigation to related companies, body corporates managed by the same persons, and persons who are or have been managing the company. <strong>Section 220</strong> empowers seizure of books and papers where there is reason to believe they may be destroyed. <strong>Section 221</strong> permits the Tribunal to freeze the company's assets on an application by the Central Government or any party connected with the company.</p>
+
+    <h3><span class="s">s. 226</span> Voluntary winding up not to stop investigation</h3>
+    <p>A voluntary winding up does not stay an investigation already in progress. The provision prevents the company from using its own dissolution as a defence against prosecution.</p>
+
+    <div class="callout ibc">
+      <span class="tag">⤺ Intersection — CIRP and SFIO running in parallel</span>
+      <p>In several high-profile cases (IL&amp;FS, Bhushan Steel, Amrapali, Jaypee Infratech, DHFL), CIRP and SFIO investigations have run in parallel. Section 32A IBC provides that, on approval of a resolution plan, the corporate debtor is immunised against criminal proceedings in respect of pre-CIRP offences, but the immunity does not extend to <strong>persons in default</strong> who were in charge of the company's affairs. SFIO prosecutions of promoters and key managerial personnel under Sections 212, 447 and 448 therefore survive resolution. The Supreme Court confirmed this design in <em>Manish Kumar v. Union of India</em> (2021) 5 SCC 1, upholding the constitutional validity of Section 32A.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART IX ================ -->
+  <section class="part reveal" id="winding">
+    <div class="part-head">
+      <div class="eyebrow">Part IX · ss. 270 to 365</div>
+      <h2>Winding up: <span class="pin">a residual jurisdiction, with influential precedent</span></h2>
+    </div>
+    <p class="lead">The 2013 Act originally contemplated two modes of winding up: by the Tribunal, and voluntary. The IBC then subsumed almost all of this, lifting "inability to pay debts" winding-up into the IBC's CIRP-and-liquidation regime, and replacing voluntary winding-up with voluntary liquidation under Section 59 IBC. What remains is a narrow band of grounds, applied to a small number of cases, but with a body of older jurisprudence that continues to influence insolvency thinking.</p>
+
+    <h3><span class="s">s. 270</span> Modes of winding up</h3>
+    <p>Originally three modes (by the Tribunal, by Court, voluntary). Post the 2016 amendments, only <strong>winding up by the Tribunal</strong> remains under the Companies Act. Voluntary winding up moved to the IBC.</p>
+
+    <h3><span class="s">s. 271</span> Grounds for winding up by the Tribunal</h3>
+    <p>The five surviving grounds, after the IBC amendments, are: <strong>(a)</strong> the company has, by special resolution, resolved that it be wound up; <strong>(b)</strong> the company has acted against the sovereignty and integrity of India, the security of the State, friendly relations with foreign States, public order, decency or morality; <strong>(c)</strong> on a report of the Registrar or inspector that the affairs of the company have been conducted fraudulently or that the company was formed for fraudulent or unlawful purposes, or that those concerned in its management have been guilty of fraud, misfeasance or misconduct; <strong>(d)</strong> the company has made default in filing financial statements or annual returns for five consecutive financial years; or <strong>(e)</strong> the Tribunal is of the opinion that it is <strong>just and equitable</strong> to wind it up.</p>
+
+    <p>Note the absence of "inability to pay debts" as a ground; that ground now goes to the IBC. Banks and other creditors invoke the IBC, not Section 271.</p>
+
+    <h3><span class="s">s. 272</span> Who may petition</h3>
+    <p>A winding-up petition under Section 271 may be presented by the company, a contributory, the Registrar, any person authorised by the Central Government, or in a Section 271(b) case, the Central Government or State Government. Notably, the creditor is <em>not</em> in the list; creditors must go to the IBC.</p>
+
+    <h3><span class="s">s. 279</span> Stay of suits</h3>
+    <p>When a winding-up order is made, no suit or other legal proceeding may be commenced or continued against the company except with the Tribunal's leave. The provision is the historical parent of the modern IBC moratorium under Section 14.</p>
+
+    <h3><span class="s">ss. 326, 327</span> Overriding preferential payments</h3>
+    <p>Sections 326 and 327 set out the priority of payments in winding up, with <strong>workmen's dues</strong> ranking pari passu with secured creditors' realisation to the extent the workmen's portion of the secured asset is concerned. Although these provisions formally govern winding up under the Companies Act, their structure also informs the IBC's Section 53 waterfall, which placed workmen's dues for the twenty-four months preceding liquidation alongside secured creditor dues. The genealogy is direct.</p>
+
+    <div class="callout ibc">
+      <span class="tag">⤺ Intersection — Section 255 IBC and the Eleventh Schedule</span>
+      <p>Section 255 of the IBC, read with the Eleventh Schedule, amended the Companies Act to remove the "inability to pay debts" winding-up jurisdiction and re-route it into CIRP. The Supreme Court in <em>Forech India Ltd. v. Edelweiss Assets Reconstruction Co. Ltd.</em> (2019) 18 SCC 549 clarified the transitional position, holding that pre-IBC winding-up petitions could be transferred to the NCLT and treated as Section 7 or Section 9 IBC applications, provided the requisite conditions were satisfied. The decision was followed in <em>Jignesh Shah v. Union of India</em> (2019) 10 SCC 750 on the limitation question.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART X ================ -->
+  <section class="part reveal" id="valuers">
+    <div class="part-head">
+      <div class="eyebrow">Part X · s. 247</div>
+      <h2>Registered valuers: <span class="pin">the gatekeepers of fair and liquidation value</span></h2>
+    </div>
+    <p class="lead">A resolution plan or a liquidation sale stands or falls on the valuations on which it is built. Section 247 of the Companies Act provides the gateway. The Insolvency and Bankruptcy Board of India is, by notification, the authority that registers valuers under the Companies (Registered Valuers and Valuation) Rules, 2017.</p>
+
+    <h3><span class="s">s. 247</span> Valuation by registered valuers</h3>
+    <p>Where a valuation is required to be made under any provision of the Companies Act in respect of any property, stocks, shares, debentures, securities or goodwill, or any other assets, or net worth of a company or its liabilities, the valuation shall be made by a person who is a <strong>registered valuer</strong> and who shall be appointed by the audit committee or, in its absence, by the Board.</p>
+    <p>Sub-section (2) imposes on the valuer the duty to exercise due diligence, make impartial, true and fair valuations, and to refrain from valuing any asset in which he has a direct or indirect interest. Sub-section (3) makes a contravening valuer liable to a fine of twenty-five thousand to one lakh rupees, and where the contravention is with intent to defraud, to fine and imprisonment up to one year, plus liability to pay damages.</p>
+
+    <div class="callout ibc">
+      <span class="tag">⤺ Intersection — Section 247 and the CIRP valuation</span>
+      <p>Under Regulation 27 of the IBBI (Insolvency Resolution Process for Corporate Persons) Regulations, 2016, the resolution professional must appoint two registered valuers within seven days of his appointment to determine the <strong>fair value</strong> and the <strong>liquidation value</strong> of the corporate debtor. The two values are confidential and are disclosed only to the committee of creditors after submission of resolution plans, in order to inform the committee's commercial wisdom. The valuer's registration, qualifications and conflict-management obligations all flow from Section 247 and the 2017 Rules.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART XI ================ -->
+  <section class="part reveal" id="fraud">
+    <div class="part-head">
+      <div class="eyebrow">Part XI · ss. 339, 447, 448, 449</div>
+      <h2>Fraud and personal liability: <span class="pin">where the corporate veil truly comes off</span></h2>
+    </div>
+    <p class="lead">The 2013 Act, learning from Satyam, contains a forceful fraud regime. Section 447 is the cornerstone definition and offence; Sections 448 and 449 deal with false statements and false evidence; and Section 339 carries forward, in modernised form, the older "fraudulent conduct of business" provision familiar from English law. Each meets a parallel IBC provision.</p>
+
+    <h3><span class="s">s. 339</span> Liability for fraudulent conduct of business</h3>
+    <p>If, in the course of winding-up of a company, it appears that any business of the company has been carried on with intent to defraud creditors or for any fraudulent purpose, the Tribunal, on the application of the Official Liquidator, the Company Liquidator, any creditor or contributory, may declare that any persons who were knowingly parties to the carrying on of the business in such manner shall be <strong>personally responsible, without any limitation of liability</strong>, for all or any of the debts or other liabilities of the company. Section 339 is the lineal descendant of Section 542 of the 1956 Act and Section 213 of the English Insolvency Act 1986.</p>
+
+    <h3><span class="s">s. 447</span> Punishment for fraud</h3>
+    <p>The cornerstone fraud provision. "Fraud" is defined as <em>any act, omission, concealment of any fact or abuse of position committed by any person or any other person with the connivance in any manner, with intent to deceive, to gain undue advantage from, or to injure the interests of, the company or its shareholders or its creditors or any other person, whether or not there is any wrongful gain or wrongful loss</em>. The punishment is imprisonment for a term not less than six months extending to ten years and a fine not less than the amount involved and up to three times that amount. Where the fraud involves public interest, the minimum term is three years. Section 447 is non-compoundable for the higher tier.</p>
+
+    <h3><span class="s">s. 448</span> False statements</h3>
+    <p>If any return, report, certificate, financial statement, prospectus, statement or other document required by or for the purpose of the Act contains any statement which is false in any material particular, or which omits any material fact, every person who makes such statement is liable under Section 447.</p>
+
+    <h3><span class="s">s. 449</span> False evidence</h3>
+    <p>If any person intentionally gives false evidence on examination on oath or in any affidavit, deposition or solemn affirmation in or about the winding-up of any company under the Act, or otherwise in any matter arising under the Act, he is punishable with imprisonment up to seven years and a fine up to ten lakh rupees.</p>
+
+    <div class="callout case">
+      <span class="tag">⚖ Case law — fraud, related parties and avoidance</span>
+      <p>In <em>Anuj Jain (IRP for Jaypee Infratech) v. Axis Bank Ltd.</em> (2020) 8 SCC 401, the Supreme Court examined transactions by which the holding company (Jaiprakash Associates) mortgaged its land for the benefit of its subsidiary (Jaypee Infratech). The Court treated the mortgages as preferential and undervalued transactions under Sections 43 and 45 IBC, and declined to recognise the mortgagee banks as financial creditors of the subsidiary, since they were creditors of the parent. The decision blended Companies Act concepts of related-party transactions and Section 339 fraudulent conduct with the IBC's avoidance regime. The companion decision in <em>Phoenix ARC Pvt. Ltd. v. Spade Financial Services Ltd.</em> (2021) 3 SCC 475 developed the related-party exclusion further.</p>
+    </div>
+
+    <div class="callout ibc">
+      <span class="tag">⤺ Intersection — fraud, Section 339 and the IBC</span>
+      <p>Section 339 of the Companies Act and <strong>Section 66 of the IBC</strong> are sister provisions. Section 339 operates in Companies Act winding-up; Section 66 operates in CIRP and liquidation under the IBC. Both impose personal, unlimited liability on persons knowingly party to fraudulent conduct of the company's business. The RP or liquidator may file under Section 66 IBC during CIRP or liquidation, and an SFIO investigation under Section 212 may parallelise the proceeding. Sections 447 to 449 then supply the criminal arm. The four-fold combination (Section 339 / Section 66 IBC / Section 447 / Section 212) is the standard practitioner's response to large promoter-led frauds.</p>
+    </div>
+  </section>
+
+  <!-- ================ PART XII — INTERPLAY ================ -->
+  <section class="part reveal" id="interplay">
+    <div class="part-head">
+      <div class="eyebrow">Part XII</div>
+      <h2>The interplay: <span class="pin">Companies Act × IBC, point by point</span></h2>
+    </div>
+    <p class="lead">The Companies Act and the IBC operate on the same corporate debtor, before the same Tribunal, often through the same hearing officers. The interplay points are concentrated in eight areas. Knowing the eight is enough to navigate most distressed-asset work.</p>
+
+    <div class="matrix">
+      <div class="mx">
+        <div class="lab">Forum</div>
+        <h5>One Tribunal, two statutes</h5>
+        <p>The NCLT is the adjudicating authority for both the Companies Act (Section 408) and the IBC (Section 60). The same Bench may, in the same week, hear an oppression petition, a merger sanction, a Section 130 re-opening application, a CIRP admission and a liquidation order. The NCLAT (Section 410) is the common appellate forum.</p>
+        <div class="links">⇄ Companies Act ss. 408 to 434 · IBC ss. 60, 61</div>
+      </div>
+
+      <div class="mx">
+        <div class="lab">Capital restructuring</div>
+        <h5>Section 30 IBC plans rest on Section 62, 66 and 71</h5>
+        <p>Every resolution plan is, in substance, a Section 62 issue of new shares, a Section 66 reduction or cancellation of old equity, and where conversion is used, a Section 71 debenture restructuring. Section 31 IBC makes the plan binding on shareholders, displacing the ordinary Companies Act approvals.</p>
+        <div class="links">⇄ Companies Act ss. 62, 66, 71 · IBC ss. 30, 31</div>
+      </div>
+
+      <div class="mx">
+        <div class="lab">Security validity</div>
+        <h5>No Section 77 registration, no secured creditor status</h5>
+        <p>Section 77(3) Companies Act says it directly: a charge unregistered with the ROC will not be recognised by the liquidator. The financial creditor votes on the CoC under Section 21 IBC but ranks as unsecured in the Section 53 waterfall.</p>
+        <div class="links">⇄ Companies Act s. 77(3) · IBC ss. 21, 53</div>
+      </div>
+
+      <div class="mx">
+        <div class="lab">Schemes vs resolution plans</div>
+        <h5>Sections 230 to 232 inside and outside CIRP</h5>
+        <p>Before CIRP, a Section 230 scheme is the consensual restructuring route. During CIRP, the resolution plan under Section 30 IBC displaces the scheme. During liquidation, Section 230 returns, per Y. Shivram Prasad, but Arun Kumar Jagatramka bars its use by ineligible promoters.</p>
+        <div class="links">⇄ Companies Act ss. 230 to 232 · IBC ss. 29A, 30, 35(1)(f)</div>
+      </div>
+
+      <div class="mx">
+        <div class="lab">Fraudulent trading</div>
+        <h5>Section 339 and Section 66 IBC are sisters</h5>
+        <p>Section 339 operates in Companies Act winding-up; Section 66 operates in CIRP and liquidation. Both impose personal, unlimited liability on persons knowingly party to fraudulent business. The Section 447 criminal offence runs alongside.</p>
+        <div class="links">⇄ Companies Act ss. 339, 447 · IBC s. 66</div>
+      </div>
+
+      <div class="mx">
+        <div class="lab">Investigation</div>
+        <h5>SFIO under Section 212 in parallel with CIRP</h5>
+        <p>An SFIO investigation is not stayed by CIRP. Section 32A IBC immunises only the corporate debtor post-resolution. Officers in default remain liable under Sections 212, 447 and 449.</p>
+        <div class="links">⇄ Companies Act ss. 212, 447 · IBC s. 32A</div>
+      </div>
+
+      <div class="mx">
+        <div class="lab">Books and audit</div>
+        <h5>Section 128 to 138 supplies the evidence base</h5>
+        <p>The IP examines books kept under Section 128 and financials prepared under Section 129 to mount avoidance applications under Sections 43, 45, 49 and 50 IBC. Section 130 re-opening of accounts may be ordered in parallel.</p>
+        <div class="links">⇄ Companies Act ss. 128 to 138 · IBC ss. 43 to 51</div>
+      </div>
+
+      <div class="mx">
+        <div class="lab">Valuation</div>
+        <h5>Section 247 supplies the registered valuer architecture</h5>
+        <p>The fair value and liquidation value exercises under the IBBI CIRP Regulations are performed by registered valuers under Section 247 and the 2017 Rules. The Section 247 conflict-of-interest discipline applies to every CIRP valuation.</p>
+        <div class="links">⇄ Companies Act s. 247 · CIRP Regulations 27, 35</div>
+      </div>
+    </div>
+
+    <h3><span class="s">Override</span> Section 238 IBC and the conflict rule</h3>
+    <p>Where the two statutes diverge, <strong>Section 238 of the IBC</strong> gives the Code overriding effect notwithstanding anything inconsistent in any other law including the Companies Act. The position has been confirmed in <em>Innoventive Industries Ltd. v. ICICI Bank Ltd.</em> (2018) 1 SCC 407 and reaffirmed in <em>Pioneer Urban Land and Infrastructure Ltd. v. Union of India</em> (2019) 8 SCC 416. The Companies Act fills the gaps; the IBC controls the conflicts.</p>
+
+    <div class="pull">
+      "The Companies Act describes the company; the IBC redistributes it."
+      <span>An operating distinction</span>
+    </div>
+  </section>
+
+  <!-- ================ PART XIII — SCENARIO ================ -->
+  <section class="part reveal" id="scenario">
+    <div class="part-head">
+      <div class="eyebrow">Part XIII · A working scenario</div>
+      <h2>The fall and resolution of <span class="pin">Meridian Steel Pvt. Ltd.</span></h2>
+    </div>
+    <p class="lead">Doctrine sticks when seen in motion. This is a fictional sequence designed to walk every provision in this treatise into action, from incorporation to resolution. The names are invented; the legal architecture is real.</p>
+
+    <div class="scene">
+      <div class="epi">Dramatis personae</div>
+      <h3>Meridian Steel Pvt. Ltd.</h3>
+      <p class="body-block">A mid-sized steel manufacturer incorporated in 2008. Promoter family (the Mahajans) holds 67%. Three banks (State Bank of Hindustan, Bharat National Bank, Axis-One Bank) collectively financed ₹820 crore over 2014 to 2019. Two minority shareholders (the Iyer family, 8%) have been on the Board since incorporation. The company also issued ₹120 crore of listed NCDs to a debenture trustee. The financial year 2022-23 closed with a loss of ₹240 crore and a missed instalment on the term loan.</p>
+
+      <div class="chapter">
+        <div class="ch-num">Chapter 1 · The slow build of distress</div>
+        <h4>The Iyers begin to ask questions</h4>
+        <p>In 2023, the Iyers notice three recurring features in the Board's report under <span class="prov">s. 134</span>: a sharp rise in advances to two related parties (one promoter-controlled trading entity and a Mahajan family-office LLP); a steady decline in inventory turnover; and the appointment, by special resolution, of a Mahajan-connected director as Managing Director, without independent nomination. They serve a written request under <span class="prov">s. 206</span> for information from the Registrar, and threaten an oppression petition.</p>
+        <p>In April 2023, the State Bank of Hindustan classifies its loan to Meridian as an NPA and issues a <span class="prov">SARFAESI s. 13(2)</span> demand notice. The 60-day clock starts.</p>
+      </div>
+
+      <div class="chapter">
+        <div class="ch-num">Chapter 2 · The oppression petition</div>
+        <h4>An NCLT filing under Section 241</h4>
+        <p>The Iyers, holding 8% which crosses the <span class="prov">s. 244</span> one-tenth issued-capital threshold (they combine with another 3% minority block to satisfy it), file an oppression petition before the NCLT under <span class="prov">s. 241</span>. The petition alleges siphoning of funds to related parties, conduct of business in a manner prejudicial to the company's interests, and breach of <span class="prov">s. 166</span> by the Mahajan-appointed directors. They invoke <span class="prov">s. 242</span> for an interim order restraining the Mahajans from disposing of any company assets pending hearing.</p>
+        <p>The NCLT, on a prima facie view, restrains the Mahajans from creating fresh charges or disposing of inventory above ₹2 crore in value, without notice to the petitioners. The case is listed for substantive hearing six weeks later.</p>
+      </div>
+
+      <div class="chapter">
+        <div class="ch-num">Chapter 3 · The Section 7 IBC filing</div>
+        <h4>The first creditor strikes</h4>
+        <p>Before the oppression matter can be heard substantively, Bharat National Bank files a <span class="prov">Section 7 IBC</span> application before the NCLT for a default of ₹180 crore, well above the ₹1 crore IBC threshold. The application is admitted in August 2023. The Section 14 IBC moratorium kicks in. The oppression proceedings stand suspended. SARFAESI enforcement by the State Bank of Hindustan also halts.</p>
+        <p>The NCLT appoints an Interim Resolution Professional. The Mahajan directors are suspended under <span class="prov">s. 17 IBC</span>; their powers vest in the IRP.</p>
+      </div>
+
+      <div class="chapter">
+        <div class="ch-num">Chapter 4 · The IRP enters the books</div>
+        <h4>Where Chapter IX meets the avoidance code</h4>
+        <p>The IRP, on his first visit to Meridian's registered office under <span class="prov">s. 12</span>, exercises the <span class="prov">s. 18 IBC</span> power to take control of records. He demands the books of account kept under <span class="prov">s. 128</span>, the financial statements under <span class="prov">s. 129</span>, the Board's report under <span class="prov">s. 134</span>, the auditor's report and the internal audit reports under <span class="prov">s. 138</span>. He commissions a transaction audit.</p>
+        <p>The audit reveals three transactions of concern: (a) loans of ₹68 crore advanced to the Mahajan-controlled trading entity at 2% per annum (transaction value at arm's length would be 11%); (b) sale of finished inventory worth ₹54 crore to the family-office LLP at 60% of its fair value; and (c) creation of a fresh charge in favour of a Mahajan-related lender 90 days before the petition, securing an alleged loan of ₹40 crore.</p>
+        <p>The IRP files three avoidance applications. Under <span class="prov">Section 43 IBC</span> for preferential treatment of the Mahajan-related lender. Under <span class="prov">Section 45 IBC</span> for the undervalued sale to the family-office LLP. Under <span class="prov">Section 66 IBC</span> for fraudulent trading, citing the below-market loans. He also writes to the Ministry of Corporate Affairs requesting <span class="prov">s. 130</span> re-opening of accounts and a <span class="prov">s. 212</span> SFIO referral.</p>
+      </div>
+
+      <div class="chapter">
+        <div class="ch-num">Chapter 5 · The unregistered charge</div>
+        <h4>Where Section 77(3) closes a door</h4>
+        <p>Investigation reveals that the ₹40 crore Mahajan-related charge was never filed with the Registrar under <span class="prov">s. 77</span>. The 30-day window had expired, and no Section 87 condonation had been sought. The IRP, applying <span class="prov">s. 77(3)</span>, declines to recognise the lender as a secured creditor. The lender's claim is admitted only as unsecured. In the eventual Section 53 IBC waterfall, this drops the claim from secured priority to financial-creditor-unsecured priority, effectively converting a ₹40 crore exposure into a near-total loss.</p>
+      </div>
+
+      <div class="chapter">
+        <div class="ch-num">Chapter 6 · The SFIO arrives</div>
+        <h4>Section 212 in parallel</h4>
+        <p>The Central Government, on the IRP's reference and the audit findings, orders an SFIO investigation under <span class="prov">s. 212</span>. The SFIO assumes exclusive jurisdiction; no other agency may proceed without permission. The Mahajan promoter and two directors are examined on oath under <span class="prov">s. 217</span>. Three are arrested on grounds of <span class="prov">s. 447</span> fraud, the SFIO Director recording reasons in writing under <span class="prov">s. 212(8)</span>.</p>
+        <p>The CIRP and the SFIO investigation run in parallel. They do not stop each other. The IRP cooperates with the SFIO; the SFIO findings strengthen the IRP's <span class="prov">Section 66 IBC</span> and <span class="prov">s. 339</span> applications.</p>
+      </div>
+
+      <div class="chapter">
+        <div class="ch-num">Chapter 7 · The resolution plan</div>
+        <h4>Section 30 IBC, reading Sections 62, 66 and 71 Companies Act</h4>
+        <p>Two resolution plans are submitted. The committee of creditors evaluates both under <span class="prov">s. 30(4) IBC</span>. The winning bidder is a strategic steel investor, Argent Resources Ltd. The plan provides:</p>
+        <p>(i) <strong>Cancellation of existing equity</strong> held by the Mahajans, using <span class="prov">s. 66</span> reduction-of-capital procedures embedded in the plan, with Section 31 IBC supplying the deemed approval. (ii) <strong>Issue of fresh equity</strong> to Argent for ₹450 crore under <span class="prov">s. 62(1)(c)</span> preferential allotment, with Section 31 IBC again displacing the ordinary special-resolution requirement. (iii) <strong>Conversion of 30% of secured financial debt to equity</strong>, with the balance restructured as long-tenor debt. (iv) <strong>Write-off of all unsecured financial debt and operational debt</strong> in excess of statutory minimums set by IBC waterfall. (v) <strong>Continuation of the avoidance applications</strong>, with proceeds (if any) to be credited to the creditors per a sharing formula in the plan.</p>
+        <p>Two values are placed before the CoC, both produced by registered valuers under <span class="prov">s. 247</span> and Regulation 27 IBBI Regulations: fair value ₹720 crore and liquidation value ₹380 crore. The CoC approves the Argent plan with 84% by value. The NCLT sanctions it under <span class="prov">s. 31 IBC</span>.</p>
+      </div>
+
+      <div class="chapter">
+        <div class="ch-num">Chapter 8 · The Mahajans attempt a Section 230 scheme</div>
+        <h4>The Arun Kumar Jagatramka bar</h4>
+        <p>The Mahajans, ineligible under <span class="prov">Section 29A IBC</span> on account of being NPA promoters, attempt to revive the company through a fast-track Section 230 scheme of arrangement in the alternative, hoping to bid in a future liquidation. They argue that <span class="prov">s. 230</span> is a separate, parallel statutory route.</p>
+        <p>The NCLT, citing <em>Arun Kumar Jagatramka v. Jindal Steel and Power Ltd.</em> (2021) 7 SCC 474, holds that an ineligible promoter under Section 29A IBC cannot use a Section 230 scheme to indirectly take back the company. The application is dismissed. The Mahajans cannot return through the back door.</p>
+      </div>
+
+      <div class="chapter">
+        <div class="ch-num">Chapter 9 · The afterlife</div>
+        <h4>Section 32A IBC, Section 447 and the rest of the story</h4>
+        <p>On approval of the Argent plan, <span class="prov">s. 32A IBC</span> immunises the corporate debtor (now under Argent's control) against pre-CIRP criminal proceedings. <strong>But the immunity does not extend to the Mahajan promoters.</strong> The SFIO prosecution under <span class="prov">s. 447</span> proceeds against them personally. <span class="prov">s. 339</span> applications by the liquidator (had it gone to liquidation) would also have survived; in resolution, the Argent-controlled company assigns the IRP's <span class="prov">Section 66 IBC</span> applications to a designated entity for continued prosecution.</p>
+        <p>The Iyer minority shareholders' oppression petition is rendered substantially moot, because the equity in which they were oppressed has been cancelled under the plan. Their claim, however, survives as a damages action against the Mahajan directors personally, both for the related-party transactions and for breach of <span class="prov">s. 166</span>.</p>
+      </div>
+
+      <div class="epilogue">
+        <p>Across the nine chapters, the case activated roughly twenty Companies Act sections and a dozen IBC sections. Each Companies Act provision did exactly the work the framework had assigned to it: <strong>Section 12</strong> for jurisdiction, <strong>Sections 128 to 138</strong> for the evidence base, <strong>Section 77(3)</strong> for the secured-status filter, <strong>Sections 62 and 66</strong> for the capital restructuring, <strong>Section 212</strong> for the criminal arm, <strong>Sections 241 to 242</strong> for the parallel governance challenge, <strong>Sections 230 to 232</strong> as the restraint on ineligible promoters, and <strong>Sections 339, 447 and 448</strong> for personal liability. The IBC supplied the moratorium, the timeline, the binding-on-all plan, and the override.</p>
+        <p>The lesson is simple. The IBC is the procedural engine of corporate resolution. The Companies Act is the substantive law that gives the engine its fuel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ PART XIV — GLOSSARY ================ -->
+  <section class="part reveal" id="glossary">
+    <div class="part-head">
+      <div class="eyebrow">Part XIV</div>
+      <h2>Glossary <span class="pin">of working abbreviations</span></h2>
+    </div>
+    <div class="defgrid">
+      <div class="defcard"><div class="term">NCLT</div><p>National Company Law Tribunal. The adjudicating authority under both the Companies Act 2013 (Section 408) and the IBC 2016 (Section 60).</p></div>
+      <div class="defcard"><div class="term">NCLAT</div><p>National Company Law Appellate Tribunal. The common appellate forum for both statutes.</p></div>
+      <div class="defcard"><div class="term">ROC</div><p>Registrar of Companies. The state-level office that maintains the register of companies and charges.</p></div>
+      <div class="defcard"><div class="term">SFIO</div><p>Serious Fraud Investigation Office, the specialised fraud investigator under Section 211 and Section 212 of the Companies Act.</p></div>
+      <div class="defcard"><div class="term">NFRA</div><p>National Financial Reporting Authority, the audit and accounting standards regulator under Section 132.</p></div>
+      <div class="defcard"><div class="term">IBBI</div><p>Insolvency and Bankruptcy Board of India. Regulator of IPs, registered valuers, IPAs and IPEs.</p></div>
+      <div class="defcard"><div class="term">CIRP</div><p>Corporate Insolvency Resolution Process. The IBC's resolution mechanism for corporate debtors.</p></div>
+      <div class="defcard"><div class="term">IRP / RP</div><p>Interim Resolution Professional and Resolution Professional. The persons in whom the corporate debtor's powers vest during CIRP.</p></div>
+      <div class="defcard"><div class="term">CoC</div><p>Committee of Creditors. The decisional body of financial creditors during CIRP, voting on the resolution plan.</p></div>
+      <div class="defcard"><div class="term">Section 29A IBC</div><p>The promoter ineligibility filter. Excludes wilful defaulters and certain related persons from submitting a resolution plan, and (per Arun Kumar Jagatramka) from using Section 230 schemes.</p></div>
+      <div class="defcard"><div class="term">Section 32A IBC</div><p>Immunity for the corporate debtor against pre-CIRP criminal liability on approval of a resolution plan. Does not extend to officers in default.</p></div>
+      <div class="defcard"><div class="term">Section 53 IBC</div><p>The liquidation waterfall, ranking creditor distributions in liquidation.</p></div>
+      <div class="defcard"><div class="term">Section 66 IBC</div><p>The fraudulent and wrongful trading provision. Sister to Section 339 Companies Act.</p></div>
+      <div class="defcard"><div class="term">Section 247 read with 2017 Rules</div><p>The registered valuer regime, applicable to all CIRP and liquidation valuations.</p></div>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<footer class="site">
+  <div class="shell">
+    <div class="ftop">
+      <div>
+        <h5>The <em>Recovery</em> Library</h5>
+        <p>A practitioner's reference set on financial restructuring and debt recovery in India — the RBI Prudential Framework, the SARFAESI Act, the Recovery of Debts and Bankruptcy Act, and the Companies Act read with the IBC, together with their leading jurisprudence.</p>
+      </div>
+      <div class="fnav">
+        <span class="fl">The Volumes</span>
+        <a href="index.html">Home</a>
+        <a href="rbi-prudential-framework.html">I · RBI Prudential Framework</a>
+        <a href="sarfaesi-act.html">II · SARFAESI Act</a>
+        <a href="rdb-act.html">III · RDB Act</a>
+        <a href="companies-act.html">IV · Companies Act</a>
+      </div>
+    </div>
+    <p class="disc"><strong>A note on use.</strong> These explainers are study and reference aids synthesised from the bare statutes, RBI directions and settled case law. Statutory positions and citations should be verified against the current text before professional reliance. They are not legal advice.</p>
+  </div>
+</footer>
+
+<script>
+const bar=document.getElementById('progress');
+function prog(){const h=document.documentElement;const sc=h.scrollTop;const max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?(sc/max*100):0)+'%';}
+document.addEventListener('scroll',prog,{passive:true});prog();
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const spy=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const id='#'+e.target.id;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));}});},{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>s&&spy.observe(s));
+</script>
+<script>
+(function(){
+  var mh=document.getElementById('masthead');
+  function onScrollMh(){ if(mh) mh.classList.toggle('scrolled', window.scrollY>10); }
+  document.addEventListener('scroll',onScrollMh,{passive:true}); onScrollMh();
+})();
+</script>
+</body>
+</html>

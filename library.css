@@ -39,6 +39,7 @@
 body[data-vol="rbi"]{ --accent:#8f6822; --accent-deep:#6f5018; --accent-soft:#f1ead9; }
 body[data-vol="sar"]{ --accent:#7d2733; --accent-deep:#5f1c26; --accent-soft:#f1e7e4; }
 body[data-vol="rdb"]{ --accent:#285049; --accent-deep:#1c3a35; --accent-soft:#e4ece9; }
+body[data-vol="ca"]{  --accent:#2a4a6b; --accent-deep:#1b3a52; --accent-soft:#e4eaf0; }
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;scroll-padding-top:96px;}
@@ -203,6 +204,8 @@ ol.clean li::before{counter-increment:c;content:counter(c,decimal-leading-zero);
 .callout.amend{border-left-color:var(--c-amend);}      .callout.amend .tag{color:var(--c-amend);}
 .callout.case{border-left-color:var(--c-case);}        .callout.case .tag{color:var(--c-case);}
 .callout.pitfall{border-left-color:var(--c-pitfall);}  .callout.pitfall .tag{color:var(--c-pitfall);}
+.callout.ibc{border-left-color:#8a5a22;}              .callout.ibc .tag{color:#8a5a22;}
+.callout.cross{border-left-color:var(--ink-faint);}   .callout.cross .tag{color:var(--ink-soft);}
 
 /* ============================================================
    DEFINITION CARDS
