@@ -40,6 +40,8 @@ body[data-vol="rbi"]{ --accent:#8f6822; --accent-deep:#6f5018; --accent-soft:#f1
 body[data-vol="sar"]{ --accent:#7d2733; --accent-deep:#5f1c26; --accent-soft:#f1e7e4; }
 body[data-vol="rdb"]{ --accent:#285049; --accent-deep:#1c3a35; --accent-soft:#e4ece9; }
 body[data-vol="ca"]{  --accent:#2a4a6b; --accent-deep:#1b3a52; --accent-soft:#e4eaf0; }
+body[data-vol="ct"]{  --accent:#5b3a6b; --accent-deep:#43284f; --accent-soft:#ebe3f0; }
+body[data-vol="tp"]{  --accent:#3d5a34; --accent-deep:#2c4226; --accent-soft:#e6ece1; }
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;scroll-padding-top:96px;}

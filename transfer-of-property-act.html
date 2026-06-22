@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Transfer of Property Act, 1882 — A Practitioner's Treatise for Insolvency &amp; Restructuring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<style>
+/* ---------- page-specific components (Transfer of Property Act) ---------- */
+.callout.intuition{border-left-color:var(--c-practice);}
+.callout.intuition .tag{color:var(--c-practice);}
+
+/* FIRAC case block */
+.case-block{margin:28px 0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper-2);max-width:80ch;}
+.case-head{padding:16px 22px;background:var(--paper-3);border-bottom:1px solid var(--line);}
+.case-head .cname{font-family:"Spectral",serif;font-size:20px;font-weight:600;color:var(--accent);line-height:1.2;letter-spacing:-.01em;}
+.case-head .cmeta{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-faint);margin-top:5px;letter-spacing:.06em;}
+.case-body{padding:18px 22px;}
+.case-body p{margin:0 0 13px;max-width:none;font-size:16.5px;line-height:1.6;color:var(--ink-soft);}
+.firac{margin:14px 0 4px;border-top:1px solid var(--line);}
+.firac-row{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);}
+.firac-row:last-child{border-bottom:none;}
+.firac-row .fk{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;color:var(--c-practice);padding-top:3px;}
+.firac-row .fv{font-size:15.5px;line-height:1.58;color:var(--ink-soft);}
+.firac-row .fv strong{color:var(--ink);}
+.case-why{margin-top:14px;padding:13px 16px;background:var(--paper);border-radius:4px;border:1px solid var(--line);}
+.case-why .tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;color:var(--accent);display:block;margin-bottom:6px;}
+.case-why p{font-size:15px;margin:0;color:var(--ink-soft);max-width:none;}
+@media(max-width:640px){.firac-row{grid-template-columns:1fr;gap:3px;}}
+</style>
+</head>
+<body data-vol="tp">
+<div id="progress"></div>
+
+<header class="masthead" id="masthead">
+  <div class="shell">
+    <a class="brand" href="index.html">
+      <span class="seal">R</span>
+      <span class="wm"><b>The Recovery Library</b><span>Debt Enforcement &middot; India</span></span>
+    </a>
+    <nav class="mnav">
+      <a class="home-link" href="index.html">Home</a>
+      <a href="rbi-prudential-framework.html">RBI Framework</a>
+      <a href="sarfaesi-act.html">SARFAESI</a>
+      <a href="rdb-act.html">RDB Act</a>
+      <a href="companies-act.html">Companies Act</a>
+      <a href="contract-act.html">Contract Act</a>
+      <a class="current" href="transfer-of-property-act.html">Property Act</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ====================== HERO ====================== -->
+<header class="hero" id="top">
+  <div class="shell">
+    <div class="kicker">Act No. 4 of 1882 · The Republic of India</div>
+    <h1>The <em>Transfer of Property</em> Act</h1>
+    <p class="full">A Practitioner's Treatise on the proprietary law that sits beneath every secured loan, every mortgage, and every distressed-asset resolution in India.</p>
+    <p class="sub">This is not a section-by-section commentary and not a bare-Act paraphrase. It isolates the doctrines a Resolution Professional, a resolution applicant, a restructuring lawyer or a banking lawyer cannot afford to misunderstand, teaches each one from first principles, and then shows exactly where it bites in CIRP, liquidation, security enforcement and debt assignment.</p>
+    <div class="meta-strip">
+      <div><span class="lab">Assent</span><span class="val">17 Feb 1882</span></div>
+      <div><span class="lab">In force</span><span class="val">1 July 1882</span></div>
+      <div><span class="lab">Core chapter</span><span class="val">Ch. IV · Mortgages</span></div>
+      <div><span class="lab">Reads with</span><span class="val">SARFAESI · IBC · CA 2013</span></div>
+      <div><span class="lab">Registration</span><span class="val">Act 16 of 1908</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="shell with-aside" style="margin-top:0;">
+  <!-- ============ TOC ============ -->
+  <aside class="toc" id="toc">
+    <h4>Contents</h4>
+    <a href="#orientation"><span class="num">I</span>Why the TPA Matters</a>
+    <a href="#transferable"><span class="num">II</span>What May Be Transferred</a>
+    <a href="#immovable"><span class="num">III</span>Immovable Property &amp; Notice</a>
+    <a href="#sale"><span class="num">IV</span>Sale &amp; the Vendor's Charge</a>
+    <a href="#mortgage"><span class="num">V</span>Mortgage: The Six Forms</a>
+    <a href="#mortgagor"><span class="num">VI</span>Rights of the Mortgagor</a>
+    <a href="#mortgagee"><span class="num">VII</span>Rights of the Mortgagee</a>
+    <a href="#redemption"><span class="num">VIII</span>Redemption &amp; the Clog</a>
+    <a href="#priority"><span class="num">IX</span>Priority of Interests</a>
+    <a href="#marshalling"><span class="num">X</span>Marshalling · Contribution · Subrogation</a>
+    <a href="#charge"><span class="num">XI</span>Charges vs Mortgages</a>
+    <a href="#partperf"><span class="num">XII</span>Part Performance (s.53A)</a>
+    <a href="#lispendens"><span class="num">XIII</span>Lis Pendens (s.52)</a>
+    <a href="#fraudulent"><span class="num">XIV</span>Fraudulent Transfer (s.53)</a>
+    <a href="#ostensible"><span class="num">XV</span>Ostensible Ownership (s.41)</a>
+    <a href="#feeding"><span class="num">XVI</span>Feeding the Grant (s.43)</a>
+    <a href="#lease"><span class="num">XVII</span>Leases &amp; Licences</a>
+    <a href="#actionable"><span class="num">XVIII</span>Actionable Claims &amp; Assignment</a>
+    <a href="#interests"><span class="num">XIX</span>Vested &amp; Contingent Interests</a>
+    <a href="#cases"><span class="num">XX</span>Landmark Jurisprudence</a>
+    <a href="#ibc"><span class="num">XXI</span>The Insolvency Interface</a>
+    <a href="#glossary"><span class="num">XXII</span>Glossary</a>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main>
+
+  <!-- =========================================================
+       PART I · ORIENTATION
+  ========================================================== -->
+  <section class="part reveal" id="orientation">
+    <div class="part-head">
+      <div class="eyebrow">Part I</div>
+      <h2>Orientation: <span class="pin">why a property statute decides insolvency outcomes</span></h2>
+    </div>
+    <p class="lead">An insolvency lawyer who treats the Transfer of Property Act as a first-year afterthought will eventually lose a case on it. The IBC tells you how a claim is admitted and distributed; the SARFAESI Act tells you how collateral is seized; but neither tells you whether a security interest is valid, who ranks ahead of whom, or what the creditor actually owns. That answer almost always lives in the TPA.</p>
+
+    <div class="body-block">
+      <p>Think of the Indian distressed-debt stack as three layers. At the top sits the procedural machinery: the IBC's collective process before the NCLT, and SARFAESI's self-help enforcement before the DRT. Beneath that sits the registration and priority overlay: the Companies Act charge register, CERSAI, and the statutory priorities in section 26E of SARFAESI and section 31B of the RDB Act. But underneath everything is the substantive law of property rights, and that foundation is the Transfer of Property Act, 1882 read with the Indian Registration Act, 1908. When a financial creditor files a claim in CIRP asserting that it is "secured," the document it relies on is a mortgage or a charge governed by the TPA. When a resolution professional verifies that claim, the test of validity is a TPA test.</p>
+      <p>The Code itself admits this dependence. Section 3(31) of the IBC defines "security interest" by pointing outward to mortgage, charge, hypothecation, assignment and so on, all creatures of the TPA and allied statutes. Section 5(8) defines "financial debt" to include amounts raised under any facility "having the commercial effect of a borrowing," which forces the reader back to mortgage and assignment concepts. The waterfall in section 53 ranks "secured creditors" without itself defining what makes a creditor secured. The TPA fills that silence.</p>
+    </div>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition to hold onto</span>
+      <p>The TPA is the law of who owns what, and of what slice of ownership a lender has carved out for itself as security. Insolvency law then decides what happens to those slices when the borrower collapses. If you cannot describe the slice precisely (a simple mortgage, an equitable mortgage, a floating charge, an assignment of receivables) you cannot predict where it sits in the queue or whether it survives at all.</p>
+    </div>
+
+    <h3><span class="s">Map</span> The provisions that actually recur in practice</h3>
+    <p>The Act has 137 sections across eight chapters. A practitioner needs perhaps a quarter of them with any frequency. The table below is the working filter that the rest of this treatise expands.</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Cluster</th><th>Sections</th><th>Why an insolvency or banking lawyer needs it</th></tr>
+        <tr><td><strong>Foundations</strong></td><td>3, 5, 6, 7, 8</td><td>What is immovable property, what may be transferred, the meaning of notice. Decides whether a spes successionis or a mere right to sue can ever be security.</td></tr>
+        <tr><td><strong>Sale</strong></td><td>54, 55</td><td>When title passes, the unpaid vendor's statutory charge, and why an agreement to sell creates no interest in land.</td></tr>
+        <tr><td><strong>Mortgage</strong></td><td>58, 59, 60, 67, 69, 69A, 76, 100</td><td>The six forms of mortgage, formalities, redemption, foreclosure, power of sale, mortgagee in possession, and the charge.</td></tr>
+        <tr><td><strong>Priority &amp; ranking</strong></td><td>48, 78, 79, 56, 81, 82, 92, 93</td><td>First in time, postponement for fraud, marshalling, contribution, subrogation, no tacking. The grammar of inter-creditor ranking.</td></tr>
+        <tr><td><strong>Protective doctrines</strong></td><td>41, 43, 52, 53, 53A</td><td>Ostensible ownership, feeding the grant by estoppel, lis pendens, fraudulent transfer, part performance. The traps in any title or avoidance fight.</td></tr>
+        <tr><td><strong>Leases</strong></td><td>105, 106, 107, 108, 111, 116</td><td>Lease versus licence, the mortgagor's leasing power, determination, holding over. Decides whether a tenant defeats the secured creditor or the resolution applicant.</td></tr>
+        <tr><td><strong>Actionable claims</strong></td><td>3, 130, 131, 132</td><td>Assignment of debt and receivables: the legal backbone of ARC acquisitions and debt trading.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART II · WHAT MAY BE TRANSFERRED
+  ========================================================== -->
+  <section class="part reveal" id="transferable">
+    <div class="part-head">
+      <div class="eyebrow">Part II · Sections 5 to 8</div>
+      <h2>What may be transferred, <span class="pin">and what can never be security</span></h2>
+    </div>
+    <p class="lead">Before any mortgage or assignment can stand, the thing being transferred must itself be transferable. Section 6 sets out a short but ruthless list of property that the law refuses to let move. A security taken over any of these is a security over nothing, and that is a recurring way for a creditor's claim to collapse.</p>
+
+    <h3><span class="s">Plain English</span> The starting rule, then the exceptions</h3>
+    <p>Section 5 says a transfer of property is an act by which a living person conveys property to another living person, in the present or in the future. Section 6 then states the general permission: property of any kind may be transferred, except as the Act or another law forbids. The drafting is deliberate. Free alienability is the default; restraints on it are the exceptions that must be justified. Everything an insolvency practitioner cares about flows from the exceptions, because the exceptions describe rights that cannot be pledged, mortgaged or assigned.</p>
+
+    <h3><span class="s">s. 6</span> The non-transferable list that matters commercially</h3>
+    <p>Most of the list is academic. Four exceptions carry real weight in lending and restructuring.</p>
+    <div class="defgrid">
+      <div class="defcard"><div class="term">Spes successionis</div><div class="sec">s.6(a)</div><p>The mere chance of an heir succeeding, or of a relation receiving a legacy, cannot be transferred. A promoter cannot validly mortgage property he merely hopes to inherit. A security purportedly created over an expectancy is void, not merely voidable.</p></div>
+      <div class="defcard"><div class="term">Mere right to sue</div><div class="sec">s.6(e)</div><p>A bare right to litigate, divorced from any property, cannot be assigned. This matters when a distressed seller tries to bundle "claims" into an asset sale. A right to recover a debt is assignable as an actionable claim; a naked right to sue for damages is not.</p></div>
+      <div class="defcard"><div class="term">Public office &amp; salary</div><div class="sec">s.6(f)</div><p>A public office and the salary of a public officer cannot be transferred. Relevant when structuring security against an individual debtor's income streams.</p></div>
+      <div class="defcard"><div class="term">Pensions &amp; stipends</div><div class="sec">s.6(g)</div><p>Military, naval, air-force and civil pensions, and political pensions, cannot be transferred. A bank cannot take valid security over a government pension as a future receivable.</p></div>
+    </div>
+
+    <div class="callout intuition">
+      <span class="tag">Why the rule exists</span>
+      <p>Section 6 protects two things at once. It protects the integrity of public functions (you cannot buy an office or a public salary) and it protects against speculation in expectancies that would let people trade on the death of a relative. The mere-right-to-sue bar exists to prevent champerty and maintenance, the trafficking in litigation. Each carve-out is a policy choice about what the market should not be allowed to commodify.</p>
+    </div>
+
+    <div class="callout pitfall">
+      <span class="tag">Pitfall: the future-receivables confusion</span>
+      <p>Bankers routinely take security over "future receivables" of a borrower, and that is perfectly valid: section 5 expressly permits a transfer "in future," and a present transfer of future property attaches when the property comes into existence. The trap is conflating a genuine future receivable (a contractual stream the borrower will earn) with a spes successionis (a bare hope of inheritance). The first is good security; the second is void under section 6(a). When a promoter offers his expected inheritance as collateral, walk away.</p>
+    </div>
+
+    <h3><span class="s">s. 7 &amp; 8</span> Competence and the reach of a transfer</h3>
+    <p>Section 7 requires the transferor to be competent to contract and entitled to the property, or authorised to deal with it. A company acting beyond its powers, an insolvent who has lost dominion over his estate, or a person transferring what he does not own all fail this test. Section 8 then tells you what a transfer carries with it absent contrary intention: a mortgage of land carries the easements, the rents and profits accruing after the transfer, and the fixtures. For a creditor this is quietly important. When you take a mortgage over a factory, section 8 means your security captures the machinery embedded in the earth and the things provided for permanent use, not merely the bare land. The boundary between what is caught and what escapes is the doctrine of fixtures, examined next.</p>
+  </section>
+
+  <!-- =========================================================
+       PART III · IMMOVABLE PROPERTY & NOTICE
+  ========================================================== -->
+  <section class="part reveal" id="immovable">
+    <div class="part-head">
+      <div class="eyebrow">Part III · Section 3</div>
+      <h2>Immovable property, fixtures <span class="pin">&amp; the doctrine of notice</span></h2>
+    </div>
+    <p class="lead">Two definitions in section 3 do disproportionate work in security disputes: what counts as immovable property (which decides whether a mortgage or a hypothecation is the right instrument) and what counts as notice (which decides whether a later buyer or creditor takes free of an earlier interest).</p>
+
+    <h3><span class="s">s. 3</span> Immovable property and the attachment test</h3>
+    <p>The TPA defines immovable property only negatively: it does not include standing timber, growing crops or grass. The positive content comes from the phrase "attached to the earth," which the section defines in three limbs: rooted in the earth (trees), embedded in the earth (walls and buildings), and attached to what is embedded for the permanent beneficial enjoyment of that to which it is attached (a ceiling fan, fixed machinery). The practical question that recurs is whether plant and machinery bolted to a factory floor is immovable (and therefore part of the mortgaged land) or movable (and therefore the subject of a separate hypothecation).</p>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition: intention and degree of annexation</span>
+      <p>Courts apply two tests together: the degree of annexation (how firmly the thing is fixed) and, more importantly, the object of annexation (was it fixed to improve the land permanently, or merely to use the chattel better?). Machinery bolted down only to steady it while it runs tends to remain movable. Machinery embedded so that removal would damage the structure, installed to make the land a permanent industrial unit, tends to become immovable. The label the parties used in their loan documents does not control; the physical and purposive reality does.</p>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: why this decides your instrument</span>
+      <p>If the machinery is immovable, the bank needs a registered mortgage to create valid security over it, and an equitable mortgage by deposit of title deeds will reach it as part of the land. If it is movable, the bank needs hypothecation, which is registered with CERSAI and, for companies, with the Registrar of Companies. Taking the wrong instrument leaves a gap a resolution professional or a competing creditor will find. In a slump-sale resolution plan, the characterisation also decides whether the asset passes under the land conveyance or needs a separate transfer.</p>
+    </div>
+
+    <h3><span class="s">s. 3</span> The doctrine of notice</h3>
+    <p>A person has notice of a fact when he actually knows it, or when he would have known it but for wilful abstention from an enquiry he ought to have made, or gross negligence. The section adds three crucial deemed-notice rules. First, registration of an instrument is notice of it from the date of registration (Explanation I). Second, actual possession by a person is notice of that person's title (Explanation II). Third, notice to an agent acting in the course of business is notice to the principal (Explanation III).</p>
+    <p>Notice is the hinge on which most priority and protective doctrines turn. The bona fide purchaser without notice defeats a prior unregistered interest; the purchaser with notice does not. The lessee in actual possession gives constructive notice to anyone dealing with the land. A creditor who fails to inspect the property or search the register is fixed with the notice a prudent creditor would have acquired, and cannot later claim to have taken free of an interest it should have discovered.</p>
+
+    <div class="callout pitfall">
+      <span class="tag">Pitfall: possession is notice</span>
+      <p>The single most common way a secured creditor is ambushed is the tenant or occupant in possession. Explanation II to section 3 means that whoever is physically on the land carries constructive notice of his rights. A bank that mortgages a property without inspecting it, and later finds a long-term lessee already in occupation, may discover that its security is encumbered by a tenancy it is deemed to have known about. Always inspect, and record the inspection, before disbursal.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART IV · SALE
+  ========================================================== -->
+  <section class="part reveal" id="sale">
+    <div class="part-head">
+      <div class="eyebrow">Part IV · Sections 54 &amp; 55</div>
+      <h2>Sale, the passing of title <span class="pin">&amp; the vendor's hidden charge</span></h2>
+    </div>
+    <p class="lead">Sale looks simple until a price goes unpaid or a project developer collapses mid-transaction. Section 54 tells you when ownership actually moves; section 55 buries two statutory charges that quietly reorder priorities in any distressed real-estate matter.</p>
+
+    <h3><span class="s">s. 54</span> Sale defined, and the agreement that conveys nothing</h3>
+    <p>Sale is a transfer of ownership in exchange for a price paid or promised. For tangible immovable property worth one hundred rupees or more, the transfer can be made only by a registered instrument. The closing sentence of section 54 is the one to memorise: a contract for sale does not, of itself, create any interest in or charge on the property. An agreement to sell is a promise, enforceable in personam by specific performance, but it is not a conveyance. The buyer under an agreement to sell owns nothing in the land until a registered sale deed is executed.</p>
+
+    <div class="callout case">
+      <span class="tag">Case law: the death of the SA/GPA "sale"</span>
+      <p>In <em>Suraj Lamp &amp; Industries v. State of Haryana</em> (2012), the Supreme Court held that transfers of immovable property through sale agreements, general powers of attorney and wills do not convey title; only a registered deed of conveyance transfers ownership. The decision matters enormously for restructuring diligence: a corporate debtor's "ownership" of land held only on an agreement to sell or a power of attorney is not ownership at all, and such land cannot safely be treated as a free asset of the estate or as security.</p>
+    </div>
+
+    <h3><span class="s">s. 55</span> The two charges nobody reads carefully</h3>
+    <p>Section 55 distributes rights and liabilities between buyer and seller. Two clauses create statutory charges that survive into insolvency.</p>
+    <div class="defgrid">
+      <div class="defcard"><div class="term">Unpaid seller's charge</div><div class="sec">s.55(4)(b)</div><p>Where ownership has passed to the buyer before the whole price is paid, the seller holds a charge on the property in the buyer's hands for the unpaid purchase money and interest. This is a statutory charge arising by operation of law, not by contract.</p></div>
+      <div class="defcard"><div class="term">Buyer's charge for prepaid price</div><div class="sec">s.55(6)(b)</div><p>A buyer who has paid in anticipation of delivery, and who has not improperly refused to take it, holds a charge on the property for the purchase money paid plus interest, as against the seller and those claiming under him.</p></div>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: why the vendor's charge ambushes a financial creditor</span>
+      <p>Picture a developer that buys land on deferred payment, mortgages it to a bank, and then defaults to both the original landowner and the bank. The landowner is an unpaid seller holding a section 55(4)(b) charge. The bank holds a mortgage. The priority contest between them turns on notice and timing under section 48. A bank that financed the acquisition without verifying that the seller had been paid in full may find a prior statutory charge sitting ahead of, or competing with, its mortgage. In CIRP, both are "secured creditors" whose claims the resolution professional must rank, and the vendor's charge is easy to miss because nothing about it appears in the charge register.</p>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">Case law: non-payment of price does not undo a completed sale</span>
+      <p>In <em>Vidyadhar v. Manikrao</em> (1999), the Supreme Court held that once a registered sale is complete, the mere non-payment of part of the price does not annul the sale; the seller's remedy is the unpaid-vendor's charge and a money claim, not avoidance of the transfer. For a resolution professional this means a property the corporate debtor sold remains sold even if the buyer still owes money; what re-enters the picture is a charge, not the asset itself.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART V · MORTGAGE
+  ========================================================== -->
+  <section class="part reveal" id="mortgage">
+    <div class="part-head">
+      <div class="eyebrow">Part V · Sections 58 &amp; 59 · Chapter IV core</div>
+      <h2>Mortgage: <span class="pin">the six forms, and which two run banking</span></h2>
+    </div>
+    <p class="lead">If one chapter of the TPA is non-negotiable for an insolvency professional, it is the law of mortgages. Almost every secured financial creditor's claim rests on a mortgage of immovable property. Misidentify the form and you misstate the creditor's remedies, the formalities its security had to satisfy, and the order in which it gets paid.</p>
+
+    <h3><span class="s">s. 58(a)</span> What a mortgage actually is</h3>
+    <p>A mortgage is the transfer of an interest in specific immovable property for the purpose of securing the payment of money advanced or to be advanced, an existing or future debt, or the performance of an engagement giving rise to pecuniary liability. Three ideas are packed in. It is a transfer of an interest, not a mere personal promise, so the creditor acquires a proprietary right that binds the property and survives a later transfer of it. It is over specific property, so a mortgage of "all my assets" without identification is suspect. And it is for the purpose of securing an obligation, so the transfer is defeasible: pay the debt and the interest must return.</p>
+
+    <div class="pull">
+      A mortgage is the transfer of an interest in specific immovable property for the purpose of securing the payment of money.
+      <span>Section 58(a), the root of every secured real-estate loan</span>
+    </div>
+
+    <h3><span class="s">s. 58</span> The six forms, ranked by how often they appear in lending</h3>
+    <div class="defgrid">
+      <div class="defcard"><div class="term">Mortgage by deposit of title deeds (equitable mortgage)</div><div class="sec">s.58(f)</div><p>The workhorse of Indian bank lending. The borrower simply hands over title documents to the lender in a notified town with intent to create security. No registered mortgage deed is required, which makes it fast and cheap. Most home loans and project loans run on this form.</p></div>
+      <div class="defcard"><div class="term">Simple mortgage</div><div class="sec">s.58(b)</div><p>No possession passes. The mortgagor binds himself personally to pay and agrees that on default the mortgagee may have the property sold through the court. The mortgagee's remedy is a suit for sale, not foreclosure. Common where a registered charge is wanted but possession is to stay with the borrower.</p></div>
+      <div class="defcard"><div class="term">English mortgage</div><div class="sec">s.58(e)</div><p>The mortgagor transfers the property absolutely to the mortgagee, with a covenant to repay on a fixed date and a proviso for re-transfer on repayment. The form that carries the out-of-court power of sale under section 69. Favoured by institutional lenders for this reason.</p></div>
+      <div class="defcard"><div class="term">Mortgage by conditional sale</div><div class="sec">s.58(c)</div><p>The mortgagor ostensibly sells the property on condition that on default the sale becomes absolute, or on payment it becomes void. The remedy is foreclosure, not sale. The proviso (post-1929) requires the condition to be embodied in the very document that effects the sale, or it is not a mortgage at all.</p></div>
+      <div class="defcard"><div class="term">Usufructuary mortgage</div><div class="sec">s.58(d)</div><p>The mortgagor delivers possession and lets the mortgagee retain it and take the rents and profits in lieu of interest or in payment of principal. No personal covenant to pay; the lender recovers from the income. Rare in modern bank finance but seen in older promoter and family arrangements.</p></div>
+      <div class="defcard"><div class="term">Anomalous mortgage</div><div class="sec">s.58(g)</div><p>Any mortgage that is none of the above, or a combination of them. Its rights and liabilities are governed by the contract in the deed and by local usage. The catch-all that absorbs bespoke security structures.</p></div>
+    </div>
+
+    <div class="callout intuition">
+      <span class="tag">The one distinction that drives remedies</span>
+      <p>The six forms split on a single practical axis: does default give the lender a right to sell, or a right to foreclose, or both? A simple mortgagee sues for sale. A mortgagee by conditional sale forecloses. An English mortgagee can both sell out of court (section 69) and, in a suit, seek sale. The equitable mortgagee by deposit of title deeds is treated like a simple mortgagee and sues for sale. Get the form right and the remedy follows; get it wrong and you plead the wrong relief.</p>
+    </div>
+
+    <h3><span class="s">s. 59</span> Formalities, and the gap that voids security</h3>
+    <p>Where the principal sum secured is one hundred rupees or more, a mortgage other than a mortgage by deposit of title deeds can be effected only by a registered instrument signed by the mortgagor and attested by at least two witnesses. The exception for the equitable mortgage is the whole reason that form dominates: it needs no registered deed, only delivery of title documents with the requisite intent. This is also where a great deal of security quietly fails. A registered mortgage that is not attested by two witnesses, or that is unregistered though registration was required, does not create a valid mortgage. In CIRP, a resolution professional verifying a "secured" claim must check the registration and attestation, because an invalid mortgage demotes a financial creditor from secured to unsecured.</p>
+
+    <div class="callout case">
+      <span class="tag">Case law: what an equitable mortgage actually requires</span>
+      <p>In <em>United Bank of India v. Lekharam Sonaram</em> (1965) and the line following <em>Rachpal Maharaj v. Bhagwandas Daruka</em> (1950), the Supreme Court fixed the essentials of a mortgage by deposit of title deeds: a debt, a deposit of documents of title, and an intention that the documents shall be security for the debt. A crucial nuance: if the parties reduce the bargain to a writing that is intended to be the contract of mortgage, that writing requires registration; but a mere memorandum recording a deposit already made does not. The distinction between a constitutive document (registrable) and an evidentiary memorandum (not registrable) is litigated constantly and decides whether a bank's equitable mortgage stands.</p>
+    </div>
+
+    <div class="callout pitfall">
+      <span class="tag">Pitfall: the notified-town requirement</span>
+      <p>A mortgage by deposit of title deeds can be created only where the deposit is made in a town notified under section 58(f). Banks manage this by ensuring the deposit occurs at a notified branch. A deposit made elsewhere may not create a valid equitable mortgage, leaving the lender with no security despite holding the title deeds. Diligence on the place of deposit is part of validating any equitable-mortgage claim.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART VI · RIGHTS OF MORTGAGOR
+  ========================================================== -->
+  <section class="part reveal" id="mortgagor">
+    <div class="part-head">
+      <div class="eyebrow">Part VI · Sections 60 to 66</div>
+      <h2>The mortgagor's rights: <span class="pin">redemption and the power to lease</span></h2>
+    </div>
+    <p class="lead">The borrower's side of the mortgage is dominated by one right above all others, the right to redeem, and by one power that can sabotage a creditor's security, the power to grant leases that bind the mortgagee.</p>
+
+    <h3><span class="s">s. 60</span> The right to redeem</h3>
+    <p>Once the principal money has become due, the mortgagor has a right, on payment of the mortgage money, to require the mortgagee to hand back the title documents, deliver possession (if the mortgagee holds it), and re-transfer or release the property. This is the equity of redemption, the residual ownership the borrower retains throughout the mortgage. It is the mirror image of the mortgagee's security: so long as the debt can be paid, the property comes back. The right is so fundamental that the law refuses to let the parties contract it away, a principle examined in Part VIII as the rule against clogs on redemption.</p>
+
+    <p>Section 60 also addresses partial redemption: a person interested in only a share of the mortgaged property generally cannot redeem his share alone on payment of a proportionate part, unless the mortgagee has acquired a share of the mortgagor's interest. Sections 60A and 60B add a right to require the mortgagee to assign the debt to a third person the mortgagor nominates (useful in refinancing) and a right to inspect and copy the title documents while the right of redemption subsists.</p>
+
+    <div class="callout intuition">
+      <span class="tag">Why redemption is sacred</span>
+      <p>A mortgage is security, not a sale. The borrower transfers an interest only to back a loan, and the law insists that the moment the loan is satisfied the interest must return, however the parties dressed the transaction. If lenders could draft away the right to redeem, every mortgage would become a disguised sale on default, and the bargaining inequality between a needy borrower and a lender would be exploited. The right to redeem keeps a mortgage a mortgage.</p>
+    </div>
+
+    <h3><span class="s">s. 65A</span> The mortgagor's power to lease</h3>
+    <p>A mortgagor lawfully in possession may make leases that bind the mortgagee, but only within tight limits: each lease must be in the ordinary course of management, reserve the best rent, take no premium and no advance rent, contain no renewal covenant, and (for buildings) not exceed three years. A lease outside these limits does not bind the mortgagee. This single section is the battleground in countless enforcement disputes, because a borrower facing seizure will often create a long lease to a friendly party to frustrate the creditor and the eventual purchaser.</p>
+
+    <div class="callout pitfall">
+      <span class="tag">Pitfall: the eve-of-default lease</span>
+      <p>A favourite delaying tactic is a sham or non-compliant lease granted just before or after the section 13(2) SARFAESI notice, designed to plant a "tenant" who then resists possession. Section 65A is the answer: a lease that breaches its limits, or is granted after the mortgagor has lost the lawful right to manage, does not bind the mortgagee. SARFAESI codified this protection in section 17(4A), letting the DRT decide whether a claimed tenancy is contrary to section 65A or post-dates the security. Always test the lease against section 65A before conceding a tenant any standing.</p>
+    </div>
+
+    <p>Sections 63 and 63A give the mortgagor, on redemption, the benefit of accessions and improvements to the property, subject to paying the mortgagee's necessary costs in defined cases. Section 65 implies covenants by the mortgagor (that his interest subsists, that he has power to transfer, that he will defend title and pay public charges). Section 66 restrains the mortgagor in possession from committing acts destructive or permanently injurious to the security where the security is or would become insufficient, the concept of waste.</p>
+  </section>
+
+  <!-- =========================================================
+       PART VII · RIGHTS OF MORTGAGEE
+  ========================================================== -->
+  <section class="part reveal" id="mortgagee">
+    <div class="part-head">
+      <div class="eyebrow">Part VII · Sections 67 to 76</div>
+      <h2>The mortgagee's rights: <span class="pin">foreclosure, sale, receiver, possession</span></h2>
+    </div>
+    <p class="lead">The lender's arsenal is built around a choice between two ultimate remedies, foreclosure and sale, plus an in-between toolkit of suing on the covenant, appointing a receiver, and taking possession. Which remedies are open depends entirely on the form of mortgage taken.</p>
+
+    <h3><span class="s">s. 67</span> Foreclosure or sale</h3>
+    <p>After the mortgage money has become due, and before redemption, the mortgagee may seek from the court either a decree foreclosing the mortgagor's right to redeem (a suit for foreclosure) or a decree that the property be sold (a suit for sale). The section then allocates these by form: an ordinary or equitable mortgagee may not foreclose but may sue for sale; a mortgagee by conditional sale, or an anomalous mortgagee whose deed so provides, may foreclose; a usufructuary mortgagee as such may not sue for sale. Foreclosure extinguishes the borrower's equity of redemption and vests the property in the lender; sale converts the property to money and applies it to the debt, returning any surplus. Indian banking overwhelmingly proceeds by sale, not foreclosure.</p>
+
+    <h3><span class="s">s. 68</span> Suing on the personal covenant</h3>
+    <p>The mortgagee may sue for the mortgage money itself (rather than against the property) in defined cases, chiefly where the mortgagor has bound himself personally to repay, or where the security has been lost or rendered insufficient through no fault of the mortgagee, or where the mortgagee is wrongfully kept out of possession. This is the personal remedy that runs alongside the proprietary one, and it underlies a lender's ability to pursue the borrower (and guarantors) for any shortfall after the security is realised.</p>
+
+    <h3><span class="s">s. 69</span> The power of sale without the court</h3>
+    <p>Section 69 is the conceptual ancestor of SARFAESI. It permits a mortgagee, in narrow circumstances, to sell the mortgaged property without the intervention of the court: chiefly where the mortgage is an English mortgage and neither party belongs to certain communities, or where a power of sale is expressly conferred by the deed and the mortgagee is the Government, or where the deed confers the power and the property is in specified towns. The power may be exercised only after a written notice requiring payment of principal has been served and default has continued for three months, or interest of at least five hundred rupees has been in arrear for three months.</p>
+
+    <div class="callout case">
+      <span class="tag">Case law: redemption survives until the conveyance</span>
+      <p>In <em>Narandas Karsondas v. S.A. Kamtam</em> (1977), the Supreme Court held that under the section 69 power of sale, the mortgagor's right of redemption is not extinguished by the mere issue of a sale notice or even acceptance of a bid; it survives until the sale is completed by registration of the conveyance. This TPA principle was the template SARFAESI later modified: the 2016 amendment to section 13(8) deliberately advanced the cut-off to publication of the auction notice precisely because, under the unmodified TPA position, redemption lingered too long for efficient enforcement. Knowing the TPA baseline explains why the statute was changed.</p>
+    </div>
+
+    <h3><span class="s">s. 69A</span> Appointment of a receiver</h3>
+    <p>A mortgagee entitled to exercise the power of sale may appoint a receiver of the income of the mortgaged property. The receiver is deemed the agent of the mortgagor, collects the income, and applies it in a statutory order: outgoings and taxes, prior charges, his own commission and insurance, the interest under the mortgage, and then, if directed, the principal. The receivership device lets a lender bleed value from an income-producing asset without taking the drastic step of sale, a useful intermediate measure in a workout.</p>
+
+    <h3><span class="s">s. 76</span> Liabilities of a mortgagee in possession</h3>
+    <p>A mortgagee who takes possession is held to the standard of a prudent owner: he must manage the property, collect rents, pay public charges, make necessary repairs, not commit waste, keep accurate accounts, and credit the receipts against interest and then principal. Possession is therefore a double-edged remedy. It gives control but imposes fiduciary-like duties and strict accounting. A mortgagee in possession who mismanages the asset can be debited with the loss. This is why lenders often prefer sale or a receiver to direct possession.</p>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: mapping TPA remedies onto SARFAESI and IBC</span>
+      <p>Every SARFAESI measure has a TPA ancestor. The section 13(4) power to take possession and sell is the statutory supercharging of the section 69 power of sale, freed from its narrow preconditions. The appointment of a manager under SARFAESI echoes the section 69A receiver. The mortgagee-in-possession duties of section 76 inform how an authorised officer must account for the asset. And in CIRP, a secured financial creditor that stays outside liquidation to enforce its own security under section 52 of the IBC is, in substance, exercising its TPA and SARFAESI realisation rights, subject to the liquidator's verification of those very security interests.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART VIII · REDEMPTION & CLOG
+  ========================================================== -->
+  <section class="part reveal" id="redemption">
+    <div class="part-head">
+      <div class="eyebrow">Part VIII</div>
+      <h2>Redemption, foreclosure <span class="pin">&amp; the rule against clogs</span></h2>
+    </div>
+    <p class="lead">Two maxims govern this area: "once a mortgage, always a mortgage," and "a mortgage cannot be made irredeemable." Together they form the doctrine of the clog on the equity of redemption, a doctrine that quietly polices the fairness of every security bargain.</p>
+
+    <h3><span class="s">Doctrine</span> What a clog is, and why equity strikes it down</h3>
+    <p>The equity of redemption is the borrower's right to get his property back on paying the debt. A clog is any term in the mortgage that obstructs, postpones unreasonably, or destroys that right. Equity refuses to enforce clogs because the entire premise of a mortgage is that it is security and nothing more. A common example is a term providing that if the borrower fails to pay by a certain date, the property is forfeited to the lender outright. Such a term tries to convert a mortgage into a sale on default, and the courts will strike it down and allow redemption notwithstanding.</p>
+
+    <div class="callout case">
+      <span class="tag">Case law: a long redemption period is not automatically a clog</span>
+      <p>In <em>Seth Ganga Dhar v. Shankar Lal</em> (1958), the Supreme Court held that a stipulation postponing redemption (there, for a long term) is not, by itself, a clog; the question is whether the term is, in the circumstances, oppressive or unconscionable. Length alone does not condemn it. The court looks at bargaining position, the nature of the transaction, and whether the term in substance defeats the right to redeem. Contrast the later approach in <em>Pomal Kanji Govindji v. Vrajlal Karsandas Purohit</em> (1989), where the Court treated an unusually long fetter, against a backdrop of rising values, as oppressive. The doctrine is fact-sensitive, not mechanical.</p>
+    </div>
+
+    <h3><span class="s">Compare</span> Redemption against foreclosure, side by side</h3>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Feature</th><th>Redemption (the borrower's right)</th><th>Foreclosure (the lender's remedy)</th></tr>
+        <tr><td>Who invokes it</td><td>Mortgagor and others interested in the equity (s.91)</td><td>Mortgagee by conditional sale, or anomalous mortgagee whose deed allows it (s.67)</td></tr>
+        <tr><td>Effect</td><td>Property returns to the borrower free of the mortgage</td><td>Borrower's equity of redemption is extinguished; property vests in the lender</td></tr>
+        <tr><td>Available against</td><td>Every mortgage</td><td>Only foreclosure-type mortgages; barred to simple and equitable mortgagees</td></tr>
+        <tr><td>Can it be contracted away?</td><td>No; clogs are void</td><td>It is a remedy, not a right that can be drafted around the redemption rule</td></tr>
+        <tr><td>Insolvency relevance</td><td>Survives until sale completes; a guarantor or co-debtor may redeem to step into the lender's shoes</td><td>Rare in bank practice; sale is the dominant route</td></tr>
+      </table>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: redemption inside CIRP</span>
+      <p>The right of redemption does not vanish merely because a moratorium is in force; it is suspended in the sense that enforcement is frozen, but the equity of redemption remains a property right of the corporate debtor's estate. A resolution plan that proposes to release the mortgaged asset to a resolution applicant is, in commercial substance, effecting a redemption of the security in exchange for the plan's payment to the secured creditor. Section 91 also matters: a guarantor who pays the secured debt may, on redeeming, be subrogated to the lender's security (sections 91 and 92), a point that frequently surfaces when a promoter-guarantor tries to recover after honouring a guarantee.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART IX · PRIORITY
+  ========================================================== -->
+  <section class="part reveal" id="priority">
+    <div class="part-head">
+      <div class="eyebrow">Part IX · Sections 48, 78 &amp; 79</div>
+      <h2>Priority of interests: <span class="pin">who gets paid first</span></h2>
+    </div>
+    <p class="lead">When two or more creditors hold security over the same property and the asset cannot satisfy them all, priority decides everything. The TPA's default rule is deceptively simple, and the exceptions are where the real fights happen.</p>
+
+    <h3><span class="s">s. 48</span> First in time prevails</h3>
+    <p>Where a person creates, by transfer at different times, rights over the same immovable property that cannot all be exercised in full together, each later right is, absent a special contract, subject to the rights created earlier. This is the maxim <em>qui prior est tempore potior est jure</em>, he who is earlier in time is stronger in law. The first mortgagee ranks ahead of the second; the second ahead of the third. The rule is the foundation of inter-creditor ranking, and it is why the date a security interest was created, and registered, is the first thing to establish in any priority dispute.</p>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition: and where registration overrides time</span>
+      <p>Section 48 sets the baseline, but it operates "absent a special contract" and subject to the doctrine of notice. Registration converts a private interest into a publicly notified one. Once an instrument is registered, everyone is deemed to have notice of it from the date of registration (Explanation I to section 3). So the practical priority rule blends two ideas: time of creation, and time of notice through registration. A later mortgagee who took without notice of an earlier unregistered interest may, in defined circumstances, gain priority; a later mortgagee fixed with notice cannot.</p>
+    </div>
+
+    <h3><span class="s">s. 78</span> Postponement of the prior mortgagee</h3>
+    <p>The first-in-time rule yields where the prior mortgagee's own fraud, misrepresentation or gross neglect induced a later person to advance money on the security. In that case the prior mortgagee is postponed to the subsequent mortgagee. The earlier creditor loses his priority not because the later creditor was clever but because the earlier creditor misled. A bank that conceals its charge, or carelessly lets title documents circulate so that another lender is deceived into financing the same property, can be pushed down the queue.</p>
+
+    <h3><span class="s">s. 79</span> Mortgage to secure an uncertain amount</h3>
+    <p>Where a mortgage secures future advances or the balance of a running account up to a stated maximum, a later mortgagee taking with notice is postponed to the prior mortgage in respect of all advances up to the maximum, even advances made after notice of the second mortgage. This protects the structure of working-capital lending, where a bank advances against a fluctuating cash-credit limit. The maximum, once stated, fixes the prior lender's protected ceiling.</p>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: how TPA priority meets the registration overlay</span>
+      <p>In modern practice, the TPA's time-and-notice rules sit inside a registration framework. A company's charges are registered with the Registrar of Companies under the Companies Act, and security interests are registered with CERSAI under SARFAESI. Section 26D of SARFAESI makes registration with CERSAI a precondition to enforcement, and section 26E gives a registered secured creditor priority over Government dues, expressly subject to the IBC. The TPA tells you the substantive ranking between competing security holders; the registration statutes tell you whether a given interest is perfected and enforceable. A resolution professional ranking secured claims must read both layers together: a mortgage valid under the TPA but unregistered where registration was mandatory may be unenforceable or subordinated.</p>
+    </div>
+
+    <div class="callout pitfall">
+      <span class="tag">Pitfall: the unregistered charge in CIRP</span>
+      <p>A frequent fault line in claim verification is a financial creditor asserting a "first charge" that was never registered with the Registrar of Companies, or whose CERSAI registration is missing or defective. The mortgage may be perfectly valid between the parties under the TPA, yet its priority and even its enforceability against third parties and a liquidator can be compromised by the registration failure. Verify the registration trail before accepting a creditor's claimed rank in the waterfall.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART X · MARSHALLING ETC
+  ========================================================== -->
+  <section class="part reveal" id="marshalling">
+    <div class="part-head">
+      <div class="eyebrow">Part X · Sections 56, 81, 82 &amp; 92</div>
+      <h2>Marshalling, contribution <span class="pin">&amp; subrogation</span></h2>
+    </div>
+    <p class="lead">These three doctrines are the equitable machinery for sharing security fairly among competing claimants. They look technical, but they decide real money in multi-property, multi-creditor distress, which is exactly the situation an insolvency professional confronts.</p>
+
+    <h3><span class="s">ss. 56 &amp; 81</span> Marshalling</h3>
+    <p>Marshalling answers a problem of fairness between creditors of a common debtor. Suppose a debtor mortgages two properties, A and B, to Lender One, and then mortgages only property B to Lender Two. If Lender One could choose to satisfy itself entirely out of property B, Lender Two would be left with nothing, even though property A was available. Marshalling forces Lender One to look first to the property that is not also charged to Lender Two, so far as it will go, before touching the doubly-charged property. Section 81 states the rule for subsequent mortgagees; section 56 states a parallel rule for a buyer of one of several mortgaged properties. The doctrine never prejudices the prior mortgagee: it cannot reduce his recovery, only arrange the order of resort to protect the junior claimant.</p>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition: arrange the funds, do not reduce the senior</span>
+      <p>Marshalling is about sequencing, not subtraction. The senior creditor with security over both assets gets paid in full either way; the doctrine simply requires him to draw first on the asset over which the junior has no claim, so that something is left for the junior. It is the law saying: do not, by an arbitrary choice of which collateral to hit, destroy a junior creditor when there was enough to go around if you had drawn in the fair order.</p>
+    </div>
+
+    <h3><span class="s">s. 82</span> Contribution</h3>
+    <p>Contribution addresses the mirror situation. Where one mortgage covers several properties belonging to different owners, and the debt is paid out of one property, that property's owner can require the others to contribute rateably according to the value of their shares. Nobody should bear the whole burden of a common debt when others' properties were equally charged for it. Contribution equalises the load.</p>
+
+    <h3><span class="s">ss. 91 &amp; 92</span> Subrogation</h3>
+    <p>Subrogation lets a person who pays off a mortgage step into the paid-off mortgagee's shoes, acquiring the same security and priority. Section 91 lists who may redeem (any person interested in the property or the equity of redemption, any surety for the debt, any creditor who has obtained a decree for sale). Section 92 then provides that such a person, on redeeming, is subrogated to the rights of the mortgagee he redeems. There are two routes: legal subrogation, which arises by operation of law when a person interested in the property pays off a charge, and conventional subrogation, which requires a registered agreement that the payer shall be subrogated.</p>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: subrogation is a guarantor's lifeline</span>
+      <p>Subrogation is where promoter guarantees and refinancing collide with insolvency. When a guarantor pays the secured creditor, he is subrogated to that creditor's security and priority against the principal debtor (sections 140 and 141 of the Contract Act work hand in hand with sections 91 and 92 of the TPA). In CIRP, this means a guarantor who honours the debt may assert a subrogated secured claim against the corporate debtor's estate. The Supreme Court's decisions on guarantor liability under the IBC (notably the recognition that creditors may proceed against guarantors despite a resolution plan binding the corporate debtor) make the subrogation question commercially live. A refinancing lender who pays off an existing mortgage should secure conventional subrogation by a registered instrument so that it inherits, rather than loses, the discharged lender's priority.</p>
+    </div>
+
+    <h3><span class="s">s. 93</span> No tacking</h3>
+    <p>Section 93 abolishes tacking: a mortgagee who pays off a prior mortgage does not thereby gain priority for his own separate advance, and a mortgagee making a further advance does not gain priority over an intermediate mortgage for that advance, except in the running-account situation of section 79. The rule prevents a creditor from manipulating priority by acquiring earlier securities and "tacking" later advances onto them ahead of an intervening creditor.</p>
+  </section>
+
+  <!-- =========================================================
+       PART XI · CHARGE
+  ========================================================== -->
+  <section class="part reveal" id="charge">
+    <div class="part-head">
+      <div class="eyebrow">Part XI · Sections 100 &amp; 101</div>
+      <h2>The charge, <span class="pin">and how it differs from a mortgage</span></h2>
+    </div>
+    <p class="lead">The words "charge" and "mortgage" are used loosely in loan documents and pleadings, but they are not the same thing, and the difference can decide enforcement and priority. Section 100 defines the charge; the distinction from a mortgage is one every secured-lending lawyer must be able to state cleanly.</p>
+
+    <h3><span class="s">s. 100</span> What a charge is</h3>
+    <p>Where immovable property of one person is made security for the payment of money to another, by act of parties or by operation of law, and the transaction does not amount to a mortgage, the second person has a charge on the property. The defining feature is in the negative: a charge is security that is not a mortgage. The provisions that apply to a simple mortgage apply, so far as may be, to a charge. Crucially, a charge does not transfer an interest in the property; it merely fastens an obligation onto it, creating a right to have the property applied in payment of the money. A mortgage, by contrast, transfers an interest.</p>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition: a mortgage moves an interest, a charge attaches a claim</span>
+      <p>Picture the property as a house. A mortgage hands the lender a defined legal stake in the house itself, a proprietary slice he can enforce against the world. A charge does not give the lender a slice; it pins a "this house answers for my debt" label onto it, enforceable as a right to sell, but without conveying any ownership interest. Because the mortgage conveys an interest and the charge does not, the mortgagee's right is generally stronger against third parties, especially bona fide purchasers without notice.</p>
+    </div>
+
+    <h3><span class="s">Compare</span> Charge versus mortgage</h3>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Aspect</th><th>Mortgage (s.58)</th><th>Charge (s.100)</th></tr>
+        <tr><td>Nature of right</td><td>Transfer of an interest in specific immovable property</td><td>No transfer of interest; an obligation fastened on the property</td></tr>
+        <tr><td>How created</td><td>Only by act of parties (a mortgage deed or deposit of title deeds)</td><td>By act of parties or by operation of law</td></tr>
+        <tr><td>Right against a bona fide transferee without notice</td><td>Generally enforceable, the mortgagee holds a proprietary interest</td><td>Not enforceable against a transferee for value without notice of the charge</td></tr>
+        <tr><td>Remedy</td><td>Sale or foreclosure depending on the form</td><td>Right to have the property sold; treated like a simple mortgage</td></tr>
+        <tr><td>Typical examples</td><td>Bank loan against a registered or equitable mortgage of land</td><td>Unpaid vendor's charge (s.55(4)(b)); a statutory charge for tax; a charge created by a decree</td></tr>
+      </table>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">Case law: the line between charge and mortgage</span>
+      <p>In <em>Dattatreya Shankar Mote v. Anand Chintaman Datar</em> (1974), the Supreme Court explained that the central distinction is the transfer of an interest: a mortgage transfers an interest in specific immovable property, while a charge creates only a right of payment out of specified property without transferring an interest in it. The characterisation governs whether the security binds a later purchaser without notice and which remedies are available. In claim verification, mislabelling a charge as a mortgage (or the reverse) can mislead on both enforceability and rank.</p>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: floating charges and the company law overlay</span>
+      <p>Much corporate security takes the form of a charge rather than a TPA mortgage, particularly the floating charge over current assets and the fixed-and-floating debenture. These are charges in the section 100 sense, registered under the Companies Act with the Registrar of Companies, and (for security interests within SARFAESI's reach) with CERSAI. In CIRP, a floating charge holder is a secured creditor whose security crystallises and whose priority in liquidation is governed by section 53 of the IBC, where workmen's dues and the costs of the process take precedence over even secured creditors in defined slices. The TPA gives you the substantive nature of the charge; the Companies Act gives you perfection; the IBC gives you the distribution rank.</p>
+    </div>
+
+    <p>Section 101 adds a useful rule: a mortgagee or charge-holder who acquires the equity of redemption does not, as against a subsequent encumbrancer, cause his own mortgage or charge to merge and disappear. This prevents the accidental extinction of a senior security when the senior creditor buys out the owner, preserving its priority against juniors.</p>
+  </section>
+
+  <!-- =========================================================
+       PART XII · PART PERFORMANCE
+  ========================================================== -->
+  <section class="part reveal" id="partperf">
+    <div class="part-head">
+      <div class="eyebrow">Part XII · Section 53A</div>
+      <h2>Part performance: <span class="pin">the shield that protects a possessing buyer</span></h2>
+    </div>
+    <p class="lead">Section 53A imports the English equitable doctrine of part performance. It does not give a buyer title, but it gives him a shield: a transferor who has taken the buyer's money and let him into possession cannot turn around and evict him merely because the conveyance was never formally completed.</p>
+
+    <h3><span class="s">s. 53A</span> The doctrine, and its strict conditions</h3>
+    <p>Where a person contracts in writing to transfer immovable property for consideration, the terms can be ascertained with reasonable certainty, the transferee has taken possession (or, being already in possession, continues and does some act in furtherance of the contract), and the transferee has performed or is willing to perform his part, then the transferor and those claiming under him are barred from enforcing against the transferee any right in the property other than a right expressly provided by the contract. The protection is a defence, not a sword: section 53A cannot be used to claim title, only to resist dispossession.</p>
+
+    <div class="callout intuition">
+      <span class="tag">Why the doctrine exists</span>
+      <p>The doctrine prevents a particular injustice. A seller signs a written contract, takes the price, and hands over possession, but the formal registered deed is never executed. Without section 53A, the seller could exploit the missing formality to evict the buyer and keep both the money and the land. Equity refuses to let the statute of formalities become an instrument of fraud. The buyer who has paid and possessed gets to stay, even though he has not acquired title.</p>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">Case law: part performance defeats even a later transferee in some cases</span>
+      <p>In <em>Shrimant Shamrao Suryavanshi v. Pralhad Bhairoba Suryavanshi</em> (2002), the Supreme Court confirmed that section 53A protects a transferee in possession under a written, part-performed contract even against the transferor and persons claiming under him, subject to the proviso that protects a later transferee for consideration who took without notice of the contract or the part performance. The 2001 amendment removed the earlier requirement that the contract be registered, but the proviso protecting a bona fide purchaser without notice remains the key qualifier.</p>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: section 53A in distressed real estate</span>
+      <p>In real-estate insolvency, section 53A is constantly invoked by homebuyers and by parties holding agreements to sell. A buyer who has paid and is in possession under a written agreement may resist the corporate debtor (or its resolution applicant, or a secured creditor enforcing) on the strength of part performance. But the shield is qualified: a financial creditor who took its mortgage for value without notice of the buyer's possession and contract may defeat the section 53A claim under the proviso. Possession plus a written contract is the buyer's strongest card; absence of notice is the lender's answer. The contest turns, once again, on the doctrine of notice from Part III.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART XIII · LIS PENDENS
+  ========================================================== -->
+  <section class="part reveal" id="lispendens">
+    <div class="part-head">
+      <div class="eyebrow">Part XIII · Section 52</div>
+      <h2>Lis pendens: <span class="pin">you cannot trade your way out of a lawsuit</span></h2>
+    </div>
+    <p class="lead">The doctrine of lis pendens, "a pending litigation," stops a party from defeating a court proceeding by transferring the disputed property while the case is alive. Any transfer made during the suit is subject to whatever the court ultimately decides.</p>
+
+    <h3><span class="s">s. 52</span> The rule</h3>
+    <p>During the pendency of a non-collusive suit in which any right to immovable property is directly and specifically in question, the property cannot be transferred or otherwise dealt with by any party so as to affect the rights of any other party under the eventual decree, except with the court's authority. The transfer is not void; it is valid between the transferor and transferee, but it binds the transferee to the result of the litigation. A buyer who purchases property that is the subject of a pending suit takes it cum onere, burdened by the outcome.</p>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition: protect the decree, not punish the buyer</span>
+      <p>The doctrine exists to keep litigation meaningful. If a defendant could sell the disputed property mid-suit and thereby place it beyond the reach of the court's decree, every property dispute would become a race to convey the asset to a stranger. Lis pendens freezes the legal effect of any such transfer: deal with the property if you must, but the buyer inherits the lawsuit. The aim is to protect the eventual decree, not to invalidate the transaction.</p>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">Case law: the transferee is bound, even if bona fide</span>
+      <p>In <em>Rajender Singh v. Santa Singh</em> (1973) and again in <em>T.G. Ashok Kumar v. Govindammal</em> (2010), the Supreme Court applied lis pendens to bind a transferee to the decree even where the purchase appeared bona fide, because the policy is to prevent the frustration of pending litigation. The transferee's remedy lies against his own transferor, not against the successful litigant. The doctrine traces to the English rule in <em>Bellamy v. Sabine</em>, which Indian law codified in section 52.</p>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: lis pendens in CIRP and avoidance</span>
+      <p>Lis pendens has sharp edges in insolvency. A corporate debtor that transfers an asset while litigation over that asset is pending passes only a title burdened by the suit, so a resolution professional acquiring the estate inherits whatever the court decides. More broadly, any transfer of the debtor's property made during pending proceedings (including recovery suits) is vulnerable: the transferee cannot defeat the eventual decree-holder. When conducting diligence on a distressed target, a pending-litigation search is as important as a charge search, because a clean-looking conveyance may be silently subject to lis pendens.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART XIV · FRAUDULENT TRANSFER
+  ========================================================== -->
+  <section class="part reveal" id="fraudulent">
+    <div class="part-head">
+      <div class="eyebrow">Part XIV · Section 53</div>
+      <h2>Fraudulent transfer: <span class="pin">the TPA's own avoidance power</span></h2>
+    </div>
+    <p class="lead">Long before the IBC's avoidance provisions, the TPA gave creditors a tool to undo transfers designed to put assets beyond their reach. Section 53 voidably annuls transfers made to defeat or delay creditors, and it remains a live remedy alongside the Code's preference and undervaluation provisions.</p>
+
+    <h3><span class="s">s. 53</span> The two limbs</h3>
+    <p>The first limb: every transfer of immovable property made with intent to defeat or delay the creditors of the transferor is voidable at the option of any creditor so defeated or delayed. The right does not impair a transferee in good faith and for consideration, and the avoidance suit must be brought on behalf of all the creditors. The second limb: every transfer made without consideration with intent to defraud a subsequent transferee is voidable at the option of that transferee. The first limb is the one creditors use; it lets a defrauded creditor unwind a debtor's attempt to hide property.</p>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition: intent to defeat, not mere preference</span>
+      <p>Section 53 targets the dishonest debtor who shifts property to a friend or relative on the eve of recovery so that creditors find an empty shell. The animating idea is that a debtor's assets are, in a moral sense, answerable to his creditors, and the law will not let him cheat them by a paper transfer. The transferee in good faith and for value is protected, because the wrong is the intent to defeat, not the transfer as such. Intent is the gravamen, and it is usually proved by the surrounding circumstances: timing, inadequacy of price, the relationship of the parties, and the retention of benefit by the transferor.</p>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">Case law: proving the intent to defeat creditors</span>
+      <p>In <em>Abdul Shukoor Saheb v. Arji Papa Rao</em> (1963), the Supreme Court discussed how the intent to defeat or delay creditors under section 53 is to be inferred from the badges of fraud: a transfer to a near relation, for inadequate or no real consideration, made when the transferor was indebted and facing recovery, with the transferor continuing to enjoy the property. No single badge is conclusive; the court weighs them cumulatively. The burden lies on the creditor to establish the fraudulent intent.</p>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: section 53 alongside IBC avoidance</span>
+      <p>The IBC supplies its own avoidance toolkit: preferential transactions (section 43), undervalued transactions (section 45), transactions defrauding creditors (section 49), and extortionate credit (section 50). Section 53 of the TPA is not displaced by these; it is a parallel, creditor-driven remedy that can reach transfers a resolution professional might also attack under the Code. The IBC provisions have defined look-back periods and run at the instance of the RP or liquidator; section 53 has no fixed look-back beyond limitation and can be invoked by a creditor directly. In a complex fraud, both routes may be pursued. Knowing the TPA limb lets you frame the avoidance attack with the widest reach.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART XV · OSTENSIBLE OWNERSHIP
+  ========================================================== -->
+  <section class="part reveal" id="ostensible">
+    <div class="part-head">
+      <div class="eyebrow">Part XV · Section 41</div>
+      <h2>Ostensible ownership: <span class="pin">protecting the lender who relied on appearances</span></h2>
+    </div>
+    <p class="lead">Section 41 protects a person who, in good faith and after reasonable care, deals for value with someone who looks like the owner. It is the statutory expression of the principle that where one of two innocent parties must suffer for a third person's act, the loss should fall on the one who created the appearance that misled the other.</p>
+
+    <h3><span class="s">s. 41</span> The rule and its conditions</h3>
+    <p>Where, with the consent (express or implied) of the persons interested in immovable property, a person is the ostensible owner and transfers the property for consideration, the transfer is not voidable on the ground that the transferor was not authorised, provided the transferee took reasonable care to ascertain the transferor's power and acted in good faith. Four conditions must coexist: the transferor was the ostensible owner; the real owner consented to that appearance; the transfer was for consideration; and the transferee acted in good faith after reasonable enquiry.</p>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition: the consenting real owner bears the loss</span>
+      <p>The doctrine allocates loss by fault. If the true owner allowed someone else to appear as owner (by putting property in his name, letting him hold the title deeds, letting him deal openly), and a careful purchaser or lender relied on that appearance, the true owner cannot later spring his hidden ownership to defeat the transaction. He created the misleading picture; he, not the innocent transferee, must bear the consequence. The doctrine traces to the Privy Council's decision in <em>Ramcoomar Koondoo v. Macqueen</em>, which section 41 codified.</p>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">Case law: benami and the limits of section 41</span>
+      <p>In <em>Jayadayal Poddar v. Bibi Hazra</em> (1974), the Supreme Court set out the tests for deciding whether a holder is a real or merely an ostensible (benami) owner: the source of the purchase money, possession, the parties' relationship, their conduct, and the custody of title deeds. Section 41 protects a transferee only where the true owner consented to the ostensible ownership; a benami arrangement where the real owner never consented to the front-man dealing with the property will not attract the protection. The transferee must also prove reasonable care, not blind reliance.</p>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: section 41 is a bank's defence on title</span>
+      <p>A lender that takes a mortgage from someone who appears, on the register and from possession, to be the owner can invoke section 41 if a hidden real owner later surfaces, provided the lender made the enquiries a prudent lender makes. This is precisely why diligence (title search, possession inspection, verification of authority) is not box-ticking: the reasonable-care condition of section 41 is what converts a bank's reliance into a protected transaction. A lender that skipped enquiry cannot claim the section's shelter. In distressed acquisitions, where promoter group entities hold assets in confusing nominee structures, section 41 is both a sword for the careful buyer and a trap for the careless one.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART XVI · FEEDING THE GRANT
+  ========================================================== -->
+  <section class="part reveal" id="feeding">
+    <div class="part-head">
+      <div class="eyebrow">Part XVI · Section 43</div>
+      <h2>Feeding the grant by estoppel: <span class="pin">the after-acquired title that perfects security</span></h2>
+    </div>
+    <p class="lead">Section 43 deals with the seller who transfers property he does not yet own but later acquires. The doctrine of feeding the grant by estoppel makes the after-acquired title flow automatically to the transferee, so the earlier defective transfer is fed and perfected.</p>
+
+    <h3><span class="s">s. 43</span> The rule</h3>
+    <p>Where a person fraudulently or erroneously represents that he is authorised to transfer certain immovable property and purports to transfer it for consideration, the transfer operates, at the transferee's option, on any interest the transferor later acquires in that property while the contract of transfer subsists. The transferor is estopped from denying that he had the title he claimed; when the title actually arrives, it feeds the earlier grant. The transferee may elect to take the benefit. A proviso protects a later bona fide transferee for value without notice of the prior transaction.</p>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition: you cannot keep what you promised away</span>
+      <p>Suppose a promoter mortgages a plot to a bank, representing that he owns it, when in fact title is still being conveyed to him. When the title finally vests in the promoter, fairness forbids him from pocketing the unencumbered plot and telling the bank its mortgage was over nothing. Section 43 makes the after-acquired title feed the mortgage automatically. The doctrine rests on estoppel: having represented ownership and taken value, the transferor cannot deny the very title that later comes to him.</p>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">Case law: feeding the grant prevails over spes successionis</span>
+      <p>In <em>Jumma Masjid, Mercara v. Kodimaniandra Deviah</em> (1962), the Supreme Court resolved the tension between section 6(a) (a spes successionis cannot be transferred) and section 43 (after-acquired title feeds the grant). It held that where a transferor represents a present title and the transferee acts in good faith on that representation, section 43 applies and the after-acquired interest feeds the transfer, even though the interest transferred was at the time a mere expectancy. The transferee who knew the transferor had only a spes successionis cannot invoke section 43; but the transferee misled into believing in a present title can. The decision is the leading authority on reconciling the two sections.</p>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: perfecting security over to-be-acquired assets</span>
+      <p>Project finance frequently involves security over assets the borrower has agreed to buy but not yet acquired, plant being installed, land under conveyance, units to be allotted. Section 43 is the doctrine that perfects such security once the borrower acquires the asset, provided the lender took for value and in good faith on a representation of title. Combined with the rule that a present transfer of future property attaches when the property arises, section 43 is what makes "negative lien and create security on acquisition" covenants effective. For an RP verifying a creditor's security over after-acquired property, section 43 explains how a mortgage that looked premature became good when title vested.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART XVII · LEASES
+  ========================================================== -->
+  <section class="part reveal" id="lease">
+    <div class="part-head">
+      <div class="eyebrow">Part XVII · Sections 105 to 116</div>
+      <h2>Leases and licences: <span class="pin">the tenant who can defeat a secured creditor</span></h2>
+    </div>
+    <p class="lead">A lease creates an interest in land; a licence does not. That single distinction decides whether an occupant can resist a secured creditor, a resolution applicant, or an auction purchaser. Leases also generate their own contests over creation, determination and holding over.</p>
+
+    <h3><span class="s">s. 105</span> Lease defined</h3>
+    <p>A lease of immovable property is a transfer of a right to enjoy the property for a certain time, or in perpetuity, in consideration of a price (premium) or rent. The defining feature is the transfer of a right to enjoy, which gives the lessee an interest in the land, a proprietary right that binds the lessor's transferees and survives changes in ownership. The lessee has exclusive possession for the term. This is what separates a lease from a licence.</p>
+
+    <h3><span class="s">Compare</span> Lease against licence</h3>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Aspect</th><th>Lease (s.105 TPA)</th><th>Licence (s.52 Easements Act)</th></tr>
+        <tr><td>Nature</td><td>Transfer of an interest in land</td><td>Mere permission to do something on the land; no interest passes</td></tr>
+        <tr><td>Possession</td><td>Exclusive possession for the term</td><td>No exclusive possession; the grantor retains legal possession</td></tr>
+        <tr><td>Transferability</td><td>Assignable and heritable unless restricted</td><td>Personal; generally not transferable or heritable</td></tr>
+        <tr><td>Effect on a transferee of the land</td><td>Binds the new owner; the lessee's interest survives</td><td>Does not bind a transferee; the licence may be revoked</td></tr>
+        <tr><td>Insolvency relevance</td><td>A genuine lessee may resist a secured creditor and a resolution applicant</td><td>A licensee has no interest to assert against the estate or a purchaser</td></tr>
+      </table>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">Case law: the substance test for lease versus licence</span>
+      <p>In <em>Associated Hotels of India v. R.N. Kapoor</em> (1959), the Supreme Court laid down the enduring test: the label the parties use is not decisive; what matters is the substance of the transaction and, in particular, whether exclusive possession was granted. If a document gives exclusive possession for a term in consideration of rent, it is a lease however it is styled; if it confers only a permission to use without exclusive possession, it is a licence. Decades of disputes about whether an occupant can resist dispossession turn on this single test.</p>
+    </div>
+
+    <h3><span class="s">ss. 107 &amp; 111</span> Creation and determination</h3>
+    <p>A lease from year to year, or for a term exceeding one year, or reserving a yearly rent, can be made only by a registered instrument (section 107). Shorter leases may be oral with delivery of possession. Section 111 then sets out how a lease determines: by efflux of time, by happening of a determining event, by merger, by surrender (express or implied), by forfeiture (for breach of an express condition of re-entry, denial of the lessor's title, or the lessee's insolvency where the lease so provides), and on the expiry of a notice to quit. Forfeiture is the lessor's weapon against a defaulting or disloyal tenant, subject to the tenant's statutory relief against forfeiture under sections 114 and 114A.</p>
+
+    <h3><span class="s">s. 116</span> Holding over</h3>
+    <p>If a lessee remains in possession after the lease ends and the lessor accepts rent or otherwise assents to his continuing, the lease is renewed from year to year or month to month according to the purpose of the lease. Holding over creates a fresh tenancy by the conduct of the parties. The contrast is the tenant at sufferance, who simply stays on without the lessor's assent and acquires no fresh interest. The distinction matters because a tenant holding over has a renewed tenancy that may bind the lessor's transferees, while a tenant at sufferance is little better than a trespasser.</p>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: the tenancy battleground in enforcement and CIRP</span>
+      <p>Whether a tenant can defeat a secured creditor or a resolution applicant collapses into a sequence of TPA questions. Is the occupant a lessee (an interest in land) or a mere licensee (no interest)? If a lessee, was the lease created before the mortgage and validly (registered where required), or is it an eve-of-default contrivance caught by section 65A? Was it within the mortgagor's leasing power? Did it determine by forfeiture or efflux? A genuine, prior, registered lease within section 65A binds the creditor and the purchaser; a sham or non-compliant lease does not. The Supreme Court's SARFAESI tenancy decisions (protecting bona fide pre-mortgage lessees, refusing protection to manufactured tenancies) are, at bottom, applications of these TPA rules, now read into section 17(4A) of SARFAESI. In a resolution plan, the treatment of subsisting leases must be diligenced through exactly this lattice.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART XVIII · ACTIONABLE CLAIMS
+  ========================================================== -->
+  <section class="part reveal" id="actionable">
+    <div class="part-head">
+      <div class="eyebrow">Part XVIII · Sections 3 &amp; 130 to 137</div>
+      <h2>Actionable claims &amp; assignment: <span class="pin">the legal engine of debt trading</span></h2>
+    </div>
+    <p class="lead">When a bank sells a non-performing loan to an asset reconstruction company, or one lender assigns its debt to another, the transaction runs on the TPA's law of actionable claims. For anyone in distressed-debt acquisition, this is the most commercially important corner of the Act.</p>
+
+    <h3><span class="s">s. 3</span> What an actionable claim is</h3>
+    <p>An actionable claim is a claim to any debt (other than a debt secured by mortgage of immovable property or by hypothecation or pledge of movable property) or to any beneficial interest in movable property not in the claimant's possession, which the civil courts recognise as affording grounds for relief, whether the debt or interest is existent, accruing, conditional or contingent. In plain terms, it is a claim that you can only realise by suing, an unsecured debt, a book debt, a receivable. The definition deliberately excludes a debt secured by a mortgage of immovable property, because that is governed by the mortgage rules; but an unsecured loan and most receivables are classic actionable claims.</p>
+
+    <h3><span class="s">ss. 130 &amp; 131</span> How an actionable claim is transferred</h3>
+    <p>The transfer of an actionable claim, with or without consideration, must be effected by an instrument in writing signed by the transferor or his agent. On execution of the instrument, the transfer is complete, and all the transferor's rights and remedies vest in the transferee, whether or not notice is given to the debtor. The transferee may then sue in his own name without joining the transferor. Notice to the debtor (section 131) protects the transferee against the debtor honestly paying the original creditor: until the debtor has notice, a payment to the transferor discharges him. Section 132 makes the transferee take subject to all the equities and liabilities to which the transferor was subject, the assignee takes the debt warts and all, including any set-off the debtor had against the original creditor.</p>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition: you buy the debt as it stands</span>
+      <p>Assignment of an actionable claim is the legal mechanism by which a debt changes hands. Two ideas govern it. First, writing perfects the transfer and vests the right to sue in the buyer, so an ARC that takes a written assignment can enforce the loan as if it had made it. Second, the buyer steps into the seller's shoes exactly, no better and no worse: section 132 means every defence, set-off and equity the borrower had against the original bank survives against the ARC. You cannot launder a defective debt clean by assigning it.</p>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">Case law: banks may assign their debts, including NPAs</span>
+      <p>In <em>ICICI Bank v. Official Liquidator of APS Star Industries</em> (2010), the Supreme Court held that a bank's assignment of its debts (including non-performing assets) to another bank or to an ARC is a transfer of an actionable claim, is not "trading in debts" forbidden by banking law, and is a legitimate tool of debt management consistent with RBI guidelines. The decision is the doctrinal licence for the entire secondary market in distressed Indian debt: it confirms that loan portfolios are assignable actionable claims and that the assignee inherits the lender's enforcement rights.</p>
+    </div>
+
+    <div class="callout case">
+      <span class="tag">Case law: assignment, limitation and the IBC</span>
+      <p>In <em>Kotak Mahindra Bank v. A. Balakrishnan</em> (2022), the Supreme Court connected the assignment and recovery machinery to the IBC, holding that a recovery certificate issued in favour of a creditor furnishes a fresh cause of action and can found a CIRP application, and that limitation must be respected throughout. For an assignee of debt, the case underlines that what it buys is a claim with its own limitation clock, and that the assignment must be diligenced for limitation just as carefully as for quantum.</p>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: the assignment diligence checklist</span>
+      <p>When acquiring a loan, the actionable-claim rules dictate what to verify. Is there a written, executed assignment deed (sections 130 to 131)? Has notice been given to the borrower so that payments now flow to the assignee? Has the security (which travels with the debt under section 8) been validly transferred and re-registered with CERSAI and the Registrar of Companies? What equities and set-offs does the borrower hold that will follow the debt under section 132? Is the claim within limitation? And, because a debt secured by a mortgage is not itself a bare actionable claim, has the mortgage been assigned in the form its own nature requires? An assignment that captures the debt but botches the security transfer leaves the ARC with an unsecured claim in CIRP.</p>
+    </div>
+
+    <p>Section 137 carves out negotiable instruments, stocks, shares, debentures and mercantile documents of title from the actionable-claim machinery; these move by their own specialised laws. The carve-out matters when a distressed portfolio mixes loans (actionable claims) with bonds and debentures (governed by the SEBI framework and the Negotiable Instruments Act), because each category transfers by a different route.</p>
+  </section>
+
+  <!-- =========================================================
+       PART XIX · VESTED & CONTINGENT
+  ========================================================== -->
+  <section class="part reveal" id="interests">
+    <div class="part-head">
+      <div class="eyebrow">Part XIX · Sections 19 &amp; 21</div>
+      <h2>Vested and contingent interests: <span class="pin">only as far as security needs it</span></h2>
+    </div>
+    <p class="lead">This is the most over-taught and least commercially relevant cluster for an insolvency practitioner, so it earns only the treatment that genuine security questions require. The single thing that matters is whether the interest a borrower offers as collateral is vested (a present, certain right) or contingent (a right that may never arise).</p>
+
+    <h3><span class="s">ss. 19 &amp; 21</span> The distinction that affects collateral</h3>
+    <p>A vested interest (section 19) is created in favour of a person without specifying a time for it to take effect, or to take effect immediately or on an event that must happen; it is a present right, not defeated by the holder's death before possession. A contingent interest (section 21) takes effect only on the happening of a specified uncertain event, or on a specified uncertain event not happening; it becomes vested only when the event occurs (or becomes impossible). The practical point for a lender is that a vested interest is solid security, the borrower certainly has it, whereas a contingent interest is fragile, because it may evaporate if the contingency fails.</p>
+
+    <div class="callout intuition">
+      <span class="tag">The intuition: lend against certainty, not against a maybe</span>
+      <p>The reason this matters at all in lending is risk. A borrower's vested remainder, or a vested reversion, is a real present asset that can secure a loan and be realised. A contingent interest is a bet: if the contingency fails, the asset never comes into being and the security is worthless. A careful lender either avoids taking contingent interests as primary security or prices and structures for the contingency. In valuing a distressed estate, an RP must similarly discount contingent interests, which may never crystallise into realisable assets.</p>
+    </div>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: keep the focus narrow</span>
+      <p>Beyond the vested-versus-contingent line, the elaborate rules on transfers to unborn persons, the rule against perpetuity, and accumulation directions (sections 13 to 18) rarely surface in commercial restructuring. Recognise them so you can spot the unusual estate-planning or trust structure that occasionally appears in a promoter's asset web, but do not invest the study time that mortgages, priority, leases and assignment demand. The return on attention is in those four clusters.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART XX · CASES (FIRAC)
+  ========================================================== -->
+  <section class="part reveal" id="cases">
+    <div class="part-head">
+      <div class="eyebrow">Part XX</div>
+      <h2>Landmark jurisprudence <span class="pin">taught the way you should hold it</span></h2>
+    </div>
+    <p class="lead">These are the decisions an insolvency or restructuring professional should be able to narrate from memory. Each is given the full FIRAC treatment so that you understand the ratio without first reading the judgment. Read the reports before citing in a Tier-1 brief; treat what follows as the working map.</p>
+
+    <!-- CASE 1 -->
+    <div class="case-block">
+      <div class="case-head">
+        <div class="cname">Chunchun Jha v. Ebadat Ali</div>
+        <div class="cmeta">Supreme Court of India · 1954 · AIR 1954 SC 345</div>
+      </div>
+      <div class="case-body">
+        <p>A man took money and executed a document over his land that looked, on its face, like a sale with a right of repurchase. When the lender treated it as an outright purchase and the borrower as a mortgage, the courts had to decide what the transaction really was. The line between a sale with an option to buy back and a mortgage by conditional sale is thin, and the consequences (whether the borrower keeps a right to redeem) are enormous.</p>
+        <div class="firac">
+          <div class="firac-row"><div class="fk">Facts</div><div class="fv">A document transferred land for money with a stipulation permitting the transferor to get it back on repayment within a period. The form resembled both a sale-with-repurchase and a mortgage by conditional sale.</div></div>
+          <div class="firac-row"><div class="fk">Issue</div><div class="fv">Whether the transaction was a sale with a condition of repurchase (no right of redemption) or a mortgage by conditional sale (a right of redemption survives).</div></div>
+          <div class="firac-row"><div class="fk">Rule</div><div class="fv">The intention of the parties governs. Under the proviso to section 58(c), the transaction is a mortgage by conditional sale only if the condition of reconveyance is embodied in the very document that effects the sale. The court looks at the document as a whole, the relationship of the consideration to the property's value, and the surrounding circumstances. Where the deed is ambiguous, the law leans in favour of a mortgage (and therefore redemption) rather than a sale.</div></div>
+          <div class="firac-row"><div class="fk">Analysis</div><div class="fv">The Court held that the determining factor is whether a debtor-creditor relationship, and a continuing debt, was intended. If the relationship of borrower and lender persists and the "sale" is in truth a security for a debt, it is a mortgage by conditional sale however dressed. The condition being part of the same document satisfied the proviso, and the presence of an enduring debt pointed to mortgage rather than absolute sale.</div></div>
+          <div class="firac-row"><div class="fk">Conclusion</div><div class="fv">The transaction was a mortgage by conditional sale; the transferor retained the right to redeem. Where construction is genuinely doubtful, the leaning is towards mortgage.</div></div>
+        </div>
+        <div class="case-why">
+          <span class="tag">Why it still matters</span>
+          <p>Distressed borrowers and opportunistic lenders still execute documents that blur sale and security. A lender who structures a "sale with buy-back" to escape the redemption right, or a borrower who claims a genuine sale was really a mortgage, replays this contest. The rule (intention controls, the proviso must be satisfied, doubt favours mortgage) decides whether the borrower keeps an equity of redemption that re-enters the estate in insolvency.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case-block">
+      <div class="case-head">
+        <div class="cname">Seth Ganga Dhar v. Shankar Lal</div>
+        <div class="cmeta">Supreme Court of India · 1958 · AIR 1958 SC 770</div>
+      </div>
+      <div class="case-body">
+        <p>A mortgage postponed the borrower's right to redeem for an unusually long period. When the borrower sought to redeem earlier, the lender resisted, relying on the term. The borrower argued the long postponement was a clog on the equity of redemption and should be struck down.</p>
+        <div class="firac">
+          <div class="firac-row"><div class="fk">Facts</div><div class="fv">The mortgage deed stipulated that redemption could not be sought for a long term of years. The mortgagor attempted to redeem before that period and challenged the postponement as a clog.</div></div>
+          <div class="firac-row"><div class="fk">Issue</div><div class="fv">Whether a long postponement of the right to redeem is, by itself, a clog on the equity of redemption and therefore void.</div></div>
+          <div class="firac-row"><div class="fk">Rule</div><div class="fv">A term postponing redemption is not automatically a clog. The test is whether the term is, in the circumstances, oppressive or unconscionable. The court examines bargaining position, the nature of the security, and whether the term in substance defeats the right to redeem rather than merely deferring it.</div></div>
+          <div class="firac-row"><div class="fk">Analysis</div><div class="fv">The Court reasoned that parties are free to fix the term of a mortgage, and a long term is a legitimate commercial choice unless shown to be the product of oppression or to operate as a fetter that destroys the substance of redemption. There was nothing inherently oppressive in the postponement on the facts.</div></div>
+          <div class="firac-row"><div class="fk">Conclusion</div><div class="fv">The long postponement was upheld; it was not a clog merely because it was long. The challenge failed.</div></div>
+        </div>
+        <div class="case-why">
+          <span class="tag">Why it still matters</span>
+          <p>The clog doctrine is invoked whenever a security bargain looks one-sided. This decision sets the calibrated test: length alone does not condemn a term; oppression does. It tempers the later, more interventionist approach in <em>Pomal Kanji Govindji</em>. For a restructuring lawyer drafting or attacking long-dated security, it draws the line between a permissible commercial term and a void fetter.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case-block">
+      <div class="case-head">
+        <div class="cname">Narandas Karsondas v. S.A. Kamtam</div>
+        <div class="cmeta">Supreme Court of India · 1977 · (1977) 3 SCC 247</div>
+      </div>
+      <div class="case-body">
+        <p>A mortgagee exercising the out-of-court power of sale under section 69 issued a sale notice and accepted a bid. Before the sale was completed by a registered conveyance, the mortgagor tendered the dues and claimed to redeem. The question was whether the right to redeem had already been lost.</p>
+        <div class="firac">
+          <div class="firac-row"><div class="fk">Facts</div><div class="fv">Under a section 69 power of sale, the mortgagee had advertised the property and accepted an offer, but the conveyance to the purchaser had not yet been executed. The mortgagor sought to redeem at that stage.</div></div>
+          <div class="firac-row"><div class="fk">Issue</div><div class="fv">At what point in the exercise of the section 69 power of sale is the mortgagor's right of redemption extinguished?</div></div>
+          <div class="firac-row"><div class="fk">Rule</div><div class="fv">The equity of redemption subsists until the sale is completed by registration of the conveyance. Mere issue of a sale notice, or acceptance of a bid, does not extinguish redemption. Until the deed of transfer is executed and registered, the mortgagor may redeem.</div></div>
+          <div class="firac-row"><div class="fk">Analysis</div><div class="fv">The Court emphasised that a contract for sale does not by itself create an interest in the property (section 54), so an accepted bid is only a contract; the purchaser acquires no title until conveyance. Redemption, being a right that lasts until the security is finally realised, therefore survives up to that point. The mortgagor's tender before conveyance was effective.</div></div>
+          <div class="firac-row"><div class="fk">Conclusion</div><div class="fv">The mortgagor was entitled to redeem; the right had not been lost merely because a bid had been accepted.</div></div>
+        </div>
+        <div class="case-why">
+          <span class="tag">Why it still matters</span>
+          <p>This is the TPA baseline that SARFAESI deliberately altered. Because redemption under section 69 lingered until conveyance, enforcement could be frustrated by last-minute tenders. The 2016 amendment to section 13(8) of SARFAESI advanced the redemption cut-off to publication of the auction notice precisely to overcome this position, as the Supreme Court later confirmed in <em>Celir LLP v. Bafna Motors</em>. Understanding <em>Narandas</em> is the only way to understand why the SARFAESI redemption window was rewritten.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 4 -->
+    <div class="case-block">
+      <div class="case-head">
+        <div class="cname">Jumma Masjid, Mercara v. Kodimaniandra Deviah</div>
+        <div class="cmeta">Supreme Court of India · 1962 · AIR 1962 SC 847</div>
+      </div>
+      <div class="case-body">
+        <p>A person who at the time held only a chance of inheriting (a spes successionis) transferred the property, representing that he was entitled to it. He later actually inherited. The transferee claimed the after-acquired title under section 43; the other side argued the transfer was void from the start because a bare expectancy cannot be transferred under section 6(a).</p>
+        <div class="firac">
+          <div class="firac-row"><div class="fk">Facts</div><div class="fv">A transferor with only a spes successionis purported to transfer the property for consideration, representing a present title. He subsequently acquired the inheritance. The transferee sought to hold the property under section 43.</div></div>
+          <div class="firac-row"><div class="fk">Issue</div><div class="fv">Whether section 43 (feeding the grant by estoppel) applies when the interest transferred was, at the time, a mere spes successionis that section 6(a) declares non-transferable.</div></div>
+          <div class="firac-row"><div class="fk">Rule</div><div class="fv">Sections 6(a) and 43 operate in different fields. Section 6(a) prohibits a transfer of a bare expectancy as such. Section 43 applies where a transferor represents a present title (fraudulently or erroneously) and the transferee acts on that representation in good faith; the after-acquired interest then feeds the grant. A transferee who knew it was only an expectancy cannot invoke section 43, but a transferee misled into believing in a present title can.</div></div>
+          <div class="firac-row"><div class="fk">Analysis</div><div class="fv">The Court harmonised the sections by focusing on the representation and the transferee's knowledge. Section 6(a) protects against trafficking in expectancies; section 43 protects an innocent transferee misled by a false claim of present ownership. Since the transferee here relied in good faith on a representation of title, section 43 applied and the after-acquired title fed the transfer.</div></div>
+          <div class="firac-row"><div class="fk">Conclusion</div><div class="fv">Section 43 prevailed; the after-acquired title fed the grant in favour of the bona fide transferee.</div></div>
+        </div>
+        <div class="case-why">
+          <span class="tag">Why it still matters</span>
+          <p>This is the governing authority on perfecting security or sale over property the transferor does not yet own. In project finance and promoter restructurings, security is routinely taken over assets still being acquired. <em>Jumma Masjid</em> confirms that, where the lender took in good faith on a representation of title, the security is fed and perfected once the asset vests, the doctrinal basis for "create security on acquisition" covenants.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 5 -->
+    <div class="case-block">
+      <div class="case-head">
+        <div class="cname">Associated Hotels of India v. R.N. Kapoor</div>
+        <div class="cmeta">Supreme Court of India · 1959 · AIR 1959 SC 1262</div>
+      </div>
+      <div class="case-body">
+        <p>An occupant ran a business from rooms in a hotel under a document the parties called a licence. When the relationship soured, everything turned on whether the document was truly a licence (revocable, no interest in land) or in substance a lease (an interest in land, with security of tenure).</p>
+        <div class="firac">
+          <div class="firac-row"><div class="fk">Facts</div><div class="fv">A document styled a licence gave the occupant exclusive possession of defined premises for a term against periodic payment. A dispute arose over whether the occupant held as lessee or licensee.</div></div>
+          <div class="firac-row"><div class="fk">Issue</div><div class="fv">By what test does one distinguish a lease from a licence, and does the name the parties give the document control?</div></div>
+          <div class="firac-row"><div class="fk">Rule</div><div class="fv">Substance prevails over form. The decisive question is whether the document creates an interest in the property; the clearest indicator is the grant of exclusive possession for a term in consideration of rent. If exclusive possession is granted, the transaction is a lease however it is labelled; if only a permission to use without exclusive possession is given, it is a licence.</div></div>
+          <div class="firac-row"><div class="fk">Analysis</div><div class="fv">Examining the document's operative terms, the Court found that exclusive possession had been conferred for a term against payment, the hallmarks of a lease. The label "licence" was a device that could not override the substance. The intention gathered from the substance, not the chosen word, governed.</div></div>
+          <div class="firac-row"><div class="fk">Conclusion</div><div class="fv">The transaction was a lease, not a licence; the occupant held an interest in the land.</div></div>
+        </div>
+        <div class="case-why">
+          <span class="tag">Why it still matters</span>
+          <p>The lease-versus-licence test decides whether an occupant can resist a secured creditor, an auction purchaser, or a resolution applicant. A licensee has no interest to assert against the estate; a lessee may. Whenever a "tenant" surfaces during enforcement or in CIRP diligence, the first question is the <em>R.N. Kapoor</em> question: was exclusive possession granted? The answer determines whether the occupant is an obstacle with rights or a stranger to be removed.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 6 -->
+    <div class="case-block">
+      <div class="case-head">
+        <div class="cname">ICICI Bank v. Official Liquidator of APS Star Industries</div>
+        <div class="cmeta">Supreme Court of India · 2010 · (2010) 10 SCC 1</div>
+      </div>
+      <div class="case-body">
+        <p>Banks sought to sell their loan portfolios, including bad loans, to other banks. A challenge was mounted that selling debts amounted to "trading in debts," which banking law did not permit, and that such inter-bank assignment of NPAs was therefore impermissible.</p>
+        <div class="firac">
+          <div class="firac-row"><div class="fk">Facts</div><div class="fv">A bank assigned its debts, including non-performing assets, to other banks. The validity of such assignment was questioned on the footing that it was trading in debts outside the bank's permitted business.</div></div>
+          <div class="firac-row"><div class="fk">Issue</div><div class="fv">Whether a bank may assign its debts (including NPAs) to another bank, and whether such assignment is a transfer of an actionable claim or impermissible trading in debt.</div></div>
+          <div class="firac-row"><div class="fk">Rule</div><div class="fv">A debt is an actionable claim, transferable by a written instrument under sections 130 to 137 of the TPA. Assignment of a bank's debts to another bank or to an ARC is a legitimate transfer of an actionable claim and a recognised tool of debt management, consistent with RBI guidelines; it is not prohibited trading in debt.</div></div>
+          <div class="firac-row"><div class="fk">Analysis</div><div class="fv">The Court located the transaction squarely within the TPA's actionable-claim framework and the regulatory architecture for asset reconstruction. Assigning loans to clean balance sheets and route recoveries through specialist entities serves the banking system's stability; nothing in banking law forbade it. The assignee takes the debt with its rights and remedies, subject to the borrower's equities under section 132.</div></div>
+          <div class="firac-row"><div class="fk">Conclusion</div><div class="fv">The assignment was valid; banks may assign their debts, including NPAs, as transfers of actionable claims.</div></div>
+        </div>
+        <div class="case-why">
+          <span class="tag">Why it still matters</span>
+          <p>This is the doctrinal foundation of the entire Indian secondary market in distressed debt. Every ARC acquisition, every inter-creditor loan sale, every portfolio transaction rests on the principle that a loan is an assignable actionable claim and the assignee inherits the lender's enforcement rights. For anyone in distressed-asset resolution, this case is the licence to trade the debt, and section 132 is the reminder that you buy it with its defences attached.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 7 -->
+    <div class="case-block">
+      <div class="case-head">
+        <div class="cname">Jayadayal Poddar v. Bibi Hazra</div>
+        <div class="cmeta">Supreme Court of India · 1974 · (1974) 1 SCC 3</div>
+      </div>
+      <div class="case-body">
+        <p>Property stood in one person's name, but another claimed to be the real owner who had merely used the first as a front. A purchaser who had dealt with the apparent owner found his title attacked by the alleged real owner. The court had to decide who truly owned the property and whether the purchaser was protected.</p>
+        <div class="firac">
+          <div class="firac-row"><div class="fk">Facts</div><div class="fv">Title was held ostensibly by one person while another asserted real ownership in a benami arrangement. A transferee who relied on the apparent owner's title faced a challenge from the claimed real owner.</div></div>
+          <div class="firac-row"><div class="fk">Issue</div><div class="fv">How does a court determine whether a holder is the real owner or a mere ostensible (benami) owner, and when is a transferee protected under section 41?</div></div>
+          <div class="firac-row"><div class="fk">Rule</div><div class="fv">The tests for real versus benami ownership are: the source of the purchase money; the nature and possession of the property; the motive for the benami; the relationship of the parties; their conduct in dealing with the property; and the custody of the title deeds. The source of consideration is the most important. Section 41 protects a transferee only where the real owner consented to the ostensible ownership and the transferee acted in good faith after reasonable care.</div></div>
+          <div class="firac-row"><div class="fk">Analysis</div><div class="fv">Applying the indicia, the Court identified the real owner by tracing the purchase money and the conduct of the parties. Where the real owner had consented to the front-man's apparent ownership and a careful transferee relied on it, protection under section 41 would follow; absent consent or care, it would not.</div></div>
+          <div class="firac-row"><div class="fk">Conclusion</div><div class="fv">The Court resolved ownership on the indicia and confirmed the conditions for section 41 protection, anchoring the doctrine of ostensible ownership.</div></div>
+        </div>
+        <div class="case-why">
+          <span class="tag">Why it still matters</span>
+          <p>Promoter groups routinely hold assets through nominees and group entities. When a lender takes security from an apparent owner, or a resolution applicant buys assets from a complex structure, the ostensible-ownership doctrine decides whether a hidden real owner can later defeat the transaction. <em>Jayadayal Poddar</em> supplies both the tests for spotting a benami holding and the conditions a careful lender must satisfy to claim section 41 protection. It is why diligence on the source of funds and custody of deeds is indispensable.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 8 -->
+    <div class="case-block">
+      <div class="case-head">
+        <div class="cname">Rachpal Maharaj v. Bhagwandas Daruka</div>
+        <div class="cmeta">Supreme Court of India · 1950 · AIR 1950 SC 272</div>
+      </div>
+      <div class="case-body">
+        <p>A borrower deposited title deeds with a lender and the parties also drew up a writing. The fight was whether that writing was the mortgage itself (which would have required registration to be valid) or a mere record of a deposit already made (which would not). On the answer hung the validity of the bank's security.</p>
+        <div class="firac">
+          <div class="firac-row"><div class="fk">Facts</div><div class="fv">Title deeds were deposited as security for a debt, accompanied by a memorandum in writing. No separate registered mortgage deed was executed. The validity of the equitable mortgage was challenged on the ground that the writing required registration.</div></div>
+          <div class="firac-row"><div class="fk">Issue</div><div class="fv">When a memorandum accompanies a deposit of title deeds, does it require registration, and what determines whether it is the bargain itself or merely evidence of a completed deposit?</div></div>
+          <div class="firac-row"><div class="fk">Rule</div><div class="fv">A mortgage by deposit of title deeds is created by the deposit with intent to secure; no registration is required for the deposit. But if the parties reduce the bargain to writing and intend that writing to be the contract that creates the mortgage, that writing requires registration. A memorandum that merely records, for evidential purposes, a deposit already made does not require registration.</div></div>
+          <div class="firac-row"><div class="fk">Analysis</div><div class="fv">The Court distinguished a constitutive document (which embodies and creates the security, and so must be registered) from an evidentiary memorandum (which merely recites a deposit that already, by itself, created the mortgage). The intention of the parties, gathered from the document, decides which it is. If the deposit alone created the security and the writing simply records it, registration is not needed.</div></div>
+          <div class="firac-row"><div class="fk">Conclusion</div><div class="fv">The character of the writing decides registrability; a mere record of a completed deposit is valid without registration, while a constitutive instrument is not.</div></div>
+        </div>
+        <div class="case-why">
+          <span class="tag">Why it still matters</span>
+          <p>The equitable mortgage by deposit of title deeds is the dominant form of bank security in India, and its validity is repeatedly attacked on this exact registration point. An RP verifying a bank's equitable-mortgage claim, or a lender defending one, must apply the constitutive-versus-evidentiary distinction. A memorandum carelessly drafted to read as the creating instrument can sink an otherwise good security for want of registration.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:34px;font-size:18px">Beyond these, the following decisions recur often enough to keep as quick reference. Read the full reports before reliance.</p>
+    <div class="defgrid">
+      <div class="defcard"><div class="term">Suraj Lamp &amp; Industries v. State of Haryana</div><div class="sec">(2012) 1 SCC 656</div><p>Sale agreements, GPAs and wills do not transfer title to immovable property; only a registered conveyance does. Critical for verifying a corporate debtor's actual ownership of land.</p></div>
+      <div class="defcard"><div class="term">Vidyadhar v. Manikrao</div><div class="sec">(1999) 3 SCC 573</div><p>Non-payment of part of the price does not annul a completed registered sale; the seller's remedy is the unpaid vendor's charge and a money claim, not avoidance.</p></div>
+      <div class="defcard"><div class="term">Pomal Kanji Govindji v. Vrajlal Karsandas Purohit</div><div class="sec">(1989) 1 SCC 458</div><p>An unusually long fetter on redemption, against rising values, may be an oppressive clog. The more interventionist counterpoint to <em>Ganga Dhar</em>.</p></div>
+      <div class="defcard"><div class="term">Dattatreya Shankar Mote v. Anand Chintaman Datar</div><div class="sec">(1974) 2 SCC 799</div><p>A mortgage transfers an interest; a charge creates only a right of payment out of property. The characterisation governs enforceability against a transferee without notice.</p></div>
+      <div class="defcard"><div class="term">Shrimant Shamrao Suryavanshi v. Pralhad Bhairoba</div><div class="sec">(2002) 3 SCC 676</div><p>Section 53A protects a transferee in possession under a written, part-performed contract, subject to the proviso protecting a bona fide purchaser without notice.</p></div>
+      <div class="defcard"><div class="term">T.G. Ashok Kumar v. Govindammal</div><div class="sec">(2010) 14 SCC 370</div><p>A purchaser pendente lite is bound by the decree even if bona fide; lis pendens protects the integrity of pending litigation. Diligence must include a litigation search.</p></div>
+      <div class="defcard"><div class="term">Abdul Shukoor Saheb v. Arji Papa Rao</div><div class="sec">AIR 1963 SC 1150</div><p>Intent to defeat creditors under section 53 is inferred from cumulative badges of fraud: relationship, inadequate consideration, timing, retained enjoyment.</p></div>
+      <div class="defcard"><div class="term">Kotak Mahindra Bank v. A. Balakrishnan</div><div class="sec">(2022) 9 SCC 186</div><p>A recovery certificate furnishes a fresh cause of action and can found a CIRP application; limitation must be respected. Connects assignment and recovery to the IBC.</p></div>
+      <div class="defcard"><div class="term">United Bank of India v. Lekharam Sonaram</div><div class="sec">AIR 1965 SC 1591</div><p>The three essentials of a mortgage by deposit of title deeds: a debt, a deposit of title documents, and intention that they be security.</p></div>
+      <div class="defcard"><div class="term">Harshad Govardhan Sondagar v. International ARC</div><div class="sec">(2014) 6 SCC 1</div><p>A genuine lessee under a valid lease predating the mortgage is protected against summary dispossession in enforcement. The TPA leasing rules read into SARFAESI.</p></div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PART XXI · IBC INTERFACE
+  ========================================================== -->
+  <section class="part reveal" id="ibc">
+    <div class="part-head">
+      <div class="eyebrow">Part XXI</div>
+      <h2>The insolvency interface: <span class="pin">where each TPA doctrine bites</span></h2>
+    </div>
+    <p class="lead">This treatise has explained each doctrine and flagged its insolvency relevance in passing. This final synthesis gathers the threads, so that you can move from a TPA concept to its consequence in CIRP, liquidation and enforcement in a single step.</p>
+
+    <div class="tablewrap">
+      <table>
+        <tr><th>TPA doctrine</th><th>Where it surfaces in insolvency and restructuring</th></tr>
+        <tr><td><strong>Mortgage validity (ss.58, 59)</strong></td><td>An invalid mortgage (unregistered where required, unattested) demotes a financial creditor from secured to unsecured in claim verification, changing its rank in the section 53 IBC waterfall.</td></tr>
+        <tr><td><strong>Equitable mortgage (s.58(f))</strong></td><td>The dominant bank security. Its validity (deposit in a notified town, constitutive-versus-evidentiary memorandum) is a frequent battleground when an RP verifies a secured claim.</td></tr>
+        <tr><td><strong>Redemption &amp; the clog (ss.60, 67)</strong></td><td>The equity of redemption is an estate asset; a resolution plan releasing the mortgaged asset effects a commercial redemption. A guarantor who pays may redeem and be subrogated.</td></tr>
+        <tr><td><strong>Power of sale (s.69) and s.76 duties</strong></td><td>The conceptual ancestor of SARFAESI section 13. <em>Narandas</em> explains why the SARFAESI redemption window was rewritten in 2016.</td></tr>
+        <tr><td><strong>Priority (ss.48, 78, 79)</strong></td><td>Sets the substantive ranking among competing security holders that the RP must apply, read with CERSAI and Registrar of Companies registration and the section 53 waterfall.</td></tr>
+        <tr><td><strong>Marshalling, contribution, subrogation (ss.56, 81, 82, 92)</strong></td><td>Govern fair sharing among multi-property, multi-creditor structures, and the subrogated secured claim a paying guarantor asserts against the corporate debtor.</td></tr>
+        <tr><td><strong>Charge vs mortgage (s.100)</strong></td><td>Most corporate security is a charge (including floating charges) registered under the Companies Act; characterisation governs enforceability and crystallisation in liquidation.</td></tr>
+        <tr><td><strong>Part performance (s.53A)</strong></td><td>Homebuyers and agreement-holders in possession resist the estate, the RA and secured creditors, subject to the proviso protecting a lender without notice.</td></tr>
+        <tr><td><strong>Lis pendens (s.52)</strong></td><td>An asset transferred during pending litigation passes burdened by the decree; diligence must include a litigation search, and avoidance analysis must account for it.</td></tr>
+        <tr><td><strong>Fraudulent transfer (s.53)</strong></td><td>A creditor-driven avoidance remedy that runs parallel to IBC sections 43, 45, 49 and 50, sometimes reaching transfers the RP also attacks under the Code.</td></tr>
+        <tr><td><strong>Ostensible ownership (s.41) &amp; feeding the grant (s.43)</strong></td><td>Decide whether security from an apparent owner or over to-be-acquired assets stands, central to promoter-group and project-finance diligence.</td></tr>
+        <tr><td><strong>Leases &amp; licences (ss.105, 65A, 111, 116)</strong></td><td>Decide whether an occupant can defeat a secured creditor, an auction purchaser or a resolution applicant. The TPA leasing rules now read into SARFAESI section 17(4A).</td></tr>
+        <tr><td><strong>Actionable claims &amp; assignment (ss.130 to 137)</strong></td><td>The legal engine of every ARC acquisition and loan sale; the assignee inherits the lender's enforcement rights and the borrower's equities under section 132.</td></tr>
+      </table>
+    </div>
+
+    <h4>The interface, stated as a rule of practice</h4>
+    <p>The IBC and SARFAESI are procedural overlays on a substantive foundation of property rights. When a moratorium under section 14 of the IBC freezes enforcement, it suspends the exercise of TPA and SARFAESI realisation rights but does not extinguish the underlying security interest, which the TPA defines. When a secured creditor stays outside liquidation under section 52 of the IBC to enforce its own security, the liquidator's first task is to verify that the security interest is valid under the TPA and perfected under the registration statutes. When the section 53 waterfall ranks secured creditors, the TPA tells you who is secured and in what order. The Code does not replace the TPA; it presupposes it.</p>
+
+    <div class="callout prac">
+      <span class="tag">Practitioner's note: the order of questions in claim verification</span>
+      <p>For any secured financial creditor's claim, ask the TPA questions in sequence. First, is there a valid security interest at all (a properly created and, where required, registered mortgage or charge under sections 58, 59 and 100)? Second, what does the security cover (the asset, its fixtures under section 8, and any after-acquired property fed under section 43)? Third, has it been perfected (Registrar of Companies and CERSAI registration)? Fourth, where does it rank against competing interests (sections 48, 78, 79, and any statutory charges such as the unpaid vendor's charge under section 55)? Fifth, what defences or equities travel with it (section 132 for assigned debt, lis pendens under section 52, part performance under section 53A)? Only after these TPA questions are answered can the claim be slotted correctly into the IBC waterfall.</p>
+    </div>
+
+    <div class="orn"><span>✦ ✦ ✦</span></div>
+  </section>
+
+  <!-- =========================================================
+       PART XXII · GLOSSARY
+  ========================================================== -->
+  <section class="part reveal" id="glossary">
+    <div class="part-head">
+      <div class="eyebrow">Part XXII</div>
+      <h2>Glossary <span class="pin">of working terms</span></h2>
+    </div>
+    <div class="defgrid">
+      <div class="defcard"><div class="term">Equity of redemption</div><p>The mortgagor's residual right to recover the property on paying the debt; protected against clogs (s.60).</p></div>
+      <div class="defcard"><div class="term">Clog on redemption</div><p>Any term that obstructs or destroys the right to redeem; void in equity. "Once a mortgage, always a mortgage."</p></div>
+      <div class="defcard"><div class="term">Foreclosure</div><p>The remedy that extinguishes the mortgagor's equity of redemption and vests the property in the mortgagee (s.67); available only to foreclosure-type mortgages.</p></div>
+      <div class="defcard"><div class="term">Equitable mortgage</div><p>Mortgage by deposit of title deeds in a notified town (s.58(f)); the dominant form of bank security, requiring no registered deed.</p></div>
+      <div class="defcard"><div class="term">Charge</div><p>Security that fastens an obligation on property without transferring an interest (s.100); distinct from a mortgage.</p></div>
+      <div class="defcard"><div class="term">Marshalling</div><p>Requiring a senior creditor with security over two assets to satisfy itself first from the asset the junior cannot reach (ss.56, 81).</p></div>
+      <div class="defcard"><div class="term">Subrogation</div><p>Stepping into a paid-off mortgagee's security and priority; legal (by operation of law) or conventional (by registered agreement) (ss.91, 92).</p></div>
+      <div class="defcard"><div class="term">Lis pendens</div><p>A transfer made during pending litigation over the property binds the transferee to the decree (s.52).</p></div>
+      <div class="defcard"><div class="term">Part performance</div><p>A defensive shield protecting a possessing buyer under a written, part-performed contract (s.53A); not a source of title.</p></div>
+      <div class="defcard"><div class="term">Ostensible owner</div><p>A person who, with the real owner's consent, appears to own property; a careful transferee for value is protected (s.41).</p></div>
+      <div class="defcard"><div class="term">Feeding the grant</div><p>After-acquired title automatically perfects an earlier defective transfer where the transferee took in good faith on a representation of title (s.43).</p></div>
+      <div class="defcard"><div class="term">Actionable claim</div><p>A claim to an unsecured debt or to a beneficial interest in movable property not in possession; transferable in writing (ss.3, 130).</p></div>
+      <div class="defcard"><div class="term">Holding over</div><p>A fresh periodic tenancy created when a lessee stays on after the term and the lessor accepts rent or assents (s.116).</p></div>
+      <div class="defcard"><div class="term">Spes successionis</div><p>A bare chance of inheriting; non-transferable (s.6(a)), and so never valid security.</p></div>
+      <div class="defcard"><div class="term">Unpaid vendor's charge</div><p>A statutory charge a seller holds on the property for unpaid purchase money where ownership has passed (s.55(4)(b)).</p></div>
+      <div class="defcard"><div class="term">CIRP</div><p>Corporate Insolvency Resolution Process under the IBC, within which secured claims grounded in TPA security are verified and ranked.</p></div>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<footer class="site">
+  <div class="shell">
+    <div class="ftop">
+      <div>
+        <h5>The <em>Recovery</em> Library</h5>
+        <p>A practitioner's reference set on financial restructuring and debt recovery in India &mdash; the Indian Contract Act, the Transfer of Property Act, the RBI Prudential Framework, the SARFAESI Act, the Recovery of Debts and Bankruptcy Act, and the Companies Act read with the IBC, together with their leading jurisprudence.</p>
+      </div>
+      <div class="fnav">
+        <span class="fl">The Volumes</span>
+        <a href="index.html">Home</a>
+        <a href="rbi-prudential-framework.html">I &middot; RBI Prudential Framework</a>
+        <a href="sarfaesi-act.html">II &middot; SARFAESI Act</a>
+        <a href="rdb-act.html">III &middot; RDB Act</a>
+        <a href="companies-act.html">IV &middot; Companies Act</a>
+        <a href="contract-act.html">V &middot; Contract Act</a>
+        <a href="transfer-of-property-act.html">VI &middot; Transfer of Property Act</a>
+      </div>
+    </div>
+    <p class="disc"><strong>A note on use.</strong> These explainers are study and reference aids synthesised from the bare statutes, RBI directions and settled case law. Statutory positions and citations should be verified against the current text before professional reliance. They are not legal advice.</p>
+  </div>
+</footer>
+
+<script>
+const bar=document.getElementById('progress');
+function prog(){const h=document.documentElement;const sc=h.scrollTop;const max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?(sc/max*100):0)+'%';}
+document.addEventListener('scroll',prog,{passive:true});prog();
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const spy=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const id='#'+e.target.id;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));}});},{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>s&&spy.observe(s));
+</script>
+<script>
+(function(){
+  var mh=document.getElementById('masthead');
+  function onScrollMh(){ if(mh) mh.classList.toggle('scrolled', window.scrollY>10); }
+  document.addEventListener('scroll',onScrollMh,{passive:true}); onScrollMh();
+})();
+</script>
+</body>
+</html>
