@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The IBC (Amendment) Act, 2026 · A Practitioner's Working Guide · The Recovery Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<style>
+/* ===== IBC guide content, remapped onto the Recovery Library system ===== */
+.wrap{max-width:none;margin:0;padding:0;}
+.col{max-width:none;margin:0;padding:0;}
+
+
+
+
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;margin:0 0 16px;display:flex;align-items:center;gap:14px;}
+.kicker::before{content:"";width:24px;height:1.5px;background:var(--accent);flex-shrink:0;}
+
+h2.h{font-family:"Spectral",serif;font-weight:600;font-size:clamp(28px,3.7vw,42px);line-height:1.08;
+  letter-spacing:-.014em;margin:0 0 14px;color:var(--ink);text-wrap:balance;}
+.lead{font-family:"Spectral",serif;font-weight:400;font-size:21px;line-height:1.55;color:var(--ink-soft);
+  max-width:70ch;margin:18px 0 8px;}
+
+
+em.t{font-style:italic;color:inherit;}
+
+
+
+
+/* amendment card */
+.amend{background:var(--paper);border:1px solid var(--line);border-radius:6px;
+  box-shadow:0 18px 40px -34px var(--shadow);padding:28px 30px 26px;margin:24px 0;}
+.amend > p{max-width:none;}
+.amend > .tagrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px;}
+.stag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.07em;font-weight:500;text-transform:uppercase;
+  background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line);padding:5px 10px;border-radius:3px;}
+.stag.ibc{background:var(--accent-soft);color:var(--accent);border-color:transparent;}
+.amend h3.atitle{margin:6px 0 8px;font-size:23px;color:var(--ink);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.amend h3.atitle .num{font-family:"IBM Plex Mono",monospace;color:var(--accent);font-weight:600;font-size:13px;
+  border:1px solid var(--line);background:var(--paper-2);padding:4px 9px;border-radius:3px;line-height:1;}
+
+/* before / after ledger */
+.ledger{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:18px 0;border:1px solid var(--line);border-radius:5px;overflow:hidden;}
+.ledger > div{padding:18px 20px;}
+.ledger .before{background:var(--paper-3);border-right:1px solid var(--line);}
+.ledger .after{background:var(--accent-soft);}
+.ledger h5{margin:0 0 9px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;display:flex;align-items:center;gap:8px;}
+.ledger .before h5{color:var(--ink-faint);}
+.ledger .after h5{color:var(--accent);}
+.ledger .dot{width:8px;height:8px;border-radius:50%;display:inline-block;}
+.ledger .before .dot{background:var(--ink-faint);}
+.ledger .after .dot{background:var(--accent);}
+.ledger p{font-size:16px;line-height:1.55;margin:0 0 9px;color:var(--ink-soft);max-width:none;}
+.ledger p:last-child{margin-bottom:0;}
+@media(max-width:680px){.ledger{grid-template-columns:1fr;}.ledger .before{border-right:0;border-bottom:1px solid var(--line);}}
+
+/* callouts — quiet library style */
+.why,.prac,.watch,.note{border:1px solid var(--line);border-left:3px solid var(--ink-faint);
+  background:var(--paper-2);border-radius:4px;padding:18px 22px;margin:20px 0;}
+.why h5,.prac h5,.watch h5,.note h5{margin:0 0 8px;font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);}
+.why p,.prac p,.watch p,.note p{margin:6px 0;font-size:16.5px;line-height:1.6;color:var(--ink-soft);max-width:none;}
+.why p:last-child,.prac p:last-child,.watch p:last-child,.note p:last-child{margin-bottom:0;}
+.why{border-left-color:var(--c-amend);}      .why h5{color:var(--c-amend);}
+.prac{border-left-color:var(--c-practice);}  .prac h5{color:var(--c-practice);}  .prac a{color:var(--c-practice);}
+.watch{border-left-color:var(--c-case);}      .watch h5{color:var(--c-case);}
+.note{border-left-color:var(--ink-faint);}    .note h5{color:var(--ink-soft);}
+
+/* case law card */
+.caselaw{background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--c-case);
+  border-radius:4px;padding:18px 22px;margin:20px 0;}
+.caselaw .cn{font-family:"Spectral",serif;font-weight:600;color:var(--c-case);font-size:17px;}
+.caselaw .cc{color:var(--ink-faint);font-size:13.5px;font-style:italic;margin-left:4px;}
+.caselaw p{font-size:16px;margin:7px 0 0;color:var(--ink-soft);max-width:none;line-height:1.55;}
+.caselaw .rel{margin-top:8px;color:var(--ink-soft);}
+.caselaw .rel b{color:var(--c-practice);font-weight:600;}
+
+/* pills */
+.pill{display:inline-block;white-space:nowrap;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;padding:3px 9px;border-radius:30px;vertical-align:middle;}
+td .pill{margin-top:2px;}
+.pill.live{background:var(--c-practice);color:#fff;}
+.pill.pending{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent);}
+
+/* tables — inherit the shared library design used on every other volume.
+   .tablewrap / table / th / td / row-striping all come from library.css. */
+.tcap{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-faint);font-weight:500;margin:26px 0 8px;max-width:none;}
+.tcap + .tablewrap{margin-top:0;}
+td.s{white-space:nowrap;font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--accent);font-size:13px;}
+td.ibcs{white-space:nowrap;font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--accent);font-size:13px;}
+
+/* timeline */
+.timeline{position:relative;border-left:1.5px solid var(--line);margin:24px 0;padding:4px 0 4px 4px;}
+.timeline::before{display:none;}
+.tl{position:relative;padding:0 0 22px 26px;}
+.tl::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--accent);}
+.tl .yr{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--accent);font-size:12px;letter-spacing:.06em;}
+.tl .ev{font-size:16px;color:var(--ink-soft);}
+.tl.now::before{background:var(--accent);}
+
+/* flow — responsive card grid, on the library card system (no loose arrows) */
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:14px;margin:24px 0;counter-reset:flowstep;}
+.flow .arrow{display:none;}
+.flow .step{position:relative;background:var(--paper-2);border:1px solid var(--line);border-top:3px solid var(--accent);
+  border-radius:6px;padding:18px 20px 18px;}
+.flow .step b{display:block;font-family:"IBM Plex Mono",monospace;color:var(--accent);font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;margin-bottom:8px;}
+.flow .step span{font-size:15.5px;color:var(--ink-soft);line-height:1.55;}
+
+/* inline TOC */
+/* inline TOC removed — sidebar uses library aside.toc */
+
+ul.tight{margin:8px 0 16px;padding-left:0;list-style:none;max-width:none;}
+ul.tight li{position:relative;padding:8px 0 8px 26px;line-height:1.6;border-bottom:1px solid var(--line-soft);
+  color:var(--ink-soft);font-size:16.5px;}
+ul.tight li:last-child{border-bottom:none;}
+ul.tight li::before{content:"\00a7";position:absolute;left:2px;top:8px;color:var(--accent);font-weight:600;}
+ul.tight li strong{color:var(--ink);}
+.twocol{columns:2;column-gap:30px;}
+@media(max-width:680px){.twocol{columns:1;}}
+hr.soft{border:0;border-top:1px solid var(--line);margin:34px 0;}
+
+.legendrow{display:flex;flex-wrap:wrap;gap:16px;margin:14px 0 0;}
+.legendrow .lg{display:flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);}
+.legendrow .sw{width:24px;height:13px;border-radius:3px;display:inline-block;border:1px solid var(--line);}
+</style>
+</head>
+<body data-vol="ibc">
+<div id="progress"></div>
+
+<header class="masthead" id="masthead">
+  <div class="shell">
+    <a class="brand" href="index.html">
+      <span class="seal">R</span>
+      <span class="wm"><b>The Recovery Library</b><span>Debt Enforcement &middot; India</span></span>
+    </a>
+    <nav class="mnav">
+      <a class="home-link" href="index.html">Home</a>
+      <a class="current" href="ibc-amendment-act.html">IBC 2026</a>
+      <a href="rbi-prudential-framework.html">RBI Framework</a>
+      <a href="sarfaesi-act.html">SARFAESI</a>
+      <a href="rdb-act.html">RDB Act</a>
+      <a href="companies-act.html">Companies Act</a>
+      <a href="contract-act.html">Contract Act</a>
+      <a href="transfer-of-property-act.html">Property Act</a>
+    </nav>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="shell">
+    <div class="kicker">Volume I &middot; Keystone &middot; Act No. 6 of 2026</div>
+    <h1>The Insolvency &amp; Bankruptcy Code <em>(Amendment) Act, 2026</em></h1>
+    <p class="full">A complete clause-by-clause working guide to all seventy-two amending sections of the Code's first decadal overhaul.</p>
+    <p class="sub">Every amendment explained from first principles to practitioner depth &mdash; what changed, what the law was before, why Parliament moved, how it plays out in the tribunal, and the case law that shaped each reform.</p>
+    <div class="meta-strip">
+      <div><span class="lab">Assent</span><span class="val">6 April 2026</span></div>
+      <div><span class="lab">Bill</span><span class="val">No. 107-F of 2025</span></div>
+      <div><span class="lab">Amending sections</span><span class="val">72 clauses</span></div>
+      <div><span class="lab">Mostly in force</span><span class="val">26 May 2026</span></div>
+      <div><span class="lab">Awaiting notification</span><span class="val">CIIRP &middot; Group &middot; Cross-border</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="shell with-aside" style="margin-top:0;">
+  <aside class="toc" id="toc">
+    <h4>Contents</h4>
+    <a href="#overview"><span class="num">01</span>The shape of the reform</a>
+    <a href="#commencement"><span class="num">02</span>What is in force</a>
+    <a href="#definitions"><span class="num">A</span>Definitions &amp; the frame</a>
+    <a href="#admission"><span class="num">B</span>Admission &amp; timelines</a>
+    <a href="#withdrawal"><span class="num">C</span>Withdrawal &amp; settlement</a>
+    <a href="#moratorium"><span class="num">D</span>Moratorium &amp; guarantor assets</a>
+    <a href="#conduct"><span class="num">E</span>Conduct of the process</a>
+    <a href="#resolution"><span class="num">F</span>The resolution plan</a>
+    <a href="#liquidation"><span class="num">G</span>Liquidation overhaul</a>
+    <a href="#secured"><span class="num">H</span>Secured creditors &amp; waterfall</a>
+    <a href="#avoidance"><span class="num">I</span>Avoidance &amp; fraudulent trading</a>
+    <a href="#ciirp"><span class="num">J</span>Pre-pack &amp; the creditor route</a>
+    <a href="#voluntary"><span class="num">K</span>Voluntary liquidation</a>
+    <a href="#group"><span class="num">L</span>Group insolvency</a>
+    <a href="#individual"><span class="num">M</span>Personal insolvency</a>
+    <a href="#penalties"><span class="num">N</span>Penalties &amp; enforcement</a>
+    <a href="#regulator"><span class="num">O</span>The Board &amp; utilities</a>
+    <a href="#rules"><span class="num">P</span>Rules, portal, cross-border</a>
+    <a href="#reference"><span class="num">&#9733;</span>Master index of 72 clauses</a>
+  </aside>
+  <main>
+<section class="part reveal" id="overview">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Start here</div>
+      <h2>The shape of the reform, in one page</h2>
+    </div>
+    <p class="lead">The Insolvency and Bankruptcy Code, 2016 turned ten in 2026. A decade of cases exposed gaps the drafters did not foresee and produced judicial answers that sometimes pulled in opposite directions. The 2026 Amendment is the legislature's reply: it settles several long running controversies, hard wires timelines, shifts the balance of power inside liquidation towards creditors, and opens three new doors, a creditor driven resolution route, a framework for groups of companies, and an enabling power for cross-border cases.</p>
+
+    <p>It is useful to hold four organising ideas in mind before reading any single clause. They recur throughout the Act and explain why otherwise scattered amendments hang together.</p>
+
+    <div class="flow">
+      <div class="step"><b>1 &middot; Certainty</b><span>Mandatory admission, fixed outer limits on tribunal orders, and statutory codification of judge-made rules.</span></div>
+      <div class="arrow">&rarr;</div>
+      <div class="step"><b>2 &middot; Creditor control</b><span>The committee of creditors now supervises liquidation, picks and replaces the liquidator, and gains new exit and dissolution levers.</span></div>
+      <div class="arrow">&rarr;</div>
+      <div class="step"><b>3 &middot; Value capture</b><span>Avoidance look-backs lengthened, guarantor assets pulled into the estate, security realisation disciplined, government dues put back in their place.</span></div>
+      <div class="arrow">&rarr;</div>
+      <div class="step"><b>4 &middot; New pathways</b><span>Creditor-initiated process, group insolvency, cross-border recognition, and a single electronic portal.</span></div>
+    </div>
+
+    <div class="note">
+      <h5>How to read this guide</h5>
+      <p>Each amendment is presented as a card. The two coloured panels are a <strong>before and after ledger</strong>: the left records the position under the unamended Code, the right records what the 2026 Act puts in its place. A brass <strong>"Why"</strong> note gives the mischief Parliament was addressing. A green <strong>practitioner note</strong> tells you how the change actually bites in practice. Case cards carry the authorities. An oxblood <strong>"Watch"</strong> note flags what remains unsettled. At the very end, a <strong>master index</strong> lists all seventy-two clauses so that nothing is left out, including the small consequential and rule-making amendments.</p>
+      <div class="legendrow">
+        <span class="lg"><span class="sw" style="background:#ece5d6"></span> Position before</span>
+        <span class="lg"><span class="sw" style="background:#f2e6e6"></span> Position after</span>
+        <span class="lg"><span class="sw" style="background:#9c7530"></span> Why it was done</span>
+        <span class="lg"><span class="sw" style="background:#2f5a52"></span> Practitioner note</span>
+        <span class="lg"><span class="sw" style="background:#7d2733"></span> Still unsettled</span>
+      </div>
+    </div>
+
+    <h3>The ten year arc that produced the Act</h3>
+    <div class="timeline">
+      <div class="tl"><span class="yr">2016</span> <span class="ev">The Code is enacted on the Bankruptcy Law Reforms Committee design: creditor in control, time bound, a clean break between resolution and recovery.</span></div>
+      <div class="tl"><span class="yr">2018 to 2021</span> <span class="ev">Five amendments follow in quick succession: home buyers as financial creditors, the section 29A bar, the section 12A withdrawal route, the pre-packaged process for micro, small and medium enterprises.</span></div>
+      <div class="tl"><span class="yr">2022 to 2024</span> <span class="ev">A run of Supreme Court decisions unsettles or sharpens key questions: discretion at admission, the dissenting secured creditor's floor, government dues as security, the contours of withdrawal.</span></div>
+      <div class="tl"><span class="yr">Jan 2023</span> <span class="ev">The Ministry of Corporate Affairs releases a wide ranging consultation paper proposing most of what the 2026 Act now contains.</span></div>
+      <div class="tl now"><span class="yr">2025 to 2026</span> <span class="ev">The Bill (No. 107-F of 2025) is passed by both Houses. The President assents on 6 April 2026. Most provisions are notified into force on 26 May 2026.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMMENCEMENT ===================== -->
+<section class="part reveal" id="commencement">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">The first practitioner question</div>
+      <h2>What is actually in force, and what is not</h2>
+    </div>
+    <p>Section 1(2) of the Amendment Act allows the Central Government to bring different provisions into force on different dates. This matters enormously in day to day practice, because some of the headline reforms are not yet operative. By the commencement notification, the large majority of the seventy-two clauses took effect on 26 May 2026. A discrete set of the most structural reforms was deliberately held back, pending the regulations and notifications needed to make them work.</p>
+
+    <p class="tcap">Commencement status of the principal reforms</p>
+      <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Reform</th><th>Where</th><th>Status</th><th>What it waits on</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mandatory admission, withdrawal discipline, fixed order timelines</td><td class="ibcs">ss. 7, 9, 10, 12A, 31, 33</td><td><span class="pill live">In force</span></td><td>Operative</td></tr>
+          <tr><td>Committee supervision of liquidation, separate liquidator, dissolution by creditors</td><td class="ibcs">ss. 21, 34, 34A, 35, 54</td><td><span class="pill live">In force</span></td><td>Operative, regulations to fill detail</td></tr>
+          <tr><td>Secured creditor realisation and the distribution waterfall</td><td class="ibcs">ss. 52, 53</td><td><span class="pill live">In force</span></td><td>Operative, valuation manner to be specified</td></tr>
+          <tr><td>Transfer of guarantor assets during the process</td><td class="ibcs">s. 28A</td><td><span class="pill live">In force</span></td><td>Operative, conditions to be specified</td></tr>
+          <tr><td><strong>Creditor-Initiated Insolvency Resolution Process</strong></td><td class="ibcs">Ch. IV-A, ss. 58A to 58K</td><td><span class="pill pending">Not yet</span></td><td>Notification of eligible debtors and creditor classes, plus regulations</td></tr>
+          <tr><td><strong>Group insolvency</strong></td><td class="ibcs">Ch. VA, s. 59A</td><td><span class="pill pending">Not yet</span></td><td>Central Government rules</td></tr>
+          <tr><td><strong>Cross-border insolvency</strong></td><td class="ibcs">s. 240C</td><td><span class="pill pending">Not yet</span></td><td>Rules, notified countries, designated benches</td></tr>
+          <tr><td><strong>Electronic portal</strong></td><td class="ibcs">s. 240B</td><td><span class="pill pending">Not yet</span></td><td>Notification and build</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prac">
+      <h5>Practitioner note</h5>
+      <p>Do not advise a client to plan a transaction around the creditor-initiated route, group coordination, or cross-border recognition yet. As matters stand those chapters are on the statute book but inert. Until the enabling rules issue, the live changes are the ones touching ordinary corporate insolvency, liquidation, security realisation, the waterfall, personal guarantors, penalties and regulatory oversight. Diarise the commencement notifications: the moment the held-back chapters are switched on, the strategic options for lenders change materially.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOC ===================== -->
+
+
+<!-- CLUSTERS APPENDED BELOW -->
+
+<!-- ===== frag_AB.html ===== -->
+<!-- ============================================================= -->
+<!-- CLUSTER A : DEFINITIONS AND THE INSTITUTIONAL FRAME -->
+<!-- ============================================================= -->
+<section class="part reveal" id="definitions">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster A</div>
+      <h2>Definitions and the institutional frame</h2>
+    </div>
+    <p class="lead">Definitions look dull until you realise that, in insolvency, a single defined term can decide who gets paid and who does not. The 2026 Act rewrites a handful of definitions that had been quietly doing heavy lifting in litigation, and it folds the various insolvency professionals into one umbrella expression so that the Board can regulate them coherently.</p>
+
+    <!-- s.2 / IBC s.3 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 2</span><span class="stag ibc">IBC s. 3 &middot; definitions</span></div>
+      <h3 class="atitle"><span class="num">A1</span>Registered valuer, the meaning of "security interest", and "service provider"</h3>
+      <p>Three changes are made to the master definition section. Two are clarificatory, one is structural, and the middle one is among the most consequential single sentences in the entire Act.</p>
+
+      <h4>New clause (27A): "registered valuer"</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>The Code used valuation throughout, for the liquidation value, the fair value, and the test that protects dissenting and operational creditors, but it never tied "registered valuer" to a recognised standard. The qualification of valuers lived only in the regulations.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>"Registered valuer" now carries the same meaning as under Chapter XVII of the Companies Act, 2013. The competence and registration of the person who fixes the numbers is anchored in primary law.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Valuation disputes are the soft underbelly of every contested resolution. Wide swings between two registered valuers feed objections under section 30 and appeals under section 61. Linking the term to the Companies Act standard raises the floor on who may value and gives the Board a firmer footing to discipline poor work.</p></div>
+
+      <h4>New Explanation to clause (31): what "security interest" is, and is not</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>"Security interest" was defined broadly. Critically, it could be read to include a charge "created by operation of law". On that reading a statutory first charge for unpaid tax made the State a secured creditor. The Supreme Court adopted exactly this reading.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>The new Explanation says a security interest exists only where it arises from a right or claim created by the act of two or more parties, by agreement or arrangement. It expressly does not include a security interest created merely by operation of law.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>This sentence is Parliament's answer to the most disruptive line of insolvency authority of the last decade. By excluding charges that arise by statute alone, the Act removes the doctrinal foundation on which government tax departments had climbed up the priority order. It must be read together with the matching Explanation inserted into the section 53 waterfall (see Cluster H), which channels government dues back to their designated rung.</p></div>
+
+      <div class="caselaw">
+        <span class="cn">State Tax Officer v. Rainbow Papers Ltd.</span><span class="cc">2022 SCC OnLine SC 1162; review dismissed in Sanjay Kumar Agarwal v. State Tax Officer, 2023</span>
+        <p>The Court held that a first charge under section 48 of the Gujarat Value Added Tax Act made the State a "secured creditor" under the Code, because the definition of security interest reached charges created by operation of law and did not exclude the government. A resolution plan that ignored statutory dues was held liable to be set aside.</p>
+        <p class="rel"><b>Relevance:</b> The new Explanation legislatively dislodges the premise of Rainbow Papers. A charge that exists only because a statute says so is no longer a "security interest" for the Code.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">Paschimanchal Vidyut Vitran Nigam Ltd. v. Raman Ispat Pvt. Ltd.</span><span class="cc">2023 SCC OnLine SC 842</span>
+        <p>A coordinate Bench distinguished Rainbow Papers and held that government dues are dealt with separately, and at a lower rung, by the waterfall, so the State could not enforce outside liquidation as though it were an ordinary secured creditor.</p>
+        <p class="rel"><b>Relevance:</b> The Amendment adopts the Raman Ispat position and ends the coordinate-Bench tug of war by statute, which is the cleaner route to certainty than waiting for a larger Bench.</p>
+      </div>
+
+      <h4>New clause (31A): "service provider"</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>The Code regulated insolvency professionals, insolvency professional agencies and information utilities as three separate species, each named at length wherever the Board's powers appeared.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>"Service provider" is a single umbrella term covering the insolvency professional, the agency, the information utility, the registered valuer, and any other category the Central Government notifies, all registered with the Board.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>This is plumbing for the regulator. It lets a single set of provisions on complaints, inspection, show cause and discipline (sections 217 to 220, rewritten in Cluster O) apply across the whole professional ecosystem, and it future-proofs the regime so that newly notified categories of provider fall under the Board without further primary amendment.</p></div>
+    </div>
+
+    <!-- s.3 / IBC s.5 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 3</span><span class="stag ibc">IBC s. 5 &middot; definitions (Part II)</span></div>
+      <h3 class="atitle"><span class="num">A2</span>Avoidance transaction, fraudulent trading, the initiation date, and asset sales as resolution</h3>
+      <p>Five edits sharpen the corporate definitions. They are individually modest but together they tidy up concepts that the rest of the Act now leans on.</p>
+      <ul class="tight">
+        <li><strong>New clause (2A), "avoidance transaction".</strong> A single label is given to the family of vulnerable transactions in sections 43, 45, 49 and 50 (preferential, undervalued, transactions defrauding creditors, and extortionate credit). The existing clause is renumbered (2B). This lets the Act refer to the whole family in one breath, which it does repeatedly in the liquidation and creditor-application provisions.</li>
+        <li><strong>New clause (9A), "fraudulent or wrongful trading".</strong> A defined pointer to section 66, again so that later provisions can treat avoidance and fraudulent trading as a pair.</li>
+        <li><strong>Proviso to clause (11), "initiation date".</strong> Where several applications against the same debtor are pending on the commencement date, the initiation date is the date of the first application. This matters because the Act now ties the avoidance look-back to the initiation date rather than the later commencement date (Cluster I), so fixing which application counts is essential.</li>
+        <li><strong>Explanation to clause (26), "resolution plan".</strong> The plan may now expressly contemplate the sale of one or more assets of the debtor through one or more plans by one or more applicants, on specified conditions. This blesses asset-wise and multi-applicant resolutions, which the market had been doing under regulation but which sat uneasily with the older definition.</li>
+        <li><strong>Clause (28), "voting share".</strong> Refined to the debt owed to the members of the committee who are eligible to vote, removing ambiguity about whose debt forms the denominator.</li>
+      </ul>
+      <div class="prac"><h5>Practitioner note</h5><p>The asset-sale Explanation is quietly important for distressed mergers and acquisitions. A bidder who wants only a clean division or a single plant, rather than the whole company, now has clearer statutory cover. Expect resolution professionals to structure invitations that permit composite as well as asset-specific bids, and expect the section 30 compliance check to be applied plan by plan where the estate is carved up.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- CLUSTER B : ADMISSION, THE GATE, TIMELINES -->
+<!-- ============================================================= -->
+<section class="part reveal" id="admission">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster B</div>
+      <h2>Admission, the gate, and the new timelines</h2>
+    </div>
+    <p class="lead">The single most litigated question in the Code's first decade was deceptively simple: once a creditor proves a debt and a default, must the tribunal admit, or may it decline? The 2026 Act answers it, and in doing so reverses a Supreme Court decision by statute.</p>
+
+    <!-- s.4 / IBC s.7 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 4</span><span class="stag ibc">IBC s. 7 &middot; financial creditor's application</span></div>
+      <h3 class="atitle"><span class="num">B1</span>Mandatory admission of a financial creditor's application</h3>
+      <p><strong>In plain terms.</strong> A bank shows the tribunal two things: money was owed, and it was not paid. The old text said the tribunal "may" admit. A reasonable reader, and eventually the Supreme Court, asked whether "may" gave the tribunal a discretion to refuse even when the bank had proved its case. The new text removes the doubt: if the default is made out and the file is complete, the tribunal "shall" admit, and nothing else may be weighed.</p>
+
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>Section 7(4) required the tribunal to ascertain default within fourteen days. Section 7(5)(a) said it "may admit" once satisfied of default, completeness and no disciplinary cloud over the proposed professional.</p>
+          <p>The word "may" was read literally to confer discretion, so a tribunal could keep an admission in abeyance even where debt and default were proved.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>The tribunal "shall" admit within fourteen days where default has occurred and the application is complete, with no pending disciplinary proceeding against the proposed professional.</p>
+          <p>Explanation I states that once those requirements are met, no other ground may be considered to reject. Explanation II makes an information utility record of default sufficient proof. Delay beyond fourteen days must be reasoned in writing.</p>
+        </div>
+      </div>
+
+      <div class="why"><h5>Why</h5><p>The Code was built on a clean trigger: default, not commercial insolvency. The Bankruptcy Law Reforms Committee deliberately moved away from the older "inability to pay" enquiry, which invited the debtor to litigate its own solvency and bled the timeline dry. A discretion to weigh the debtor's overall financial health reopened exactly that door. Parliament has now shut it.</p></div>
+
+      <div class="caselaw">
+        <span class="cn">Innoventive Industries Ltd. v. ICICI Bank</span><span class="cc">(2018) 1 SCC 407</span>
+        <p>The Court held that the moment the tribunal is satisfied a default has occurred, the application must be admitted unless incomplete. The enquiry is binary: debt and default.</p>
+        <p class="rel"><b>Relevance:</b> The new section 7(5) restores and codifies the Innoventive twin test as the whole of the admission enquiry.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">Vidarbha Industries Power Ltd. v. Axis Bank Ltd.</span><span class="cc">(2022) 8 SCC 352; review dismissed</span>
+        <p>A two-judge Bench read "may" in section 7(5)(a) as conferring genuine discretion, so the tribunal could decline or defer admission after weighing surrounding circumstances, there, a large award receivable by the debtor that would have cleared the debt.</p>
+        <p class="rel"><b>Relevance:</b> This is the decision the Amendment overrides. By substituting "shall" and adding Explanation I, the legislature removes the discretionary reading that Vidarbha had introduced.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">M. Suresh Kumar Reddy v. Canara Bank</span><span class="cc">(2023)</span>
+        <p>A later Bench confined Vidarbha to its peculiar facts and reaffirmed that once default is established there is hardly any discretion to refuse admission.</p>
+        <p class="rel"><b>Relevance:</b> The Amendment converts this judicial course-correction into the settled statutory rule, ending bench-to-bench variation.</p>
+      </div>
+
+      <div class="prac"><h5>Practitioner note</h5><p>For a lender, admission risk on a clean, information-utility-recorded default is now close to nil, which strengthens the bargaining position long before the file reaches the tribunal. For a debtor, the defensive playbook narrows sharply: the time to settle, dispute the existence of default, or cure is before filing, not at the admission hearing. Solvency, a pending receivable, or hardship are no longer arguments against admission. Note also that the operational creditor route under section 9 always used "shall", so the Amendment harmonises the two gates.</p></div>
+      <div class="watch"><h5>Still unsettled</h5><p>The mandatory rule does not abolish the threshold of a genuine pre-existing dispute on operational debt, nor does it license abuse: the new penalty for frivolous or vexatious proceedings (Cluster N) is the counterweight, and the tribunal retains the duty to satisfy itself that a real default, and not a manufactured one, is before it.</p></div>
+    </div>
+
+    <!-- s.5 / IBC s.9 and s.6 / IBC s.10 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 5</span><span class="stag ibc">IBC s. 9</span><span class="stag">Amendment s. 6</span><span class="stag ibc">IBC s. 10</span></div>
+      <h3 class="atitle"><span class="num">B2</span>Operational and debtor applications: speed, and the debtor loses the power to choose its own professional</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>On a section 9 operational creditor application, certain information was "as prescribed" by rules. There was no express duty to record reasons for delay.</p>
+          <p>On a section 10 application by the debtor itself, the debtor proposed the resolution professional and the tribunal screened for disciplinary proceedings against that nominee.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>Section 9 information moves to the "as specified" regulation-making power, and a delay beyond fourteen days must be reasoned in writing, mirroring section 7.</p>
+          <p>Section 10 drops the debtor's nomination of the professional. Under the matching change to section 16 (next card), the tribunal refers the choice of interim professional to the Board.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>A debtor who files its own insolvency and hand-picks the professional invites a tame, debtor-aligned process. Removing self-nomination and routing the appointment through the Board protects the confidence of the creditors who will sit on the committee, and addresses a recognised avenue for misuse of the voluntary route.</p></div>
+    </div>
+
+    <!-- s.10 / IBC s.16 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 10</span><span class="stag ibc">IBC s. 16 &middot; appointment of interim professional</span></div>
+      <h3 class="atitle"><span class="num">B3</span>Who becomes the interim resolution professional</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>The professional proposed in the application was generally appointed as interim professional, including for debtor-filed cases.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>For a financial creditor's application the proposed professional is appointed, subject only to no pending discipline. For a debtor's application under section 10 the tribunal refers the matter to the Board for a recommendation. Consequential wording threads the new sub-section (3A) into sub-section (4).</p></div>
+      </div>
+      <div class="prac"><h5>Practitioner note</h5><p>A financial creditor keeps effective control of the first professional, which preserves creditor confidence at the outset. A debtor loses it. Advisers running a section 10 filing should set client expectations early: the professional will be a Board nominee, not a familiar face.</p></div>
+    </div>
+
+    <!-- timelines + NCLAT + frivolous + s.65 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 43</span><span class="stag ibc">IBC s. 61</span><span class="stag">Amendment s. 44</span><span class="stag ibc">new s. 64A</span><span class="stag">Amendment s. 45</span><span class="stag ibc">IBC s. 65</span></div>
+      <h3 class="atitle"><span class="num">B4</span>Tightening the clock and deterring tactical filings</h3>
+      <p>A cluster of changes hard-wires speed and discipline across the gate and the appeal.</p>
+      <ul class="tight">
+        <li><strong>Section 61, appeals.</strong> The appellate tribunal must dispose of an appeal within three months of receipt. Combined with the fixed thirty-day windows the Act places on tribunal orders at admission, plan approval, liquidation and dissolution, the whole timeline now has outer limits at every node.</li>
+        <li><strong>New section 64A, frivolous Part II proceedings.</strong> A person who launches a frivolous or vexatious proceeding before the tribunal may be penalised between one lakh and two crore rupees. A mirror provision, section 183A, does the same for Part III (Cluster N).</li>
+        <li><strong>Section 65.</strong> The existing bar on fraudulent or malicious initiation is extended to the new creditor-initiated process.</li>
+      </ul>
+      <div class="why"><h5>Why</h5><p>Mandatory admission removes the tribunal's discretion to filter out weak cases at the door. The frivolous-proceedings penalty is the deliberate counterweight: the gate is open, but those who abuse it pay. The three-month appeal limit attacks the other end of the problem, where resolution timelines were defeated not at admission but in years of appellate delay.</p></div>
+      <div class="watch"><h5>Still unsettled</h5><p>Disposal "within three months" is, on the Code's own history, more aspirational than self-executing, the original fourteen-day admission norm was routinely overshot. Whether the appellate tribunal is resourced to meet a hard quarterly limit, and what follows if it does not, will be tested in practice. The reasons-for-delay duty at least creates a record.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== frag_CDE.html ===== -->
+<!-- ============================================================= -->
+<!-- CLUSTER C : WITHDRAWAL AND SETTLEMENT -->
+<!-- ============================================================= -->
+<section class="part reveal" id="withdrawal">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster C</div>
+      <h2>Withdrawal and settlement</h2>
+    </div>
+    <p class="lead">Insolvency is collective. Once a company is admitted, the proceeding stops being a private fight between one creditor and the debtor and becomes a process for the benefit of all creditors. The hard question is when, and on whose say-so, the parties may still call the whole thing off by settling.</p>
+
+    <!-- s.8 / IBC s.12A -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 8</span><span class="stag ibc">IBC s. 12A &middot; substituted</span></div>
+      <h3 class="atitle"><span class="num">C1</span>The new withdrawal window</h3>
+      <p><strong>In plain terms.</strong> Two parties can shake hands and end the case, but only inside a fixed window, and only if a heavy majority of the creditors agree. The new section draws the window with bright lines: not before the committee of creditors is formed, and not after bidding has opened.</p>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>The old section 12A allowed withdrawal of an admitted application by the applicant, with ninety per cent committee approval, "in such manner as may be specified". The detail lived in regulation 30A, which had to be patched repeatedly. Courts filled the gaps using Article 142 and inherent powers.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>Withdrawal is now made by the resolution professional, with ninety per cent committee approval, and is barred (a) before the committee is constituted, and (b) after the first invitation for resolution plans has issued. The tribunal must pass its order within thirty days, recording reasons for any delay.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>The Code discourages a single creditor unwinding a collective process at will. The earlier framework left two gaps the courts had to plug case by case: withdrawal before the committee exists, and withdrawal after bidding opens. The Amendment writes the answers into primary law, channels the application through the professional rather than the applicant, and gives the tribunal a clock.</p></div>
+      <div class="caselaw">
+        <span class="cn">Swiss Ribbons (P) Ltd. v. Union of India</span><span class="cc">(2019) 4 SCC 17</span>
+        <p>Upheld section 12A and the ninety per cent threshold, and accepted that before the committee is constituted the tribunal may permit withdrawal after hearing the parties.</p>
+        <p class="rel"><b>Relevance:</b> The new pre-committee bar refines, rather than contradicts, this position by routing early withdrawal through the professional within the specified procedure.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">GLAS Trust Company LLC v. BYJU Raveendran</span><span class="cc">2024 INSC 811; (2025) 3 SCC 625</span>
+        <p>The Court mapped the stages at which withdrawal may be sought, held that the application must travel through the professional, and clarified that once the committee is in existence the section 12A route with its ninety per cent threshold governs, displacing recourse to inherent powers or Article 142.</p>
+        <p class="rel"><b>Relevance:</b> The substituted section 12A codifies the GLAS Trust architecture: professional-led applications, a defined window, and committee primacy over settlement.</p>
+      </div>
+      <div class="prac"><h5>Practitioner note</h5><p>Settlement strategy now has a deadline you can mark on a calendar. If a one-time settlement is the client's exit, it must be landed and committee-approved before the first invitation for resolution plans goes out. Miss that, and the only escape from the process is a resolution plan, not a private deal. For a settling creditor, the ninety per cent bar means the deal must satisfy the committee as a whole, not just the applicant who filed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- CLUSTER D : MORATORIUM AND GUARANTOR ASSETS -->
+<!-- ============================================================= -->
+<section class="part reveal" id="moratorium">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster D</div>
+      <h2>The moratorium, and a new power over guarantor assets</h2>
+    </div>
+    <p class="lead">The moratorium is the protective shield that freezes claims against the debtor while a resolution is attempted. Two changes here are easy to miss but commercially significant: one clarifies that a guarantor cannot use a back-door claim to puncture the shield, and the other lets the estate reach into assets that secured the company's debt but sit in a guarantor's hands.</p>
+
+    <!-- s.9 / IBC s.14 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 9</span><span class="stag ibc">IBC s. 14 &middot; moratorium</span></div>
+      <h3 class="atitle"><span class="num">D1</span>The surety cannot ricochet a claim back onto the debtor</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>Section 14(3)(b) carved a surety under a contract of guarantee out of the moratorium, so that creditors could pursue guarantors even while the company was protected. What was less clear was the reverse: could a surety who had paid then turn around and pursue the debtor during the moratorium?</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>A new Explanation confirms that the moratorium also applies where the surety seeks to initiate or continue any action against the corporate debtor pursuant to a contract of guarantee. The numbering also adds the new sub-section (2A) (which protects guarantor-asset transfers) to the list of carve-outs in sub-section (1).</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>A guarantor who pays the creditor steps into the creditor's shoes by subrogation under the Indian Contract Act, 1872, and could in theory chase the debtor for indemnity. Allowing that during a resolution would let a fresh claim ricochet onto the very estate the process is trying to preserve. The Explanation stops the back-door claim and protects the value being assembled for all creditors. It sits alongside the clean-slate codification in section 31 (Cluster F), which extinguishes a paying guarantor's indemnity right once a plan is approved.</p></div>
+    </div>
+
+    <!-- s.17 / new IBC s.28A -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 17</span><span class="stag ibc">new s. 28A</span></div>
+      <h3 class="atitle"><span class="num">D2</span>Transferring a guarantor's asset as part of the resolution</h3>
+      <p><strong>In plain terms.</strong> Suppose a bank held security not over the company's own factory but over a building owned by the promoter who guaranteed the loan, and the bank has already taken possession of that building. The new section lets that building be brought into the deal and sold as part of the company's resolution, with the committee's blessing, instead of being marooned in a separate, slower recovery action.</p>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>There was no mechanism to fold a guarantor's asset, already in a creditor's possession, into the corporate resolution. The asset sat outside the process, realised separately and slowly, fragmenting the value available to a resolution applicant who wanted the whole picture.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>Where a creditor has taken possession of a personal or corporate guarantor's asset by enforcing security under any law, the creditor may, during the corporate process, permit that asset to be transferred as part of the resolution, with prior committee approval. Tiered approvals apply where the guarantor is itself in process: sixty-six per cent of the corporate guarantor's committee, or three-fourths in value of a personal guarantor's creditors. Sale proceeds are adjusted against the guarantor's debt after costs of preservation, and any surplus returns to the guarantor.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Promoter and group guarantees are the norm in Indian lending. Keeping the guarantor's collateral outside the resolution fragmented the estate and depressed the price a bidder would pay. Section 28A consolidates value: a resolution applicant can now acquire a coherent asset base, and the transfer vests clean title in the buyer as if made by the asset's owner.</p></div>
+      <div class="prac"><h5>Practitioner note</h5><p>Two conditions gate this power and must be checked first: the creditor must already have taken possession, and must have enforced its security under a law that empowers a transfer, typically the SARFAESI Act. The regulations are expected to specify which assets qualify, who may buy, and how a composite transfer is valued. Until then, treat section 28A as available in principle but dependent on careful structuring of the underlying enforcement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- CLUSTER E : CONDUCT OF THE RESOLUTION PROCESS -->
+<!-- ============================================================= -->
+<section class="part reveal" id="conduct">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster E</div>
+      <h2>Conduct of the resolution process</h2>
+    </div>
+    <p class="lead">Between admission and the plan vote, the professional runs the company, collects and verifies claims, and the committee deliberates. The Amendment tightens duties here, broadens who must cooperate, and, in its single most debated move, extends the committee's reach into the liquidation that follows a failed resolution.</p>
+
+    <!-- s.11 / IBC s.18 and s.12 / IBC s.19 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 11</span><span class="stag ibc">IBC s. 18</span><span class="stag">Amendment s. 12</span><span class="stag ibc">IBC s. 19</span></div>
+      <h3 class="atitle"><span class="num">E1</span>Claims verification, and a wider duty to cooperate</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>Section 18 required the interim professional to collate claims. Whether collation included verification, and the determination of claim value, was a recurring fight.</p>
+          <p>Section 19 spoke of "personnel" of the debtor and its promoter cooperating with the professional, language that some used to escape the duty by saying they were neither.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>Section 18 now states expressly that the professional, while collating claims, shall verify them and, if required, determine the value of verified claims, in the specified manner.</p>
+          <p>Section 19 changes "Personnel" to "Persons" and extends the cooperation duty to anyone associated with the debtor's management or engaged under a contract for service. An Explanation confirms references to the interim professional include the professional.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Two practical headaches are removed. First, the verification-versus-collation argument that delayed the constitution of the committee and the admission of claims. Second, the cooperation gap, where consultants, former officers and contractors who held the debtor's records sheltered behind the narrow word "personnel". The wider "persons" formula closes that escape.</p></div>
+    </div>
+
+    <!-- s.13 / IBC s.21 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 13</span><span class="stag ibc">IBC s. 21 &middot; new sub-section (11)</span></div>
+      <h3 class="atitle"><span class="num">E2</span>The committee of creditors now supervises liquidation</h3>
+      <p><strong>In plain terms.</strong> Until now, the committee of creditors was a creature of the resolution stage. Once a company tipped into liquidation, the committee dissolved and the liquidator ran the show under the tribunal's eye. The Amendment keeps the committee alive into liquidation and gives it a supervisory role over the liquidator. This is the structural pivot of the whole Act.</p>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>The committee's statutory life effectively ended at the resolution stage. In liquidation the liquidator exercised the powers, subject to the tribunal's directions, and creditors participated mainly through a consultation committee under the regulations, with no statutory supervisory authority.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>New sub-section (11) provides that where liquidation is initiated, the committee constituted under section 21 continues, and supervises the conduct of the liquidation by the liquidator, with sections 21 and 24 applying as the context requires. The Board may admit other classes of creditor to attend without a vote. The provision applies to liquidations begun after commencement and to ongoing liquidations where the liquidator has not yet applied for dissolution.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>The drafters concluded that creditors, who bear the loss, should steer realisation in liquidation too, rather than handing the asset sale entirely to a liquidator supervised only by an over-burdened tribunal. Read with the liquidation overhaul in Cluster G, where the committee chooses and can replace the liquidator, sub-section (11) extends the Code's "creditor in control" philosophy across the cliff edge from resolution into liquidation.</p></div>
+      <div class="watch"><h5>Still unsettled, and a real debate</h5><p>This is the Act's most contested reform. The case for it is creditor accountability. The case against runs from the Code's own Preamble, which commits the law to balancing the interests of <em class="t">all</em> stakeholders, not only the financial creditors who dominate the committee. In liquidation the residual claimants change: operational creditors, workmen, statutory dues and even shareholders have more at stake than in resolution, yet the supervising committee is weighted towards financial creditors. A genuine question is whether committee supervision of liquidation, untempered, risks the very stakeholder balance the Preamble protects. The Board's power to admit non-voting classes is a partial answer; the regulations specifying the manner of supervision will decide how serious the tension proves.</p></div>
+    </div>
+
+    <!-- s.14 / IBC s.22 ; s.15 / IBC s.25 ; s.16 / IBC s.26 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 14</span><span class="stag ibc">IBC s. 22</span><span class="stag">Amendment s. 15</span><span class="stag ibc">IBC s. 25</span><span class="stag">Amendment s. 16</span><span class="stag ibc">IBC s. 26</span></div>
+      <h3 class="atitle"><span class="num">E3</span>Appointment of the professional, avoidance duties, and severing avoidance from the main process</h3>
+      <ul class="tight">
+        <li><strong>Section 22, deemed appointment.</strong> When the committee resolves to appoint or confirm the resolution professional, that person is deemed appointed from the date of the resolution, and the decision is communicated to the interim professional, the debtor and the Board. This removes the dead time between the committee's vote and a formal order.</li>
+        <li><strong>Section 25(2)(j), avoidance duty.</strong> The professional's duty is restated to require filing applications in respect of an avoidance transaction or fraudulent or wrongful trading, using the new defined terms.</li>
+        <li><strong>Section 26, substituted.</strong> An avoidance or fraudulent-trading application, or one under the new section 47, does not affect the conduct of the resolution or liquidation, and, conversely, completion of the resolution or liquidation does not stop the avoidance proceedings continuing.</li>
+      </ul>
+      <div class="why"><h5>Why</h5><p>The substituted section 26 answers a problem that had reached the High Courts: do avoidance applications survive once a resolution plan is approved and the professional functus officio? Treating recovery of clawed-back value as parasitic on the main process risked extinguishing valuable claims the moment a plan went through. The Amendment severs the two tracks, so a preference or undervalue claim lives on regardless of the headline outcome, preserving value that ultimately benefits creditors.</p></div>
+      <div class="caselaw">
+        <span class="cn">Tata Steel BSL Ltd. v. Venus Recruiter Pvt. Ltd.</span><span class="cc">Delhi High Court</span>
+        <p>The survival of avoidance applications after approval of a resolution plan, and who may pursue them, was litigated at length, with real doubt over whether such applications abated on the professional's exit.</p>
+        <p class="rel"><b>Relevance:</b> The substituted section 26, read with the new section 47 and the section 36 and 54 changes (Clusters G and I), settles by statute that avoidance and fraudulent-trading proceedings continue independently and that the committee may direct how the recoveries are pursued and distributed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== frag_FG.html ===== -->
+<!-- ============================================================= -->
+<!-- CLUSTER F : THE RESOLUTION PLAN -->
+<!-- ============================================================= -->
+<section class="part reveal" id="resolution">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster F</div>
+      <h2>The resolution plan</h2>
+    </div>
+    <p class="lead">This is where money is allocated. Two reforms dominate: a recalibrated floor for the creditor who votes no, and a statutory clean slate for the buyer who takes over the company. Both respond directly to lines of Supreme Court authority.</p>
+
+    <!-- s.18 / IBC s.30 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 18</span><span class="stag ibc">IBC s. 30 &middot; contents of the plan</span></div>
+      <h3 class="atitle"><span class="num">F1</span>The dissenting financial creditor's minimum, and a mandatory monitoring committee</h3>
+      <p><strong>In plain terms.</strong> When most creditors vote yes to a rescue deal but a minority votes no, the law guarantees the dissenter a floor so it is not crammed down to nothing. The Amendment redraws that floor and pins it to the actual plan, and it requires every approved plan to be watched by a dedicated committee during implementation.</p>
+
+      <h4>New clause (ba): the floor for those who vote no</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>Section 30(2)(b) bundled two guarantees together. Operational creditors got the higher of their liquidation value or what priority distribution of the plan amount would give them. A dissenting financial creditor got not less than the amount payable in a liquidation under section 53.</p>
+          <p>How to compute that liquidation figure for a secured dissenter, by share of admitted claim or by the value of its specific security, split the Supreme Court.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>Operational creditors stay in clause (b). A new clause (ba) governs dissenting financial creditors. Their floor is now the <strong>lower</strong> of two amounts: (i) what they would get in a liquidation under section 53; or (ii) what they would get if the plan amount were distributed in accordance with the section 53 order of priority. Explanation I keeps the "fair and equitable" standard. Explanation II makes the new rule prospective, sparing plans already approved, or where liquidation was already ordered or resolved, before commencement.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>The old single floor of "liquidation value" produced a perverse incentive and years of litigation. A secured creditor could vote no and demand the full liquidation value of its collateral out of a plan whose total value was below liquidation value, in effect making the assenting majority subsidise the dissenter and pushing the deal towards collapse. Tying the floor to the lower of liquidation value and priority-distribution of the actual plan amount disciplines strategic dissent while preserving a genuine minimum.</p></div>
+
+      <div class="caselaw">
+        <span class="cn">Committee of Creditors of Essar Steel India Ltd. v. Satish Kumar Gupta</span><span class="cc">(2020) 8 SCC 531</span>
+        <p>A three-judge Bench held that equitable, not necessarily equal, treatment is required; the committee's commercial wisdom governs distribution, subject to the statutory minimum and to fairness between similarly situated creditors.</p>
+        <p class="rel"><b>Relevance:</b> The retained "fair and equitable" Explanation carries Essar Steel's principle forward; clause (ba) supplies the recalibrated minimum that operates within it.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">India Resurgence ARC (P) Ltd. v. Amit Metaliks Ltd.</span><span class="cc">2021 SCC OnLine SC 409</span>
+        <p>A two-judge Bench held that a dissenting secured creditor cannot demand the full value of its security and is confined to the liquidation value, deferring to the committee's distribution; a higher entitlement would incentivise liquidation over resolution.</p>
+        <p class="rel"><b>Relevance:</b> The "pooled" view of the dissenter's floor.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">DBS Bank Ltd. Singapore v. Ruchi Soya Industries Ltd.</span><span class="cc">2024 SCC OnLine SC 3</span>
+        <p>Another two-judge Bench took the opposite view: because a dissenting secured creditor is constructively forced to surrender its security on plan approval, it must receive the value of that security as it would in a liquidation, reading section 30(2)(b)(ii) with sections 52 and 53. Finding the conflict with Amit Metaliks, it referred the question to a larger Bench.</p>
+        <p class="rel"><b>Relevance:</b> The "collateral-specific" view. The Amendment recalibrates the quantum of the floor but leaves the computation question, claim-share or security-value, to be read with the new section 53(1)(b)(ii) Explanation (Cluster H), which itself points towards valuing a secured creditor to the extent of its security.</p>
+      </div>
+      <div class="watch"><h5>Still unsettled</h5><p>The Amendment does not, in terms, declare whether the section 53 figure for a dissenting secured creditor is computed by share of admitted claim or by the value of its specific collateral. The DBS Bank reference to a larger Bench is not mooted simply because the floor has been rewritten. The better view, taking clause (ba) together with the new section 53(1)(b)(ii) Explanation, is that the regime now leans collateral-specific, but a practitioner should treat the precise computation as live until the larger Bench speaks or the valuation manner is specified.</p></div>
+
+      <h4>Substituted clause (d): a real monitoring committee</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>The plan had to provide for "implementation and supervision", a thin requirement that left post-approval monitoring patchy and a frequent source of grievance when successful applicants under-performed.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>The plan must constitute a committee for implementation and supervision, comprising the resolution professional or another insolvency professional, representatives of classes of creditors, and the resolution applicant, on specified terms. Sub-section (4) also requires the committee of creditors to record reasons for approving a plan.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Implementation failure had become the quiet scandal of the resolution stage. A formal monitoring committee, with creditor and applicant representation, gives stakeholders eyes on delivery, in line with the Board's discussion paper on monitoring committees. Recording reasons for approval improves the auditability of the committee's commercial wisdom without inviting the tribunal to second-guess it.</p></div>
+    </div>
+
+    <!-- s.19 / IBC s.31 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 19</span><span class="stag ibc">IBC s. 31 &middot; approval of the plan</span></div>
+      <h3 class="atitle"><span class="num">F2</span>Two-stage approval, continuity of licences, and the statutory clean slate</h3>
+      <p>Three significant additions, the last of which writes a major judicial doctrine into the Code.</p>
+
+      <h4>Two-stage approval, rectification, and a clock</h4>
+      <ul class="tight">
+        <li><strong>New proviso to (1).</strong> On the professional's application, with sixty-six per cent committee approval, the tribunal may first approve the <em class="t">implementation</em> of the plan and then approve the <em class="t">manner of distribution</em> within thirty days. This lets a viable plan begin without distribution disputes holding the whole thing hostage.</li>
+        <li><strong>Proviso to (2).</strong> Before rejecting a plan, the tribunal may notify the committee to rectify defects, rather than sending everyone back to square one.</li>
+        <li><strong>New (2A).</strong> The tribunal must pass its order on the plan within thirty days, recording reasons for delay.</li>
+      </ul>
+
+      <h4>New (5): licences, permits and grants survive</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>Nothing in section 31 protected the licences, permits, registrations, quotas and clearances a business depends on. A successful applicant could acquire a company only to find a sectoral regulator or authority treating the change as a trigger to suspend or cancel a vital permit.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>A licence, permit, registration, quota, concession or similar grant associated with an approved plan shall not be suspended or terminated for the remaining period, provided the debtor or successful applicant complies with the obligations attached to it.</p></div>
+      </div>
+
+      <h4>New (6): the clean slate, in statute</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>The "clean slate" was judge-made. Approved plans were binding on all stakeholders, and the Supreme Court held that claims not in the plan stood extinguished, but the principle rested on case law rather than express text, and its edges were litigated repeatedly, including against tax and other authorities.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>On approval, unless the plan provides otherwise, any claim against the debtor and its assets prior to approval is extinguished, and no proceeding may be continued or instituted on such claims, including for assessment. Explanation I preserves claims against promoters, those in management, guarantors and persons jointly liable. Explanation II extinguishes a jointly-liable payer's indemnity right against the debtor. Explanation III applies the clean slate from the commencement of the Code, except for matters that have attained finality.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>A buyer will not pay full value for a company that might be ambushed by a stale claim, a surprise tax demand, or a fresh assessment for a pre-approval period. Codifying extinguishment, and protecting licences, makes the slate genuinely clean and lifts the price a resolution applicant will offer, which benefits every creditor. The carve-outs keep guarantors and wrongdoers on the hook, so the clean slate rescues the business, not the people who ran it into the ground.</p></div>
+      <div class="caselaw">
+        <span class="cn">Ghanashyam Mishra &amp; Sons (P) Ltd. v. Edelweiss ARC Ltd.</span><span class="cc">(2021) 9 SCC 657</span>
+        <p>Held that once a plan is approved under section 31, all claims not part of the plan stand extinguished and no person may pursue a claim outside it, including governments and authorities.</p>
+        <p class="rel"><b>Relevance:</b> New sub-section (6) is the codification of Ghanashyam Mishra, and Explanation III gives it the same retrospective reach from the Code's commencement.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">Committee of Creditors of Essar Steel v. Satish Kumar Gupta</span><span class="cc">(2020) 8 SCC 531; State Bank of India v. V. Ramakrishnan, (2018) 17 SCC 394</span>
+        <p>Confirmed that approval of a plan does not discharge a guarantor's co-extensive liability.</p>
+        <p class="rel"><b>Relevance:</b> Explanation I to sub-section (6) preserves exactly this, ensuring the clean slate does not release guarantors or jointly liable persons.</p>
+      </div>
+      <div class="prac"><h5>Practitioner note</h5><p>For acquirers, the diligence emphasis shifts. Pre-approval liabilities are largely washed away, so the focus moves to obligations <em class="t">attached</em> to the licences being preserved, and to whether any matter has already "attained finality" and therefore escapes Explanation III. For lenders who also hold guarantees, the message is reassuring: pursue the company through the plan and the guarantor separately, and structure the plan so that it does not inadvertently waive guarantee rights.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- CLUSTER G : THE LIQUIDATION GOVERNANCE OVERHAUL -->
+<!-- ============================================================= -->
+<section class="part reveal" id="liquidation">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster G</div>
+      <h2>The liquidation governance overhaul</h2>
+    </div>
+    <p class="lead">Liquidation used to be the quiet endgame: a single liquidator, often the former resolution professional, selling assets under the tribunal's distant supervision. The 2026 Act rebuilds this stage. The committee stays in charge, a fresh liquidator takes over, a failed resolution can sometimes be revived, and a quick dissolution route opens for cases where realisation is pointless.</p>
+
+    <!-- s.20 / IBC s.33 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 20</span><span class="stag ibc">IBC s. 33 &middot; initiation of liquidation</span></div>
+      <h3 class="atitle"><span class="num">G1</span>A moratorium in liquidation, and a one-time revival of the resolution process</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>On a failed resolution the tribunal ordered liquidation. There was no moratorium tailored to the liquidation stage; protection came from section 33(5)'s bar on suits. Once liquidation was ordered there was no statutory mechanism to step back into resolution.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>The liquidation order now declares a moratorium for the purposes of section 14(1)(a) and (c), applied to liquidation. Before ordering liquidation, the tribunal must consider a committee application (sixty-six per cent) to <strong>restore</strong> the resolution process, and may restore it, once only, for up to one hundred and twenty days. New sub-section (6) lets the liquidator continue or commence suits only with the tribunal's leave.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Two mischiefs are addressed. First, the want of a clear moratorium in liquidation left the estate exposed to scattered enforcement. Second, and more importantly, a resolution could fail for reasons that later evaporate, a bidder returns, funding appears, and yet the Code offered no way back. The one-time restoration gives creditors a controlled second chance at rescue before assets are broken up, consistent with the Code's stated preference for resolution over liquidation.</p></div>
+    </div>
+
+    <!-- s.21 / IBC s.34 ; s.22 / new s.34A -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 21</span><span class="stag ibc">IBC s. 34</span><span class="stag">Amendment s. 22</span><span class="stag ibc">new s. 34A</span></div>
+      <h3 class="atitle"><span class="num">G2</span>A fresh liquidator, chosen and removable by the committee</h3>
+      <p><strong>In plain terms.</strong> The person who failed to resolve the company no longer automatically liquidates it. A new liquidator is brought in through the Board, and the creditors can sack and replace that liquidator if they lose confidence.</p>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>Section 34 made the resolution professional the liquidator by default, unless the tribunal replaced them. The committee had no power to choose or remove the liquidator; on liquidation, all powers of the board vested in the liquidator and creditor input was largely consultative.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>The tribunal refers the appointment to the Board, which recommends an insolvency professional, and the resolution professional is expressly barred from being appointed or replaced as liquidator of the same debtor. The Board must propose a name, with consent, within ten days. New section 34A lets the committee, by sixty-six per cent, resolve to replace the liquidator with another professional, on whose consent the tribunal makes the change.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>A professional whose resolution attempt failed carries the baggage of that failure into the asset sale, and creditors had no lever to insist on fresh eyes or remove an under-performing liquidator. Separating the roles and giving the committee selection and removal powers is the liquidation-stage expression of creditor control, and it aligns the liquidator's accountability with the people who bear the loss.</p></div>
+      <div class="prac"><h5>Practitioner note</h5><p>Resolution professionals must now plan for a clean handover on a liquidation order, since they cannot carry the matter forward themselves; section 34 requires the former professional to forward all records to the new liquidator. For creditors, the replacement power in section 34A is real bargaining power, but it needs a sixty-six per cent supermajority, so it cannot be wielded by a single frustrated lender.</p></div>
+    </div>
+
+    <!-- s.23 / IBC s.35 ; s.24 / IBC s.36 ; s.25 omit 38-42 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 23</span><span class="stag ibc">IBC s. 35</span><span class="stag">Amendment s. 24</span><span class="stag ibc">IBC s. 36</span><span class="stag">Amendment s. 25</span><span class="stag ibc">IBC ss. 38 to 42 omitted</span></div>
+      <h3 class="atitle"><span class="num">G3</span>The liquidator's powers, the estate, and the claims process moved to regulation</h3>
+      <ul class="tight">
+        <li><strong>Section 35.</strong> The liquidator's duty to "verify claims of all the creditors" becomes a duty to maintain an updated list of claims in the specified manner; the power to "invite and settle" claims loses the "invite"; and the liquidator may continue or institute avoidance and fraudulent-trading proceedings. A new sub-section (2) states that the committee supervises the liquidation in the specified manner.</li>
+        <li><strong>Section 36.</strong> The liquidation estate provisions are updated to refer to avoidance, fraudulent or wrongful trading, and section 47 proceedings, keeping the language consistent with the new defined terms.</li>
+        <li><strong>Sections 38 to 42 omitted.</strong> The detailed statutory claims process in liquidation (consolidation, verification, admission or rejection, appeals and substantiation) is removed from primary law and shifted into the regulations, where it can be calibrated more nimbly. The Explanation in section 35 makes the omission prospective.</li>
+      </ul>
+      <div class="why"><h5>Why</h5><p>The hard-coded claims machinery in sections 38 to 42 had proved rigid. Moving it to regulation lets the Board run a faster, form-driven claims process, the same instinct behind replacing "verify claims" with maintaining an updated list. The avoidance additions ensure the liquidator can pursue clawbacks now that section 26 keeps those proceedings alive independently.</p></div>
+      <div class="watch"><h5>Still unsettled</h5><p>Until the replacement regulations issue, practitioners should watch the transition carefully: the omission of sections 38 to 42 leaves the detailed claims procedure to delegated legislation, and the saving Explanation confines the change to liquidations begun after commencement, so ongoing liquidations continue under the old machinery.</p></div>
+    </div>
+
+    <!-- s.33 / IBC s.54 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 33</span><span class="stag ibc">IBC s. 54 &middot; dissolution</span></div>
+      <h3 class="atitle"><span class="num">G4</span>A 180-day liquidation clock, and dissolution without full liquidation</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>Section 54 simply said that once assets were "completely liquidated" the liquidator applied for dissolution. There was no time limit, and no route to dissolve a shell with nothing worth selling other than to grind through the full liquidation.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>The liquidator must liquidate and apply for dissolution within one hundred and eighty days, extendable once by ninety days. New sub-section (2A) lets the committee decide to <strong>dissolve</strong> the debtor (a compressed exit), on which the tribunal may order dissolution from the date of its order; any leftover asset is sold and surplus credited to the Insolvency and Bankruptcy Fund. Sub-sections (1A) and (1B) preserve pending avoidance and other proceedings, with the committee directing how they are pursued and distributed, and (2B) confirms dissolution does not stop them. The tribunal must order dissolution within thirty days.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Open-ended liquidations were a notorious drain, dragging on for years over assets worth little. A hard outer limit forces closure. The committee-led compressed dissolution recognises the commercial reality that some companies have nothing to realise, and lets creditors choose a quick burial rather than an expensive, pointless sale process, while ring-fencing avoidance recoveries so that value is not lost in the rush to dissolve.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== frag_HI.html ===== -->
+<!-- ============================================================= -->
+<!-- CLUSTER H : SECURED CREDITORS AND THE WATERFALL -->
+<!-- ============================================================= -->
+<section class="part reveal" id="secured">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster H</div>
+      <h2>Secured creditors and the waterfall</h2>
+    </div>
+    <p class="lead">Two sections carry some of the most consequential commercial reforms in the whole Amendment. Section 52 rewrites how a secured creditor stands outside the liquidation estate, and section 53 rewrites who gets paid, in what character, and where government dues sit. Read them together: they are the statutory answer to a decade of contested distribution law.</p>
+
+    <!-- s.31 / IBC s.52 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 31</span><span class="stag ibc">IBC s. 52 &middot; secured creditor in liquidation</span></div>
+      <h3 class="atitle"><span class="num">H1</span>A deadline to stand outside, a super-majority over shared collateral, and a costlier exit</h3>
+      <p><strong>In plain terms.</strong> A secured creditor in liquidation has a choice. It can drop its security into the common pool and take its place in the queue, or it can stand outside, sell its own collateral, and keep the proceeds. The Amendment puts a clock on that choice, stops a single lender from acting alone where collateral is shared, and increases what an outside realiser must hand back to the estate.</p>
+
+      <h4>Sub-section (2): a fourteen-day election, or deemed relinquishment</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>A secured creditor electing to realise its own security merely had to inform the liquidator and identify the asset. There was no statutory deadline. Indecision and delay by secured creditors stalled liquidations, because the liquidator could not finalise the estate while the perimeter of relinquished and retained security remained open.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>The election must be made within fourteen days of the liquidation commencement date. If the secured creditor does not inform the liquidator and identify the charged asset within that window, the security interest is <strong>deemed relinquished</strong> to the liquidation estate. The creditor then takes its chances inside the section 53 waterfall rather than outside it.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Certainty and speed. A liquidator cannot run a clean process if the boundary between pooled and self-realised assets stays fluid for months. A short, hard deadline forces the secured creditor to commit early, and the deeming provision removes the temptation to keep options open at the estate's expense.</p></div>
+
+      <h4>Proviso to sub-section (2): no solo realisation over shared collateral</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>Where several creditors held security over the same asset, the Code did not expressly coordinate their realisation. One secured creditor could press to enforce in a way that prejudiced the others sharing the same collateral, producing disputes over priority, marshalling and the conduct of sale.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>Where more than one secured creditor has a security interest over the same asset, no secured creditor may realise unless the realisation is agreed by secured creditors representing not less than <strong>sixty-six per cent. of the value of all claims secured by such security interests</strong>. A minority charge-holder can no longer force a solo sale of shared collateral.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Collective discipline over a common asset. The super-majority threshold mirrors the voting architecture that runs through the rest of the Code and prevents value destruction from uncoordinated enforcement, while still letting a clear majority of the secured class proceed.</p></div>
+
+      <h4>Substituted sub-section (8): the cost of staying outside has risen</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>A secured creditor realising its own security had to hand back to the liquidator only the <strong>insolvency resolution process costs</strong> attributable to it. Workmen's dues and liquidation costs were not, in terms, deducted from its realisation.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>The deduction now covers the insolvency resolution process costs <strong>and the liquidation costs, and workmen's dues</strong> referable to clause (a) and sub-clause (i) of clause (b) of section 53(1). The outside realiser must transfer these amounts to the liquidator for inclusion in the estate, on specified terms.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Equity between the creditor who pools and the creditor who self-realises. Workmen's dues for the twenty-four-month period and the costs of the liquidation are charges that, in justice, the whole estate should bear, including the secured creditor who takes its asset out of the common pool. The amendment closes a gap that let outside realisers escape a fair share of these priority burdens.</p></div>
+
+      <div class="note"><h5>Transitional</h5><p>A new Explanation makes the substituted sub-section (2), the fourteen-day election and deemed relinquishment, prospective: it does not apply to a liquidation process initiated on or before the date of commencement of the 2026 Act. Practitioners running legacy liquidations must check the commencement date before assuming the deadline bites.</p></div>
+    </div>
+
+    <!-- s.32 / IBC s.53 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 32</span><span class="stag ibc">IBC s. 53 &middot; distribution of assets</span></div>
+      <h3 class="atitle"><span class="num">H2</span>Partial relinquishment, the character of a secured creditor, and the end of <em class="t">Rainbow Papers</em></h3>
+      <p>The waterfall in section 53 is the gravitational centre of liquidation. Two Explanations and a pair of Illustrations recalibrate it, and one of them reverses a Supreme Court decision that had unsettled the entire priority scheme.</p>
+
+      <h4>Explanation to s.53(1)(b)(ii): you are secured only up to the value of your security</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>When a secured creditor relinquished security worth less than its total debt, the Code did not spell out how it should be treated for the shortfall. Was it a secured creditor for its whole admitted claim and entitled to rank in clause (b)(ii) for all of it, or only to the extent of the value of the security it gave up? This was the precise computation question that split the Court in the resolution context.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>A new Explanation clarifies that where the value of the security interest relinquished is less than the total debt, the creditor is a secured creditor <strong>only to the extent of the value of that security</strong> (determined as may be specified), and for the remaining value of the debt he is treated as an <strong>unsecured creditor</strong>. This is a collateral-specific, security-value approach.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>To end the pooled-versus-collateral-specific dispute on a principled footing. A secured creditor's preferential rank should reflect the value of the security it actually surrenders, not the full face of its debt. The balance falls to the unsecured tier, where it belongs. This aligns the liquidation waterfall with the security-value logic and feeds directly into the dissenting-creditor floor in section 30(2)(ba) discussed in Cluster F.</p></div>
+
+      <div class="caselaw">
+        <span class="cn">DBS Bank Ltd. Singapore v. Ruchi Soya Industries Ltd.</span><span class="cc">2024 SCC OnLine SC 3</span>
+        <p>The Court read section 30(2)(b)(ii) with sections 52 and 53 and favoured a collateral-specific entitlement for the dissenting secured creditor, by reference to the value of its security, and referred the conflict with the pooled view to a larger Bench.</p>
+        <p class="rel"><b>Relevance:</b> The new section 53(1)(b)(ii) Explanation embeds the security-value approach in the waterfall itself. It does not formally answer the larger-Bench reference, but it strongly signals the direction Parliament has chosen.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">India Resurgence ARC (P) Ltd. v. Amit Metaliks Ltd.</span><span class="cc">2021 SCC OnLine SC 409</span>
+        <p>A two-judge Bench held a dissenting secured creditor is confined to liquidation value and cannot insist on the full value of its security, deferring to the committee's distribution.</p>
+        <p class="rel"><b>Relevance:</b> The competing pooled view. The waterfall Explanation now leans against treating the whole admitted claim as secured, recasting the surplus as unsecured.</p>
+      </div>
+
+      <h4>Explanation to s.53(1)(e)(i): government dues, and the reversal of <em class="t">Rainbow Papers</em></h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>Section 53(1)(e)(i) placed amounts due to the Central and State Governments for the two years preceding liquidation in the fifth rank, below secured creditors and workmen. But a 2022 decision held that a statutory tax charge could make the State a "secured creditor", potentially lifting government dues far up the waterfall and destabilising the priority scheme that lenders had relied on.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>A new Explanation declares that any amount due to the Central or State Government, <strong>whether or not a security interest is created to secure it by an act of parties or merely by operation of law</strong>, for the two years preceding the liquidation commencement date, is distributed under clause (e)(i), and any remaining government amount under clause (f). Government dues are pinned to their statutory rank and cannot climb the waterfall by force of a tax charge.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>To restore the certainty the waterfall is meant to provide. The 2022 decision had let a charge "created merely by operation of law" convert the State into a secured creditor, upsetting the settled expectation of lenders and the architecture of section 53. Read with the new Explanation to the definition of "security interest" in section 3(31), which excludes interests arising merely by operation of law, the Amendment decisively relocates government dues to their intended tier.</p></div>
+
+      <div class="caselaw">
+        <span class="cn">State Tax Officer v. Rainbow Papers Ltd.</span><span class="cc">2022 SCC OnLine SC 1162</span>
+        <p>The Court held that a statutory charge for tax under a State VAT statute made the State a secured creditor within the Code's definition, so its dues could not be ignored in a resolution plan. A review was later dismissed in <em class="t">Sanjay Kumar Agarwal v. State Tax Officer</em> (2023).</p>
+        <p class="rel"><b>Relevance:</b> This is the decision the new Explanations to sections 3(31) and 53(1)(e)(i) are designed to reverse. By excluding charges arising merely by operation of law from "security interest" and fixing government dues in clause (e)(i)/(f), the Amendment removes the basis on which the State was treated as secured.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">Paschimanchal Vidyut Vitran Nigam Ltd. v. Raman Ispat (P) Ltd.</span><span class="cc">2023 SCC OnLine SC 842</span>
+        <p>A later Bench distinguished <em class="t">Rainbow Papers</em>, confined it to its facts, and reaffirmed that government dues take the rank assigned to them by section 53 rather than displacing secured creditors.</p>
+        <p class="rel"><b>Relevance:</b> The Amendment adopts the <em class="t">Raman Ispat</em> position and writes it into the statute, ending the tension between the two decisions. The Ministry's discussion paper of 18 January 2023 had flagged precisely this need.</p>
+      </div>
+
+      <h4>Illustrations to s.53(2): inter-creditor agreements, when they bind and when they do not</h4>
+      <p>Section 53(2) already disregarded contractual arrangements between equally ranked recipients that disrupt the statutory order. Two Illustrations now make its operation concrete.</p>
+      <p class="tcap">How the two Illustrations work</p>
+        <div class="tablewrap">
+        <table>
+          <thead><tr><th>Scenario</th><th>Arrangement</th><th>Effect</th></tr></thead>
+          <tbody>
+            <tr><td>Illustration I</td><td>Workmen and secured creditors agree that secured debt is cleared before any workmen's dues</td><td><strong>Disregarded.</strong> It subordinates a class (workmen) that the statute ranks <em class="t">equally</em> with relinquishing secured creditors in clause (b), so it disrupts the order.</td></tr>
+            <tr><td>Illustration II</td><td>Two secured creditors X and Y agree that X is paid before Y</td><td><strong>Not disregarded.</strong> X and Y sit within the same class; reordering <em class="t">within</em> a rank by agreement does not disrupt the statutory priority between classes.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prac"><h5>Practitioner reality</h5><p>The distinction is between arrangements that reshuffle <em class="t">across</em> statutory ranks (void against the waterfall) and arrangements that allocate <em class="t">within</em> a single rank (enforceable inter se). When drafting or advising on inter-creditor agreements, the safe design is one that operates purely within a class. Any clause that promises a creditor priority over a differently ranked class, here, secured debt ahead of workmen, will not survive section 53(2).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- CLUSTER I : AVOIDANCE AND FRAUDULENT TRADING -->
+<!-- ============================================================= -->
+<section class="part reveal" id="avoidance">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster I</div>
+      <h2>Avoidance and fraudulent trading</h2>
+    </div>
+    <p class="lead">Avoidance applications claw back value that left the company in the run-up to insolvency. The Amendment lengthens the look-back window by anchoring it to the initiation date, gives creditors a direct route when the professional sits on his hands, and lets the liquidator pursue fraudulent and wrongful trading.</p>
+
+    <!-- s.26, s.27, s.30 / IBC s.43, 46, 50 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment ss. 26, 27, 30</span><span class="stag ibc">IBC ss. 43, 46, 50 &middot; look-back windows</span></div>
+      <h3 class="atitle"><span class="num">I1</span>The clock now starts at the initiation date</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>The relevant period for preferential transactions (s.43), undervalued transactions (s.46) and extortionate credit transactions (s.50) was measured backwards from the <strong>insolvency commencement date</strong>, the date of admission. Time spent waiting for an over-burdened tribunal to admit a petition narrowed the very window in which suspect transactions could be caught.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>The window now runs "from the <strong>initiation date</strong> and ending on the insolvency commencement date" added to the existing look-back. Because the initiation date is the filing date, and the new proviso to section 5(11) fixes it at the first application where several are pending, the look-back effectively stretches to cover the admission delay.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>To stop admission delay from shrinking the avoidance window. Where months pass between filing and admission, transactions in that gap previously risked falling outside the look-back. Anchoring the period to the initiation date neutralises tribunal delay and preserves the clawback estate.</p></div>
+      <div class="caselaw">
+        <span class="cn">Anuj Jain, IRP for Jaypee Infratech Ltd. v. Axis Bank Ltd.</span><span class="cc">(2020) 8 SCC 401</span>
+        <p>The Court laid down the analytical framework for preferential transactions under section 43, distinguishing them from undervalued and extortionate transactions, and stressed that each category has distinct ingredients and look-back rules to be applied with rigour.</p>
+        <p class="rel"><b>Relevance:</b> The framework survives; the Amendment only re-times the look-back. Applications must still be pleaded with the precision <em class="t">Anuj Jain</em> demands, but with a window that now reaches back from the initiation date.</p>
+      </div>
+    </div>
+
+    <!-- s.28 / new s.47 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 28</span><span class="stag ibc">IBC s. 47 &middot; substituted</span></div>
+      <h3 class="atitle"><span class="num">I2</span>A creditor's direct route where the professional fails to act</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>Old section 47 let a creditor, member or partner approach the tribunal only for <strong>undervalued transactions</strong> that the professional had failed to report. Preferences, extortionate credit and fraudulent trading had no equivalent fallback, so if the professional did not pursue them, they often went unremedied.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>Substituted section 47 extends the creditor's fallback to all four heads: a preferential transaction (s.43), an undervalued transaction (s.45), an extortionate credit transaction (s.50), or fraudulent or wrongful trading (s.66). A creditor (alone or jointly), member or partner may apply, and the tribunal may make orders as if the application had been filed by the professional. It must also direct disciplinary proceedings where the professional, having had the information, failed to report.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Avoidance recovery had a structural weakness: it depended on a single gatekeeper. Where a professional was inert, conflicted or simply overwhelmed, value stayed lost. Opening a direct creditor route across all avoidance heads gives stakeholders a self-help remedy and disciplines professionals who neglect the estate.</p></div>
+      <div class="prac"><h5>Practitioner reality</h5><p>This is a meaningful new lever for an aggrieved creditor. If the resolution professional or liquidator has had information about a suspect transaction and sat on it, the creditor need not wait. The same application that secures avoidance can trigger a disciplinary reference against the professional, which changes the negotiating dynamic well before any order is passed.</p></div>
+    </div>
+
+    <!-- s.29 / s.49 and s.46 / s.66 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment ss. 29, 46</span><span class="stag ibc">IBC ss. 49, 66 &middot; related parties; liquidator standing</span></div>
+      <h3 class="atitle"><span class="num">I3</span>Transactions defrauding creditors, and a liquidator who can sue for fraudulent trading</h3>
+      <h4>Section 49: the related-party good-faith carve-out</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>The proviso to section 49 protected an interest acquired in good faith, for value and without notice, but only where it was acquired "from a person other than the corporate debtor". A transferee taking from a related party of the corporate debtor arguably fell within the shelter.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>The proviso now reads "from a person other than the corporate debtor <strong>or a related party of the corporate debtor</strong>". The good-faith shelter no longer protects acquisitions traced through a related party, closing an obvious avoidance-defeating channel.</p></div>
+      </div>
+      <h4>Section 66: the liquidator joins the resolution professional</h4>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>Section 66 let only the <strong>resolution professional</strong> apply for fraudulent or wrongful trading orders, and sub-section (2) spoke of conduct during the corporate insolvency resolution process. A liquidator had no clear standing to pursue these claims once the company moved into liquidation.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>The marginal heading is recast as "Fraudulent or wrongful trading". Sub-section (1) now empowers the resolution professional "or the liquidator", and sub-section (2) extends to applications "by a liquidator". The liquidator can now pursue delinquent management for contributions to the estate.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Most value-destroying conduct only surfaces during liquidation, yet the person actually in charge then, the liquidator, lacked standing to act on it. Aligning section 66 with the liquidator's role, and with the new liquidation-stage avoidance powers in section 35, removes an artificial limit on recovery. This dovetails with the survival principle that avoidance and fraudulent-trading proceedings outlive the main process (Cluster E, section 26).</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== frag_JKL.html ===== -->
+<!-- ============================================================= -->
+<!-- CLUSTER J : PRE-PACK AND THE NEW CREDITOR ROUTE -->
+<!-- ============================================================= -->
+<section class="part reveal" id="ciirp">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster J</div>
+      <h2>Pre-pack, and the new creditor-initiated route <span class="pill pending">Chapter IV-A not yet in force</span></h2>
+    </div>
+    <p class="lead">The Amendment lowers the consent threshold inside the existing pre-pack regime, deletes the long-dormant fast-track chapter, and builds an entirely new, out-of-court, debtor-in-possession process: the creditor-initiated insolvency resolution process, or CIIRP. The CIIRP chapter has not yet been brought into force, so what follows is the architecture practitioners must prepare for, not live law.</p>
+
+    <!-- s.34-38 pre-pack tweaks -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment ss. 34 to 38</span><span class="stag ibc">IBC ss. 54A, 54C, 54F, 54L, 54N &middot; pre-pack</span></div>
+      <h3 class="atitle"><span class="num">J1</span>Pre-pack recalibrated: a lower consent threshold and tidied cross-references</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>To begin a pre-packaged insolvency resolution process, the corporate debtor needed the approval of unrelated financial creditors holding not less than <strong>sixty-six per cent.</strong> in value (section 54A(2)(e) and (3)). The base of eligible processes and the cross-references in sections 54L and 54N reflected the pre-pack and liquidation architecture as it then stood.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>The threshold drops to <strong>fifty-one per cent.</strong> in both sub-sections (2)(e) and (3) of section 54A, making pre-pack easier to trigger. Sections 54A(2)(a) and (b) now also recognise the creditor-initiated process. Section 54C(3) is simplified to "such information as may be specified". Section 54F(5) aligns the cooperation duty with the amended section 19. Sections 54L and 54N pick up the new liquidation sub-clauses (iv) and (v) and the rectification proviso.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Pre-pack for micro, small and medium enterprises had been under-used, partly because assembling a two-thirds consent block among lenders was hard for small borrowers. Lowering the bar to a simple majority in value, combined with cross-referencing the new creditor route, is intended to make the quicker, debtor-friendly process actually usable.</p></div>
+    </div>
+
+    <!-- s.39 omit fast-track -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 39</span><span class="stag ibc">IBC Chapter IV of Part II &middot; omitted</span></div>
+      <h3 class="atitle"><span class="num">J2</span>The fast-track corporate insolvency resolution process is gone</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>Chapter IV of Part II housed the fast-track corporate insolvency resolution process (sections 55 to 58), a compressed timetable for notified classes of debtor. It was little used and overtaken in practice by the pre-pack regime.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>Chapter IV is omitted in full. Consequential clean-ups follow: section 33(1)(a) loses its reference to the fast-track process, and section 65(3) is recast around the pre-pack and creditor-initiated processes.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Statutory hygiene. A dead-letter chapter that practitioners never invoked added clutter and cross-reference risk. Removing it makes room for the creditor-initiated process that replaces it as the streamlined alternative to a full corporate insolvency resolution process.</p></div>
+    </div>
+
+    <!-- s.40 new Chapter IV-A CIIRP -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 40</span><span class="stag ibc">IBC new Chapter IV-A &middot; ss. 58A to 58K</span></div>
+      <h3 class="atitle"><span class="num">J3</span>The creditor-initiated insolvency resolution process (CIIRP) <span class="pill pending">not yet notified</span></h3>
+      <p><strong>In plain terms.</strong> CIIRP is a new, largely out-of-court process. A notified class of financial creditor that faces a default can start it by appointing a resolution professional, without first going to the tribunal for admission. The company's board stays in control of day-to-day management, the professional oversees, and there is no automatic moratorium. If it works, a plan is approved; if it fails, it converts into a normal corporate insolvency resolution process.</p>
+
+      <div class="flow">
+        <div class="step"><b>Trigger</b><span>Notified class of financial creditor; default by the corporate debtor (s.58B)</span></div>
+        <div class="arrow">&rarr;</div>
+        <div class="step"><b>Pre-appointment consent</b><span>51% in value of that class; 30-day notice to the debtor to make representations</span></div>
+        <div class="arrow">&rarr;</div>
+        <div class="step"><b>Public announcement</b><span>RP appointed; CIIRP deemed to commence (s.58B(4))</span></div>
+        <div class="arrow">&rarr;</div>
+        <div class="step"><b>Run the process</b><span>150 days, extendable once by 45 days; debtor in possession, RP oversight (ss.58D to 58G)</span></div>
+        <div class="arrow">&rarr;</div>
+        <div class="step"><b>Outcome</b><span>Plan approved (s.58J read with s.31), or conversion to CIRP (s.58H)</span></div>
+      </div>
+
+      <p class="tcap">The CIIRP scheme, section by section</p>
+        <div class="tablewrap">
+        <table>
+          <thead><tr><th>Section</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td class="ibcs">58A</td><td>Eligibility. Notified categories of corporate debtor by asset or income level, class of creditor or amount of debt. Barred where a Part II process is already running, or where the debtor finished a CIIRP, pre-pack or CIRP in the preceding three years.</td></tr>
+            <tr><td class="ibcs">58B</td><td>Initiation. A notified-class financial creditor obtains 51% approval, gives the debtor at least 30 days to make representations, takes fresh 51% approval, then appoints the resolution professional, who makes a public announcement. No section 7, 9, 10 or 54C application may be filed or admitted during the CIIRP period.</td></tr>
+            <tr><td class="ibcs">58C</td><td>Objections. The debtor may object to the tribunal within 30 days. The tribunal may declare the commencement void <em class="t">ab initio</em>, or convert the process to CIRP where a default occurred but the initiation breached section 58A or 58B.</td></tr>
+            <tr><td class="ibcs">58D</td><td>Timeline. 150 days from commencement, extendable once by up to 45 days with 66% committee approval. No plan in time means an order under section 58H.</td></tr>
+            <tr><td class="ibcs">58E</td><td>Powers and duties of the resolution professional: call claims, prepare the information memorandum, confirm compliance with sections 29A and 30, and the duties borrowed from sections 18 and 25.</td></tr>
+            <tr><td class="ibcs">58F</td><td>Debtor in possession. Management stays with the board or partners; the professional attends meetings and may reject resolutions, which then cannot be passed.</td></tr>
+            <tr><td class="ibcs">58G</td><td>Moratorium is <strong>optional</strong>, not automatic. The professional may apply for one with committee (or pre-constitution 51%) approval; the tribunal confirms or rejects.</td></tr>
+            <tr><td class="ibcs">58H</td><td>Conversion to CIRP: on no plan, non-cooperation, plan rejection, or a 66% committee vote. The conversion order is deemed an admission under section 7, and CIIRP costs roll into CIRP costs.</td></tr>
+            <tr><td class="ibcs">58-I</td><td>Withdrawal of the public announcement with 90% committee approval, subject to the same constraints as section 12A.</td></tr>
+            <tr><td class="ibcs">58J</td><td>Plan approval: 66% committee vote, then submission to the tribunal, which passes an order under section 31.</td></tr>
+            <tr><td class="ibcs">58K</td><td>Applies named provisions of Chapters II, III, VI and VII <em class="t">mutatis mutandis</em>, with defined substitutions of CIIRP terms for CIRP terms.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="why"><h5>Why</h5><p>The full corporate insolvency resolution process is heavy: admission, automatic moratorium, displacement of management, and a long tribunal-supervised timeline. For many defaults, especially with cooperative borrowers, that is disproportionate. CIIRP offers a lighter, creditor-led, debtor-in-possession alternative that keeps the company running and reserves the tribunal for objections, conversion and final plan approval. It draws on the debtor-in-possession philosophy already seen in the pre-pack regime.</p></div>
+
+      <div class="watch"><h5>Not yet in force, and several open design choices</h5><p>Chapter IV-A has not been notified into force. Almost every operative parameter, the eligible asset, income or debt levels (s.58A), the notified class of financial institution (s.58B), and the detailed manner and conditions, is left to delegated rule-making and notification. Until those rules and the commencement notification arrive, CIIRP cannot be initiated. Practitioners should treat this chapter as a forthcoming regime to design systems and templates around, not a present remedy.</p></div>
+      <div class="prac"><h5>Practitioner reality, once live</h5><p>CIIRP will reward lenders who can quickly assemble 51% in value within the notified class and who are willing to leave a cooperative management in place under professional oversight. The absence of an automatic moratorium changes the risk picture: enforcement by others is not frozen by default, so the professional must judge whether to seek a confirmed moratorium under section 58G. The hard back-stop is conversion under section 58H, which gives the creditor a credible route into full CIRP if cooperation breaks down.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- CLUSTER K : VOLUNTARY LIQUIDATION -->
+<!-- ============================================================= -->
+<section class="part reveal" id="voluntary">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster K</div>
+      <h2>Voluntary liquidation</h2>
+    </div>
+
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 41</span><span class="stag ibc">IBC s. 59 &middot; voluntary liquidation</span></div>
+      <h3 class="atitle"><span class="num">K1</span>A one-year deadline, a clean exit route, and a duty to inform</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>Voluntary liquidation under section 59 had to meet conditions "as may be specified by the Board" but carried <strong>no statutory outer time limit</strong> in the section itself, so solvent wind-ups could drift for years. There was no express route to <strong>terminate</strong> a voluntary liquidation once begun. Sub-section (4) required the company to "notify" the Registrar and the Board.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>Section 59(2) now requires completion "within such period which shall not be more than <strong>one year</strong>, as may be specified". New sub-sections (5A) to (5C) create a <strong>termination</strong> route: a members' special resolution, plus approval of two-thirds in value of any creditors within seven days, with the liquidator intimating the Board and Registrar, ends the proceeding. Sub-section (4) changes "notify" to "<strong>inform</strong>", and sub-section (6) imports the claim-verification duty in section 18(b).</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Two problems. First, open-ended voluntary liquidations clogged the system and left companies in limbo; a one-year discipline forces closure. Second, a solvent company that changed its mind, or whose circumstances improved, had no clean way out and risked being forced through to dissolution. The termination mechanism lets members and creditors jointly call it off, with safeguards. Importing section 18(b) brings claim verification into line with the rest of the Code.</p></div>
+      <div class="prac"><h5>Practitioner reality</h5><p>Advisers running solvent wind-ups must now plan to a one-year horizon and document the basis for any specified extension. The termination route is genuinely useful: where a voluntary liquidation was commenced prematurely, or a buyer emerges for the going concern, the special-resolution-plus-creditor-approval mechanism offers a defined off-ramp instead of an awkward application to undo the process.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- CLUSTER L : GROUP INSOLVENCY -->
+<!-- ============================================================= -->
+<section class="part reveal" id="group">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster L</div>
+      <h2>Group insolvency <span class="pill pending">Chapter VA not yet in force</span></h2>
+    </div>
+
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 42</span><span class="stag ibc">IBC new Chapter VA &middot; s. 59A</span></div>
+      <h3 class="atitle"><span class="num">L1</span>An enabling framework for groups, built to be filled by rules</h3>
+      <p><strong>In plain terms.</strong> When several companies in the same corporate group fail together, running their insolvencies in separate silos wastes value and produces inconsistent outcomes. Section 59A gives the Central Government power to make rules to coordinate group insolvencies: a common bench, coordinated committees, a common professional, and binding coordination agreements. It is an <em class="t">enabling</em> provision, the detail will come through rules.</p>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>The Code had <strong>no</strong> group insolvency framework. Coordination was improvised case by case through judicial innovation, with tribunals consolidating or coordinating proceedings on an <em class="t">ad hoc</em> basis and no settled rules on common benches, group committees or shared professionals.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>New section 59A empowers the Central Government to prescribe the manner and conditions for conducting Part II proceedings against two or more group corporate debtors. Rules may provide for a common bench and transfer of proceedings, coordination between committees and professionals, a common insolvency professional, a group committee, binding coordination agreements, and cost-sharing. A defined "group", "control", "significant ownership" (26% voting rights) and "insolvency proceedings" frame the power, and draft rules must be laid before Parliament.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Large corporate failures are rarely confined to one entity. Without a coordination framework, group insolvencies produced duplicated processes, forum conflicts and value leakage. The Working Group on Group Insolvency (2019) recommended an enabling, rules-based approach rather than a rigid statutory code, and section 59A adopts exactly that design, leaving flexibility for the rule-maker while fixing the core definitions in primary law.</p></div>
+      <div class="caselaw">
+        <span class="cn">State Bank of India v. Videocon Industries Ltd.</span><span class="cc">NCLT, Mumbai (2019)</span>
+        <p>The tribunal ordered substantive consolidation of multiple Videocon group entities, treating their assets and liabilities together for resolution, one of the first significant Indian experiments in group treatment under the Code.</p>
+        <p class="rel"><b>Relevance:</b> Section 59A supplies the statutory footing that decisions like this previously lacked, converting judicial improvisation into a rule-based framework.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">Edelweiss Asset Reconstruction Co. Ltd. v. Sachet Infrastructure (P) Ltd.</span><span class="cc">NCLAT</span>
+        <p>The appellate tribunal endorsed coordinated, simultaneous resolution of group companies developing a common project, to preserve value across the group.</p>
+        <p class="rel"><b>Relevance:</b> Illustrates the coordination need that section 59A is designed to systematise through common benches and binding coordination agreements.</p>
+      </div>
+      <div class="watch"><h5>Not yet in force</h5><p>Chapter VA has not been notified. It confers rule-making power; the substantive group regime will exist only when the Central Government makes and notifies rules, which must first be laid before both Houses. Until then, group coordination continues to rest on case-by-case tribunal practice. Treat section 59A as the enabling shell of a regime still to be built.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== frag_MN.html ===== -->
+<!-- ============================================================= -->
+<!-- CLUSTER M : PERSONAL AND INDIVIDUAL INSOLVENCY -->
+<!-- ============================================================= -->
+<section class="part reveal" id="individual">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster M</div>
+      <h2>Personal and individual insolvency</h2>
+    </div>
+    <p class="lead">Part III governs individuals and personal guarantors. The headline reform removes the automatic interim moratorium where a personal guarantor to a corporate debtor is the subject of the application, an anti-abuse measure aimed at guarantors who filed to shelter behind a stay. Several timing and drafting changes follow.</p>
+
+    <!-- s.51 / s.96(4) and s.55 / s.124(4) -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment ss. 51, 55</span><span class="stag ibc">IBC ss. 96, 124 &middot; interim moratorium</span></div>
+      <h3 class="atitle"><span class="num">M1</span>No automatic interim moratorium for a personal guarantor to a corporate debtor</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>The moment an application was filed under section 94 or 95 (insolvency resolution) or sections 122 or 123 (bankruptcy), an interim moratorium commenced automatically over the debtor's debts and proceedings. A personal guarantor to a corporate debtor could file and instantly freeze enforcement, then run the clock, a tactic used to stall recovery from guarantors.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>New sub-section (4) in each of sections 96 and 124 disapplies the automatic interim moratorium "where the debtor is a personal guarantor to a corporate debtor". The general automatic interim moratorium survives for other individuals; it is switched off only for the personal-guarantor-to-corporate-debtor cohort, removing the strategic stay.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>The automatic stay had become a shield for delay. A guarantor whose principal debtor was already in insolvency could file a personal application purely to suspend enforcement, contributing nothing to resolution. Removing the automatic moratorium for that specific class restores the creditor's ability to pursue the guarantee while the application is examined, without disturbing the protection that genuine individual debtors retain.</p></div>
+      <div class="caselaw">
+        <span class="cn">State Bank of India v. V. Ramakrishnan</span><span class="cc">(2018) 17 SCC 394</span>
+        <p>The Court held that the section 14 moratorium in the corporate process does not extend to the assets of a personal guarantor, so creditors may proceed against guarantors during the corporate debtor's moratorium.</p>
+        <p class="rel"><b>Relevance:</b> The new sub-sections extend the same anti-shelter logic into Part III, ensuring a guarantor cannot manufacture a personal stay to defeat enforcement.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">Lalit Kumar Jain v. Union of India</span><span class="cc">(2021) 9 SCC 321</span>
+        <p>The Court upheld the 2019 notification bringing personal guarantors to corporate debtors within Part III and confirmed that approval of a corporate debtor's resolution plan does not discharge the guarantor.</p>
+        <p class="rel"><b>Relevance:</b> Establishes the constitutional footing for the personal-guarantor regime that section 96(4)/124(4) now refines.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">Dilip B. Jiwrajka v. Union of India</span><span class="cc">(2024) 5 SCC 435</span>
+        <p>A three-judge Bench upheld the constitutional validity of sections 95 to 100, holding that the resolution professional's role under section 99 is recommendatory and that the adjudicating authority applies its mind at the section 100 stage; no hearing is required at the interim-moratorium stage.</p>
+        <p class="rel"><b>Relevance:</b> Confirms the procedural architecture into which the new sub-section (4) fits; removing the automatic moratorium for guarantors does not offend the process the Court approved.</p>
+      </div>
+      <div class="caselaw">
+        <span class="cn">BRS Ventures Investments Ltd. v. SREI Infrastructure Finance Ltd.</span><span class="cc">(2024) 8 SCC 489</span>
+        <p>The Court reaffirmed that a creditor may proceed against both the principal borrower and the guarantor, and that satisfaction from one reduces but does not by itself extinguish the co-extensive liability of the other.</p>
+        <p class="rel"><b>Relevance:</b> Reinforces why a guarantor should not obtain an automatic personal stay; the guarantee remains independently enforceable.</p>
+      </div>
+    </div>
+
+    <!-- s.52 / s.99 -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 52</span><span class="stag ibc">IBC s. 99 &middot; report timeline</span></div>
+      <h3 class="atitle"><span class="num">M2</span>The professional's report: ten days becomes twenty-one, and the debtor is heard</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>The resolution professional had to examine the application and report within <strong>ten days</strong> of appointment. Sub-section (2)'s proof-of-repayment mechanism spoke of the debtor proving repayment, without expressly bringing the creditor into that exchange.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>The reporting period is extended to <strong>twenty-one days</strong>, and sub-section (2) is widened to read "the debtor <strong>and the creditor</strong>", so both sides are drawn into the verification of whether the claimed debt remains unpaid.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Ten days was unrealistic for a proper examination, particularly once the professional must engage both debtor and creditor on the question of repayment. A twenty-one-day window allows a considered, adversarially tested report, improving the quality of the recommendation the tribunal relies on at the section 100 stage.</p></div>
+    </div>
+
+    <!-- s.53, s.54 / s.106, s.121 and s.56 / new s.164A, s.57 / s.178, s.58 / new s.183A -->
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment ss. 53, 54, 56, 57, 58</span><span class="stag ibc">IBC ss. 106, 121, new 164A, 178, new 183A</span></div>
+      <h3 class="atitle"><span class="num">M3</span>Repayment-plan meeting, bankruptcy timing, fraud and government dues, and a frivolous-application penalty</h3>
+      <p class="tcap">The remaining Part III changes</p>
+        <div class="tablewrap">
+        <table>
+          <thead><tr><th>Clause</th><th>Section</th><th>What changed and why</th></tr></thead>
+          <tbody>
+            <tr><td class="s">s.53</td><td class="ibcs">s.106</td><td>The report on the repayment plan is recast so the meeting of creditors is convened to consider the plan with the personal guarantor's involvement aligned to the amended process. It tightens how the repayment plan moves from professional to creditors.</td></tr>
+            <tr><td class="s">s.54</td><td class="ibcs">s.121</td><td>Adjusts the timing and mechanics of an application for bankruptcy following a failed or unimplemented repayment plan, removing ambiguity about when the bankruptcy route opens.</td></tr>
+            <tr><td class="s">s.56</td><td class="ibcs">new s.164A</td><td><strong>Transactions defrauding creditors.</strong> Imports into Part III a power for the tribunal to unwind transactions an individual debtor entered to keep assets beyond creditors' reach, mirroring the corporate section 49 logic. Closes a gap where individual debtors could dissipate assets before bankruptcy.</td></tr>
+            <tr><td class="s">s.57</td><td class="ibcs">s.178</td><td>Adds an Explanation on <strong>government dues</strong> in the bankruptcy priority of payments, parallel to the section 53 reform, so that amounts due to government take their assigned rank and do not climb by force of a statutory charge.</td></tr>
+            <tr><td class="s">s.58</td><td class="ibcs">new s.183A</td><td><strong>Penalty for frivolous applications</strong> in Part III, the individual-insolvency counterpart to the new section 64A for corporate processes. Deters abuse of the personal-insolvency machinery.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prac"><h5>Practitioner reality</h5><p>Read together, the Part III amendments shift the balance back towards creditors of personal guarantors: no automatic stay, a fraud-unwinding power, government dues confined to rank, and a penalty for frivolous filings. Advisers acting for guarantors can no longer rely on the filing itself to buy time, and must instead engage on the merits of the repayment plan within the recast timetable.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- CLUSTER N : PENALTIES AND ENFORCEMENT -->
+<!-- ============================================================= -->
+<section class="part reveal" id="penalties">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster N</div>
+      <h2>Penalties and enforcement</h2>
+    </div>
+    <p class="lead">The Amendment adds targeted penalties for the conduct that most often frustrates the process, frivolous filings, breach of the moratorium or an approved plan, and an operational creditor's concealment of a dispute, while omitting two older, blunter penal sections and consolidating the residual penalty provision.</p>
+
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment ss. 44, 47, 48</span><span class="stag ibc">IBC new ss. 64A, 67A, 67B, 67C</span></div>
+      <h3 class="atitle"><span class="num">N1</span>New targeted penalties</h3>
+      <p class="tcap">What each new penal section addresses</p>
+        <div class="tablewrap">
+        <table>
+          <thead><tr><th>Clause</th><th>New section</th><th>Mischief targeted</th></tr></thead>
+          <tbody>
+            <tr><td class="s">s.44</td><td class="ibcs">s.64A</td><td><strong>Frivolous or vexatious applications.</strong> Penalty where a person initiates a corporate process frivolously or with malicious intent. Pairs with the recast section 65 (fraudulent or malicious initiation) and the new section 61 appeal timeline to discipline abusive filings.</td></tr>
+            <tr><td class="s">s.47</td><td class="ibcs">s.67A</td><td>Recast to address <strong>contravention of the moratorium or of an approved resolution plan</strong>, giving the breach of a plan, previously hard to sanction directly, a clear penal consequence. (Distinct from the pre-pack fraudulent-management section of the same number, which is renumbered or absorbed in the consequential scheme.)</td></tr>
+            <tr><td class="s">s.48</td><td class="ibcs">ss.67B, 67C</td><td>New sections penalising, among other conduct, an <strong>operational creditor's non-disclosure of a pre-existing dispute</strong> when filing under section 9, the very concealment the twin-test in <em class="t">Mobilox</em> was meant to police, now backed by a statutory penalty.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="why"><h5>Why</h5><p>The Code's earlier penal provisions were either too general to bite or aimed at the wrong conduct. The recurring practical problems, speculative filings to extract settlements, defiance of the moratorium or an approved plan, and operational creditors hiding a genuine dispute to force admission, lacked sharp, specific sanctions. These sections supply them, raising the cost of strategic abuse.</p></div>
+      <div class="caselaw">
+        <span class="cn">Mobilox Innovations (P) Ltd. v. Kirusa Software (P) Ltd.</span><span class="cc">(2018) 1 SCC 353</span>
+        <p>The Court held that an operational creditor's application must be rejected if there is a plausible, pre-existing dispute that is not spurious or hypothetical, the "existence of a dispute" test under section 8 and 9.</p>
+        <p class="rel"><b>Relevance:</b> The new penalty for non-disclosure of a dispute reinforces <em class="t">Mobilox</em> by punishing the concealment that the test is designed to catch, deterring operational creditors from suppressing a known dispute.</p>
+      </div>
+    </div>
+
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment ss. 49, 50, 68</span><span class="stag ibc">IBC ss. 74, 76 omitted; s. 235A substituted</span></div>
+      <h3 class="atitle"><span class="num">N2</span>Two old penal sections omitted, the residual penalty consolidated</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>Section 74 penalised contravention of the moratorium and of resolution plans in broad terms; section 76 dealt with related default. Section 235A was the residual "punishment where no specific penalty is provided" clause.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>Sections 74 and 76 are <strong>omitted</strong>, their subject matter relocated to the sharper, targeted sections 67A to 67C. Section 235A is <strong>substituted</strong> to serve as the recalibrated residual penalty, with savings so that omission of sections 74 and 76 does not disturb liabilities already incurred.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>Rationalisation. Once specific, well-aimed penalties exist for moratorium and plan breaches, the older overlapping sections are redundant and risk inconsistent sentencing. Consolidating the residual penalty in a substituted section 235A, with express savings, keeps the penal scheme coherent without creating gaps for conduct that straddles the transition.</p></div>
+      <div class="note"><h5>Savings</h5><p>The omission of sections 74 and 76 is accompanied by savings provisions so that anything done, or any liability incurred, under those sections before commencement is preserved. Practitioners handling conduct that pre-dates 26 May 2026 should plead under the provisions in force at the relevant time.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== frag_OP.html ===== -->
+<!-- ============================================================= -->
+<!-- CLUSTER O : THE BOARD, DISCIPLINE AND UTILITIES -->
+<!-- ============================================================= -->
+<section class="part reveal" id="regulator">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster O</div>
+      <h2>The Board, discipline and information utilities</h2>
+    </div>
+    <p class="lead">A cluster of institutional reforms strengthens the regulator's hand: a standards-of-conduct regime for committees of creditors, recognition of service providers, a mandatory information-utility filing before an operational creditor can file, and a recast disciplinary architecture with a defined appeal to the appellate tribunal.</p>
+
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 59</span><span class="stag ibc">IBC s. 196 &middot; functions of the Board</span></div>
+      <h3 class="atitle"><span class="num">O1</span>Service providers, and a code of conduct for the committee of creditors</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>The Board's functions in section 196 covered insolvency professionals, agencies and information utilities. There was <strong>no</strong> express mandate to register or regulate other "service providers", and no statutory hook for a committee-of-creditors code of conduct, leaving creditor behaviour largely unregulated despite the committee's decisive role.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>Section 196 is widened to recognise and regulate <strong>service providers</strong>, and a new clause (sa) empowers the Board to specify <strong>standards of conduct for the committee of creditors</strong>. A fee Explanation clarifies the Board's power over the fees of professionals and providers.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>The committee of creditors wields enormous power over outcomes yet operated without a formal conduct standard, a recurring criticism after several contested resolutions. A statutory code-of-conduct power lets the Board hold committees to minimum standards of good faith, participation and reasoned decision-making. Recognising service providers reflects the maturing ecosystem of valuers, process advisers and platforms that the original Code did not anticipate.</p></div>
+    </div>
+
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 62</span><span class="stag ibc">IBC s. 215 &middot; information utilities</span></div>
+      <h3 class="atitle"><span class="num">O2</span>An operational creditor must file with an information utility before section 9</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5>
+          <p>Filing financial information with an information utility was, in practice, treated as optional for operational creditors. Disputes over the existence and quantum of debt clogged the admission stage because there was no authenticated record to point to.</p>
+        </div>
+        <div class="after"><h5><span class="dot"></span>After</h5>
+          <p>Section 215 now <strong>requires</strong> an operational creditor to file financial information with an information utility before initiating a section 9 application, and provides for <strong>deemed authentication</strong> of information in specified circumstances. The authenticated record becomes the evidential backbone of admission.</p>
+        </div>
+      </div>
+      <div class="why"><h5>Why</h5><p>To move the contest over debt off the tribunal's docket and onto an authenticated record. If an operational creditor must lodge its claim with a utility first, and the debtor has the chance to authenticate or contest it there, the section 9 hearing becomes far cleaner. This complements the new penalty for concealing a dispute (Cluster N) and the mandatory-admission discipline of section 7 (Cluster B).</p></div>
+      <div class="prac"><h5>Practitioner reality</h5><p>Operational creditors must now build the information-utility filing into their pre-litigation checklist. Skipping it risks a defective application. Conversely, debtors gain an earlier, formal opportunity to record a dispute on the utility's record, which can be decisive when the matter reaches the tribunal.</p></div>
+    </div>
+
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment ss. 60, 61, 63 to 67</span><span class="stag ibc">IBC ss. 208, 214, 217, 218, 219, 220, 224</span></div>
+      <h3 class="atitle"><span class="num">O3</span>Discipline recast, with a defined appeal, and the Insolvency and Bankruptcy Fund</h3>
+      <p class="tcap">The institutional and disciplinary changes</p>
+        <div class="tablewrap">
+        <table>
+          <thead><tr><th>Clause</th><th>Section</th><th>What changed</th></tr></thead>
+          <tbody>
+            <tr><td class="s">s.60</td><td class="ibcs">s.208</td><td>Extends the functions and obligations of insolvency professionals to the new processes (pre-pack, creditor-initiated) and to service-provider standards.</td></tr>
+            <tr><td class="s">s.61</td><td class="ibcs">s.214</td><td>Updates the obligations of information utilities, consistent with the mandatory-filing and deemed-authentication reform in section 215.</td></tr>
+            <tr><td class="s">s.63</td><td class="ibcs">s.217</td><td>Recasts the route for complaints against professionals, agencies, utilities and now service providers.</td></tr>
+            <tr><td class="s">s.64</td><td class="ibcs">s.218</td><td>Updates the Board's investigation powers to match the widened class of regulated persons.</td></tr>
+            <tr><td class="s">s.65</td><td class="ibcs">s.219 (substituted)</td><td>Substitutes a structured <strong>show-cause</strong> procedure before adverse action, strengthening natural-justice safeguards in the disciplinary process.</td></tr>
+            <tr><td class="s">s.66</td><td class="ibcs">s.220</td><td>Recasts the <strong>disciplinary committee</strong> and provides a defined <strong>appeal to the National Company Law Appellate Tribunal</strong> against its orders, replacing a less certain appellate route.</td></tr>
+            <tr><td class="s">s.67</td><td class="ibcs">s.224</td><td>Updates the <strong>Insolvency and Bankruptcy Fund</strong>, its contributions, administration and the purposes for which it may be applied.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="why"><h5>Why</h5><p>The disciplinary machinery had grown piecemeal and its appellate path was uncertain. A substituted show-cause procedure (section 219) and a clear appeal to the appellate tribunal (section 220) give regulated persons due-process protection and a predictable challenge route, while extending the regulatory perimeter to the service providers and new processes the Amendment introduces.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- CLUSTER P : RULES, PORTAL, CROSS-BORDER, DIFFICULTIES -->
+<!-- ============================================================= -->
+<section class="part reveal" id="rules">
+  <div class="col">
+    <div class="part-head">
+      <div class="eyebrow">Cluster P</div>
+      <h2>Rules, the electronic portal, cross-border, and removal of difficulties</h2>
+    </div>
+    <p class="lead">The final cluster carries the delegated-legislation engine of the whole Amendment: expanded rule-making, a statutory electronic platform, an enabling cross-border framework aligned to the UNCITRAL Model Law, and a time-limited power to remove difficulties. Three of these are not yet in force.</p>
+
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment ss. 69, 70</span><span class="stag ibc">IBC ss. 239, 240 &middot; rule and regulation making</span></div>
+      <h3 class="atitle"><span class="num">P1</span>The expanded delegated-legislation power</h3>
+      <p>Sections 239 (Central Government rules) and 240 (Board regulations) are extended with a long list of new matters on which rules and regulations may be made, every new mechanism in the Amendment that is left to be "specified" or "prescribed" finds its enabling hook here. This is the plumbing that the substantive reforms depend on.</p>
+      <div class="why"><h5>Why</h5><p>Almost every reform in the 2026 Act, the fourteen-day election manner, the CIIRP thresholds, the group-insolvency rules, the monitoring-committee terms, the manner of valuing security, is deliberately left to delegated legislation so the regime can be calibrated without further primary amendment. Sections 239 and 240 supply the corresponding powers. Until the relevant rules and regulations are notified, several reforms remain dormant in practice even where the primary provision is in force.</p></div>
+      <div class="prac"><h5>Practitioner reality</h5><p>Read the bare section together with the rules. A provision that is "in force" may still be inoperable until the Board or Government specifies the manner. Track the notifications: the operative detail of this Amendment will live largely in subordinate legislation.</p></div>
+    </div>
+
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 71</span><span class="stag ibc">IBC new ss. 240B, 240C</span></div>
+      <h3 class="atitle"><span class="num">P2</span>An electronic portal, and a cross-border framework <span class="pill pending">not yet in force</span></h3>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>New section</th><th>What it does</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="ibcs">s.240B</td><td>Establishes a statutory <strong>electronic platform</strong> for filing, service, record-keeping and conduct of proceedings under the Code, the digital backbone for an end-to-end electronic process.</td><td><span class="pill pending">Pending</span></td></tr>
+            <tr><td class="ibcs">s.240C</td><td>An enabling <strong>cross-border insolvency</strong> framework, empowering rules aligned to the <strong>UNCITRAL Model Law</strong> on Cross-Border Insolvency, recognition of foreign proceedings, cooperation, and access for foreign representatives.</td><td><span class="pill pending">Pending</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="why"><h5>Why</h5><p>India had long relied on the inadequate sections 234 and 235 (bilateral agreements and letters of request) for cross-border cases, a route the Insolvency Law Committee's report of 16 October 2018 found unworkable and recommended replacing with the UNCITRAL Model Law. Section 240C supplies the enabling power for a modern, reciprocity-based framework. Section 240B answers the parallel need for a single electronic platform after years of fragmented filing practice.</p></div>
+      <div class="watch"><h5>Not yet in force</h5><p>Both sections await notification and supporting rules. The cross-border regime in particular is enabling only: it will become operational when the Model-Law-aligned rules are made and notified. Until then, cross-border coordination continues under the existing, limited provisions.</p></div>
+      <div class="caselaw">
+        <span class="cn">Insolvency Law Committee, Report on Cross-Border Insolvency</span><span class="cc">16 October 2018</span>
+        <p>The Committee recommended adoption of the UNCITRAL Model Law on Cross-Border Insolvency, with modifications, in place of sections 234 and 235.</p>
+        <p class="rel"><b>Relevance:</b> Section 240C is the legislative response, conferring the power to build that framework through rules.</p>
+      </div>
+    </div>
+
+    <div class="amend">
+      <div class="tagrow"><span class="stag">Amendment s. 72</span><span class="stag ibc">IBC s. 242 &middot; removal of difficulties</span></div>
+      <h3 class="atitle"><span class="num">P3</span>A renewed power to remove difficulties</h3>
+      <div class="ledger">
+        <div class="before"><h5><span class="dot"></span>Before</h5><p>The original removal-of-difficulties power in section 242 was tied to the commencement of the 2016 Code and had, by its terms, spent its force.</p></div>
+        <div class="after"><h5><span class="dot"></span>After</h5><p>Section 242 is recast to give the Central Government a fresh power to remove difficulties arising in giving effect to the provisions as amended, exercisable for a defined period (within five years), with every order laid before Parliament.</p></div>
+      </div>
+      <div class="why"><h5>Why</h5><p>An amendment of this scale, with multiple new chapters and a heavy reliance on subordinate legislation, will throw up transitional wrinkles. A time-limited removal-of-difficulties power lets the Government smooth genuine implementation problems without returning to Parliament for every minor fix, subject to the discipline of a sunset and parliamentary oversight.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== frag_REF.html ===== -->
+<!-- ============================================================= -->
+<!-- REFERENCE : MASTER INDEX OF ALL 72 CLAUSES -->
+<!-- ============================================================= -->
+<section class="part reveal" id="reference">
+  <div class="wrap">
+    <div class="part-head">
+      <div class="eyebrow">Complete reference</div>
+      <h2>Master index of all seventy-two clauses</h2>
+    </div>
+    <p class="lead">Every amending clause in the 2026 Act, mapped to the principal-Act provision it touches, with a one-line statement of the change and its commencement status. Clauses shown as pending await a separate notification before they operate.</p>
+
+    <div class="legendrow">
+      <div class="lg"><span class="pill live">Live</span> in force from 26 May 2026</div>
+      <div class="lg"><span class="pill pending">Pending</span> awaiting notification</div>
+    </div>
+
+    <p class="tcap">Clause-by-clause concordance, Amendment Act sections 1 to 72</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Clause</th><th>Principal Act</th><th>What it changes</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="s">1</td><td class="ibcs">General</td><td>Short title and commencement; provides for commencement on notified dates.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">2</td><td class="ibcs">s.3</td><td>New definitions: registered valuer (27A) and service provider (31A); Explanation to "security interest" (31) excluding interests arising merely by operation of law.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">3</td><td class="ibcs">s.5</td><td>Definitions recast: avoidance transaction, fraudulent trading, an initiation-date proviso to s.5(11), asset-sale Explanation, and voting share.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">4</td><td class="ibcs">s.7</td><td>Mandatory admission once default and debt are established; overrules the <em class="t">Vidarbha</em> discretion and restores the <em class="t">Innoventive</em> twin-test.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">5</td><td class="ibcs">s.9</td><td>Operational-creditor application aligned with the information-utility and dispute-disclosure reforms.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">6</td><td class="ibcs">s.10</td><td>Corporate applicant no longer unilaterally nominates the resolution professional.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">7</td><td class="ibcs">s.11</td><td>Persons not entitled to make an application, clarified.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">8</td><td class="ibcs">s.12A</td><td>Withdrawal of an admitted application codified, consistent with <em class="t">GLAS Trust</em> and <em class="t">Swiss Ribbons</em>.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">9</td><td class="ibcs">s.14</td><td>Moratorium: Explanation on surety and guarantor; scope clarifications.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">10</td><td class="ibcs">s.16</td><td>Timing of appointment of the interim resolution professional.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">11</td><td class="ibcs">s.18</td><td>Duties of the interim resolution professional; collection of claims.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">12</td><td class="ibcs">s.19</td><td>Duty of personnel to cooperate, strengthened.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">13</td><td class="ibcs">s.21</td><td>New sub-section (11): committee of creditors given supervisory authority over the liquidation.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">14</td><td class="ibcs">s.22</td><td>Deemed appointment of the interim professional as resolution professional in defined cases.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">15</td><td class="ibcs">s.25</td><td>Duties of the resolution professional; clause (j) substituted.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">16</td><td class="ibcs">s.26</td><td>Substituted: avoidance applications severed from plan approval and expressly able to survive the process.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">17</td><td class="ibcs">new s.28A</td><td>Restriction on transfer or dealing with guarantor assets and related approvals.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">18</td><td class="ibcs">s.30</td><td>Dissenting financial creditor's floor (ba); mandatory monitoring committee (d); committee must record reasons (4).</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">19</td><td class="ibcs">s.31</td><td>Two-stage approval and rectification; continuity of licences (5); statutory clean slate (6).</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">20</td><td class="ibcs">s.33</td><td>Liquidation trigger; restoration of moratorium and corporate-process protections.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">21</td><td class="ibcs">s.34</td><td>Appointment of the liquidator recast.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">22</td><td class="ibcs">new s.34A</td><td>A separate liquidator may be chosen, and removed, by the committee of creditors.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">23</td><td class="ibcs">s.35</td><td>Powers of the liquidator, including pursuit of avoidance at the liquidation stage.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">24</td><td class="ibcs">s.36</td><td>Adjustments to the liquidation estate.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">25</td><td class="ibcs">ss.38 to 42</td><td>Omitted; the claims-handling sections give way to a procedure to be specified.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">26</td><td class="ibcs">s.43</td><td>Preferential transactions: look-back window extended to run from the initiation date.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">27</td><td class="ibcs">s.46</td><td>Undervalued transactions: relevant period recast to the initiation date.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">28</td><td class="ibcs">s.47</td><td>Substituted: creditor, member or partner may apply across all avoidance heads where the professional fails to act.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">29</td><td class="ibcs">s.49</td><td>Transactions defrauding creditors: good-faith shelter no longer covers acquisitions through a related party.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">30</td><td class="ibcs">s.50</td><td>Extortionate credit transactions: look-back from the initiation date.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">31</td><td class="ibcs">s.52</td><td>Fourteen-day election or deemed relinquishment; sixty-six per cent. consent over shared collateral; wider deductions on self-realisation.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">32</td><td class="ibcs">s.53</td><td>Security-value Explanation to (b)(ii); government-dues Explanation to (e)(i) reversing <em class="t">Rainbow Papers</em>; Illustrations on inter-creditor agreements.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">33</td><td class="ibcs">s.54</td><td>Dissolution: a clock on completion and a compressed dissolution route.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">34</td><td class="ibcs">s.54A</td><td>Pre-pack consent threshold lowered from sixty-six to fifty-one per cent.; recognition of the creditor-initiated route.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">35</td><td class="ibcs">s.54C</td><td>Pre-pack application information simplified to "as may be specified".</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">36</td><td class="ibcs">s.54F</td><td>Cooperation duty aligned with amended section 19.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">37</td><td class="ibcs">s.54L</td><td>Cross-references updated for the new liquidation sub-clauses.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">38</td><td class="ibcs">s.54N</td><td>Cross-references updated to include sub-clauses (iv) and (v).</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">39</td><td class="ibcs">Ch IV, Pt II</td><td>The fast-track corporate insolvency resolution process is omitted.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">40</td><td class="ibcs">new Ch IV-A</td><td>Creditor-initiated insolvency resolution process (ss.58A to 58K): out-of-court, debtor-in-possession, optional moratorium.</td><td><span class="pill pending">Pending</span></td></tr>
+          <tr><td class="s">41</td><td class="ibcs">s.59</td><td>Voluntary liquidation: one-year completion limit, a termination route, and "notify" becomes "inform".</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">42</td><td class="ibcs">new Ch VA</td><td>Group insolvency (s.59A): an enabling, rules-based framework for coordinated group proceedings.</td><td><span class="pill pending">Pending</span></td></tr>
+          <tr><td class="s">43</td><td class="ibcs">s.61</td><td>Appeal to the appellate tribunal: a tightened outer time limit.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">44</td><td class="ibcs">new s.64A</td><td>Penalty for frivolous or vexatious initiation of a process.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">45</td><td class="ibcs">s.65</td><td>Fraudulent or malicious initiation recast around the pre-pack and creditor-initiated processes.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">46</td><td class="ibcs">s.66</td><td>Fraudulent or wrongful trading: the liquidator, as well as the resolution professional, may apply.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">47</td><td class="ibcs">s.67A</td><td>Recast to address contravention of the moratorium or of an approved resolution plan.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">48</td><td class="ibcs">new ss.67B, 67C</td><td>Penalties including an operational creditor's non-disclosure of a pre-existing dispute.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">49</td><td class="ibcs">s.74</td><td>Omitted; subject matter relocated to the targeted sections 67A to 67C.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">50</td><td class="ibcs">s.76</td><td>Omitted; subject matter relocated to the targeted penalty sections.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">51</td><td class="ibcs">s.96</td><td>New sub-section (4): no automatic interim moratorium where the debtor is a personal guarantor to a corporate debtor.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">52</td><td class="ibcs">s.99</td><td>Report period extended from ten to twenty-one days; verification widened to "the debtor and the creditor".</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">53</td><td class="ibcs">s.106</td><td>Report on the repayment plan and the creditors' meeting recast.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">54</td><td class="ibcs">s.121</td><td>Timing and mechanics of an application for bankruptcy clarified.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">55</td><td class="ibcs">s.124</td><td>New sub-section (4): no automatic interim moratorium for a personal guarantor in the bankruptcy route.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">56</td><td class="ibcs">new s.164A</td><td>Transactions defrauding creditors, imported into the individual-insolvency regime.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">57</td><td class="ibcs">s.178</td><td>Explanation on government dues in the bankruptcy priority of payments.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">58</td><td class="ibcs">new s.183A</td><td>Penalty for frivolous applications under Part III.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">59</td><td class="ibcs">s.196</td><td>Recognition of service providers; power to specify standards of conduct for the committee of creditors; fee Explanation.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">60</td><td class="ibcs">s.208</td><td>Obligations of insolvency professionals extended to the new processes.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">61</td><td class="ibcs">s.214</td><td>Obligations of information utilities updated.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">62</td><td class="ibcs">s.215</td><td>Operational creditor must file with an information utility before section 9; deemed authentication.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">63</td><td class="ibcs">s.217</td><td>Route for complaints against regulated persons recast.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">64</td><td class="ibcs">s.218</td><td>Board's investigation powers updated.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">65</td><td class="ibcs">s.219</td><td>Substituted: a structured show-cause procedure before adverse action.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">66</td><td class="ibcs">s.220</td><td>Disciplinary committee recast, with a defined appeal to the appellate tribunal.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">67</td><td class="ibcs">s.224</td><td>The Insolvency and Bankruptcy Fund: contributions, administration and application updated.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">68</td><td class="ibcs">s.235A</td><td>Substituted residual penalty, with savings for the omission of sections 74 and 76.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">69</td><td class="ibcs">s.239</td><td>Central Government rule-making power expanded to the new mechanisms.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">70</td><td class="ibcs">s.240</td><td>Board regulation-making power expanded to the new mechanisms.</td><td><span class="pill live">Live</span></td></tr>
+          <tr><td class="s">71</td><td class="ibcs">new ss.240B, 240C</td><td>Statutory electronic platform (240B); enabling cross-border framework aligned to the UNCITRAL Model Law (240C).</td><td><span class="pill pending">Pending</span></td></tr>
+          <tr><td class="s">72</td><td class="ibcs">s.242</td><td>Removal-of-difficulties power renewed, exercisable within five years, every order laid before Parliament.</td><td><span class="pill live">Live</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="soft">
+
+    <h3>What to watch</h3>
+    <p>Four threads will determine how this Amendment actually lands, and a practitioner should track each one.</p>
+    <ul class="tight">
+      <li><strong>The pending notifications.</strong> The creditor-initiated process (Chapter IV-A), group insolvency (Chapter VA), the electronic platform (section 240B) and the cross-border framework (section 240C) are on the statute book but not yet operative. None can be used until separately notified, and each depends on supporting rules.</li>
+      <li><strong>The secured-creditor computation question.</strong> The new section 53(1)(b)(ii) Explanation leans collateral-specific, and section 30(2)(ba) recalibrates the dissenting creditor's floor, but the larger-Bench reference in <em class="t">DBS Bank</em> on how to value a dissenting secured creditor has not been mooted. Treat the precise manner of valuation as live until the Court or the rules speak.</li>
+      <li><strong>The government-dues reversal.</strong> The Explanations to sections 3(31) and 53(1)(e)(i) are drafted to undo <em class="t">Rainbow Papers</em> and adopt <em class="t">Raman Ispat</em>. Expect early litigation testing the boundary of "merely by operation of law" against specific statutory-charge regimes.</li>
+      <li><strong>The rules.</strong> So much is left to be "specified" that several live provisions are inoperable in practice until the Board and Government act. The operative detail of the 2026 Act will live in subordinate legislation.</li>
+    </ul>
+
+    <div class="note"><h5>A note on sources and verification</h5><p>Statutory text in this guide is drawn from the Amendment Act and the principal Act as they stand. Commencement dates reflect the position that the majority of the seventy-two clauses were brought into force with effect from 26 May 2026, with Chapter IV-A, Chapter VA and sections 240B and 240C awaiting separate notification. Case citations are given as commonly reported; one or two parallel citations are given in the form in which they are widely cited, and a reader relying on a holding for advice should verify the neutral citation and the current status of any pending reference. Where a point turns on rules not yet made, the guide says so rather than assuming their content.</p></div>
+  </div>
+</section>
+</main>
+</div>
+
+<footer class="site">
+  <div class="shell">
+    <div class="ftop">
+      <div>
+        <h5>The <em>Recovery</em> Library</h5>
+        <p>A clause-by-clause working guide to the Insolvency and Bankruptcy Code (Amendment) Act, 2026 &mdash; all seventy-two amending sections, the position before and after each reform, the parliamentary purpose, and the leading authorities that shaped it.</p>
+      </div>
+      <div class="fnav">
+        <span class="fl">The Volumes</span>
+        <a href="index.html">Home</a>
+        <a href="ibc-amendment-act.html">I &middot; IBC (Amendment) Act 2026</a>
+        <a href="rbi-prudential-framework.html">II &middot; RBI Prudential Framework</a>
+        <a href="sarfaesi-act.html">III &middot; SARFAESI Act</a>
+        <a href="rdb-act.html">IV &middot; RDB Act</a>
+        <a href="companies-act.html">V &middot; Companies Act</a>
+        <a href="contract-act.html">VI &middot; Contract Act</a>
+        <a href="transfer-of-property-act.html">VII &middot; Transfer of Property Act</a>
+      </div>
+    </div>
+    <p class="disc"><strong>A note on use.</strong> This guide is an explanatory and educational analysis of the Insolvency and Bankruptcy Code (Amendment) Act, 2026 and its effect on the principal Code of 2016. It is not legal advice. Several provisions discussed here await separate notification, and at least one question of valuation is pending before a larger Bench of the Supreme Court. Verify the current text of any provision, the status of any notification, and the neutral citation and standing of any decision before professional reliance.</p>
+  </div>
+</footer>
+
+<script>
+// reading progress
+const bar=document.getElementById('progress');
+function prog(){const h=document.documentElement;const sc=h.scrollTop;const max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?(sc/max*100):0)+'%';}
+document.addEventListener('scroll',prog,{passive:true});prog();
+
+// reveal on scroll
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// active TOC highlight
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const spy=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const id='#'+e.target.id;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));}});},{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>s&&spy.observe(s));
+</script>
+<script>
+(function(){
+  var mh=document.getElementById('masthead');
+  function onScrollMh(){ if(mh) mh.classList.toggle('scrolled', window.scrollY>10); }
+  document.addEventListener('scroll',onScrollMh,{passive:true}); onScrollMh();
+})();
+</script>
+</body>
+</html>

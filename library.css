@@ -36,6 +36,7 @@
 }
 
 /* per-volume accent remap */
+body[data-vol="ibc"]{ --accent:#6e1f2e; --accent-deep:#511622; --accent-soft:#f2e6e6; }
 body[data-vol="rbi"]{ --accent:#8f6822; --accent-deep:#6f5018; --accent-soft:#f1ead9; }
 body[data-vol="sar"]{ --accent:#7d2733; --accent-deep:#5f1c26; --accent-soft:#f1e7e4; }
 body[data-vol="rdb"]{ --accent:#285049; --accent-deep:#1c3a35; --accent-soft:#e4ece9; }
